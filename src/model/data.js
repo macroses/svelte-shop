@@ -1,15 +1,15 @@
 class MainData {
-    constructor(name, price, description, img) {
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.img = img;
+    constructor() {
+        this.collections = [];
+        this.getSource();
     }
 
-    addElement() {}
-    getElement() {}
-    updateElement() {}
-    removeElement() {}
+    async getSource() {
+        const url = 'http://jsonplaceholder.typicode.com/posts';
+        const resolve = await fetch(url);
+        this.collections = await resolve.json();
+    }
 }
+
 
 export default MainData;
