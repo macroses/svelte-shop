@@ -17,5 +17,7 @@
 {/await} -->
 
 
-<h1>Welcome to SvelteKit</h1>
+<main>
+    this is main
+</main>
 
