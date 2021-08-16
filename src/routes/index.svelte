@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
     import Model from "../model/data-servie";
 
     let obj = new Model();
@@ -6,12 +6,18 @@
 </script>
 
 
-{#await elem}
+<!-- {#await elem}
     <p>loading...</p>
 {:then value}
-    {#each value as item}
-        <p>{item.about}</p>
-    {/each}
+    <ul>
+        {#each value as item}
+            <li>
+                <div class="name">{item.name}</div>
+                <img src="{item.img}" alt="">
+            </li>
+        {/each}
+    </ul>
+    
 {:catch}
     <p>Это ашыпка</p>
 {/await} -->

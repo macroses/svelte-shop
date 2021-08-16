@@ -6,13 +6,22 @@
     </div>
     <div class="options">
         <div class="profile">
-            <a href="/"><span class="material-icons">face</span></a>
+            <a href="/">
+                <span class="material-icons-two-tone">face</span>
+                Профиль
+            </a>
         </div>
         <div class="favorite">
-            <a href="/"><span class="material-icons">favorite_border</span></a>
+            <a href="/">
+                <span class="material-icons-two-tone">favorite_border</span>
+                Избранное
+            </a>
         </div>
         <div class="cart">
-            <a href="/"><span class="material-icons">shopping_cart</span></a>
+            <a href="/">
+                <span class="material-icons-two-tone">shopping_cart</span>
+                Корзина
+            </a>
         </div>
     </div>
 </header>
@@ -33,5 +42,12 @@
 
     .search-input {
         width: 100%;
+    }
+
+    .options a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 </style>

@@ -1,26 +1,30 @@
 export default class Model {
-    apiBase = 'http://jsonplaceholder.typicode.com';
+    apiBase = 'https://fakestoreapi.com';
 
     async getResource(url) {
         const resolve = await fetch(`${this.apiBase}${url}`);
         return await resolve.json();
     }
 
-    static async getAllItems() {
-        const resolve = await this.getResource(`/posts/`);
+    async getAllItems() {
+        const resolve = await this.getResource(`/products/`);
         return resolve.map(this.transformData);
     }
 
-    static async getSingleItem(id) {
-        const item = await this.getResource(`/posts/${id}`);
+    async getSingleItem(id) {
+        const item = await this.getResource(`/products/${id}`);
         return this.transformData(item)
     }
 
-    transformData(post) {
+    transformData(product) {
         return {
-            id: post.id,
-            name: post.title,
-            about: post.body
+            id: product.id,
+            name: product.title,
+            about: product.description,
+            category: product.category,
+            price: product.price,
+            img: product.image,
+            isActive: false
         }
     }
 
