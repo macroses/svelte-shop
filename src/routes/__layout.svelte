@@ -23,5 +23,6 @@
             "footer";
 
         margin: 0 auto;
+        padding: 0 10px;
     }
 </style>
