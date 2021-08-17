@@ -16,6 +16,11 @@ export default class Model {
         return this.transformData(item)
     }
 
+    async getUniqueCategories() {
+        const resolve = await this.getResource(`/products/`);
+        return resolve.map(el => el.category).filter((el,i,arr) => arr.indexOf(el) == i);
+    }
+
     transformData(product) {
         return {
             id: product.id,
