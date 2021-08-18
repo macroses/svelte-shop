@@ -20,13 +20,13 @@
                 "favorite": false,
                 "isActive": false,
                 "attributes": [
-                    {"color": ["черный", "белый"]},
-                    {"display": "6.5"},
-                    {"memory": "32"},
-                    {"RAM": "4"},
-                    {"battery": "5000"},
-                    {"simCount": 2},
-                    {"OS": "Android 10"}
+                    {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "белый"]},
+                    {"attrId": 2, "attrName": "диагональ", "attrVal": "6.5"},
+                    {"attrId": 3, "attrName": "память", "attrVal": "32"},
+                    {"attrId": 4, "attrName": "ОЗУ", "attrVal": "4"},
+                    {"attrId": 5, "attrName": "аккумулятор", "attrVal": "3500"},
+                    {"attrId": 6, "attrName": "SIM", "attrVal": "2"},
+                    {"attrId": 7, "attrName": "OS", "attrVal": "Android 10"}
                 ]
             },
 
@@ -43,13 +43,13 @@
                 "favorite": false,
                 "isActive": false,
                 "attributes": [
-                    {"color": ["белый", "розовый"]},
-                    {"display": "6.2"},
-                    {"memory": "128"},
-                    {"RAM": "8"},
-                    {"battery": "4500"},
-                    {"simCount": 2},
-                    {"OS": "Android 10"}
+                    {"attrId": 1, "attrName": "цвет", "attrVal": ["розовый", "белый"]},
+                    {"attrId": 2, "attrName": "диагональ", "attrVal": "6.2"},
+                    {"attrId": 3, "attrName": "память", "attrVal": "128"},
+                    {"attrId": 4, "attrName": "ОЗУ", "attrVal": "8"},
+                    {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4500"},
+                    {"attrId": 6, "attrName": "SIM", "attrVal": "2"},
+                    {"attrId": 7, "attrName": "OS", "attrVal": "Android 10"}
                 ]
             },
 
@@ -71,13 +71,13 @@
                 "favorite": false,
                 "isActive": false,
                 "attributes": [
-                    {"color": ["белый", "золотой", "серебро"]},
-                    {"display": "6.7"},
-                    {"memory": "128"},
-                    {"RAM": "8"},
-                    {"battery": "4500"},
-                    {"simCount": 1},
-                    {"OS": "Android 11"}
+                    {"attrId": 1, "attrName": "цвет", "attrVal": ["золотой", "белый", "серебро"]},
+                    {"attrId": 2, "attrName": "диагональ", "attrVal": "6.7"},
+                    {"attrId": 3, "attrName": "память", "attrVal": "128"},
+                    {"attrId": 4, "attrName": "ОЗУ", "attrVal": "8"},
+                    {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4500"},
+                    {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
+                    {"attrId": 7, "attrName": "OS", "attrVal": "Android 11"}
                 ]
             },
 
@@ -99,13 +99,13 @@
                 "favorite": false,
                 "isActive": false,
                 "attributes": [
-                    {"color": ["серый", "золотой"]},
-                    {"display": "6.81"},
-                    {"memory": "256"},
-                    {"RAM": "8"},
-                    {"battery": "4500"},
-                    {"simCount": 1},
-                    {"OS": "Android 11"}
+                    {"attrId": 1, "attrName": "цвет", "attrVal": ["золотой", "серый"]},
+                    {"attrId": 2, "attrName": "диагональ", "attrVal": "6.81"},
+                    {"attrId": 3, "attrName": "память", "attrVal": "256"},
+                    {"attrId": 4, "attrName": "ОЗУ", "attrVal": "8"},
+                    {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4500"},
+                    {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
+                    {"attrId": 7, "attrName": "OS", "attrVal": "Android 11"}
                 ]
             },
 
@@ -127,13 +127,13 @@
                 "favorite": false,
                 "isActive": false,
                 "attributes": [
-                    {"color": ["золотой", "красный"]},
-                    {"display": "6.67"},
-                    {"memory": "128"},
-                    {"RAM": "4"},
-                    {"battery": "4500"},
-                    {"simCount": 1},
-                    {"OS": "Android 10"}
+                    {"attrId": 1, "attrName": "цвет", "attrVal": ["золотой", "красный"]},
+                    {"attrId": 2, "attrName": "диагональ", "attrVal": "6.67"},
+                    {"attrId": 3, "attrName": "память", "attrVal": "128"},
+                    {"attrId": 4, "attrName": "ОЗУ", "attrVal": "4"},
+                    {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4500"},
+                    {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
+                    {"attrId": 7, "attrName": "OS", "attrVal": "Android 10"}
                 ]
             },
 
@@ -155,13 +155,13 @@
                 "favorite": false,
                 "isActive": false,
                 "attributes": [
-                    {"color": ["серебро", "синий", "белый"]},
-                    {"display": "6.58"},
-                    {"memory": "256"},
-                    {"RAM": "8"},
-                    {"battery": "6200"},
-                    {"simCount": 2},
-                    {"OS": "Android 10"}
+                    {"attrId": 1, "attrName": "цвет", "attrVal": ["серебро", "синий", "белый"]},
+                    {"attrId": 2, "attrName": "диагональ", "attrVal": "6.58"},
+                    {"attrId": 3, "attrName": "память", "attrVal": "256"},
+                    {"attrId": 4, "attrName": "ОЗУ", "attrVal": "8"},
+                    {"attrId": 5, "attrName": "аккумулятор", "attrVal": "6200"},
+                    {"attrId": 6, "attrName": "SIM", "attrVal": "2"},
+                    {"attrId": 7, "attrName": "OS", "attrVal": "Android 10"}
                 ]
             },
 
@@ -183,13 +183,13 @@
                 "favorite": false,
                 "isActive": false,
                 "attributes": [
-                    {"color": ["черный"]},
-                    {"display": "6.1"},
-                    {"memory": "64"},
-                    {"RAM": "8"},
-                    {"battery": "3500"},
-                    {"simCount": 2},
-                    {"OS": "IOS"}
+                    {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+                    {"attrId": 2, "attrName": "диагональ", "attrVal": "6.1"},
+                    {"attrId": 3, "attrName": "память", "attrVal": "64"},
+                    {"attrId": 4, "attrName": "ОЗУ", "attrVal": "8"},
+                    {"attrId": 5, "attrName": "аккумулятор", "attrVal": "3500"},
+                    {"attrId": 6, "attrName": "SIM", "attrVal": "2"},
+                    {"attrId": 7, "attrName": "OS", "attrVal": "IOS"}
                 ]
             },
 
@@ -213,13 +213,13 @@
                 "favorite": false,
                 "isActive": false,
                 "attributes": [
-                    {"color": ["графитовый", "золотой", "серебро", "тихоокеанский синий"]},
-                    {"display": "6.7"},
-                    {"memory": "128"},
-                    {"RAM": "16"},
-                    {"battery": "4200"},
-                    {"simCount": 1},
-                    {"OS": "IOS"}
+                    {"attrId": 1, "attrName": "цвет", "attrVal": ["графитовый", "золотой", "серебро", "тихоокеанский синий"]},
+                    {"attrId": 2, "attrName": "диагональ", "attrVal": "6.7"},
+                    {"attrId": 3, "attrName": "память", "attrVal": "128"},
+                    {"attrId": 4, "attrName": "ОЗУ", "attrVal": "16"},
+                    {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4200"},
+                    {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
+                    {"attrId": 7, "attrName": "OS", "attrVal": "IOS"}
                 ]
             },
 
@@ -235,21 +235,18 @@
                     "https://img.mvideo.ru/Big/30052938bb1.jpg",
                     "https://img.mvideo.ru/Big/30052938bb2.jpg",
                     "https://img.mvideo.ru/Big/30052938bb3.jpg",
-                    "https://img.mvideo.ru/Big/30052938bb4.jpg",
-                    "https://img.mvideo.ru/Big/30052938bb5.jpg",
-                    "https://img.mvideo.ru/Big/30052938bb6.jpg",
-                    "https://img.mvideo.ru/Big/30052938bb7.jpg"
+                    "https://img.mvideo.ru/Big/30052938bb4.jpg"
                 ],
                 "favorite": false,
                 "isActive": false,
                 "attributes": [
-                    {"color": ["графитовый", "золотой", "красный"]},
-                    {"display": "6.1"},
-                    {"memory": "128"},
-                    {"RAM": "16"},
-                    {"battery": "4200"},
-                    {"simCount": 1},
-                    {"OS": "IOS"}
+                    {"attrId": 1, "attrName": "цвет", "attrVal": ["графитовый", "золотой", "красный"]},
+                    {"attrId": 2, "attrName": "диагональ", "attrVal": "6.1"},
+                    {"attrId": 3, "attrName": "память", "attrVal": "128"},
+                    {"attrId": 4, "attrName": "ОЗУ", "attrVal": "16"},
+                    {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4200"},
+                    {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
+                    {"attrId": 7, "attrName": "OS", "attrVal": "IOS"}
                 ]
             },
 
@@ -270,13 +267,13 @@
                 "favorite": false,
                 "isActive": false,
                 "attributes": [
-                    {"color": ["черный"]},
-                    {"display": "6.67"},
-                    {"memory": "256"},
-                    {"RAM": "12"},
-                    {"battery": "4200"},
-                    {"simCount": 2},
-                    {"OS": "Android 11"}
+                    {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+                    {"attrId": 2, "attrName": "диагональ", "attrVal": "6.67"},
+                    {"attrId": 3, "attrName": "память", "attrVal": "256"},
+                    {"attrId": 4, "attrName": "ОЗУ", "attrVal": "12"},
+                    {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4300"},
+                    {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
+                    {"attrId": 7, "attrName": "OS", "attrVal": "Android 11"}
                 ]
             }
         ]

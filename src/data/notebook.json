@@ -1,0 +1,118 @@
+{
+    "id": 2,
+    "catName": "Ноутбуки и настольные ПК",
+    "catImg": "https://img.mvideo.ru/catimg/Cls_130_L.png",
+    "category": [
+        {
+            "id": 1,
+            "brand": "Huawei",
+            "name": "Ноутбук Huawei MateBook D 15 BoB-WAI9 8+256GB Space Grey",
+            "title": "Удобный, быстрый, легкий. Серый цвет смотрится очень достойно.",
+            "body": "Хороший стильный ноутбук для учебы и работы. Шум вентиляторов либо не слышно, либо в очень ресурсоёмких задачах немного слышно (еле как, совсем не мешает). P.S. Вообще советую рассматривать модели с процессором AMD, но они немного дороже, и немного дефицитные.",
+            "price": "42 990",
+            "imgSet": [
+                "https://img.mvideo.ru/Big/30057322bb.jpg",
+                "https://img.mvideo.ru/Big/30057322bb1.jpg",
+                "https://img.mvideo.ru/Big/30057322bb2.jpg",
+                "https://img.mvideo.ru/Big/30057322bb3.jpg",
+                "https://img.mvideo.ru/Big/30057322bb21.jpg"
+            ],
+            "favorite": false,
+            "isActive": false,
+            "attributes": [
+                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+                {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i3 10110U 2.1"},
+                {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
+                {"attrId": 4, "attrName": "память", "attrVal": "32"},
+                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
+                {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
+                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
+                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"}
+            ]
+        },
+
+        {
+            "id": 2,
+            "brand": "HP",
+            "name": "Ноутбук HP 15s-fq2060ur 3Y1S4EA",
+            "title": "ВЫНОСЛИВЫЙ СПУТНИК",
+            "body": "Для стабильной работы большинства приложений не требуется заоблачная мощность - ноутбук HP 15s-fq2060ur запросто справится с поставленными задачами, позволяя владельцу заниматься будничными делами и отдыхать в свободное время.",
+            "price": "41 990",
+            "imgSet": [
+                "https://img.mvideo.ru/Big/30056517bb.jpg",
+                "https://img.mvideo.ru/Big/30056517bb21.jpg"
+            ],
+            "favorite": false,
+            "isActive": false,
+            "attributes": [
+                {"attrId": 1, "attrName": "цвет", "attrVal": ["металл"]},
+                {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i3 1115G4 3.0 ГГц"},
+                {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
+                {"attrId": 4, "attrName": "память", "attrVal": "256"},
+                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
+                {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
+                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
+                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
+                {"attrId": 9, "attrName": "вес", "attrVal": "1,79 кг"}
+            ]
+        },
+
+        {
+            "id": 3,
+            "brand": "Asus",
+            "name": "Ноутбук игровой ASUS TUF Gaming F15 FX506LH-HN082T",
+            "title": "ХОД NVIDIA",
+            "body": "Производительный лэптоп делает ставку на видеокарту GeForce GTX 1650 с 4 Гб памяти на борту. Она поддерживает множество современных технологий, включая DirectX 12, и выдаёт стабильный FPS в множестве хитов, включая сетевые шутеры и стратегии. Также создатели разместили в недрах устройства четырёхъядерный процессор Intel Core i5 10300H и 8 Гб оперативной памяти DDR4.",
+            "price": "64 990",
+            "imgSet": [
+                "https://img.mvideo.ru/Big/small_pic/480/30056162bb.jpg",
+                "https://img.mvideo.ru/Big/small_pic/480/30056162bb1.jpg",
+                "https://img.mvideo.ru/Big/small_pic/480/30056162bb2.jpg",
+                "https://img.mvideo.ru/Big/30056162bb21.jpg",
+                "https://img.mvideo.ru/Big/30056162bb22.jpg"
+            ],
+            "favorite": false,
+            "isActive": false,
+            "attributes": [
+                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+                {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i5 10300H 2.5 ГГц"},
+                {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
+                {"attrId": 4, "attrName": "память", "attrVal": "512"},
+                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "16"},
+                {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
+                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
+                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
+                {"attrId": 9, "attrName": "вес", "attrVal": "2,3 кг"}
+            ]
+        },
+
+        {
+            "id": 4,
+            "brand": "Acer",
+            "name": "Ноутбук Acer TravelMate TMB118-M-C6UT NX.VHSER.00E Acer",
+            "title": "Cоздан для применения в школьном классе или институтской аудитории. ",
+            "body": "Мобильный компьютер можно каждый день брать с собой на занятия. Благодаря прорезиненной противоударной рамке, экрану с защитой от давления, и клавиатуре, выдерживающей проливание до 330 мл жидкости, ему не страшно даже неаккуратное обращение.",
+            "price": "15 000",
+            "imgSet": [
+                "https://img.mvideo.ru/Big/30054870bb.jpg",
+                "https://img.mvideo.ru/Big/30054870bb1.jpg",
+                "https://img.mvideo.ru/Big/30054870bb2.jpg",
+                "https://img.mvideo.ru/Big/30054870bb3.jpg",
+                "https://img.mvideo.ru/Big/30054870bb4.jpg"
+            ],
+            "favorite": false,
+            "isActive": false,
+            "attributes": [
+                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
+                {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Celeron N4120 1.1 ГГц"},
+                {"attrId": 3, "attrName": "диагональ", "attrVal": "11.6"},
+                {"attrId": 4, "attrName": "память", "attrVal": "512"},
+                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "16"},
+                {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
+                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Нет"},
+                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
+                {"attrId": 9, "attrName": "вес", "attrVal": "1,3 кг"}
+            ]
+        }
+    ]
+}
