@@ -1,8 +1,8 @@
 <script>
-    import Model from "../../model/data-servie";
+    import Model from "../../model/data-service";
 
     const categoryCollection = new Model();
-    export const categories = categoryCollection.getAllItems();
+    const categories = categoryCollection.getAllItems();
 
 </script>
 
@@ -11,7 +11,7 @@
         <p>waiting...</p>
     {:then value}
         {#each value as item (item.id)}
-            <a href="/category/{item.id}">
+            <a href="category/{item.id}">
                 <span class="material-icons-two-tone">{item.catImg}</span>
                 <span class="cat_name_text">{item.catName}</span>
             </a>
