@@ -36,7 +36,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
+        padding: 15%;
     }
 
     .category_list a:nth-child(7n+1) {

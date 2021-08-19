@@ -5,289 +5,265 @@
     "category": [
         {
             "id": 1,
-            "brand": "Huawei",
-            "name": "Ноутбук Huawei MateBook D 15 BoB-WAI9 8+256GB Space Grey",
-            "title": "Удобный, быстрый, легкий. Серый цвет смотрится очень достойно.",
-            "body": "Хороший стильный ноутбук для учебы и работы. Шум вентиляторов либо не слышно, либо в очень ресурсоёмких задачах немного слышно (еле как, совсем не мешает). P.S. Вообще советую рассматривать модели с процессором AMD, но они немного дороже, и немного дефицитные.",
+            "brand": "Samsung",
+            "name": "Стиральная машина узкая Samsung WW65K52E69S",
+            "title": "ЭФФЕКТИВНОСТЬ",
+            "body": "Узкая стиральная машина Samsung WW65K52E69S оснащена инверторным мотором, собранным по технологии Digital Inverter. В нём есть мощные магниты, благодаря которым значительно уменьшается трение деталей, снижается вибрация и уровень шума.",
             "price": "42 990",
             "imgSet": [
-                "https://img.mvideo.ru/Big/30057322bb.jpg",
-                "https://img.mvideo.ru/Big/30057322bb1.jpg",
-                "https://img.mvideo.ru/Big/30057322bb2.jpg",
-                "https://img.mvideo.ru/Big/30057322bb3.jpg",
-                "https://img.mvideo.ru/Big/30057322bb21.jpg"
+                "https://img.mvideo.ru/Pdb/20036717b.jpg",
+                "https://img.mvideo.ru/Pdb/20036717b1.jpg",
+                "https://img.mvideo.ru/Pdb/20036717b2.jpg",
+                "https://img.mvideo.ru/Pdb/20036717b3.jpg",
+                "https://img.mvideo.ru/Pdb/20036717b4.jpg"
             ],
             "favorite": false,
             "isActive": false,
             "attributes": [
-                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i3 10110U 2.1"},
-                {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                {"attrId": 4, "attrName": "память", "attrVal": "32"},
-                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
-                {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
-                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"}
+                {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "6.5 кг"},
+                {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
+                {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
+                {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "15 мин"},
+                {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "да"},
+                {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
+                {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
             ]
         },
 
         {
             "id": 2,
-            "brand": "HP",
-            "name": "Ноутбук HP 15s-fq2060ur 3Y1S4EA",
-            "title": "ВЫНОСЛИВЫЙ СПУТНИК",
-            "body": "Для стабильной работы большинства приложений не требуется заоблачная мощность - ноутбук HP 15s-fq2060ur запросто справится с поставленными задачами, позволяя владельцу заниматься будничными делами и отдыхать в свободное время.",
-            "price": "41 990",
+            "brand": "Samsung",
+            "name": "Стиральная машина узкая Samsung WW80R42LXFW",
+            "title": "ПРОСТОЕ УПРАВЛЕНИЕ",
+            "body": "Стиральная машина Samsung WW80R42LXFW сочетает компактные размеры с большой вместимостью – до 8 килограммов хлопкового белья. Она эффективно очищает плотные ткани от стойких пятен, равномерно насыщая их моющим средством с помощью генератора пузырьков.",
+            "price": "28 990",
             "imgSet": [
-                "https://img.mvideo.ru/Big/30056517bb.jpg",
-                "https://img.mvideo.ru/Big/30056517bb21.jpg"
+                "https://img.mvideo.ru/Big/20062756bb.jpg",
+                "https://img.mvideo.ru/Big/20062756bb1.jpg",
+                "https://img.mvideo.ru/Big/20062756bb2.jpg",
+                "https://img.mvideo.ru/Big/20062756bb3.jpg",
+                "https://img.mvideo.ru/Big/20062756bb4.jpg"
             ],
             "favorite": false,
             "isActive": false,
             "attributes": [
-                {"attrId": 1, "attrName": "цвет", "attrVal": ["металл"]},
-                {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i3 1115G4 3.0 ГГц"},
-                {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                {"attrId": 4, "attrName": "память", "attrVal": "256"},
-                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
-                {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
-                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                {"attrId": 9, "attrName": "вес", "attrVal": "1,79 кг"}
+                {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "8 кг"},
+                {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
+                {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
+                {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "15 мин"},
+                {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
+                {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
+                {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
             ]
         },
 
         {
             "id": 3,
-            "brand": "Asus",
-            "name": "Ноутбук игровой ASUS TUF Gaming F15 FX506LH-HN082T",
-            "title": "ХОД NVIDIA",
-            "body": "Производительный лэптоп делает ставку на видеокарту GeForce GTX 1650 с 4 Гб памяти на борту. Она поддерживает множество современных технологий, включая DirectX 12, и выдаёт стабильный FPS в множестве хитов, включая сетевые шутеры и стратегии. Также создатели разместили в недрах устройства четырёхъядерный процессор Intel Core i5 10300H и 8 Гб оперативной памяти DDR4.",
-            "price": "64 990",
+            "brand": "LG",
+            "name": "Стиральная машина узкая LG AIDD F2T9HS9S",
+            "title": "ЛЁГКАЯ ГЛАЖКА",
+            "body": "Стиральная машина LG AI DD F2T9HS9S снабжена датчиками, которые определяют тип ткани. Она автоматически выбирает настройки для каждого материала, повышая эффективность удаления пятен и защищая деликатное бельё от повреждений.",
+            "price": "33 990",
             "imgSet": [
-                "https://img.mvideo.ru/Big/small_pic/480/30056162bb.jpg",
-                "https://img.mvideo.ru/Big/small_pic/480/30056162bb1.jpg",
-                "https://img.mvideo.ru/Big/small_pic/480/30056162bb2.jpg",
-                "https://img.mvideo.ru/Big/30056162bb21.jpg",
-                "https://img.mvideo.ru/Big/30056162bb22.jpg"
+                "https://img.mvideo.ru/Big/20063140bb.jpg",
+                "https://img.mvideo.ru/Big/20063140bb1.jpg",
+                "https://img.mvideo.ru/Big/20063140bb2.jpg",
+                "https://img.mvideo.ru/Big/20063140bb3.jpg",
+                "https://img.mvideo.ru/Big/20063140bb4.jpg"
             ],
             "favorite": false,
             "isActive": false,
             "attributes": [
-                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i5 10300H 2.5 ГГц"},
-                {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                {"attrId": 4, "attrName": "память", "attrVal": "512"},
-                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "16"},
-                {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
-                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                {"attrId": 9, "attrName": "вес", "attrVal": "2,3 кг"}
+                {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
+                {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
+                {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
+                {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
+                {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
+                {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
+                {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
             ]
         },
 
         {
             "id": 4,
-            "brand": "Acer",
-            "name": "Ноутбук Acer TravelMate TMB118-M-C6UT NX.VHSER.00E Acer",
-            "title": "Cоздан для применения в школьном классе или институтской аудитории. ",
-            "body": "Мобильный компьютер можно каждый день брать с собой на занятия. Благодаря прорезиненной противоударной рамке, экрану с защитой от давления, и клавиатуре, выдерживающей проливание до 330 мл жидкости, ему не страшно даже неаккуратное обращение.",
-            "price": "15 000",
+            "brand": "LG",
+            "name": "Стиральная машина LG AIDD F4V5VS0W",
+            "title": "МАКСИМАЛЬНО ЭФФЕКТИВНО",
+            "body": "Функция обработки паром Steam значительно уменьшит количество складок и заломов. Она также уберёт большую часть аллергенов и устранит неприятные запахи.",
+            "price": "35 990",
             "imgSet": [
-                "https://img.mvideo.ru/Big/30054870bb.jpg",
-                "https://img.mvideo.ru/Big/30054870bb1.jpg",
-                "https://img.mvideo.ru/Big/30054870bb2.jpg",
-                "https://img.mvideo.ru/Big/30054870bb3.jpg",
-                "https://img.mvideo.ru/Big/30054870bb4.jpg"
+                "https://img.mvideo.ru/Big/20063129bb.jpg",
+                "https://img.mvideo.ru/Big/20063129bb1.jpg",
+                "https://img.mvideo.ru/Big/20063129bb2.jpg",
+                "https://img.mvideo.ru/Big/20063129bb3.jpg",
+                "https://img.mvideo.ru/Big/20063129bb4.jpg"
             ],
             "favorite": false,
             "isActive": false,
             "attributes": [
-                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Celeron N4120 1.1 ГГц"},
-                {"attrId": 3, "attrName": "диагональ", "attrVal": "11.6"},
-                {"attrId": 4, "attrName": "память", "attrVal": "512"},
-                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "16"},
-                {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
-                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Нет"},
-                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                {"attrId": 9, "attrName": "вес", "attrVal": "1,3 кг"}
+                {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
+                {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
+                {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
+                {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
+                {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
+                {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
+                {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
             ]
         },
 
         {
             "id": 5,
-            "brand": "Acer",
-            "name": "Ноутбук игровой Acer Nitro 5 AN515-54-54M2 NH.Q59ER.03L",
-            "title": "Cоздан для применения в школьном классе или институтской аудитории. ",
-            "body": "Отличное сочетание видеокарты и процессора, экран с хорошей ips матрицей, корпус симпатичный, без лишнего колхоза. ",
-            "price": "64 990",
+            "brand": "Bosch",
+            "name": "Стиральная машина узкая Bosch Serie | 2 WLG20060OE",
+            "title": "ЭКОНОМИЯ ВОДЫ И ЭЛЕКТРОЭНЕРГИИ",
+            "body": "Узкая стиральная машина Bosch Serie | 2 WLG20060OE хорошо подходит для установки в небольших помещениях. Она не занимает много места, обеспечивает высокое качество стирки.",
+            "price": "23 990",
             "imgSet": [
-                "https://img.mvideo.ru/Big/30054072bb.jpg",
-                "https://img.mvideo.ru/Big/30054072bb1.jpg",
-                "https://img.mvideo.ru/Big/30054072bb2.jpg",
-                "https://img.mvideo.ru/Big/30054072bb3.jpg"
+                "https://img.mvideo.ru/Pdb/20026559b.jpg",
+                "https://img.mvideo.ru/Big/20026559b1.jpg",
+                "https://img.mvideo.ru/Big/20026559b2.jpg"
             ],
             "favorite": false,
             "isActive": false,
             "attributes": [
-                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i5 9300H 2.4 ГГц"},
-                {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                {"attrId": 4, "attrName": "память", "attrVal": "512"},
-                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "12"},
-                {"attrId": 6, "attrName": "время работы", "attrVal": "до 11 часов"},
-                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Нет"},
-                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                {"attrId": 9, "attrName": "вес", "attrVal": "1,3 кг"}
+                {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
+                {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
+                {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
+                {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
+                {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
+                {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
+                {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
             ]
         },
 
         {
             "id": 6,
-            "brand": "Lenovo",
-            "name": "Ноутбук игровой Lenovo Legion 5 15ACH6H (82JU000XRU) Lenovo",
-            "title": "Lenovo Legion 5 15ACH6H готов доказать",
-            "body": "Главная особенность ноутбука от Lenovo – видеокарта GeForce RTX 3060 c 6 Гб памяти. Благодаря стараниям адаптера тебе не придётся смотреть на мыльные текстуры или отключать эффекты ради стабильного FPS. Он поддерживает технологию DLSS, которая пригодится в самых требовательных играх, а также трассировку лучей в реальном времени.",
-            "price": "109 990",
+            "brand": "Bosch",
+            "name": "Стиральная машина Bosch HomeProfessional WAX32DH1OE",
+            "title": "ЭКОНОМИЯ ВОДЫ И ЭЛЕКТРОЭНЕРГИИ",
+            "body": "Узкая стиральная машина Bosch Serie | 2 WLG20060OE хорошо подходит для установки в небольших помещениях. Она не занимает много места, обеспечивает высокое качество стирки.",
+            "price": "23 990",
             "imgSet": [
-                "https://img.mvideo.ru/Big/30056271bb21.jpg",
-                "https://img.mvideo.ru/Big/30056271bb22.jpg",
-                "https://img.mvideo.ru/Big/30056271bb23.jpg",
-                "https://img.mvideo.ru/Big/30056271bb24.jpg",
-                "https://img.mvideo.ru/Big/30056271bb25.jpg"
+                "https://img.mvideo.ru/Big/20068648bb.jpg",
+                "https://img.mvideo.ru/Big/20068648bb1.jpg",
+                "https://img.mvideo.ru/Big/20068648bb2.jpg",
+                "https://img.mvideo.ru/Big/20068648bb3.jpg",
+                "https://img.mvideo.ru/Big/20068648bb4.jpg"
             ],
             "favorite": false,
             "isActive": false,
             "attributes": [
-                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                {"attrId": 2, "attrName": "процессор", "attrVal": "AMD Ryzen 5 5600H 3.3 ГГц"},
-                {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                {"attrId": 4, "attrName": "память", "attrVal": "512"},
-                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "16"},
-                {"attrId": 6, "attrName": "время работы", "attrVal": "до 9 часов"},
-                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                {"attrId": 9, "attrName": "вес", "attrVal": "1,3 кг"}
+                {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
+                {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
+                {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
+                {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
+                {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
+                {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
+                {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
             ]
         },
 
         {
             "id": 7,
-            "brand": "Dell",
-            "name": "Ноутбук Dell Inspiron 3501-8182",
-            "title": "ДОСТОЙНЫЙ УРОВЕНЬ",
-            "body": "Линейка ноутбуков Dell Inspiron 3501 выделяется не только скромными габаритами, благодаря которым владелец может запросто запускать самые востребованные программы в дороге, но и солидными характеристиками.",
-            "price": "31 990",
+            "brand": "Candy",
+            "name": "Стиральная машина узкая Candy SmartPro CSO44128TB1/2-07",
+            "title": "ПРЕВОСХОДНЫЙ РЕЗУЛЬТАТ",
+            "body": "Глубина корпуса стиральной машины Candy SmartPro CSO4 CO4 106T1/2-07 составляет 40 см. Благодаря этому она не занимает много места и подходит для установки в небольшом помещении. Эта модель рассчитана на одновременную загрузку до 6 кг белья.",
+            "price": "17 490",
             "imgSet": [
-                "https://img.mvideo.ru/Big/30055083bb.jpg",
-                "https://img.mvideo.ru/Big/30055083bb1.jpg",
-                "https://img.mvideo.ru/Big/30055083bb21.jpg",
-                "https://img.mvideo.ru/Big/30055083bb22.jpg",
-                "https://img.mvideo.ru/Big/30055083bb23.jpg"
+                "https://img.mvideo.ru/Big/20071249bb4.jpg",
+                "https://img.mvideo.ru/Big/20071249bb1.jpg",
+                "https://img.mvideo.ru/Big/20071249bb2.jpg",
+                "https://img.mvideo.ru/Big/20071249bb3.jpg",
+                "https://img.mvideo.ru/Big/20071249bb4.jpg"
             ],
             "favorite": false,
             "isActive": false,
             "attributes": [
-                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i3 1005G1 1.2 ГГц"},
-                {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                {"attrId": 4, "attrName": "память", "attrVal": "128"},
-                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "4"},
-                {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
-                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                {"attrId": 9, "attrName": "вес", "attrVal": "1,85 кг"}
+                {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
+                {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
+                {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
+                {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
+                {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
+                {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
+                {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
             ]
         },
 
         {
             "id": 8,
-            "brand": "Apple",
-            "name": "Ноутбук Apple MacBook Pro 13 M1/8/256 Space Gray",
-            "title": "MacBook Pro 13 дюймов",
-            "body": "MacBook Pro 13 дюймов выходит на совершенно новый уровень благодаря мощному чипу Apple M1. До 2,8 раза больше вычислительной мощности, до 5 раз выше скорость обработки графики, до 20 часов работы без подзарядки — дольше любого другого Mac. Теперь в вашем распоряжении ещё более впечатляющие возможности. И они повсюду с вами.",
-            "price": "31 990",
+            "brand": "Candy",
+            "name": "Стиральная машина с вертикальной загрузкой Candy CST G270L/1-07",
+            "title": "ПРЕВОСХОДНЫЙ РЕЗУЛЬТАТ",
+            "body": "ГИ вот я ее нашла! Изучив характеристики этой машинки, я отправилась за ней в магазин, оценить, так сказать, ",
+            "price": "27 490",
             "imgSet": [
-                "https://img.mvideo.ru/Big/30053805bb.jpg",
-                "https://img.mvideo.ru/Big/30053805bb1.jpg",
-                "https://img.mvideo.ru/Big/30053805bb2.jpg",
-                "https://img.mvideo.ru/Big/30053805bb3.jpg",
-                "https://img.mvideo.ru/Big/30053805bb4.jpg",
-                "https://img.mvideo.ru/Big/30053805bb5.jpg"
+                "https://img.mvideo.ru/Pdb/1100023634546b.jpg",
+                "https://img.mvideo.ru/Pdb/1100023634546b1.jpg",
+                "https://img.mvideo.ru/Pdb/1100023634546b2.jpg",
+                "https://img.mvideo.ru/Pdb/1100023634546b3.jpg",
+                "https://img.mvideo.ru/Pdb/1100023634546b4.jpg"
             ],
             "favorite": false,
             "isActive": false,
             "attributes": [
-                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "металл"]},
-                {"attrId": 2, "attrName": "процессор", "attrVal": "Apple M1"},
-                {"attrId": 3, "attrName": "диагональ", "attrVal": "13.3"},
-                {"attrId": 4, "attrName": "память", "attrVal": "128"},
-                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
-                {"attrId": 6, "attrName": "время работы", "attrVal": "до 20 часов"},
-                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                {"attrId": 9, "attrName": "вес", "attrVal": "1,85 кг"}
+                {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
+                {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
+                {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
+                {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
+                {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
+                {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
+                {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
             ]
         },
 
         {
             "id": 9,
-            "brand": "Apple",
-            "name": "Ноутбук Apple MacBook Pro 13 M1/8/256 Space Gray",
-            "title": "MacBook Pro 13 дюймов",
-            "body": "MacBook Pro 13 дюймов выходит на совершенно новый уровень благодаря мощному чипу Apple M1. До 2,8 раза больше вычислительной мощности, до 5 раз выше скорость обработки графики, до 20 часов работы без подзарядки — дольше любого другого Mac. Теперь в вашем распоряжении ещё более впечатляющие возможности. И они повсюду с вами.",
-            "price": "31 990",
+            "brand": "V-Zug",
+            "name": "Стиральная машина премиум V-Zug AdoraWash AW6TWHCR",
+            "title": "ПРЕВОСХОДНЫЙ РЕЗУЛЬТАТ",
+            "body": "V-Zug AdoraWash AW6TWHCR – стиральная машина премиум-класса. Она обеспечивает превосходные результаты стирки, а функция разглаживания паром позволяет справиться со складками и обойтись без утюга.",
+            "price": "535 990",
             "imgSet": [
-                "https://img.mvideo.ru/Big/30053805bb.jpg",
-                "https://img.mvideo.ru/Big/30053805bb1.jpg",
-                "https://img.mvideo.ru/Big/30053805bb2.jpg",
-                "https://img.mvideo.ru/Big/30053805bb3.jpg",
-                "https://img.mvideo.ru/Big/30053805bb4.jpg",
-                "https://img.mvideo.ru/Big/30053805bb5.jpg"
+                "https://img.mvideo.ru/Pdb/20075493b.jpg",
+                "https://img.mvideo.ru/Pdb/20075493b1.jpg",
+                "https://img.mvideo.ru/Pdb/20075493b2.jpg",
+                "https://img.mvideo.ru/Pdb/20075493b3.jpg",
+                "https://img.mvideo.ru/Pdb/20075493b4.jpg"
             ],
             "favorite": false,
             "isActive": false,
             "attributes": [
-                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "металл"]},
-                {"attrId": 2, "attrName": "процессор", "attrVal": "Apple M1"},
-                {"attrId": 3, "attrName": "диагональ", "attrVal": "13.3"},
-                {"attrId": 4, "attrName": "память", "attrVal": "128"},
-                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
-                {"attrId": 6, "attrName": "время работы", "attrVal": "до 20 часов"},
-                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                {"attrId": 9, "attrName": "вес", "attrVal": "1,85 кг"}
+                {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
+                {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
+                {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
+                {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
+                {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
+                {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
+                {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
             ]
         },
 
         {
             "id": 10,
-            "brand": "Apple",
-            "name": "Ноутбук Apple MacBook Pro 13 M1/8/256 Space Gray",
-            "title": "MacBook Pro 13 дюймов",
-            "body": "MacBook Pro 13 дюймов выходит на совершенно новый уровень благодаря мощному чипу Apple M1. До 2,8 раза больше вычислительной мощности, до 5 раз выше скорость обработки графики, до 20 часов работы без подзарядки — дольше любого другого Mac. Теперь в вашем распоряжении ещё более впечатляющие возможности. И они повсюду с вами.",
-            "price": "31 990",
+            "brand": "Kuppersbusch",
+            "name": "Стиральная машина премиум Kuppersbusch WA1940.0CU3 (Titan Rock)",
+            "title": "СТОПРОЦЕНТНЫЙ КОМФОРТ",
+            "body": "Kuppersbusch WA 1940.0 T – стиральная машина с предельной загрузкой 8 кг, которая обеспечит вашей одежде и текстилю уход премиум-класса. Производимая в Швейцарии модель отличается непревзойдённой надёжностью, поэтому прослужит вам максимально долго.",
+            "price": "386 990",
             "imgSet": [
-                "https://img.mvideo.ru/Big/30053805bb.jpg",
-                "https://img.mvideo.ru/Big/30053805bb1.jpg",
-                "https://img.mvideo.ru/Big/30053805bb2.jpg",
-                "https://img.mvideo.ru/Big/30053805bb3.jpg",
-                "https://img.mvideo.ru/Big/30053805bb4.jpg",
-                "https://img.mvideo.ru/Big/30053805bb5.jpg"
+                "https://img.mvideo.ru/Big/20072309bb.jpg"
             ],
             "favorite": false,
             "isActive": false,
             "attributes": [
-                {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "металл"]},
-                {"attrId": 2, "attrName": "процессор", "attrVal": "Apple M1"},
-                {"attrId": 3, "attrName": "диагональ", "attrVal": "13.3"},
-                {"attrId": 4, "attrName": "память", "attrVal": "128"},
-                {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
-                {"attrId": 6, "attrName": "время работы", "attrVal": "до 20 часов"},
-                {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                {"attrId": 9, "attrName": "вес", "attrVal": "1,85 кг"}
+                {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
+                {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
+                {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
+                {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
+                {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
+                {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
+                {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
             ]
         }
     ]
