@@ -11,7 +11,7 @@
         <p>waiting...</p>
     {:then value}
         {#each value as item}
-            <a href="category/{item.id}">
+            <a href="category/{item.id}" sveltekit:prefetch>
                 <span class="material-icons-two-tone">{item.catImg}</span>
                 <span class="cat_name_text">{item.catName}</span>
             </a>

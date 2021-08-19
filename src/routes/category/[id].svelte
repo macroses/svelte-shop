@@ -9,6 +9,7 @@
     export let id;
 
     import Model from "../../model/data-service";
+    import GoodItemView from "../../components/Main/Good/GoodItemView.svelte";
 
     const temp = new Model();
     const result = temp.getCurrentCategory(id);
@@ -16,7 +17,6 @@
 
 <main>
     <div class="container">
-
         {#await result}
             <p>load...</p>
         {:then value}
@@ -25,20 +25,7 @@
 
             <ul class="items_list">
                 {#each value.category as item (item.id)}
-                    <li>
-                        <a href="/" class="item_link_img">
-                            <div class="picture">
-                                <img src="{item.imgSet[0]}" alt="">
-                            </div>
-                            <span class="item_name">{item.name}</span>
-                        </a>
-                        <div class="bottom">
-                            <div class="price">{item.price} руб</div>
-                            <button>
-                                <span class="material-icons-two-tone">shopping_cart</span>
-                            </button>
-                        </div>
-                    </li>
+                    <GoodItemView {...item}/>
                 {/each}
             </ul>
         {/await}
@@ -48,43 +35,8 @@
 <style>
     .items_list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 30px 20px;
-    }
-
-    .items_list li {
-        
-    }
-
-    .picture {
-        display: flex;
-        width: 100%;
-        margin-bottom: 1.2rem;
-    }
-
-    .picture img {
-        max-width: 80%;
-    }
-
-    .price {
-        font-size: 1.3rem;
-        font-weight: normal;
-        font-weight: 500;
-    }
-
-    .item_link_img {
-        grid-area: photo;
-    }
-
-    .item_link {
-        grid-area: title;
-        font-size: 1rem;
-        color: var(--main-text-color);
-        transition: .2s;
-    }
-
-    .item_link:hover {
-        color: var(--main-theme-color);
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 30px 50px;
     }
 </style>
 
