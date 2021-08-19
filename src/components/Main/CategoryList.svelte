@@ -10,7 +10,7 @@
     {#await categories}
         <p>waiting...</p>
     {:then value}
-        {#each value as item (item.id)}
+        {#each value as item}
             <a href="category/{item.id}">
                 <span class="material-icons-two-tone">{item.catImg}</span>
                 <span class="cat_name_text">{item.catName}</span>

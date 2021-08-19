@@ -5,9 +5,7 @@
 
 <div class="wrapper">
     <Header/>
-    <main>
-        <slot></slot>
-    </main>
+    <main><slot></slot></main>
     <footer>footer</footer>
 </div>
 

@@ -1,9 +1,11 @@
-export default class Model {
+class Model {
 
     async getAllItems() {
-        const resolve = await fetch(`./static/data.json`);
+        const resolve = await fetch('http://localhost:3000/api/jsondata');
         const result = await resolve.json();
         return result;
     }
 
 }
+
+export default Model;
