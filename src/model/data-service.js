@@ -11,10 +11,6 @@ class Model {
         const result = await resolve;
         return result[id - 1];
     }
-
-    changeStatus(status) {
-        return status = !status;
-    }
 }
 
 export default Model;

@@ -1,6 +1,5 @@
 <script>
     import Button from "../../Helpers/Button.svelte";
-    import Model from '../../../model/data-service'
 
     export let {...item} = $$props;
 </script>

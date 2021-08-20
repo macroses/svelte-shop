@@ -1,5 +1,6 @@
 <script>
     import Model from "../../model/data-service";
+import Loader from "../Helpers/Loader.svelte";
 
     const categoryCollection = new Model();
     const categories = categoryCollection.getAllItems();
@@ -8,7 +9,7 @@
 
 <div class="category_list">
     {#await categories}
-        <p>waiting...</p>
+        <Loader />
     {:then value}
         {#each value as item}
             <a href="category/{item.id}" sveltekit:prefetch>
