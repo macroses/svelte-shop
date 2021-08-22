@@ -12,7 +12,6 @@
     import GoodItemView from "../../components/Main/Good/GoodItemView.svelte";
     import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
     import Loader from '../../components/Helpers/Loader.svelte';
-    // import { clickOutside } from '../../presenter/present-service';
 
     const temp = new Model();
     const result = temp.getCurrentCategory(id);
@@ -24,6 +23,10 @@
 
 </script>
 
+<svelte:head>
+    <title></title>
+</svelte:head>
+
 <main>
     <div class="container">
         
@@ -32,25 +35,28 @@
             {#await result}
                 <Loader/>
             {:then value}
-
                 <Breadcrumbs refaddress={value.catName}/>
-                <div class="filters">
-                    <div class="sort" on:click={handleToggle} >
-                        сортировка
-                        <span class="material-icons-two-tone">import_export</span>
-                        {#if active}
-                            <ul class="sort_positions">
-                                <li>сначала дешевле</li>
-                                <li>сначала дороже</li>
-                            </ul>
-                        {/if}
+                {#if value.category}
+                    <div class="filters">
+                        <div class="sort" on:click={handleToggle} >
+                            сортировка
+                            <span class="material-icons-two-tone">import_export</span>
+                            {#if active}
+                                <ul class="sort_positions">
+                                    <li>сначала дешевле</li>
+                                    <li>сначала дороже</li>
+                                </ul>
+                            {/if}
+                        </div>
                     </div>
-                </div>
-                <ul class="items_list">
-                    {#each value.category as item (item.id)}
-                        <GoodItemView {...item}/>
-                    {/each}
-                </ul>    
+                    <ul class="items_list">
+                        {#each value.category as item (item.id)}
+                            <GoodItemView {...item}/>    
+                        {/each}
+                    </ul>
+                {:else}
+                    <div class="empty_catalog">По вашему запросу ничего не найдено</div>
+                {/if}
             {/await}
 
         </div>
@@ -59,6 +65,11 @@
 
 
 <style>
+    .empty_catalog {
+        font-size: 1.5rem;
+        font-weight: 500;
+        min-width: max-content;
+    }
     .items_list {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));

@@ -1,4 +1,8 @@
-<div class="catalog">
+<script>
+    export let modalToggle;
+</script>
+
+<div class="catalog" on:click={modalToggle}>
     <span class="material-icons-two-tone">menu</span>
     <span class="text">Каталог</span>
 </div>

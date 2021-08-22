@@ -2,18 +2,26 @@
     import HeaderCatalog from "./HeaderСatalog.svelte";
     import HeaderOptions from "./HeaderOptions.svelte";
     import HeaderSearch from "./HeaderSearch.svelte";
+    import Modal from "../Modal/Modal.svelte";
+
+    let showModal = false;
 </script>
 
 <header>
     <div class="container">
         <div class="header_content">
             <a href="/" class="logo"><img src="logo.svg" alt=""></a>
-            <HeaderCatalog/>
+            <HeaderCatalog modalToggle={() => showModal = true}/>
             <HeaderSearch/>
             <HeaderOptions/>
         </div>
     </div>
 </header>
+
+{#if showModal}
+    <Modal on:close="{() => showModal = false}"/>
+{/if}
+
 
 <style>
     header {
