@@ -42,3 +42,15 @@ a {
     padding: 0 10px;
     margin: 0 auto;
 }
+
+option {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* убираем скачок при появлении контента */
+@media screen and (min-width: 1350px) {
+    html {
+        overflow-x: hidden;
+        margin-right: calc(-1 * (100vw - 100%));
+    }
+}

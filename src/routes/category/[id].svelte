@@ -8,23 +8,34 @@
 <script>
     export let id;
 
+    import { onMount } from "svelte";
     import Model from "../../model/data-service";
     import GoodItemView from "../../components/Main/Good/GoodItemView.svelte";
     import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
     import Loader from '../../components/Helpers/Loader.svelte';
 
     const temp = new Model();
-    const result = temp.getCurrentCategory(id);
-    let active = false;
+    let result = []
+    result = temp.getCurrentCategory(id);
+    let title = '';
+    let selectedValue;
 
-    function handleToggle() {
-        active = !active;
+    onMount(async() => {
+        const resolve = await temp.getCurrentCategory(id);
+        title = resolve.catName;
+    });
+
+    // ну почти почти
+    function sortItems(arr) {
+        // return arr.sort((a,b) => parseFloat(a.price) - parseFloat(b.price))
+        console.log( arr.sort((a,b) => parseFloat(a.price) - parseFloat(b.price)))
     }
-
+    
+    
 </script>
 
 <svelte:head>
-    <title></title>
+    <title>{title}</title>
 </svelte:head>
 
 <main>
@@ -38,16 +49,12 @@
                 <Breadcrumbs refaddress={value.catName}/>
                 {#if value.category}
                     <div class="filters">
-                        <div class="sort" on:click={handleToggle} >
-                            сортировка
-                            <span class="material-icons-two-tone">import_export</span>
-                            {#if active}
-                                <ul class="sort_positions">
-                                    <li>сначала дешевле</li>
-                                    <li>сначала дороже</li>
-                                </ul>
-                            {/if}
-                        </div>
+                        <select bind:value={selectedValue} on:change={() => sortItems(value.category)}>
+                            <option value="1" selected disabled>Сортировка</option>
+                            <option value="2" >Сначала дешевле</option>
+                            <option value="3">Сначала дороже</option>
+                        </select>
+                        {selectedValue}
                     </div>
                     <ul class="items_list">
                         {#each value.category as item (item.id)}
@@ -81,6 +88,7 @@
         display: grid;
         grid-template-columns: minmax(200px, 300px) 1fr;
         grid-template-rows: auto 1fr;
+        column-gap: 1rem;
         grid-template-areas: 
             'crumbs crumbs'
             'filter content';
@@ -88,31 +96,6 @@
 
     .filters {
         grid-area: filter;
-    }
-
-    .sort {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        position: relative;
-    }
-
-    .sort_positions {
-        position: absolute;
-        left: 0;
-        top: 100%;
-        background: #fff;
-        box-shadow: 4px 4px 11px 2px rgba(0,0,0,.1);
-    }
-
-    .sort_positions li{
-        padding: 3px 10px;
-        transition: .2s;
-    }
-
-    .sort_positions li:hover {
-        background: var(--main-theme-color);
-        color: #fff;
     }
 </style>
 
