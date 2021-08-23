@@ -15,8 +15,6 @@
     import Loader from '../../components/Helpers/Loader.svelte';
 
     const temp = new Model();
-    let result = []
-    result = temp.getCurrentCategory(id);
     let title = '';
     let selectedValue;
 
@@ -25,13 +23,14 @@
         title = resolve.catName;
     });
 
-    // ну почти почти
-    function sortItems(arr) {
-        // return arr.sort((a,b) => parseFloat(a.price) - parseFloat(b.price))
-        console.log( arr.sort((a,b) => parseFloat(a.price) - parseFloat(b.price)))
+    $: result = [];
+    $: if(selectedValue == undefined) {
+        result = temp.getCurrentCategory(id);
+    } else if(selectedValue === "2") {
+        result = temp.sortItems(id);
+        // придумать как обновлять в доме result
     }
-    
-    
+
 </script>
 
 <svelte:head>
@@ -49,8 +48,8 @@
                 <Breadcrumbs refaddress={value.catName}/>
                 {#if value.category}
                     <div class="filters">
-                        <select bind:value={selectedValue} on:change={() => sortItems(value.category)}>
-                            <option value="1" selected disabled>Сортировка</option>
+                        <select bind:value={selectedValue}>
+                            <option value="" selected disabled>Сортировка</option>
                             <option value="2" >Сначала дешевле</option>
                             <option value="3">Сначала дороже</option>
                         </select>

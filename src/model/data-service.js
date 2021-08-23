@@ -12,12 +12,11 @@ class Model {
         return result[id - 1];
     }
 
-    async sortItems(arr, id) {
-        let sortedArr = []
-        arr = await this.getCurrentCategory(id);
-        sortedArr = arr.category.sort((a,b) => parseFloat(a.price) - parseFloat(b.price));
-        return sortedArr;
-        // console.log(sortedArr)
+    async sortItems(id) {
+        const resolve = await this.getAllItems();
+        const result = await resolve;
+        // console.log(result[id - 1].category.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)));
+        return result[id - 1].category.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
     }
 }
 
