@@ -22,14 +22,32 @@
     let selectedValue;
     let checkBrand = [];
 
+    let staticData = temp.getCurrentCategory(id);
+
     onMount(async() => {
         const resolve = await temp.getCurrentCategory(id);
         title = resolve.catName;
     });
 
     $: result = [];
-    $: result = temp.getCurrentCategory(id, selectedValue, checkBrand);
+    $: result = temp.getCurrentCategory(id, selectedValue);
     
+    // взяли название бренда из чекбокса
+    // положили в переменую
+    // взяли весь массив элементов
+    // отфильтровали соответствено бренду в переменной
+
+    function getBrandsByCheck(val) {
+        if(checkBrand.includes(val)) {
+            checkBrand = checkBrand.filter(el => el !== val);
+        }
+        else {
+            checkBrand = [...checkBrand, val];
+        }
+
+        console.log(checkBrand);
+        // перенести в сервис
+    }
 </script>
 
 <svelte:head>
@@ -41,26 +59,29 @@
         
         <div class="category_box">
 
-            {#await result}
-                <Loader/>
-            {:then value}
+            {#await staticData then value}
                 <Breadcrumbs refaddress={value.catName}/>
+                <div class="filters">
+                    <SortSelect bind:selected={selectedValue}>
+                        <option value="" selected disabled slot="s-head">Сортировка</option>
+                        <option value="2">Сначала дешевле</option>
+                        <option value="3">Сначала дороже</option>
+                    </SortSelect>
+                    <ul class="filters_list">
+                        {#each temp.getBrandCount(value.category) as item}
+                            <li>
+                                <Checkbox spanValue={item.brand} checkBrand={() => getBrandsByCheck(item.brand)}/>
+                                <span class="counter">{item.count}</span>
+                            </li>
+                        {/each}
+                    </ul>
+                </div>
+            {/await}
+                
+            {#await result}
+                    <Loader/>
+            {:then value}
                 {#if value.category}
-                    <div class="filters">
-                        <SortSelect bind:selected={selectedValue}>
-                            <option value="" selected disabled slot="s-head">Сортировка</option>
-                            <option value="2">Сначала дешевле</option>
-                            <option value="3">Сначала дороже</option>
-                        </SortSelect>
-                        <ul class="filters_list">
-                            {#each temp.getBrandCount(value.category) as item}
-                                <li>
-                                    <Checkbox spanValue={item.brand}/>
-                                    <span class="counter">{item.count}</span>
-                                </li>
-                            {/each}
-                        </ul>
-                    </div>
                     <ul class="items_list" transition:fade>
                         {#each value.category as item (item.id)}
                             <GoodItemView {...item}/>    

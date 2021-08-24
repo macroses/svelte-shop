@@ -4,7 +4,7 @@
 </script>
 
 <label>
-    <input type="checkbox" on:change={checkBrand}>
+    <input type="checkbox" on:input={checkBrand}>
     <span>{spanValue}</span>
 </label>
 
@@ -37,10 +37,10 @@
         content: '';
         background: rgba(255,255,255,0);
         position: absolute;
-        left: 3px;
-        top: 5px;
-        width: 14px;
-        height: 14px;
+        left: 4px;
+        top: 6px;
+        width: 12px;
+        height: 12px;
     }
 
     input:checked + span:after {
