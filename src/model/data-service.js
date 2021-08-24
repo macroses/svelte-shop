@@ -29,6 +29,7 @@ class Model {
         return arr[id-1];
     }
 
+    // вывод уникальных брендов и их количества
     getBrandCount(array) {
         const res = [];
         array.forEach(el => {
@@ -36,15 +37,7 @@ class Model {
                 return item['brand'] === el.brand;
             });
 
-            if(index === -1) {
-                res.push({
-                    'brand': el.brand,
-                    "count": 1
-                })
-            }
-            else {
-                res[index]["count"]++;
-            }
+            index === -1 ? res.push({'brand': el.brand, 'count': 1}) : res[index]['count']++;
         });
         return res;
     }
