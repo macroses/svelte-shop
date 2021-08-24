@@ -48,7 +48,7 @@ option {
 }
 
 /* убираем скачок при появлении контента */
-@media screen and (min-width: 1350px) {
+@media screen and (min-width: 1240px) {
     html {
         overflow-x: hidden;
         margin-right: calc(-1 * (100vw - 100%));

@@ -9,14 +9,18 @@
     export let id;
 
     import { onMount } from "svelte";
+    import { fade } from "svelte/transition";
     import Model from "../../model/data-service";
     import GoodItemView from "../../components/Main/Good/GoodItemView.svelte";
     import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
     import Loader from '../../components/Helpers/Loader.svelte';
+    import SortSelect from "../../components/Helpers/SortSelect.svelte";
+    import Checkbox from "../../components/Helpers/Checkbox.svelte";
 
     const temp = new Model();
     let title = '';
     let selectedValue;
+    let checkBrand = [];
 
     onMount(async() => {
         const resolve = await temp.getCurrentCategory(id);
@@ -24,13 +28,8 @@
     });
 
     $: result = [];
-    $: if(selectedValue == undefined) {
-        result = temp.getCurrentCategory(id);
-    } else if(selectedValue === "2") {
-        result = temp.sortItems(id);
-        // придумать как обновлять в доме result
-    }
-
+    $: result = temp.getCurrentCategory(id, selectedValue, checkBrand);
+    
 </script>
 
 <svelte:head>
@@ -48,14 +47,21 @@
                 <Breadcrumbs refaddress={value.catName}/>
                 {#if value.category}
                     <div class="filters">
-                        <select bind:value={selectedValue}>
-                            <option value="" selected disabled>Сортировка</option>
-                            <option value="2" >Сначала дешевле</option>
+                        <SortSelect bind:selected={selectedValue}>
+                            <option value="" selected disabled slot="s-head">Сортировка</option>
+                            <option value="2">Сначала дешевле</option>
                             <option value="3">Сначала дороже</option>
-                        </select>
-                        {selectedValue}
+                        </SortSelect>
+                        <ul class="filters_list">
+                            {#each temp.getBrandCount(value.category) as item}
+                                <li>
+                                    <Checkbox spanValue={item.brand}/>
+                                    <span class="counter">{item.count}</span>
+                                </li>
+                            {/each}
+                        </ul>
                     </div>
-                    <ul class="items_list">
+                    <ul class="items_list" transition:fade>
                         {#each value.category as item (item.id)}
                             <GoodItemView {...item}/>    
                         {/each}
@@ -95,6 +101,19 @@
 
     .filters {
         grid-area: filter;
+    }
+
+    .filters_list {
+        margin: 15px 0;
+    }
+
+    .filters_list li {
+        padding: 8px 0;
+    }
+
+    .counter {
+        color: #ccc;
+        margin-left: 5px;
     }
 </style>
 

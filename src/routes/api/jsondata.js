@@ -61,7 +61,7 @@ export async function get() {
         
                     {
                         "id": 3,
-                        "brand": "Sumsung",
+                        "brand": "Samsung",
                         "name": "Смартфон Samsung Galaxy Z Flip 3 128GB Green (SM-F711B)",
                         "title": "Свежий взгляд на раскладушку",
                         "body": "Откройте для себя эксклюзивные цвета Galaxy Z Flip3 5G только на Samsung.com.Предложение ограничено!",

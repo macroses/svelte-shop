@@ -1,7 +1,5 @@
 <script>
     export let selected;
-
-    console.log(selected)
 </script>
 
 <select bind:value={selected}>

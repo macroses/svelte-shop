@@ -1,0 +1,49 @@
+<script>
+    export let spanValue;
+    export let checkBrand;
+</script>
+
+<label>
+    <input type="checkbox" on:change={checkBrand}>
+    <span>{spanValue}</span>
+</label>
+
+<style>
+    input {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    span {
+        position: relative;
+        padding-left: 25px;
+    }
+
+    span:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #ccc;
+    }
+
+    span:after {
+        content: '';
+        background: rgba(255,255,255,0);
+        position: absolute;
+        left: 3px;
+        top: 5px;
+        width: 14px;
+        height: 14px;
+    }
+
+    input:checked + span:after {
+        background: var(--main-theme-color);
+    }
+</style>
