@@ -31,11 +31,6 @@
 
     $: result = [];
     $: result = temp.getCurrentCategory(id, selectedValue);
-    
-    // взяли название бренда из чекбокса
-    // положили в переменую
-    // взяли весь массив элементов
-    // отфильтровали соответствено бренду в переменной
 
     function getBrandsByCheck(val) {
         if(checkBrand.includes(val)) {
@@ -48,6 +43,8 @@
         console.log(checkBrand);
         // перенести в сервис
     }
+
+    // массив должен быть абстрактным и пушить в него будем из значения checkbrand (который перестанет быть массивом)
 </script>
 
 <svelte:head>
