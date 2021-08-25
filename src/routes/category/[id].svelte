@@ -4,42 +4,29 @@
         return { props: {id}}
     }
 </script>
-
 <script>
     export let id;
-
     import { onMount } from "svelte";
-    import { fade } from "svelte/transition";
-    import Model from "../../model/data-service";
-    import GoodItemView from "../../components/Main/Good/GoodItemView.svelte";
-    import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
-    import Loader from '../../components/Helpers/Loader.svelte';
-    import SortSelect from "../../components/Helpers/SortSelect.svelte";
-    import Checkbox from "../../components/Helpers/Checkbox.svelte";
+        import { fade } from "svelte/transition";
+        import Model from "../../model/data-service";
+        import GoodItemView from "../../components/Main/Good/GoodItemView.svelte";
+        import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
+        import Loader from '../../components/Helpers/Loader.svelte';
+        import Filters from "../../components/Main/Filters/Filters.svelte";
 
     const temp = new Model();
     let title = '';
     let selectedValue;
     let result = [];
-    let staticData = temp.getCurrentCategory(id);
-
+    
     $: brandsCollection = [];
     $: result = temp.getCurrentCategory(id, selectedValue, brandsCollection);
+    let staticData = temp.getCurrentCategory(id);
 
     onMount(async() => {
         const resolve = await temp.getCurrentCategory(id);
         title = resolve.catName;
     });
-
-    function checkBrands(val) {
-        if(brandsCollection.includes(val)) {
-            brandsCollection = brandsCollection.filter(el => el !== val);
-        }
-        else {
-            brandsCollection = [...brandsCollection, val];
-        }
-        return brandsCollection;
-    }
 </script>
 
 <svelte:head>
@@ -48,28 +35,11 @@
 
 <main>
     <div class="container">
-        
         <div class="category_box">
-
             {#await staticData then value}
                 <Breadcrumbs refaddress={value.catName}/>
-                <div class="filters">
-                    <SortSelect bind:selected={selectedValue}>
-                        <option value="" selected disabled slot="s-head">Сортировка</option>
-                        <option value="2">Сначала дешевле</option>
-                        <option value="3">Сначала дороже</option>
-                    </SortSelect>
-                    <ul class="filters_list">
-                        {#each temp.getBrandCount(value.category) as item}
-                            <li>
-                                <Checkbox spanValue={item.brand} checkBrand={() => checkBrands(item.brand)}/>
-                                <span class="counter">{item.count}</span>
-                            </li>
-                        {/each}
-                    </ul>
-                </div>
+                <Filters {...value} bind:selectedValue bind:brandsCollection />
             {/await}
-                
             {#await result}
                     <Loader/>
             {:then value}
@@ -87,7 +57,6 @@
         </div>
     </div>
 </main>
-
 
 <style>
     .empty_catalog {

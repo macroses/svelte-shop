@@ -13,6 +13,7 @@ class Model {
 
         return result[id];
     }
+
     _sortByPrice(arr, val, id) {
         const sortableArray = arr[id];
 
@@ -24,6 +25,7 @@ class Model {
 
         return sortableArray;
     }
+
     _sortByBrand(arr, brandsFromView, id) {
         let sortableArray = arr[id];
         if(!brandsFromView) return sortableArray;
@@ -34,6 +36,7 @@ class Model {
         
         return sortableArray;
     }
+    
     // вывод уникальных брендов и их количества
     getBrandCount(array) {
         const res = [];
