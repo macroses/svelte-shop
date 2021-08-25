@@ -44,7 +44,7 @@
                     <Loader/>
             {:then value}
                 {#if value.category}
-                    <ul class="items_list" transition:fade>
+                    <ul class="items_list" in:fade>
                         {#each value.category as item (item.id)}
                             <GoodItemView {...item}/>    
                         {/each}
