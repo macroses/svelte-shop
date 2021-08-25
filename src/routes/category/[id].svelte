@@ -20,31 +20,26 @@
     const temp = new Model();
     let title = '';
     let selectedValue;
-    let checkBrand = [];
-
+    let result = [];
     let staticData = temp.getCurrentCategory(id);
+
+    $: brandsCollection = [];
+    $: result = temp.getCurrentCategory(id, selectedValue, brandsCollection);
 
     onMount(async() => {
         const resolve = await temp.getCurrentCategory(id);
         title = resolve.catName;
     });
 
-    $: result = [];
-    $: result = temp.getCurrentCategory(id, selectedValue);
-
-    function getBrandsByCheck(val) {
-        if(checkBrand.includes(val)) {
-            checkBrand = checkBrand.filter(el => el !== val);
+    function checkBrands(val) {
+        if(brandsCollection.includes(val)) {
+            brandsCollection = brandsCollection.filter(el => el !== val);
         }
         else {
-            checkBrand = [...checkBrand, val];
+            brandsCollection = [...brandsCollection, val];
         }
-
-        console.log(checkBrand);
-        // перенести в сервис
+        return brandsCollection;
     }
-
-    // массив должен быть абстрактным и пушить в него будем из значения checkbrand (который перестанет быть массивом)
 </script>
 
 <svelte:head>
@@ -67,7 +62,7 @@
                     <ul class="filters_list">
                         {#each temp.getBrandCount(value.category) as item}
                             <li>
-                                <Checkbox spanValue={item.brand} checkBrand={() => getBrandsByCheck(item.brand)}/>
+                                <Checkbox spanValue={item.brand} checkBrand={() => checkBrands(item.brand)}/>
                                 <span class="counter">{item.count}</span>
                             </li>
                         {/each}

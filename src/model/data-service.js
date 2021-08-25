@@ -1,34 +1,39 @@
 class Model {
-
     async getAllItems () {
         const resolve = await fetch('http://localhost:3000/api/jsondata');
         const result = await resolve.json();
         return result;
     }
-
-    async getCurrentCategory(id, costRange) {
+    async getCurrentCategory(id, costRange, brandsCollection) {
         const resolve = await this.getAllItems();
         const result = await resolve;
 
-        this._getSortedItems(result, costRange, id);
+        this._sortByPrice(result, costRange, id);
+        this._sortByBrand(result, brandsCollection, id);
 
-        return result[id - 1];
+        return result[id];
     }
+    _sortByPrice(arr, val, id) {
+        const sortableArray = arr[id];
 
-    _getSortedItems(arr, val, id) {
-        if(!val) {
-            return arr[id - 1];
-        }
-        if(val === "2") {
-            arr[id-1].category = arr[id-1].category.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-        }
-        if(val === "3") {
-            arr[id-1].category = arr[id-1].category.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
-        }
+        if(!val) return sortableArray;
+        
+        if(val === "2") sortableArray.category = sortableArray.category.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+        
+        if(val === "3") sortableArray.category = sortableArray.category.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
 
-        return arr[id-1];
+        return sortableArray;
     }
+    _sortByBrand(arr, brandsFromView, id) {
+        let sortableArray = arr[id];
+        if(!brandsFromView) return sortableArray;
 
+        if(brandsFromView.length > 0) {
+            sortableArray.category = sortableArray.category.filter(el => brandsFromView.includes(el.brand));
+        }   
+        
+        return sortableArray;
+    }
     // вывод уникальных брендов и их количества
     getBrandCount(array) {
         const res = [];

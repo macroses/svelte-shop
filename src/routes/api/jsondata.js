@@ -2,7 +2,7 @@ export async function get() {
     return {
         body: [
             {   
-                "id": 1,
+                "id": 0,
                 "catName": "Смартфоны и планшеты",
                 "catImg": "phone_iphone",
                 "category": [
@@ -286,7 +286,7 @@ export async function get() {
             },
         
             {
-                "id": 2,
+                "id": 1,
                 "catName": "Ноутбуки и настольные ПК",
                 "catImg": "computer",
                 "category": [
@@ -581,7 +581,7 @@ export async function get() {
             },
         
             {
-                "id": 3,
+                "id": 2,
                 "catName": "Стиральные машины",
                 "catImg": "local_laundry_service",
                 "category": [
@@ -852,25 +852,25 @@ export async function get() {
             },
         
             {
-                "id": 4,
+                "id": 3,
                 "catName": "Холодильники",
                 "catImg": "kitchen"
             },
         
             {
-                "id": 5,
+                "id": 4,
                 "catName": "Игры и развлечения",
                 "catImg": "sports_esports"
             },
         
             {
-                "id": 6,
+                "id": 5,
                 "catName": "Техника для кухни",
                 "catImg": "blender"
             },
         
             {
-                "id": 7,
+                "id": 6,
                 "catName": "Фото и видеотехника",
                 "catImg": "photo_camera"
             }
