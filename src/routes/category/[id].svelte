@@ -80,22 +80,5 @@
             'crumbs crumbs'
             'filter content';
     }
-
-    .filters {
-        grid-area: filter;
-    }
-
-    .filters_list {
-        margin: 15px 0;
-    }
-
-    .filters_list li {
-        padding: 8px 0;
-    }
-
-    .counter {
-        color: #ccc;
-        margin-left: 5px;
-    }
 </style>
 
