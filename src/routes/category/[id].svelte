@@ -19,8 +19,8 @@
     let selectedValue;
     let result = [];
     
-    $: brandsCollection = [];
-    $: result = temp.getCurrentCategory(id, selectedValue, brandsCollection);
+    $: filterCollection = [];
+    $: result = temp.getCurrentCategory(id, selectedValue, filterCollection);
     let staticData = temp.getCurrentCategory(id);
 
     onMount(async() => {
@@ -38,7 +38,7 @@
         <div class="category_box">
             {#await staticData then value}
                 <Breadcrumbs refaddress={value.catName}/>
-                <Filters {...value} bind:selectedValue bind:brandsCollection />
+                <Filters {...value} bind:selectedValue bind:filterCollection />
             {/await}
             {#await result}
                     <Loader/>

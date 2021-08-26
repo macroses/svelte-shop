@@ -1,14 +1,36 @@
 <script>
     import Button from "../../Helpers/Button.svelte";
-
     export let {...item} = $$props;
+
+    let currentIndex = 0;
+    $: defaultInfo = false;
+    function getIndex(i) {
+        currentIndex = i;
+        defaultInfo = false;
+    }
+
+    function handleErr() {
+        defaultInfo = true;
+    }
 </script>
 
 <li>
     <span class="material-icons-two-tone favorite">favorite_border</span>
-    <a href="/category/{item.id}" class="item_link_img">
+    <a href="/" class="item_link_img">
         <div class="picture">
-            <img src="{item.imgSet[0]}" alt="">
+            
+            {#if !defaultInfo}
+                <img src="{item.imgSet[currentIndex]}" alt={item.name} on:error={handleErr}>
+            {:else}
+                <img src="default_img.svg" alt="">
+            {/if}
+            <div class="preview_list">    
+                {#each item.imgSet as itemImg, index}
+                    {#if item.imgSet.length > 1}
+                        <span class="preview" on:mouseenter={() => getIndex(index)} ></span>
+                    {/if}
+                {/each}
+            </div>
         </div>
         <span class="item_name">{item.name}</span>
     </a>
@@ -45,10 +67,44 @@
         display: flex;
         width: 100%;
         margin-bottom: 1.2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .preview_list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        width: 80%;
+        display: flex;
+    }
+
+    .preview {
+        height: 100%;
+        flex: 1;
+        position: relative;
+    }
+
+    .preview:after {
+        content: '';
+        position: absolute;
+        width: calc(100% - 5px);
+        padding: 0 1px;
+        height: 3px;
+        background: rgba(0,0,0,.2);
+        bottom: -10px;
+    }
+
+    .preview:hover:after {
+        background: var(--main-theme-color);
     }
 
     .picture img {
         max-width: 80%;
+        height: 150px;
     }
 
     .price {

@@ -1,23 +1,21 @@
 <script>
     import SortSelect from "../../Helpers/SortSelect.svelte";
     import Checkbox from "../../Helpers/Checkbox.svelte";
-    import Model from '../../../model/data-service';
 
     export let selectedValue;
     export let allData = $$props;
-    export let brandsCollection = [];
+    export let filterCollection = [];
 
     function checkBrands(val) {
-        if(brandsCollection.includes(val)) {
-            brandsCollection = brandsCollection.filter(el => el !== val);
+        if(filterCollection.includes(val)) {
+            filterCollection = filterCollection.filter(el => el !== val);
         }
         else {
-            brandsCollection = [...brandsCollection, val];
+            filterCollection = [...filterCollection, val];
         }
-        return brandsCollection;
+        return filterCollection;
     }
 
-    const temp = new Model();
 </script>
 
 <div class="filters">
@@ -26,14 +24,25 @@
         <option value="2">Сначала дешевле</option>
         <option value="3">Сначала дороже</option>
     </SortSelect>
-    <ul class="filters_list">
+
+    {#each allData.category as itemCategory (itemCategory.id)}
+        {#each itemCategory.attributes as item}
+            <h4>{item.attrName}</h4>
+        {/each}
+    {/each}
+    <!-- <ul class="filters_list">
         {#each temp.getBrandCount(allData.category) as item}
             <li>
                 <Checkbox spanValue={item.brand} checkBrand={() => checkBrands(item.brand)}/>
                 <span class="counter">{item.count}</span>
             </li>
         {/each}
-    </ul>
+    </ul> -->
+    <!-- {#each allData.category as item}
+        {#each item.attributes as item}
+            <p>{item.attrName}</p>
+        {/each}
+    {/each} -->
 </div>
 
 <style>

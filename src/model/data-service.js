@@ -4,12 +4,12 @@ class Model {
         const result = await resolve.json();
         return result;
     }
-    async getCurrentCategory(id, costRange, brandsCollection) {
+    async getCurrentCategory(id, costRange, attributesCollection) {
         const resolve = await this.getAllItems();
         const result = await resolve;
 
         this._sortByPrice(result, costRange, id);
-        this._sortByBrand(result, brandsCollection, id);
+        this._sortByBrand(result, attributesCollection, id);
 
         return result[id];
     }
@@ -26,12 +26,12 @@ class Model {
         return sortableArray;
     }
 
-    _sortByBrand(arr, brandsFromView, id) {
+    _sortByBrand(arr, attributesFromView, id) {
         let sortableArray = arr[id];
-        if(!brandsFromView) return sortableArray;
+        if(!attributesFromView) return sortableArray;
 
-        if(brandsFromView.length > 0) {
-            sortableArray.category = sortableArray.category.filter(el => brandsFromView.includes(el.brand));
+        if(attributesFromView.length > 0) {
+            sortableArray.category = sortableArray.category.filter(el => attributesFromView.includes(el.brand));
         }   
         
         return sortableArray;
