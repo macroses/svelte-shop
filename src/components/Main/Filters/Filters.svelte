@@ -1,48 +1,42 @@
 <script>
     import SortSelect from "../../Helpers/SortSelect.svelte";
-    // import Checkbox from "../../Helpers/Checkbox.svelte";
+    import Checkbox from "../../Helpers/Checkbox.svelte";
+    import Model from '../../../model/data-service';
 
     export let selectedValue;
-    // export let allData = $$props;
-    // export let filterCollection = [];
+    export let allData = $$props;
+    export let filterCollection = [];
 
-    // function checkBrands(val) {
-    //     if(filterCollection.includes(val)) {
-    //         filterCollection = filterCollection.filter(el => el !== val);
-    //     }
-    //     else {
-    //         filterCollection = [...filterCollection, val];
-    //     }
-    //     return filterCollection;
-    // }
+    let uniq = [];
+    allData.category.forEach((el) => uniq.push(el.brand));
+    
+
+    function checkBrands(val) {
+        if(filterCollection.includes(val)) {
+            filterCollection = filterCollection.filter(el => el !== val);
+        }
+        else {
+            filterCollection = [...filterCollection, val];
+        }
+        return filterCollection;
+    }
 
 </script>
 
 <div class="filters">
     <SortSelect bind:selected={selectedValue}>
         <option value="" selected disabled slot="s-head">Сортировка</option>
-        <option value="2">Сначала дешевле</option>
-        <option value="3">Сначала дороже</option>
+        <option value="price_desc">Сначала дешевле</option>
+        <option value="price_asc">Сначала дороже</option>
     </SortSelect>
-
-    <!-- {#each allData.category as itemCategory (itemCategory.id)}
-        {#each itemCategory.attributes as item}
-            <h4>{item.attrName}</h4>
-        {/each}
-    {/each} -->
-    <!-- <ul class="filters_list">
-        {#each temp.getBrandCount(allData.category) as item}
+    <ul class="filters_list">
+        {#each Array.from(new Set(uniq)) as item}
             <li>
-                <Checkbox spanValue={item.brand} checkBrand={() => checkBrands(item.brand)}/>
-                <span class="counter">{item.count}</span>
+                <Checkbox spanValue={item} checkBrand={() => checkBrands(item)}/>
             </li>
         {/each}
-    </ul> -->
-    <!-- {#each allData.category as item}
-        {#each item.attributes as item}
-            <p>{item.attrName}</p>
-        {/each}
-    {/each} -->
+    </ul>
+
 </div>
 
 <style>

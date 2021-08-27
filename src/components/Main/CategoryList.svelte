@@ -4,7 +4,6 @@
 
     const temp = new Model();
     const categories = temp._getAllItems();
-
 </script>
 
 <div class="category_list">

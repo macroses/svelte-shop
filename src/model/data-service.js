@@ -2,36 +2,56 @@ class Model {
     async _getAllItems () {
         const resolve = await fetch('http://localhost:3000/api/jsondata');
         const result = await resolve.json();
-        return result;
+        const data = result.map((cat) => {
+            return {
+                id: cat.id,
+                catName: cat.catName,
+                catImg: cat.catImg,
+                category: cat.category ? cat.category.map(item => {
+                    return {
+                        id: item.id,
+                        brand: item.brand,
+                        name: item.name,
+                        title: item.title,
+                        body: item.body,
+                        price: parseFloat(item.price.replace(/\s/g,'')),
+                        imgSet: item.imgSet,
+                        favorite: item.favorite,
+                        isActive: item.isActive,
+                        attributes: item.attributes
+                    }
+                }) : []
+            }
+        });
+        return data;
     }
 
     async getCategoryItem(id) {
         const resolve = await this._getAllItems(id);
         const result = await resolve[id];
+
         return result;
     }
 
     async sortByPrice(val, id) {
-        const categoryItemsCollection = await this.getCategoryItem(id);
+        let arr = await this.getCategoryItem(id);
 
-        if(!val) return categoryItemsCollection;
-        if(val === "2") categoryItemsCollection.category = categoryItemsCollection.category.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-        if(val === "3") categoryItemsCollection.category = categoryItemsCollection.category.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
-        
-        return categoryItemsCollection;
+        if(!val) return arr;
+        if(val === "price_desc") arr.category = arr.category.sort((a, b) => a.price - b.price);
+        if(val === "price_asc") arr.category = arr.category.sort((a, b) => b.price - a.price);
+        return arr;
     }
 
-    // _sortByPrice(arr, val, id) {
-    //     const sortableArray = arr[id];
+    async filterByBrands(id, arr) {
+        let temp = await this.getCategoryItem(id);
+        let sortableArray = temp.category.filter(el => !arr.indexOf(el.brand))
 
-    //     if(!val) return sortableArray;
-        
-    //     if(val === "2") sortableArray.category = sortableArray.category.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-        
-    //     if(val === "3") sortableArray.category = sortableArray.category.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+        return sortableArray;
+    }
 
-    //     return sortableArray;
-    // }
+    getUniqueNames(arr) {
+        return Array.from(new Set(arr));
+    }
 
     // _sortByBrand(arr, attributesFromView, id) {
     //     let sortableArray = arr[id];

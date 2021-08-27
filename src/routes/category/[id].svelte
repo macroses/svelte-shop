@@ -17,15 +17,18 @@
     const temp = new Model();
     let title = '';
     let selectedValue;
-    const staticData = temp.getCategoryItem(id);
-    $: categoryItem = temp.sortByPrice(selectedValue, id);
     
+    $: categoryItem = temp.sortByPrice(selectedValue, id);
     $: filterCollection = [];
+
+    const staticData = temp.getCategoryItem(id);
 
     onMount(async() => {
         const resolve = await categoryItem;
         title = resolve.catName;
     });
+
+
 </script>
 
 <svelte:head>
@@ -38,8 +41,9 @@
             {#await staticData then value}
                 <Breadcrumbs refaddress={value.catName}/>
                 <Filters {...value} bind:selectedValue bind:filterCollection />
+                
             {/await}
-            {#await categoryItem}
+            <!-- {#await categoryItem}
                     <Loader/>
             {:then value}
                 {#if value.category}
@@ -51,7 +55,7 @@
                 {:else}
                     <div class="empty_catalog">По вашему запросу ничего не найдено</div>
                 {/if}
-            {/await}
+            {/await} -->
 
         </div>
     </div>
