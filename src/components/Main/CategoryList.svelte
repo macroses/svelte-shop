@@ -1,9 +1,9 @@
 <script>
     import Model from "../../model/data-service";
-import Loader from "../Helpers/Loader.svelte";
+    import Loader from "../Helpers/Loader.svelte";
 
-    const categoryCollection = new Model();
-    const categories = categoryCollection.getAllItems();
+    const temp = new Model();
+    const categories = temp._getAllItems();
 
 </script>
 

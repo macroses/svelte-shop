@@ -17,14 +17,13 @@
     const temp = new Model();
     let title = '';
     let selectedValue;
-    let result = [];
+    const staticData = temp.getCategoryItem(id);
+    $: categoryItem = temp.sortByPrice(selectedValue, id);
     
     $: filterCollection = [];
-    $: result = temp.getCurrentCategory(id, selectedValue, filterCollection);
-    let staticData = temp.getCurrentCategory(id);
 
     onMount(async() => {
-        const resolve = await temp.getCurrentCategory(id);
+        const resolve = await categoryItem;
         title = resolve.catName;
     });
 </script>
@@ -40,7 +39,7 @@
                 <Breadcrumbs refaddress={value.catName}/>
                 <Filters {...value} bind:selectedValue bind:filterCollection />
             {/await}
-            {#await result}
+            {#await categoryItem}
                     <Loader/>
             {:then value}
                 {#if value.category}
@@ -57,6 +56,8 @@
         </div>
     </div>
 </main>
+
+
 
 <style>
     .empty_catalog {

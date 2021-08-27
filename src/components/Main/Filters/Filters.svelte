@@ -1,20 +1,20 @@
 <script>
     import SortSelect from "../../Helpers/SortSelect.svelte";
-    import Checkbox from "../../Helpers/Checkbox.svelte";
+    // import Checkbox from "../../Helpers/Checkbox.svelte";
 
     export let selectedValue;
-    export let allData = $$props;
-    export let filterCollection = [];
+    // export let allData = $$props;
+    // export let filterCollection = [];
 
-    function checkBrands(val) {
-        if(filterCollection.includes(val)) {
-            filterCollection = filterCollection.filter(el => el !== val);
-        }
-        else {
-            filterCollection = [...filterCollection, val];
-        }
-        return filterCollection;
-    }
+    // function checkBrands(val) {
+    //     if(filterCollection.includes(val)) {
+    //         filterCollection = filterCollection.filter(el => el !== val);
+    //     }
+    //     else {
+    //         filterCollection = [...filterCollection, val];
+    //     }
+    //     return filterCollection;
+    // }
 
 </script>
 
@@ -25,11 +25,11 @@
         <option value="3">Сначала дороже</option>
     </SortSelect>
 
-    {#each allData.category as itemCategory (itemCategory.id)}
+    <!-- {#each allData.category as itemCategory (itemCategory.id)}
         {#each itemCategory.attributes as item}
             <h4>{item.attrName}</h4>
         {/each}
-    {/each}
+    {/each} -->
     <!-- <ul class="filters_list">
         {#each temp.getBrandCount(allData.category) as item}
             <li>
