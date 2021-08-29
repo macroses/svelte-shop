@@ -23,12 +23,12 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "белый"]},
-                            {"attrId": 2, "attrName": "диагональ", "attrVal": "6.5"},
-                            {"attrId": 3, "attrName": "память", "attrVal": "32"},
-                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": "4"},
-                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": "3500"},
-                            {"attrId": 6, "attrName": "SIM", "attrVal": "2"},
-                            {"attrId": 7, "attrName": "OS", "attrVal": "Android 10"}
+                            {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.5"]},
+                            {"attrId": 3, "attrName": "память", "attrVal": ["32"]},
+                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["4"]},
+                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["3500"]},
+                            {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]}
                         ]
                     },
         
@@ -50,12 +50,12 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["розовый", "белый"]},
-                            {"attrId": 2, "attrName": "диагональ", "attrVal": "6.2"},
-                            {"attrId": 3, "attrName": "память", "attrVal": "128"},
-                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": "8"},
-                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4500"},
-                            {"attrId": 6, "attrName": "SIM", "attrVal": "2"},
-                            {"attrId": 7, "attrName": "OS", "attrVal": "Android 10"}
+                            {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.2"]},
+                            {"attrId": 3, "attrName": "память", "attrVal": ["128"]},
+                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
+                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
+                            {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]}
                         ]
                     },
         
@@ -78,12 +78,12 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["золотой", "белый", "серебро"]},
-                            {"attrId": 2, "attrName": "диагональ", "attrVal": "6.7"},
-                            {"attrId": 3, "attrName": "память", "attrVal": "128"},
-                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": "8"},
-                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4500"},
-                            {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
-                            {"attrId": 7, "attrName": "OS", "attrVal": "Android 11"}
+                            {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.7"]},
+                            {"attrId": 3, "attrName": "память", "attrVal": ["128"]},
+                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
+                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
+                            {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]}
                         ]
                     },
         
@@ -106,12 +106,12 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["золотой", "серый"]},
-                            {"attrId": 2, "attrName": "диагональ", "attrVal": "6.81"},
-                            {"attrId": 3, "attrName": "память", "attrVal": "256"},
-                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": "8"},
-                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4500"},
-                            {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
-                            {"attrId": 7, "attrName": "OS", "attrVal": "Android 11"}
+                            {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.81"]},
+                            {"attrId": 3, "attrName": "память", "attrVal": ["256"]},
+                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
+                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
+                            {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]}
                         ]
                     },
         
@@ -134,12 +134,12 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["золотой", "красный"]},
-                            {"attrId": 2, "attrName": "диагональ", "attrVal": "6.67"},
-                            {"attrId": 3, "attrName": "память", "attrVal": "128"},
-                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": "4"},
-                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4500"},
-                            {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
-                            {"attrId": 7, "attrName": "OS", "attrVal": "Android 10"}
+                            {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.67"]},
+                            {"attrId": 3, "attrName": "память", "attrVal": ["128"]},
+                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["4"]},
+                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
+                            {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]}
                         ]
                     },
         
@@ -162,12 +162,12 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["серебро", "синий", "белый"]},
-                            {"attrId": 2, "attrName": "диагональ", "attrVal": "6.58"},
-                            {"attrId": 3, "attrName": "память", "attrVal": "256"},
-                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": "8"},
-                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": "6200"},
-                            {"attrId": 6, "attrName": "SIM", "attrVal": "2"},
-                            {"attrId": 7, "attrName": "OS", "attrVal": "Android 10"}
+                            {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.58"]},
+                            {"attrId": 3, "attrName": "память", "attrVal": ["256"]},
+                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
+                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["6200"]},
+                            {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]}
                         ]
                     },
         
@@ -190,12 +190,12 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                            {"attrId": 2, "attrName": "диагональ", "attrVal": "6.1"},
-                            {"attrId": 3, "attrName": "память", "attrVal": "64"},
-                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": "8"},
-                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": "3500"},
-                            {"attrId": 6, "attrName": "SIM", "attrVal": "2"},
-                            {"attrId": 7, "attrName": "OS", "attrVal": "IOS"}
+                            {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.1"]},
+                            {"attrId": 3, "attrName": "память", "attrVal": ["64"]},
+                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
+                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["3500"]},
+                            {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]}
                         ]
                     },
         
@@ -220,12 +220,12 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["графитовый", "золотой", "серебро", "тихоокеанский синий"]},
-                            {"attrId": 2, "attrName": "диагональ", "attrVal": "6.7"},
-                            {"attrId": 3, "attrName": "память", "attrVal": "128"},
-                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": "16"},
-                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4200"},
-                            {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
-                            {"attrId": 7, "attrName": "OS", "attrVal": "IOS"}
+                            {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.7"]},
+                            {"attrId": 3, "attrName": "память", "attrVal": ["128"]},
+                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["16"]},
+                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4200"]},
+                            {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]}
                         ]
                     },
         
@@ -247,12 +247,12 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["графитовый", "золотой", "красный"]},
-                            {"attrId": 2, "attrName": "диагональ", "attrVal": "6.1"},
-                            {"attrId": 3, "attrName": "память", "attrVal": "128"},
-                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": "16"},
-                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4200"},
-                            {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
-                            {"attrId": 7, "attrName": "OS", "attrVal": "IOS"}
+                            {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.1"]},
+                            {"attrId": 3, "attrName": "память", "attrVal": ["128"]},
+                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["16"]},
+                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4200"]},
+                            {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]}
                         ]
                     },
         
@@ -274,12 +274,12 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                            {"attrId": 2, "attrName": "диагональ", "attrVal": "6.67"},
-                            {"attrId": 3, "attrName": "память", "attrVal": "256"},
-                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": "12"},
-                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": "4300"},
-                            {"attrId": 6, "attrName": "SIM", "attrVal": "1"},
-                            {"attrId": 7, "attrName": "OS", "attrVal": "Android 11"}
+                            {"attrId": 2, "attrName": "диагональ", "attrVal": ["6.67"]},
+                            {"attrId": 3, "attrName": "память", "attrVal": ["256"]},
+                            {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["12"]},
+                            {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4300"]},
+                            {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]}
                         ]
                     }
                 ]
@@ -308,13 +308,13 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                            {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i3 10110U 2.1"},
-                            {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                            {"attrId": 4, "attrName": "память", "attrVal": "32"},
-                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
-                            {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
-                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                            {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"}
+                            {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Core i3 10110U 2.1"]},
+                            {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+                            {"attrId": 4, "attrName": "память", "attrVal": ["32"]},
+                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
+                            {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
+                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]}
                         ]
                     },
             
@@ -333,14 +333,14 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["металл"]},
-                            {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i3 1115G4 3.0 ГГц"},
-                            {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                            {"attrId": 4, "attrName": "память", "attrVal": "256"},
-                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
-                            {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
-                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                            {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                            {"attrId": 9, "attrName": "вес", "attrVal": "1,79 кг"}
+                            {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Core i3 1115G4 3.0 ГГц"]},
+                            {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+                            {"attrId": 4, "attrName": "память", "attrVal": ["256"]},
+                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
+                            {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
+                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,79 кг"]}
                         ]
                     },
             
@@ -362,14 +362,14 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                            {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i5 10300H 2.5 ГГц"},
-                            {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                            {"attrId": 4, "attrName": "память", "attrVal": "512"},
-                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": "16"},
-                            {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
-                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                            {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                            {"attrId": 9, "attrName": "вес", "attrVal": "2,3 кг"}
+                            {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Core i5 10300H 2.5 ГГц"]},
+                            {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+                            {"attrId": 4, "attrName": "память", "attrVal": ["512"]},
+                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["16"]},
+                            {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
+                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["2,3 кг"]}
                         ]
                     },
             
@@ -391,14 +391,14 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                            {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Celeron N4120 1.1 ГГц"},
-                            {"attrId": 3, "attrName": "диагональ", "attrVal": "11.6"},
-                            {"attrId": 4, "attrName": "память", "attrVal": "512"},
-                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": "16"},
-                            {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
-                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Нет"},
-                            {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                            {"attrId": 9, "attrName": "вес", "attrVal": "1,3 кг"}
+                            {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Celeron N4120 1.1 ГГц"]},
+                            {"attrId": 3, "attrName": "диагональ", "attrVal": ["11.6"]},
+                            {"attrId": 4, "attrName": "память", "attrVal": ["512"]},
+                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["16"]},
+                            {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
+                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Нет"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]}
                         ]
                     },
             
@@ -419,14 +419,14 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                            {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i5 9300H 2.4 ГГц"},
-                            {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                            {"attrId": 4, "attrName": "память", "attrVal": "512"},
-                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": "12"},
-                            {"attrId": 6, "attrName": "время работы", "attrVal": "до 11 часов"},
-                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Нет"},
-                            {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                            {"attrId": 9, "attrName": "вес", "attrVal": "1,3 кг"}
+                            {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Core i5 9300H 2.4 ГГц"]},
+                            {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+                            {"attrId": 4, "attrName": "память", "attrVal": ["512"]},
+                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["12"]},
+                            {"attrId": 6, "attrName": "время работы", "attrVal": ["до 11 часов"]},
+                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Нет"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]}
                         ]
                     },
             
@@ -448,14 +448,14 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                            {"attrId": 2, "attrName": "процессор", "attrVal": "AMD Ryzen 5 5600H 3.3 ГГц"},
-                            {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                            {"attrId": 4, "attrName": "память", "attrVal": "512"},
-                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": "16"},
+                            {"attrId": 2, "attrName": "процессор", "attrVal": ["AMD Ryzen 5 5600H 3.3 ГГц"]},
+                            {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+                            {"attrId": 4, "attrName": "память", "attrVal": ["512"]},
+                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["16"]},
                             {"attrId": 6, "attrName": "время работы", "attrVal": "до 9 часов"},
-                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                            {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                            {"attrId": 9, "attrName": "вес", "attrVal": "1,3 кг"}
+                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]}
                         ]
                     },
             
@@ -477,14 +477,14 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный"]},
-                            {"attrId": 2, "attrName": "процессор", "attrVal": "Intel Core i3 1005G1 1.2 ГГц"},
-                            {"attrId": 3, "attrName": "диагональ", "attrVal": "15.6"},
-                            {"attrId": 4, "attrName": "память", "attrVal": "128"},
-                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": "4"},
-                            {"attrId": 6, "attrName": "время работы", "attrVal": "до 7 часов"},
-                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                            {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                            {"attrId": 9, "attrName": "вес", "attrVal": "1,85 кг"}
+                            {"attrId": 2, "attrName": "процессор", "attrVal": ["Intel Core i3 1005G1 1.2 ГГц"]},
+                            {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
+                            {"attrId": 4, "attrName": "память", "attrVal": ["128"]},
+                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["4"]},
+                            {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
+                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]}
                         ]
                     },
             
@@ -507,14 +507,14 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "металл"]},
-                            {"attrId": 2, "attrName": "процессор", "attrVal": "Apple M1"},
-                            {"attrId": 3, "attrName": "диагональ", "attrVal": "13.3"},
-                            {"attrId": 4, "attrName": "память", "attrVal": "128"},
-                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
-                            {"attrId": 6, "attrName": "время работы", "attrVal": "до 20 часов"},
-                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                            {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                            {"attrId": 9, "attrName": "вес", "attrVal": "1,85 кг"}
+                            {"attrId": 2, "attrName": "процессор", "attrVal": ["Apple M1"]},
+                            {"attrId": 3, "attrName": "диагональ", "attrVal": ["13.3"]},
+                            {"attrId": 4, "attrName": "память", "attrVal": ["128"]},
+                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
+                            {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
+                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]}
                         ]
                     },
             
@@ -537,14 +537,14 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "металл"]},
-                            {"attrId": 2, "attrName": "процессор", "attrVal": "Apple M1"},
-                            {"attrId": 3, "attrName": "диагональ", "attrVal": "13.3"},
-                            {"attrId": 4, "attrName": "память", "attrVal": "128"},
-                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
-                            {"attrId": 6, "attrName": "время работы", "attrVal": "до 20 часов"},
-                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                            {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                            {"attrId": 9, "attrName": "вес", "attrVal": "1,85 кг"}
+                            {"attrId": 2, "attrName": "процессор", "attrVal": ["Apple M1"]},
+                            {"attrId": 3, "attrName": "диагональ", "attrVal": ["13.3"]},
+                            {"attrId": 4, "attrName": "память", "attrVal": ["128"]},
+                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
+                            {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
+                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]}
                         ]
                     },
             
@@ -567,14 +567,14 @@ export async function get() {
                         "isActive": false,
                         "attributes": [
                             {"attrId": 1, "attrName": "цвет", "attrVal": ["черный", "металл"]},
-                            {"attrId": 2, "attrName": "процессор", "attrVal": "Apple M1"},
-                            {"attrId": 3, "attrName": "диагональ", "attrVal": "13.3"},
-                            {"attrId": 4, "attrName": "память", "attrVal": "128"},
-                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": "8"},
-                            {"attrId": 6, "attrName": "время работы", "attrVal": "до 20 часов"},
-                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": "Да"},
-                            {"attrId": 8, "attrName": "OS", "attrVal": "Windows 10 Домашняя 64"},
-                            {"attrId": 9, "attrName": "вес", "attrVal": "1,85 кг"}
+                            {"attrId": 2, "attrName": "процессор", "attrVal": ["Apple M1"]},
+                            {"attrId": 3, "attrName": "диагональ", "attrVal": ["13.3"]},
+                            {"attrId": 4, "attrName": "память", "attrVal": ["128"]},
+                            {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
+                            {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
+                            {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]}
                         ]
                     }
                 ]
@@ -602,13 +602,13 @@ export async function get() {
                         "favorite": false,
                         "isActive": false,
                         "attributes": [
-                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "6.5 кг"},
-                            {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
-                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
-                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "15 мин"},
-                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "да"},
-                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
+                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": ["6.5 кг"]},
+                            {"attrId": 2, "attrName": "Мотор", "attrVal": ["инверторный"]},
+                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": ["1200 об/мин"]},
+                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["15 мин"]},
+                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["да"]},
+                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
                         ]
                     },
             
@@ -629,13 +629,13 @@ export async function get() {
                         "favorite": false,
                         "isActive": false,
                         "attributes": [
-                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "8 кг"},
-                            {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
-                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
-                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "15 мин"},
-                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
-                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
+                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": ["8 кг"]},
+                            {"attrId": 2, "attrName": "Мотор", "attrVal": ["инверторный"]},
+                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": ["1200 об/мин"]},
+                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["15 мин"]},
+                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
+                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
                         ]
                     },
             
@@ -656,13 +656,13 @@ export async function get() {
                         "favorite": false,
                         "isActive": false,
                         "attributes": [
-                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
-                            {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
-                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
-                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
-                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
-                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
+                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": ["7 кг"]},
+                            {"attrId": 2, "attrName": "Мотор", "attrVal": ["инверторный"]},
+                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": ["1200 об/мин"]},
+                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
+                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
+                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
                         ]
                     },
             
@@ -683,13 +683,13 @@ export async function get() {
                         "favorite": false,
                         "isActive": false,
                         "attributes": [
-                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
-                            {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
-                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
-                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
-                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
-                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
+                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": ["7 кг"]},
+                            {"attrId": 2, "attrName": "Мотор", "attrVal": ["инверторный"]},
+                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": ["1200 об/мин"]},
+                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
+                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
+                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
                         ]
                     },
             
@@ -708,13 +708,13 @@ export async function get() {
                         "favorite": false,
                         "isActive": false,
                         "attributes": [
-                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
-                            {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
-                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
-                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
-                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
-                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
+                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": ["7 кг"]},
+                            {"attrId": 2, "attrName": "Мотор", "attrVal": ["инверторный"]},
+                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": ["1200 об/мин"]},
+                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
+                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
+                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
                         ]
                     },
             
@@ -735,13 +735,13 @@ export async function get() {
                         "favorite": false,
                         "isActive": false,
                         "attributes": [
-                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
-                            {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
-                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
-                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
-                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
-                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
+                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": ["7 кг"]},
+                            {"attrId": 2, "attrName": "Мотор", "attrVal": ["инверторный"]},
+                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": ["1200 об/мин"]},
+                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
+                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
+                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
                         ]
                     },
             
@@ -762,13 +762,13 @@ export async function get() {
                         "favorite": false,
                         "isActive": false,
                         "attributes": [
-                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
-                            {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
-                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
-                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
-                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
-                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
+                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": ["7 кг"]},
+                            {"attrId": 2, "attrName": "Мотор", "attrVal": ["инверторный"]},
+                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": ["1200 об/мин"]},
+                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
+                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
+                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
                         ]
                     },
             
@@ -789,13 +789,13 @@ export async function get() {
                         "favorite": false,
                         "isActive": false,
                         "attributes": [
-                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
-                            {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
-                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
-                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
-                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
-                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
+                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": ["7 кг"]},
+                            {"attrId": 2, "attrName": "Мотор", "attrVal": ["инверторный"]},
+                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": ["1200 об/мин"]},
+                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
+                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
+                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
                         ]
                     },
             
@@ -816,13 +816,13 @@ export async function get() {
                         "favorite": false,
                         "isActive": false,
                         "attributes": [
-                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
-                            {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
-                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
-                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
-                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
-                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
+                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": ["7 кг"]},
+                            {"attrId": 2, "attrName": "Мотор", "attrVal": ["инверторный"]},
+                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": ["1200 об/мин"]},
+                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
+                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
+                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
                         ]
                     },
             
@@ -839,13 +839,13 @@ export async function get() {
                         "favorite": false,
                         "isActive": false,
                         "attributes": [
-                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": "7 кг"},
-                            {"attrId": 2, "attrName": "Мотор", "attrVal": "инверторный"},
-                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": "1200 об/мин"},
-                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": "14 мин"},
-                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": "частичная"},
-                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": "да"},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": "Да"}
+                            {"attrId": 1, "attrName": "Максимальная загрузка", "attrVal": ["7 кг"]},
+                            {"attrId": 2, "attrName": "Мотор", "attrVal": ["инверторный"]},
+                            {"attrId": 3, "attrName": "Скорость отжима", "attrVal": ["1200 об/мин"]},
+                            {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
+                            {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
+                            {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
                         ]
                     }
                 ]

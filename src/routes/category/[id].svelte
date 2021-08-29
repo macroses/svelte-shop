@@ -43,7 +43,7 @@
                 <Filters {...value} bind:selectedValue bind:filterCollection />
                 
             {/await}
-            <!-- {#await categoryItem}
+            {#await categoryItem}
                     <Loader/>
             {:then value}
                 {#if value.category}
@@ -55,7 +55,7 @@
                 {:else}
                     <div class="empty_catalog">По вашему запросу ничего не найдено</div>
                 {/if}
-            {/await} -->
+            {/await}
 
         </div>
     </div>

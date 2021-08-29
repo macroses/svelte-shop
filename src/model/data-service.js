@@ -29,7 +29,6 @@ class Model {
     async getCategoryItem(id) {
         const resolve = await this._getAllItems(id);
         const result = await resolve[id];
-
         return result;
     }
 
@@ -53,29 +52,6 @@ class Model {
         return Array.from(new Set(arr));
     }
 
-    // _sortByBrand(arr, attributesFromView, id) {
-    //     let sortableArray = arr[id];
-    //     if(!attributesFromView) return sortableArray;
-
-    //     if(attributesFromView.length > 0) {
-    //         sortableArray.category = sortableArray.category.filter(el => attributesFromView.includes(el.brand));
-    //     }   
-        
-    //     return sortableArray;
-    // }
-    
-    // // вывод уникальных брендов и их количества
-    // getBrandCount(array) {
-    //     const res = [];
-    //     array.forEach(el => {
-    //         const index = res.findIndex(item => {
-    //             return item['brand'] === el.brand;
-    //         });
-
-    //         index === -1 ? res.push({'brand': el.brand, 'count': 1}) : res[index]['count']++;
-    //     });
-    //     return res;
-    // }
 }
 
 export default Model;
