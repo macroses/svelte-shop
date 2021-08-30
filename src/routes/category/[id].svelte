@@ -19,7 +19,6 @@
     let selectedValue;
     
     $: categoryItem = temp.sortByPrice(selectedValue, id);
-    $: filterCollection = [];
 
     const staticData = temp.getCategoryItem(id);
 
@@ -27,8 +26,6 @@
         const resolve = await categoryItem;
         title = resolve.catName;
     });
-
-
 </script>
 
 <svelte:head>
@@ -40,7 +37,7 @@
         <div class="category_box">
             {#await staticData then value}
                 <Breadcrumbs refaddress={value.catName}/>
-                <Filters {...value} bind:selectedValue bind:filterCollection id={id}/>
+                <Filters {...value} bind:selectedValue/>
                 
             {/await}
             {#await categoryItem}

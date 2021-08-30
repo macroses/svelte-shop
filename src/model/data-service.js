@@ -1,7 +1,5 @@
-import { attr } from "svelte/internal";
-
 class Model {
-    async _getAllItems () {
+    async _getAllItems() {
         const resolve = await fetch('http://localhost:3000/api/jsondata');
         const result = await resolve.json();
         const data = result.map((cat) => {
@@ -16,7 +14,7 @@ class Model {
                         name: item.name,
                         title: item.title,
                         body: item.body,
-                        price: parseFloat(item.price.replace(/\s/g,'')),
+                        price: parseFloat(item.price.replace(/\s/g, '')),
                         imgSet: item.imgSet,
                         favorite: item.favorite,
                         isActive: item.isActive,
@@ -37,9 +35,9 @@ class Model {
     async sortByPrice(val, id) {
         let arr = await this.getCategoryItem(id);
 
-        if(!val) return arr;
-        if(val === "price_desc") arr.category = arr.category.sort((a, b) => a.price - b.price);
-        if(val === "price_asc") arr.category = arr.category.sort((a, b) => b.price - a.price);
+        if (!val) return arr;
+        if (val === "price_desc") arr.category = arr.category.sort((a, b) => a.price - b.price);
+        if (val === "price_asc") arr.category = arr.category.sort((a, b) => b.price - a.price);
         return arr;
     }
 
@@ -50,21 +48,20 @@ class Model {
         return sortableArray;
     }
 
-    async getFiltersList(id, arr) {
-        let temp = await this.getCategoryItem(id);
+    // извне приходит коллекция категорий, пробегаясь по которой получаем униклаьные элементы
+    getFilterList(outerArr, innerArr) {
+        innerArr.forEach(cat => {
+            cat.attributes.forEach(attrEl => {
+                attrEl.attrVal.forEach(attrElVal => {
+                    const key = attrEl.attrName;
 
-        temp.category.forEach(cat => {
-            cat.attributes.forEach(attrElem => {
-                attrElem.forEach(el => {
-                    const key = el.attrName;
-
-                    if(arr[key] == undefined) arr[key] = [];
-                    if(!arr[key].includes(el)) arr[key].push(el)
+                    if (outerArr[key] == undefined) outerArr[key] = [];
+                    if (!outerArr[key].includes(attrElVal)) outerArr[key].push(attrElVal);
                 })
             })
-        })
+        });
 
-        return arr;
+        return Object.entries(outerArr);
     }
 
 }
