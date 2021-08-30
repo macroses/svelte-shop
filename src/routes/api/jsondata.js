@@ -452,7 +452,7 @@ export async function get() {
                             {"attrId": 3, "attrName": "диагональ", "attrVal": ["15.6"]},
                             {"attrId": 4, "attrName": "память", "attrVal": ["512"]},
                             {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["16"]},
-                            {"attrId": 6, "attrName": "время работы", "attrVal": "до 9 часов"},
+                            {"attrId": 6, "attrName": "время работы", "attrVal": ["до 9 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
                             {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
                             {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]}

@@ -2,45 +2,29 @@
     import SortSelect from "../../Helpers/SortSelect.svelte";
     import Checkbox from "../../Helpers/Checkbox.svelte";
 
+    export let id;
     export let selectedValue;
     export let allData = $$props;
     export let filterCollection = [];
 
+    let temp = [];
 
-    // из категории забираем бренды, имена атрибутов и их значения
-    // создаем массив объектов
-    // в каждом объекте будет поле с уникальным именем и поле с коллекцией 
-    // уникальных значений атрибутов
-//
-    let brands = [];
-    let prices = [];
-    let attrNames = [];
-    let attrArray = [];
-    let titles = ['Бренды', "Цены", "Прочее"];
-    
-    allData.category.forEach(el => {
-        // prices.push(el.price);
-        brands.push(el.brand);
-        
-        el.attributes.forEach(attr => {
-            attrNames.push(attr.attrName)
+    allData.category.forEach(cat => {
+        cat.attributes.forEach(attrEl =>  {
+            attrEl.attrVal.forEach(attrElVal => {
+                const key = attrEl.attrName;
+                                
+                if(temp[key] == undefined)
+                temp[key] = [];
+                
+                if(!temp[key].includes(attrElVal)) {
+                    temp[key].push(attrElVal);
+                }
+            })
         })
-    })
+    });
 
-    let collectData = [[...brands], [...prices], [...attrNames]];
-    
-    // function checkBrands(val) {
-    //     if(filterCollection.includes(val)) {
-    //         filterCollection = filterCollection.filter(el => el !== val);
-    //     }
-    //     else {
-    //         filterCollection = [...filterCollection, val];
-    //     }
-    //     return filterCollection;
-    // }
-
-
-
+    let attributes = Object.entries(temp);
 </script>
 
 <div class="filters">
@@ -50,12 +34,13 @@
         <option value="price_asc">Сначала дороже</option>
     </SortSelect>
     
-    {#each collectData as collectDataItem}
-        <ul class="filters_list">
-            {#each Array.from(new Set(collectDataItem)) as item}
+
+    {#each attributes as itemAttr}
+        <h4>{itemAttr[0]}</h4>
+        <ul class=filters_list>
+            {#each itemAttr[1] as itemVal}
                 <li>
-                    <!-- <Checkbox spanValue={item} checkBrand={() => checkBrands(item)}/> -->
-                    {item}
+                    <Checkbox spanValue={itemVal} checkBrand={() => checkBrands(itemVal)}/>
                 </li>
             {/each}
         </ul>

@@ -1,3 +1,5 @@
+import { attr } from "svelte/internal";
+
 class Model {
     async _getAllItems () {
         const resolve = await fetch('http://localhost:3000/api/jsondata');
@@ -48,8 +50,21 @@ class Model {
         return sortableArray;
     }
 
-    getUniqueNames(arr) {
-        return Array.from(new Set(arr));
+    async getFiltersList(id, arr) {
+        let temp = await this.getCategoryItem(id);
+
+        temp.category.forEach(cat => {
+            cat.attributes.forEach(attrElem => {
+                attrElem.forEach(el => {
+                    const key = el.attrName;
+
+                    if(arr[key] == undefined) arr[key] = [];
+                    if(!arr[key].includes(el)) arr[key].push(el)
+                })
+            })
+        })
+
+        return arr;
     }
 
 }

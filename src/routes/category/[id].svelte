@@ -40,7 +40,7 @@
         <div class="category_box">
             {#await staticData then value}
                 <Breadcrumbs refaddress={value.catName}/>
-                <Filters {...value} bind:selectedValue bind:filterCollection />
+                <Filters {...value} bind:selectedValue bind:filterCollection id={id}/>
                 
             {/await}
             {#await categoryItem}
@@ -73,6 +73,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 30px 50px;
+        height: min-content;
         grid-area: content;
     }
 
