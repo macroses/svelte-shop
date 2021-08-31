@@ -7,18 +7,19 @@
 <script>
     export let id;
     import { onMount } from "svelte";
-        import { fade } from "svelte/transition";
-        import Model from "../../model/data-service";
-        import GoodItemView from "../../components/Main/Good/GoodItemView.svelte";
-        import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
-        import Loader from '../../components/Helpers/Loader.svelte';
-        import Filters from "../../components/Main/Filters/Filters.svelte";
+    import { fade } from "svelte/transition";
+    import Model from "../../model/data-service";
+    import GoodItemView from "../../components/Main/Good/GoodItemView.svelte";
+    import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
+    import Loader from '../../components/Helpers/Loader.svelte';
+    import Filters from "../../components/Main/Filters/Filters.svelte";
 
     const temp = new Model();
     let title = '';
     let selectedValue;
     
     $: categoryItem = temp.sortByPrice(selectedValue, id);
+    $: filterCollection = [];
 
     const staticData = temp.getCategoryItem(id);
 
@@ -26,6 +27,8 @@
         const resolve = await categoryItem;
         title = resolve.catName;
     });
+
+    // console.log(temp.filterItemsByConditionsList(id, filterCollection, 'Apple'))
 </script>
 
 <svelte:head>
@@ -37,7 +40,7 @@
         <div class="category_box">
             {#await staticData then value}
                 <Breadcrumbs refaddress={value.catName}/>
-                <Filters {...value} bind:selectedValue/>
+                <Filters {...value} bind:selectedValue bind:filterCollection/>
                 
             {/await}
             {#await categoryItem}

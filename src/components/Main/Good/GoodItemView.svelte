@@ -15,7 +15,6 @@
 </script>
 
 <li>
-    <span class="material-icons-two-tone favorite">favorite_border</span>
     <a href="/" class="item_link_img">
         <div class="picture">
             
@@ -49,15 +48,6 @@
         position: relative;
     }
 
-    .favorite {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        cursor: pointer;
-        z-index: 2;
-        user-select: none;
-    }
-
     .item_name {
         color: var(--main-text-color);
         transition: .2s;
@@ -65,6 +55,7 @@
 
     .picture {
         display: flex;
+        justify-content: center;
         width: 100%;
         margin-bottom: 1.2rem;
         position: relative;
@@ -78,7 +69,7 @@
         bottom: 0;
         right: 0;
         z-index: 2;
-        width: 80%;
+        /* width: 80%; */
         display: flex;
     }
 
@@ -103,7 +94,7 @@
     }
 
     .picture img {
-        max-width: 80%;
+        max-width: 100%;
         height: 150px;
     }
 

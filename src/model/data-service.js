@@ -51,10 +51,13 @@ class Model {
     // извне приходит коллекция категорий, пробегаясь по которой получаем униклаьные элементы
     getFilterList(outerArr, innerArr) {
         innerArr.forEach(cat => {
+            const key = "Бренды";
+            if (outerArr[key] == undefined) outerArr[key] = [];
+            if (!outerArr[key].includes(cat.brand)) outerArr[key].push(cat.brand);
+
             cat.attributes.forEach(attrEl => {
                 attrEl.attrVal.forEach(attrElVal => {
                     const key = attrEl.attrName;
-
                     if (outerArr[key] == undefined) outerArr[key] = [];
                     if (!outerArr[key].includes(attrElVal)) outerArr[key].push(attrElVal);
                 })
@@ -64,6 +67,20 @@ class Model {
         return Object.entries(outerArr);
     }
 
+    async filterItemsByConditionsList(id, conditions, conditionVal) {
+        // let temp = await this.getCategoryItem(id);
+
+        // const conditionList = this.getFiltersCondition(conditions, conditionVal);
+
+        // let filteredArray = temp.category.filter(el => !conditionList.indexOf(el.brand))
+
+        // console.log(conditionList);
+    }
+
+    // async getFiltersCondition(arr, val) {
+	// 	arr.includes(val) ? arr = arr.filter(el => el !== val) : arr = [...arr, val];
+    //     return arr;
+	// }
 }
 
 export default Model;
