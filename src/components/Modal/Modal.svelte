@@ -1,5 +1,5 @@
 <script>
-	import { createEventDispatcher, onDestroy } from 'svelte';
+	import { createEventDispatcher} from 'svelte';
     import { fade } from 'svelte/transition';
 
 	const dispatch = createEventDispatcher();
@@ -14,13 +14,6 @@
 		}
 	};
 
-	const previously_focused = typeof document !== 'undefined' && document.activeElement;
-
-	if (previously_focused) {
-		onDestroy(() => {
-			previously_focused.focus();
-		});
-	}
 </script>
 
 <svelte:window on:keydown={handle_keydown} />
