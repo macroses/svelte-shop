@@ -32,20 +32,14 @@ class Model {
         return result;
     }
 
-    async sortByPrice(val, id) {
+    async sortByPrice(val, id, filterCollection) {
         let arr = await this.getCategoryItem(id);
 
-        if (!val) return arr;
+        // if (!val) return arr;
         if (val === "price_desc") arr.category = arr.category.sort((a, b) => a.price - b.price);
         if (val === "price_asc") arr.category = arr.category.sort((a, b) => b.price - a.price);
+
         return arr;
-    }
-
-    async filterByBrands(id, arr) {
-        let temp = await this.getCategoryItem(id);
-        let sortableArray = temp.category.filter(el => !arr.indexOf(el.brand))
-
-        return sortableArray;
     }
 
     // извне приходит коллекция категорий, пробегаясь по которой получаем униклаьные элементы
@@ -67,20 +61,10 @@ class Model {
         return Object.entries(outerArr);
     }
 
-    async filterItemsByConditionsList(id, conditions, conditionVal) {
-        // let temp = await this.getCategoryItem(id);
-
-        // const conditionList = this.getFiltersCondition(conditions, conditionVal);
-
-        // let filteredArray = temp.category.filter(el => !conditionList.indexOf(el.brand))
-
-        // console.log(conditionList);
-    }
-
-    // async getFiltersCondition(arr, val) {
-	// 	arr.includes(val) ? arr = arr.filter(el => el !== val) : arr = [...arr, val];
-    //     return arr;
-	// }
+    getFiltersCondition(arr, val) {
+		arr.includes(val) ? arr = arr.filter(el => el !== val) : arr = [...arr, val];
+        return arr;
+	}
 }
 
 export default Model;

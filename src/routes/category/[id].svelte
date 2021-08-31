@@ -18,9 +18,9 @@
     let title = '';
     let selectedValue;
     
-    $: categoryItem = temp.sortByPrice(selectedValue, id);
     $: filterCollection = [];
-
+    $: categoryItem = temp.sortByPrice(selectedValue, id, filterCollection);
+    // $: categoryItem = temp.filterByBrands(id, filterCollection);
     const staticData = temp.getCategoryItem(id);
 
     onMount(async() => {
@@ -28,12 +28,11 @@
         title = resolve.catName;
     });
 
-    // console.log(temp.filterItemsByConditionsList(id, filterCollection, 'Apple'))
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
     <title>{title}</title>
-</svelte:head>
+</svelte:head> -->
 
 <main>
     <div class="container">
