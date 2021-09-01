@@ -19,20 +19,18 @@
     let selectedValue;
     
     $: filterCollection = [];
-    $: categoryItem = temp.sortByPrice(selectedValue, id, filterCollection);
-    // $: categoryItem = temp.filterByBrands(id, filterCollection);
+    $: categoryItem = temp.getCategoryItem(id, selectedValue, filterCollection);
     const staticData = temp.getCategoryItem(id);
 
     onMount(async() => {
         const resolve = await categoryItem;
         title = resolve.catName;
     });
-
 </script>
 
-<!-- <svelte:head>
+<svelte:head>
     <title>{title}</title>
-</svelte:head> -->
+</svelte:head>
 
 <main>
     <div class="container">

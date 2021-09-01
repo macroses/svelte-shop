@@ -26,20 +26,31 @@ class Model {
         return data;
     }
 
-    async getCategoryItem(id) {
+    async getCategoryItem(id, sortVal, filterCollection) {
         const resolve = await this._getAllItems(id);
         const result = await resolve[id];
+
+        if(sortVal) this._sortByPrice(sortVal, result);
+        if(filterCollection !== undefined) this._filterByConditions(result, filterCollection);
+
         return result;
     }
 
-    async sortByPrice(val, id, filterCollection) {
-        let arr = await this.getCategoryItem(id);
+    _filterByConditions(arr, filtersArr) {
+        // прокинули метод в получение категории, теперь подумаем, как филььровать по ВСЕМ параметрам
+        if(!filtersArr) return arr;
 
-        // if (!val) return arr;
-        if (val === "price_desc") arr.category = arr.category.sort((a, b) => a.price - b.price);
-        if (val === "price_asc") arr.category = arr.category.sort((a, b) => b.price - a.price);
-
+        if(filtersArr.length > 0) {
+            arr.category = arr.category.filter(el => filtersArr.includes(el.brand));
+        }   
         return arr;
+    }
+
+    _sortByPrice(val, array) {
+        if (!val) return array;
+        if (val === "price_desc") array.category = array.category.sort((a, b) => a.price - b.price);
+        if (val === "price_asc") array.category = array.category.sort((a, b) => b.price - a.price);
+        return array;
     }
 
     // извне приходит коллекция категорий, пробегаясь по которой получаем униклаьные элементы
