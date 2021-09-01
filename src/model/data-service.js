@@ -32,19 +32,22 @@ class Model {
 
         if(sortVal) this._sortByPrice(sortVal, result);
         if(filterCollection !== undefined) this._filterByConditions(result, filterCollection);
-
+        
         return result;
     }
 
     _filterByConditions(arr, filtersArr) {
-        // прокинули метод в получение категории, теперь подумаем, как филььровать по ВСЕМ параметрам
         if(!filtersArr) return arr;
 
         if(filtersArr.length > 0) {
-            arr.category = arr.category.filter(el => filtersArr.includes(el.brand));
+            arr.category = arr.category.filter(el => 
+                el.attributes.some(sub => {
+                    return sub.attrVal.some(el => filtersArr.includes(el));
+                }));
         }   
         return arr;
     }
+
 
     _sortByPrice(val, array) {
         if (!val) return array;
@@ -56,13 +59,10 @@ class Model {
     // извне приходит коллекция категорий, пробегаясь по которой получаем униклаьные элементы
     getFilterList(outerArr, innerArr) {
         innerArr.forEach(cat => {
-            const key = "Бренды";
-            if (outerArr[key] == undefined) outerArr[key] = [];
-            if (!outerArr[key].includes(cat.brand)) outerArr[key].push(cat.brand);
-
             cat.attributes.forEach(attrEl => {
                 attrEl.attrVal.forEach(attrElVal => {
                     const key = attrEl.attrName;
+                    const counter = 0;
                     if (outerArr[key] == undefined) outerArr[key] = [];
                     if (!outerArr[key].includes(attrElVal)) outerArr[key].push(attrElVal);
                 })

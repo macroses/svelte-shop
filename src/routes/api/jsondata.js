@@ -28,7 +28,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["4"]},
                             {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["3500"]},
                             {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
-                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]}
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Samsung"]}
                         ]
                     },
         
@@ -55,7 +56,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
                             {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
                             {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
-                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]}
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Xiaomi"]}
                         ]
                     },
         
@@ -83,7 +85,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
                             {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
                             {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
-                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]}
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Samsung"]}
                         ]
                     },
         
@@ -111,7 +114,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
                             {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
                             {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
-                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]}
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Xiaomi"]}
                         ]
                     },
         
@@ -139,7 +143,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["4"]},
                             {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4500"]},
                             {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
-                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]}
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Huawei"]}
                         ]
                     },
         
@@ -167,7 +172,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
                             {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["6200"]},
                             {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
-                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]}
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 10"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Huawei"]}
                         ]
                     },
         
@@ -195,7 +201,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["8"]},
                             {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["3500"]},
                             {"attrId": 6, "attrName": "SIM", "attrVal": ["2"]},
-                            {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]}
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Apple"]}
                         ]
                     },
         
@@ -225,7 +232,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["16"]},
                             {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4200"]},
                             {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
-                            {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]}
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Apple"]}
                         ]
                     },
         
@@ -252,7 +260,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["16"]},
                             {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4200"]},
                             {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
-                            {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]}
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["IOS"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Apple"]}
                         ]
                     },
         
@@ -279,7 +288,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "ОЗУ", "attrVal": ["12"]},
                             {"attrId": 5, "attrName": "аккумулятор", "attrVal": ["4300"]},
                             {"attrId": 6, "attrName": "SIM", "attrVal": ["1"]},
-                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]}
+                            {"attrId": 7, "attrName": "OS", "attrVal": ["Android 11"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Asus"]}
                         ]
                     }
                 ]
@@ -314,7 +324,8 @@ export async function get() {
                             {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
-                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]}
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 9, "attrName": "бренд", "attrVal": ["Huawei"]}
                         ]
                     },
             
@@ -340,7 +351,8 @@ export async function get() {
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
                             {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
-                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,79 кг"]}
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,79 кг"]},
+                            {"attrId": 10, "attrName": "бренд", "attrVal": ["HP"]}
                         ]
                     },
             
@@ -369,7 +381,8 @@ export async function get() {
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
                             {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
-                            {"attrId": 9, "attrName": "вес", "attrVal": ["2,3 кг"]}
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["2,3 кг"]},
+                            {"attrId": 10, "attrName": "бренд", "attrVal": ["Asus"]}
                         ]
                     },
             
@@ -398,7 +411,8 @@ export async function get() {
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Нет"]},
                             {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
-                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]}
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]},
+                            {"attrId": 10, "attrName": "бренд", "attrVal": ["Acer"]}
                         ]
                     },
             
@@ -426,7 +440,8 @@ export async function get() {
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 11 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Нет"]},
                             {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
-                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]}
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]},
+                            {"attrId": 10, "attrName": "бренд", "attrVal": ["Acer"]}
                         ]
                     },
             
@@ -455,7 +470,8 @@ export async function get() {
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 9 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
                             {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
-                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]}
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,3 кг"]},
+                            {"attrId": 10, "attrName": "бренд", "attrVal": ["Lenovo"]}
                         ]
                     },
             
@@ -484,7 +500,8 @@ export async function get() {
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 7 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
                             {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
-                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]}
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]},
+                            {"attrId": 10, "attrName": "бренд", "attrVal": ["Dell"]}
                         ]
                     },
             
@@ -514,7 +531,8 @@ export async function get() {
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
                             {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
-                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]}
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]},
+                            {"attrId": 10, "attrName": "бренд", "attrVal": ["Apple"]}
                         ]
                     },
             
@@ -544,7 +562,8 @@ export async function get() {
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
                             {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
-                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]}
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]},
+                            {"attrId": 10, "attrName": "бренд", "attrVal": ["Apple"]}
                         ]
                     },
             
@@ -574,7 +593,8 @@ export async function get() {
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
                             {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
-                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]}
+                            {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]},
+                            {"attrId": 10, "attrName": "бренд", "attrVal": ["Apple"]}
                         ]
                     }
                 ]
@@ -608,7 +628,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["15 мин"]},
                             {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["да"]},
                             {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Samsung"]}
                         ]
                     },
             
@@ -635,7 +656,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["15 мин"]},
                             {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
                             {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Samsung"]}
                         ]
                     },
             
@@ -662,7 +684,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
                             {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
                             {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["LG"]}
                         ]
                     },
             
@@ -689,7 +712,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
                             {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
                             {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["LG"]}
                         ]
                     },
             
@@ -714,7 +738,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
                             {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
                             {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Bosch"]}
                         ]
                     },
             
@@ -741,7 +766,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
                             {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
                             {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Bosch"]}
                         ]
                     },
             
@@ -768,7 +794,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
                             {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
                             {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Candy"]}
                         ]
                     },
             
@@ -795,7 +822,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
                             {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
                             {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Candy"]}
                         ]
                     },
             
@@ -822,7 +850,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
                             {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
                             {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["V-Zug"]}
                         ]
                     },
             
@@ -845,7 +874,8 @@ export async function get() {
                             {"attrId": 4, "attrName": "Минипрограмма", "attrVal": ["14 мин"]},
                             {"attrId": 5, "attrName": "Защита от протечек", "attrVal": ["частичная"]},
                             {"attrId": 6, "attrName": "Стабилизатор напряжения", "attrVal": ["да"]},
-                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]}
+                            {"attrId": 7, "attrName": "Стирка с паром", "attrVal": ["Да"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Kuppersbusch"]}
                         ]
                     }
                 ]
