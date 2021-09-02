@@ -17,6 +17,9 @@
     const temp = new Model();
     let title = '';
     let selectedValue;
+
+    let min = 0;
+    let max = 100;
     
     $: filterCollection = [];
     $: categoryItem = temp.getCategoryItem(id, selectedValue, filterCollection);
@@ -37,7 +40,10 @@
         <div class="category_box">
             {#await staticData then value}
                 <Breadcrumbs refaddress={value.catName}/>
-                <Filters {...value} bind:selectedValue bind:filterCollection/>
+                <Filters {...value} 
+                    bind:selectedValue 
+                    bind:filterCollection
+                    min={min} max={max}/>
                 
             {/await}
             {#await categoryItem}

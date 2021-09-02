@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
+    box-sizing: border-box;
     outline: none;
 }
 
@@ -13,6 +13,8 @@
     --main-bg-color: #fff;
     --main-hover-color: #ff5b24;
     --main-border-color: #ededed;
+
+    --filter-bg-color: #faf8f8;
 
     --font: 'Jost', sans-serif;
     --font-size-default: 16px;

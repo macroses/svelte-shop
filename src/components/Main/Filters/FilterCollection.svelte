@@ -1,39 +1,79 @@
 <script>
-	import Checkbox from '../../Helpers/Checkbox.svelte';
-	import Model from '../../../model/data-service';
+    import Checkbox from '../../Helpers/Checkbox.svelte';
+    import Model from '../../../model/data-service';
+    import { slide } from 'svelte/transition';
 
-	export let allData = $$props;
     export let filterCollection = [];
+    export let itemAttr = $$props;
 
-	let filledArr = [];
-	const temp = new Model();
-	const attributes = temp.getFilterList(filledArr, allData.category);
+    const temp = new Model();
+    let active = false;
+
 </script>
 
-<div class="unique_title">{itemAttr[0]}</div>
-<ul class="filters_list">
-    {#each itemAttr[1] as itemVal}
-        <li>
-            <Checkbox 
-                spanValue={itemVal} 
-                checkBrand={() => filterCollection = temp.getFiltersCondition(filterCollection, itemVal)} 
-            />
-        </li>
-    {/each}
-</ul>
+<div class="filterlist_item">
+    <div class="unique_title" class:active on:click={() => active = !active}>
+        <span class="val">{itemAttr[0]}</span>
+        <span class="material-icons-two-tone arrow">expand_more</span>
+    </div>
+    {#if active}
+        <ul class="filters_list" transition:slide={{duration: 200}}>
+            {#each itemAttr[1] as itemVal}
+                <li>
+                    <Checkbox 
+                        spanValue={itemVal}
+                        checkBrand={() => filterCollection = temp.getFiltersCondition(filterCollection, itemVal)}
+                    />
+                </li>
+            {/each}
+        </ul>
+    {/if}
+</div>
+
 <style>
     .unique_title {
         font-weight: 600;
+        padding: 1rem;
+        transition: .2s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .unique_title.active .arrow {
+        transform: rotate(180deg);
+        color: #fff;
+    }
+
+    .unique_title .val::first-letter {
+        text-transform: uppercase;
+    }
+
+    .arrow {
+        font-size: 1rem;
+        transition: .2s;
+    }
+
+    .filterlist_item {
+        border-bottom: 1px solid var(--main-border-color);
+        user-select: none;
     }
     .unique_title::first-letter {
         text-transform: uppercase;
     }
 
 	.filters_list {
-		margin: 15px 0;
+		padding: 0 0 0 1rem;
+        background: var(--filter-bg-color);
 	}
 
 	.filters_list li {
 		padding: 8px 0;
 	}
+
+    .active {
+        background: var(--main-theme-color);
+        color: var(--main-bg-color);
+    }
 </style>

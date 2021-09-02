@@ -1,15 +1,22 @@
 <script>
 	import SortSelect from '../../Helpers/SortSelect.svelte';
-	import Checkbox from '../../Helpers/Checkbox.svelte';
 	import Model from '../../../model/data-service';
+	import FilterCollection from './FilterCollection.svelte';
+	import RangeSlider from "svelte-range-slider-pips";
 
 	export let selectedValue;
 	export let allData = $$props;
     export let filterCollection = [];
 
+	export let min;
+	export let max;
+
 	let filledArr = [];
 	const temp = new Model();
 	const attributes = temp.getFilterList(filledArr, allData.category);
+
+	// prices
+	let values = [min, max];
 </script>
 
 <div class="filters">
@@ -18,37 +25,66 @@
 		<option value="price_desc">Сначала дешевле</option>
 		<option value="price_asc">Сначала дороже</option>
 	</SortSelect>
+	<div class="filter_by_price">
+		<div class="price_item">
+			<input type="text" class="inp_price" bind:value={values[0]}>
+		</div>
+		<div class="price_item">
+			<input type="text" class="inp_price" bind:value={values[1]}>
+		</div>
+	</div>
+	<RangeSlider float range bind:values/>
 	{#each attributes as itemAttr}
-		<div class="unique_title">{itemAttr[0]}</div>
-		<ul class="filters_list">
-			{#each itemAttr[1] as itemVal}
-				<li>
-					<Checkbox 
-                        spanValue={itemVal} 
-                        checkBrand={() => filterCollection = temp.getFiltersCondition(filterCollection, itemVal)} 
-                    />
-				</li>
-			{/each}
-		</ul>
+		<FilterCollection {...itemAttr} bind:filterCollection/>
 	{/each}
 </div>
 
 <style>
-    .unique_title {
-        font-weight: 600;
-    }
-    .unique_title::first-letter {
-        text-transform: uppercase;
-    }
-	.filters {
-		grid-area: filter;
+	.filter_by_price {
+		display: flex;
+		width: 100%;
 	}
 
-	.filters_list {
-		margin: 15px 0;
+	.price_item {
+		width: 50%;
+		display: inline-block;
 	}
 
-	.filters_list li {
-		padding: 8px 0;
+	.inp_price {
+		padding: 5px 10px;
+		border: 1px solid var(--main-border-color);
+		font-family: var(--font);
+		max-width: 100%;
+	}
+
+	:global(.rangeSlider) {
+		margin: 2rem 0.5rem 1rem;
+		height: 0.3em;
+	}
+	:global(.rangeSlider .rangeHandle) {
+		width: 1em;
+		height: 1em;
+		top: 0.13em;
+	}
+
+	:global(.rangeSlider.focus .rangeBar) {
+		background-color: var(--main-theme-color);
+		height: 0.3em;
+	}
+
+	:global(.rangeSlider .rangeBar) {
+		background-color: var(--main-theme-color);
+		height: 0.3em;
+	}
+
+	:global(.rangeSlider .rangeHandle.active .rangeNub,
+			.rangeSlider .rangeHandle .rangeNub) {
+		background-color: var(--main-theme-color);
+	}
+
+	:global(.rangeSlider.focus .rangeFloat,
+			.rangeSlider .rangeFloat) {
+		background: var(--main-theme-color);
+		color: #fff;
 	}
 </style>

@@ -16,6 +16,8 @@
 
     label {
         cursor: pointer;
+        display: block;
+        width: 100%;
     }
 
     span {

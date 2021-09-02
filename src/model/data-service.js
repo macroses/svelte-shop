@@ -26,35 +26,43 @@ class Model {
         return data;
     }
 
-    async getCategoryItem(id, sortVal, filterCollection) {
+    async getCategoryItem(id, sortVal, filterCollection, minPrice, maxPrice) {
         const resolve = await this._getAllItems(id);
         const result = await resolve[id];
 
         if(sortVal) this._sortByPrice(sortVal, result);
         if(filterCollection !== undefined) this._filterByConditions(result, filterCollection);
-        
+        // if(minPrice && maxPrice) this._filterByPriceValue(result, minPrice, maxPrice);
+
         return result;
     }
 
-    _filterByConditions(arr, filtersArr) {
-        if(!filtersArr) return arr;
+    _filterByConditions(categoryItems, filtersArr) {
+        if(!filtersArr) return categoryItems;
 
         if(filtersArr.length > 0) {
-            arr.category = arr.category.filter(el => 
+            categoryItems.category = categoryItems.category.filter(el => 
                 el.attributes.some(sub => {
                     return sub.attrVal.some(el => filtersArr.includes(el));
                 }));
         }   
-        return arr;
+        return categoryItems;
     }
 
 
-    _sortByPrice(val, array) {
-        if (!val) return array;
-        if (val === "price_desc") array.category = array.category.sort((a, b) => a.price - b.price);
-        if (val === "price_asc") array.category = array.category.sort((a, b) => b.price - a.price);
-        return array;
+    _sortByPrice(val, categoryItems) {
+        if (!val) return categoryItems;
+        if (val === "price_desc") categoryItems.category = categoryItems.category.sort((a, b) => a.price - b.price);
+        if (val === "price_asc") categoryItems.category = categoryItems.category.sort((a, b) => b.price - a.price);
+        return categoryItems;
     }
+
+    // _filterByPriceValue(categoryItems, min, max) {
+    //     let items = categoryItems.category;
+    //     items = items.sort((a, b) => a.price - b.price);
+    //     items = items.filter(el => (min <= el.price && el.price <= max));
+    //     return items;
+    // }
 
     // извне приходит коллекция категорий, пробегаясь по которой получаем униклаьные элементы
     getFilterList(outerArr, innerArr) {
@@ -62,7 +70,6 @@ class Model {
             cat.attributes.forEach(attrEl => {
                 attrEl.attrVal.forEach(attrElVal => {
                     const key = attrEl.attrName;
-                    const counter = 0;
                     if (outerArr[key] == undefined) outerArr[key] = [];
                     if (!outerArr[key].includes(attrElVal)) outerArr[key].push(attrElVal);
                 })
