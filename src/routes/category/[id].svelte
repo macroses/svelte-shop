@@ -18,8 +18,8 @@
     let title = '';
     let selectedValue;
 
-    let min = 0;
-    let max = 100;
+    let min;
+    let max;
     
     $: filterCollection = [];
     $: categoryItem = temp.getCategoryItem(id, selectedValue, filterCollection);

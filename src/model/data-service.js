@@ -32,7 +32,6 @@ class Model {
 
         if(sortVal) this._sortByPrice(sortVal, result);
         if(filterCollection !== undefined) this._filterByConditions(result, filterCollection);
-        // if(minPrice && maxPrice) this._filterByPriceValue(result, minPrice, maxPrice);
 
         return result;
     }
@@ -49,20 +48,12 @@ class Model {
         return categoryItems;
     }
 
-
     _sortByPrice(val, categoryItems) {
         if (!val) return categoryItems;
         if (val === "price_desc") categoryItems.category = categoryItems.category.sort((a, b) => a.price - b.price);
         if (val === "price_asc") categoryItems.category = categoryItems.category.sort((a, b) => b.price - a.price);
         return categoryItems;
     }
-
-    // _filterByPriceValue(categoryItems, min, max) {
-    //     let items = categoryItems.category;
-    //     items = items.sort((a, b) => a.price - b.price);
-    //     items = items.filter(el => (min <= el.price && el.price <= max));
-    //     return items;
-    // }
 
     // извне приходит коллекция категорий, пробегаясь по которой получаем униклаьные элементы
     getFilterList(outerArr, innerArr) {
