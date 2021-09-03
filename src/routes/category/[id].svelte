@@ -17,18 +17,19 @@
     const temp = new Model();
     let title = '';
     let selectedValue;
+    let values;
 
-    let min;
-    let max;
-    
     $: filterCollection = [];
-    $: categoryItem = temp.getCategoryItem(id, selectedValue, filterCollection);
+    $: categoryItem = temp.getCategoryItem(id, selectedValue, filterCollection, values);
     const staticData = temp.getCategoryItem(id);
 
     onMount(async() => {
         const resolve = await categoryItem;
         title = resolve.catName;
     });
+
+    
+    
 </script>
 
 <svelte:head>
@@ -43,7 +44,8 @@
                 <Filters {...value} 
                     bind:selectedValue 
                     bind:filterCollection
-                    min={min} max={max}/>
+                    bind:values
+                    />
                 
             {/await}
             {#await categoryItem}

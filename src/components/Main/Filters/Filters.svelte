@@ -8,15 +8,18 @@
 	export let allData = $$props;
     export let filterCollection = [];
 
-	export let min;
-	export let max;
-
 	let filledArr = [];
 	const temp = new Model();
+	// prices
+	let min = temp.getMinPrice(allData)
+	let max = temp.getMaxPrice(allData)
 	const attributes = temp.getFilterList(filledArr, allData.category);
 
-	// prices
-	let values = [min, max];
+
+	export let values = [
+		temp.getMinPrice(allData),
+		temp.getMaxPrice(allData)
+	];
 </script>
 
 <div class="filters">
@@ -33,7 +36,7 @@
 			<input type="text" class="inp_price" bind:value={values[1]}>
 		</div>
 	</div>
-	<RangeSlider float range bind:values/>
+	<RangeSlider float range bind:min bind:max bind:values/>
 	{#each attributes as itemAttr}
 		<FilterCollection {...itemAttr} bind:filterCollection/>
 	{/each}

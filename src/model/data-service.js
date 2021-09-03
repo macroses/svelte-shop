@@ -26,14 +26,31 @@ class Model {
         return data;
     }
 
-    async getCategoryItem(id, sortVal, filterCollection, minPrice, maxPrice) {
+    async getCategoryItem(id, sortVal, filterCollection, prices) {
         const resolve = await this._getAllItems(id);
         const result = await resolve[id];
 
         if(sortVal) this._sortByPrice(sortVal, result);
         if(filterCollection !== undefined) this._filterByConditions(result, filterCollection);
+        if(prices) this._filterByPriceValue(result, prices);
 
         return result;
+    }
+
+    _filterByPriceValue(categoryItem, pricesArr) {
+        categoryItem.category = categoryItem.category.filter(el => {
+            return el.price >= pricesArr[0] && el.price <= pricesArr[1];
+        });
+
+        return categoryItem;
+    }
+
+    getMinPrice(prices) {
+        return Math.min(...prices.category.map((a) => a.price));
+    }
+
+    getMaxPrice(prices) {
+        return Math.max(...prices.category.map((a) => a.price));
     }
 
     _filterByConditions(categoryItems, filtersArr) {
