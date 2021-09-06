@@ -1,8 +1,6 @@
 <script>
     export let spanValue;
     export let checkBrand;
-
-    
 </script>
 
 <label>

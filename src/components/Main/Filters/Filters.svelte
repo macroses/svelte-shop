@@ -14,6 +14,7 @@
 	let filledArr = [];
 	const temp = new Model();
 	const attributes = temp.getFilterList(filledArr, allData.category);
+
 </script>
 
 <div class="filters">

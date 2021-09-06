@@ -27,9 +27,6 @@
         const resolve = await categoryItem;
         title = resolve.catName;
     });
-
-    
-    
 </script>
 
 <svelte:head>
@@ -39,18 +36,19 @@
 <div class="container">
     <div class="category_box">
         {#await staticData then value}
-            <Breadcrumbs refaddress={value.catName}/>
-            <Filters {...value} 
-                bind:selectedValue 
-                bind:filterCollection
-                bind:values
-                />
-            
+            {#if value.category.length > 0}
+                <Breadcrumbs refaddress={value.catName}/>
+                <Filters {...value} 
+                    bind:selectedValue 
+                    bind:filterCollection
+                    bind:values
+                    />
+            {/if}
         {/await}
         {#await categoryItem}
                 <Loader/>
         {:then value}
-            {#if value.category}
+            {#if value.category.length > 0}
                 <ul class="items_list" in:fade>
                     {#each value.category as item (item.id)}
                         <GoodItemView {...item}/>    
@@ -60,7 +58,6 @@
                 <div class="empty_catalog">По вашему запросу ничего не найдено</div>
             {/if}
         {/await}
-
     </div>
 </div>
 
@@ -69,6 +66,11 @@
         font-size: 1.5rem;
         font-weight: 500;
         min-width: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100%;
     }
     .items_list {
         display: grid;

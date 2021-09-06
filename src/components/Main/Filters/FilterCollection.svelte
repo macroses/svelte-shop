@@ -22,6 +22,7 @@
                     <Checkbox 
                         spanValue={itemVal}
                         checkBrand={() => filterCollection = temp.getFiltersCondition(filterCollection, itemVal)}
+                        tryToCheck
                     />
                 </li>
             {/each}
