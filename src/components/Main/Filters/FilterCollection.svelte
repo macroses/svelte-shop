@@ -8,6 +8,7 @@
 
     const temp = new Model();
     let active = false;
+
 </script>
 
 <div class="filterlist_item">
@@ -21,8 +22,7 @@
                 <li>
                     <Checkbox 
                         spanValue={itemVal}
-                        checkBrand={() => filterCollection = temp.getFiltersCondition(filterCollection, itemVal)}
-                        tryToCheck
+                        checkBrand={() => filterCollection = temp.getFiltersCondition(filterCollection, itemVal, itemAttr[0])}
                     />
                 </li>
             {/each}

@@ -15,6 +15,7 @@
 	const temp = new Model();
 	const attributes = temp.getFilterList(filledArr, allData.category);
 
+	$: console.log(filterCollection)
 </script>
 
 <div class="filters">

@@ -87,8 +87,9 @@ class Model {
         return Object.entries(outerArr);
     }
 
-    getFiltersCondition(arr, val) {
-		arr.includes(val) ? arr = arr.filter(el => el !== val) : arr = [...arr, val];
+    getFiltersCondition(arr, val, name) {
+        if(arr[name] == undefined) arr[name] = [];       
+        arr[name].includes(val) ? arr[name] = arr[name].filter(el => el != val) : arr[name].push(val);
         return arr;
 	}
 }
