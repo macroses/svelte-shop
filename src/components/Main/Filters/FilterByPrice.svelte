@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
     import RangeSlider from "svelte-range-slider-pips";
     import Model from '../../../model/data-service';
 
@@ -14,17 +14,32 @@
 	];
 </script>
 
-<div class="filter_by_price">
-    <div class="price_item">
-        <input type="text" class="inp_price" bind:value={values[0]}>
-    </div>
-    <div class="price_item">
-        <input type="text" class="inp_price" bind:value={values[1]}>
-    </div>
+<div class="unique_title">
+	<span class="val">Цена</span>
 </div>
-<RangeSlider float range bind:min bind:max bind:values/>
+<div class="filter_price_container">
+	<div class="filter_by_price">
+		<div class="price_item">
+			<input type="text" class="inp_price" bind:value={values[0]}>
+		</div>
+		<div class="price_item">
+			<input type="text" class="inp_price" bind:value={values[1]}>
+		</div>
+	</div>
+	<RangeSlider float range bind:min bind:max bind:values/>
+</div>
 
 <style>
+	.unique_title {
+        font-weight: 600;
+        padding: 1rem;
+        transition: .2s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
 	.filter_by_price {
 		display: flex;
 		width: 100%;
@@ -72,4 +87,4 @@
 		background: var(--main-theme-color);
 		color: #fff;
 	}
-</style> -->
+</style>

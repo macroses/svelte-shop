@@ -36,37 +36,33 @@
     <title>{title}</title>
 </svelte:head>
 
-<main>
-    <div class="container">
-        <div class="category_box">
-            {#await staticData then value}
-                <Breadcrumbs refaddress={value.catName}/>
-                <Filters {...value} 
-                    bind:selectedValue 
-                    bind:filterCollection
-                    bind:values
-                    />
-                
-            {/await}
-            {#await categoryItem}
-                    <Loader/>
-            {:then value}
-                {#if value.category}
-                    <ul class="items_list" in:fade>
-                        {#each value.category as item (item.id)}
-                            <GoodItemView {...item}/>    
-                        {/each}
-                    </ul>
-                {:else}
-                    <div class="empty_catalog">По вашему запросу ничего не найдено</div>
-                {/if}
-            {/await}
+<div class="container">
+    <div class="category_box">
+        {#await staticData then value}
+            <Breadcrumbs refaddress={value.catName}/>
+            <Filters {...value} 
+                bind:selectedValue 
+                bind:filterCollection
+                bind:values
+                />
+            
+        {/await}
+        {#await categoryItem}
+                <Loader/>
+        {:then value}
+            {#if value.category}
+                <ul class="items_list" in:fade>
+                    {#each value.category as item (item.id)}
+                        <GoodItemView {...item}/>    
+                    {/each}
+                </ul>
+            {:else}
+                <div class="empty_catalog">По вашему запросу ничего не найдено</div>
+            {/if}
+        {/await}
 
-        </div>
     </div>
-</main>
-
-
+</div>
 
 <style>
     .empty_catalog {
