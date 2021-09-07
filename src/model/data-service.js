@@ -55,18 +55,15 @@ class Model {
 
     _filterByConditions(categoryItems, filtersArr) {
         if(!filtersArr) return categoryItems;
-
         function getQuery(filtersArr) {
             let descriptions = [];
-
             for(let key in filtersArr) {
                 if(filtersArr[key] === undefined && filtersArr[key] === []) continue;
-                
                 descriptions.push(product => product.attributes.some(a => a.attrName === key && filtersArr[key].every(v => a.attrVal.includes(v))));
             }
             return product => descriptions.every(b => b(product));
         }
-
+        
         let query = getQuery(filtersArr); 
 
         categoryItems.category = categoryItems.category.filter(b => query(b));

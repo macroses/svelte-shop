@@ -9,7 +9,13 @@
 
     const temp = new Model();
     let active = false;
+    $: valuesChecked = [];
 
+// 1. возьмем массив всех атрибутов - itemAttr
+// 2. возьмем заполненный массив фильтров - filterCollection
+// 3. создадим новый массив, в который положим результат фильтрации itemAttr по filterCollection
+
+// 4. новый массив передадим в чекбоксы, где каждый элемент массива, будет чекать чекбокс.
 </script>
 
 <div class="filterlist_item">
@@ -65,13 +71,16 @@
     }
 
 	.filters_list {
-		padding: 0 0 0 1rem;
         background: var(--filter-bg-color);
 	}
 
 	.filters_list li {
-		padding: 8px 0;
+		padding: 0.5rem 0 0.5rem 1rem;
 	}
+
+    .filters_list li:hover {
+        background: #ececec;
+    }
 
     .active {
         background: var(--main-theme-color);

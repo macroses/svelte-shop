@@ -34,6 +34,7 @@
         width: 18px;
         height: 18px;
         border: 1px solid #ccc;
+        background: #fff;
     }
 
     span:after {
