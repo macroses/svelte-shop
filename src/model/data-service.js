@@ -56,12 +56,20 @@ class Model {
     _filterByConditions(categoryItems, filtersArr) {
         if(!filtersArr) return categoryItems;
 
-        if(filtersArr.length > 0) {
-            categoryItems.category = categoryItems.category.filter(el => 
-                el.attributes.some(sub => {
-                    return sub.attrVal.some(el => filtersArr.includes(el));
-                }));
-        }   
+        function getQuery(filtersArr) {
+            let descriptions = [];
+
+            for(let key in filtersArr) {
+                if(filtersArr[key] === undefined && filtersArr[key] === []) continue;
+                
+                descriptions.push(product => product.attributes.some(a => a.attrName === key && filtersArr[key].every(v => a.attrVal.includes(v))));
+            }
+            return product => descriptions.every(b => b(product));
+        }
+
+        let query = getQuery(filtersArr); 
+
+        categoryItems.category = categoryItems.category.filter(b => query(b));
         return categoryItems;
     }
 
@@ -87,9 +95,16 @@ class Model {
         return Object.entries(outerArr);
     }
 
-    getFiltersCondition(arr, val, name) {
+    fillFiltersParameters(arr, val, name) {
         if(arr[name] == undefined) arr[name] = [];       
-        arr[name].includes(val) ? arr[name] = arr[name].filter(el => el != val) : arr[name].push(val);
+
+        if(arr[name].includes(val)) {
+            arr[name] = arr[name].filter(el => el != val);
+        } 
+        else {
+            arr[name].push(val);
+        }
+
         return arr;
 	}
 }

@@ -41,7 +41,7 @@
     .logo {
         grid-area: logo;
         height: 30px;
-        background: url(./logo.svg) no-repeat;
+        background: url(../logo.svg) no-repeat;
     }
 
     @media (max-width: 992px) {
