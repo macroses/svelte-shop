@@ -13,16 +13,13 @@
 
 	let filledArr = [];
 	const temp = new Model();
-	const attributes = temp.getFilterList(filledArr, allData.category);
+	$: attributes = temp.getFilterList(filledArr, allData.category);
 
 	$: filterCollection = [];
 
 	function handleResetFilters() {
-		for(let key in filterCollection) {
-			if(filterCollection[key] !== undefined) {
-				filterCollection = [];
-			}
-		}
+		filterCollection = [];
+		selectedValue = "";
 	}
 
 </script>
