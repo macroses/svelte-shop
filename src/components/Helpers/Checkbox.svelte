@@ -1,11 +1,13 @@
 <script>
     export let spanValue;
     export let checkBrand;
-    let checkedFilter = false;
+    export let allCheckedFilters;
+
+    let checked = allCheckedFilters;
 </script>
 
 <label>
-    <input type="checkbox" on:input={checkBrand} checked={checkedFilter}>
+    <input type="checkbox" on:input={checkBrand} bind:checked={checked}>
     <span>{spanValue}</span>
 </label>
 

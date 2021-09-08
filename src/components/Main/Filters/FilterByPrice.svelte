@@ -20,10 +20,10 @@
 <div class="filter_price_container">
 	<div class="filter_by_price">
 		<div class="price_item">
-			<input type="text" class="inp_price" bind:value={values[0]}>
+			<input type="text" class="inp_price" bind:value={values[0]} placeholder={`от ${min}`}>
 		</div>
 		<div class="price_item">
-			<input type="text" class="inp_price" bind:value={values[1]}>
+			<input type="text" class="inp_price" bind:value={values[1]} placeholder={`до ${max}`}>
 		</div>
 	</div>
 	<RangeSlider float range bind:min bind:max bind:values/>

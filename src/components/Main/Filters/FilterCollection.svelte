@@ -5,21 +5,13 @@
 
     export let filterCollection = [];
     export let itemAttr = $$props;
-    
+    export let active = false;
 
     const temp = new Model();
-    let active = false;
-    $: valuesChecked = [];
-
-// 1. возьмем массив всех атрибутов - itemAttr
-// 2. возьмем заполненный массив фильтров - filterCollection
-// 3. создадим новый массив, в который положим результат фильтрации itemAttr по filterCollection
-
-// 4. новый массив передадим в чекбоксы, где каждый элемент массива, будет чекать чекбокс.
 </script>
 
 <div class="filterlist_item">
-    <div class="unique_title" class:active on:click={() => active = !active}>
+    <div class="unique_title"  class:active on:click={() => active = !active}>
         <span class="val">{itemAttr[0]}</span>
         <span class="material-icons-two-tone arrow">expand_more</span>
     </div>
@@ -30,6 +22,7 @@
                     <Checkbox 
                         spanValue={itemVal}
                         checkBrand={() => filterCollection = temp.fillFiltersParameters(filterCollection, itemVal, itemAttr[0])}
+                        allCheckedFilters={temp.getInitialCheckboxesState(filterCollection, itemAttr[0], itemVal)}
                     />
                 </li>
             {/each}

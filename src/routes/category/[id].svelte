@@ -27,6 +27,8 @@
         const resolve = await categoryItem;
         title = resolve.catName;
     });
+
+    
 </script>
 
 <svelte:head>
