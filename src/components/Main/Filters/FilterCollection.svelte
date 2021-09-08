@@ -3,15 +3,21 @@
     import Model from '../../../model/data-service';
     import { slide } from 'svelte/transition';
 
-    export let filterCollection = [];
+    export let filterCollection;
     export let itemAttr = $$props;
-    export let active = false;
+    export let exportedActive;
 
+    $: if(exportedActive == false) {
+        active = false;
+        exportedActive = undefined;
+    }
+
+    $: active = false;
     const temp = new Model();
 </script>
 
 <div class="filterlist_item">
-    <div class="unique_title"  class:active on:click={() => active = !active}>
+    <div class="unique_title"  class:active on:click={() => active = !active} >
         <span class="val">{itemAttr[0]}</span>
         <span class="material-icons-two-tone arrow">expand_more</span>
     </div>

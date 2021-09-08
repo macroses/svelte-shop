@@ -110,6 +110,13 @@ class Model {
             ? false 
             : filterCollection[attrName].includes(attrValue);
     }
+
+    resetFilters(filterCollection, selectedValue, activeName) {
+        filterCollection = [];
+        selectedValue = "";
+        activeName = false;
+        console.log(filterCollection);
+    }
 }
 
 export default Model;

@@ -1,4 +1,5 @@
 <script>
+	import { fade } from "svelte/transition";
 	import SortSelect from '../../Helpers/SortSelect.svelte';
 	import Model from '../../../model/data-service';
 	import FilterCollection from './FilterCollection.svelte';
@@ -11,17 +12,26 @@
 	export let max
 	export let values;
 
+	let exportedActive;
+	let showResetButton = false;
+
 	let filledArr = [];
 	const temp = new Model();
-	$: attributes = temp.getFilterList(filledArr, allData.category);
-
-	$: filterCollection = [];
+	let attributes = temp.getFilterList(filledArr, allData.category);
 
 	function handleResetFilters() {
-		filterCollection = [];
+		for(let key in filterCollection) {
+			if(filterCollection[key] !== undefined) {
+				filterCollection = [];
+			}
+		}
 		selectedValue = "";
+		exportedActive = false;
 	}
 
+	$: if(selectedValue || Object.keys(filterCollection).length !== 0) {
+		showResetButton = true;
+	} else showResetButton = false;
 </script>
 
 <div class="filters">
@@ -32,9 +42,11 @@
 	</SortSelect>
 	<FilterByPrice bind:values bind:min bind:max {...allData}/>
 	{#each attributes as itemAttr}
-		<FilterCollection {...itemAttr} bind:filterCollection/>
+		<FilterCollection {...itemAttr} bind:filterCollection bind:exportedActive/>
 	{/each}
-	<button on:click={handleResetFilters}>очистить</button>
+	{#if showResetButton}
+		<button on:click={handleResetFilters} transition:fade={{duration: 200}}>очистить</button>
+	{/if}
 </div>
 
 <style>
@@ -42,9 +54,9 @@
 		position: sticky;
 		bottom: 0;
 		width: 100%;
-		background: var(--main-bg-color);
+		background: var(--main-theme-color);
 		border: 1px solid var(--main-theme-color);
-		color: var(--main-theme-color);
+		color: var(--main-bg-color);
 		font: 600 0.75rem var(--font);
 		text-transform: uppercase;
 		padding: 17px;
@@ -53,7 +65,6 @@
 	}
 
 	button:hover {
-		background: var(--main-theme-color);
-		color: var(--main-bg-color);
+		background: var(--main-hover-color);
 	}
 </style>
