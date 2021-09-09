@@ -111,12 +111,6 @@ class Model {
             : filterCollection[attrName].includes(attrValue);
     }
 
-    resetFilters(filterCollection, selectedValue, activeName) {
-        filterCollection = [];
-        selectedValue = "";
-        activeName = false;
-    }
-
     getImgSetIndex(index, imgSet, currentIndex) {
         if(currentIndex >= imgSet.length) {
             currentIndex = 0;

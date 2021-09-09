@@ -3,15 +3,14 @@
     import Model from '../../../model/data-service';
 
     export let allData = $$props;
+	export let changePrice = false;
     const temp = new Model();
 
     let min = temp.getMinPrice(allData);
 	let max = temp.getMaxPrice(allData);
+	let values = [];
 
-	export let values = [
-		temp.getMinPrice(allData),
-		temp.getMaxPrice(allData)
-	];
+	$: if(!changePrice) values = [temp.getMinPrice(allData), temp.getMaxPrice(allData)];
 </script>
 
 <div class="unique_title">
@@ -19,14 +18,10 @@
 </div>
 <div class="filter_price_container">
 	<div class="filter_by_price">
-		<div class="price_item">
-			<input type="text" class="inp_price" bind:value={values[0]} placeholder={`от ${min}`}>
-		</div>
-		<div class="price_item">
-			<input type="text" class="inp_price" bind:value={values[1]} placeholder={`до ${max}`}>
-		</div>
+		<div class="price_item">от {values[0]}</div>
+		<div class="price_item">до {values[1]}</div>
 	</div>
-	<RangeSlider float range bind:min bind:max bind:values/>
+	<RangeSlider range bind:min bind:max bind:values on:change={() => changePrice = true}/>
 </div>
 
 <style>
@@ -43,22 +38,15 @@
 	.filter_by_price {
 		display: flex;
 		width: 100%;
+		justify-content: space-between;
 	}
 
 	.price_item {
-		width: 50%;
 		display: inline-block;
 	}
 
-	.inp_price {
-		padding: 5px 10px;
-		border: 1px solid var(--main-border-color);
-		font-family: var(--font);
-		max-width: 100%;
-	}
-
 	:global(.rangeSlider) {
-		margin: 2rem 0.5rem 1rem;
+		margin: 1rem 0.5rem 3rem;
 		height: 0.3em;
 	}
 	:global(.rangeSlider .rangeHandle) {

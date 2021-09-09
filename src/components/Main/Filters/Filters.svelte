@@ -8,12 +8,10 @@
 	export let selectedValue;
 	export let allData = $$props;
     export let filterCollection;
-	export let min
-	export let max
-	export let values;
 
 	let exportedActive;
 	let showResetButton = false;
+	let changePrice;
 
 	let filledArr = [];
 	const temp = new Model();
@@ -27,11 +25,14 @@
 		}
 		selectedValue = "";
 		exportedActive = false;
+		changePrice = false;
 	}
 
-	$: if(selectedValue || Object.keys(filterCollection).length !== 0) {
-		showResetButton = true;
-	} else showResetButton = false;
+	$: selectedValue 
+		|| Object.keys(filterCollection).length !== 0 
+		|| changePrice
+			? showResetButton = true
+			: showResetButton = false;
 </script>
 
 <div class="filters">
@@ -40,7 +41,7 @@
 		<option value="price_desc">Сначала дешевле</option>
 		<option value="price_asc">Сначала дороже</option>
 	</SortSelect>
-	<FilterByPrice bind:values bind:min bind:max {...allData}/>
+	<FilterByPrice {...allData} bind:changePrice/>
 	{#each attributes as itemAttr}
 		<FilterCollection {...itemAttr} bind:filterCollection bind:exportedActive/>
 	{/each}

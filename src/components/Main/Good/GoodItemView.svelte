@@ -24,11 +24,12 @@
 <li>
     <a href="/" class="item_link_img">
         <div class="picture">
-            
             {#if !defaultInfo}
                 <img src="{item.imgSet[currentIndex]}" alt={item.name}>
             {:else}
-                <img src="default_img.svg" alt="" transition:fade>
+                {#if currentIndex}
+                    <img src="default_img.svg" alt="" transition:fade>
+                {/if}
             {/if}
             <div class="preview_list">    
                 {#each item.imgSet as itemImg, index}
@@ -47,10 +48,13 @@
         </Button>
     </div>
 
-    <div class="controls">
-        <span on:click={() => currentIndex = currentIndex + 1}>+</span>
-        <span on:click={() => currentIndex = currentIndex - 1}>-</span>
-    </div>
+    {#if item.imgSet.length > 1}
+        <div class="controls">
+            <span on:click={() => currentIndex = ++currentIndex} class="material-icons-two-tone">navigate_before</span>
+            <span on:click={() => currentIndex = --currentIndex} class="material-icons-two-tone">navigate_next</span>
+        </div>
+    {/if}
+    
 </li>
 
 <style>
@@ -81,7 +85,6 @@
         bottom: 0;
         right: 0;
         z-index: 2;
-        /* width: 80%; */
         display: flex;
     }
 
@@ -139,7 +142,9 @@
         filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(23deg) brightness(118%) contrast(118%);
     }
 
-    
+    .controls {
+        display: none;
+    }
 
     @media (max-width: 768px) {
         .preview_list {
@@ -151,16 +156,19 @@
             display: flex;
             justify-content: space-between;
             position: absolute;
-            top: 50%;
-            z-index: 1000;
+            top: 25%;
+            z-index: 2;
 
             font-size: 2rem;
         }
 
         .controls span {
-            display: inline-block;
-            padding: 20px;
-            background: gold;
+            border: 1px solid var(--main-border-color);
+            color: var(--main-theme-color);
+            border-radius: 50%;
+            padding: 5px;
+            user-select: none;
+            transition: .1s;
         }
     }
 </style>
