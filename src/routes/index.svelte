@@ -6,13 +6,11 @@
     <title>Shop</title>
 </svelte:head>
 
-<main>
-    <div class="container">
-        <div class="main_content">
-            <CategoryList/>
-        </div>
+<div class="container">
+    <div class="main_content">
+        <CategoryList/>
     </div>
-</main>
+</div>
 
 <style>
     

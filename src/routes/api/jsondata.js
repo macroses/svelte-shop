@@ -897,12 +897,6 @@ export async function get() {
                 "id": 5,
                 "catName": "Техника для кухни",
                 "catImg": "blender"
-            },
-        
-            {
-                "id": 6,
-                "catName": "Фото и видеотехника",
-                "catImg": "photo_camera"
             }
         ]
     }

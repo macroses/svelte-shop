@@ -27,8 +27,6 @@
         const resolve = await categoryItem;
         title = resolve.catName;
     });
-
-    
 </script>
 
 <svelte:head>
@@ -90,6 +88,14 @@
         grid-template-areas: 
             'crumbs crumbs'
             'filter content';
+    }
+
+    @media (max-width: 768px) {
+        .category_box {
+            grid-template-areas: 
+            'crumbs crumbs'
+            'content content';
+        }
     }
 </style>
 

@@ -67,4 +67,10 @@
 	button:hover {
 		background: var(--main-hover-color);
 	}
+
+	@media (max-width: 768px) {
+		.filters {
+			display: none;
+		}
+	}
 </style>

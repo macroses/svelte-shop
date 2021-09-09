@@ -1,16 +1,23 @@
 <script>
+    import { fade } from "svelte/transition";
     import Button from "../../Helpers/Button.svelte";
     export let {...item} = $$props;
 
     let currentIndex = 0;
-    $: defaultInfo = false;
-    function getIndex(i) {
-        currentIndex = i;
-        defaultInfo = false;
-    }
+    let defaultInfo = false;
 
-    function handleErr() {
-        defaultInfo = true;
+    $:  if(currentIndex >= item.imgSet.length) {
+        currentIndex = 0;
+    } else if (currentIndex < 0) {
+        currentIndex = item.imgSet.length-1;
+    }
+    
+    function getIndex(i, imgs) {
+        if(currentIndex >= imgs.length) {
+            currentIndex = 0;
+        } else {
+            currentIndex = i;
+        }
     }
 </script>
 
@@ -19,14 +26,14 @@
         <div class="picture">
             
             {#if !defaultInfo}
-                <img src="{item.imgSet[currentIndex]}" alt={item.name} on:error={handleErr}>
+                <img src="{item.imgSet[currentIndex]}" alt={item.name}>
             {:else}
-                <img src="default_img.svg" alt="">
+                <img src="default_img.svg" alt="" transition:fade>
             {/if}
             <div class="preview_list">    
                 {#each item.imgSet as itemImg, index}
                     {#if item.imgSet.length > 1}
-                        <span class="preview" on:mouseenter={() => getIndex(index)} ></span>
+                        <span class="preview" on:mouseenter={() => getIndex(index, item.imgSet)} ></span>
                     {/if}
                 {/each}
             </div>
@@ -38,6 +45,11 @@
         <Button titleProp={"в корзину"}>
             <span class="material-icons-two-tone cart">shopping_cart</span>
         </Button>
+    </div>
+
+    <div class="controls">
+        <span on:click={() => currentIndex = currentIndex + 1}>+</span>
+        <span on:click={() => currentIndex = currentIndex - 1}>-</span>
     </div>
 </li>
 
@@ -93,6 +105,9 @@
         background: var(--main-theme-color);
     }
 
+    .picture {
+        position: relative;
+    }
     .picture img {
         max-width: 100%;
         height: 150px;
@@ -106,6 +121,8 @@
 
     .item_link_img {
         flex-grow: 1;
+        position: relative;
+        z-index: 2;
     }
 
     .item_link_img:hover .item_name {
@@ -120,5 +137,30 @@
 
     .cart {
         filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(23deg) brightness(118%) contrast(118%);
+    }
+
+    
+
+    @media (max-width: 768px) {
+        .preview_list {
+            display: none;
+        }
+
+        .controls {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            z-index: 1000;
+
+            font-size: 2rem;
+        }
+
+        .controls span {
+            display: inline-block;
+            padding: 20px;
+            background: gold;
+        }
     }
 </style>

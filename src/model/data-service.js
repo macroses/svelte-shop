@@ -115,7 +115,16 @@ class Model {
         filterCollection = [];
         selectedValue = "";
         activeName = false;
-        console.log(filterCollection);
+    }
+
+    getImgSetIndex(index, imgSet, currentIndex) {
+        if(currentIndex >= imgSet.length) {
+            currentIndex = 0;
+        } else {
+            currentIndex = index;
+        }
+
+        return currentIndex;
     }
 }
 

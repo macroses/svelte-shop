@@ -53,4 +53,16 @@
             column-gap: 1rem;
         }
     }
+
+    @media (max-width: 768px) {
+        .header_content {
+            padding: 0.5rem 0;
+            row-gap: 0.5rem;
+        }
+
+        header {
+            box-shadow: none;
+            border: 0;
+        }
+    }
 </style>

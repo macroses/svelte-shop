@@ -29,4 +29,10 @@
     a {
         color: var(--main-theme-color);
     }
+
+    @media (max-width: 768px) {
+        ul {
+            padding: 0 0 0.5rem;
+        }
+    }
 </style>
