@@ -9,6 +9,7 @@
 	export let allData = $$props;
     export let filterCollection;
 	export let toggleFilters = false;
+	export let values;
 
 	let exportedActive;
 	let showResetButton = false;
@@ -43,18 +44,18 @@
 		<option value="price_desc">Сначала дешевле</option>
 		<option value="price_asc">Сначала дороже</option>
 	</SortSelect>
-	<FilterByPrice {...allData} bind:changePrice/>
+	<FilterByPrice {...allData} bind:changePrice bind:values/>
 	{#each attributes as itemAttr}
 		<FilterCollection {...itemAttr} bind:filterCollection bind:exportedActive/>
 	{/each}
 	{#if showResetButton}
-		<button on:click={handleResetFilters} transition:fade={{duration: 200}}>очистить</button>
-		<!-- сюда кнопку "показать" для мобильных, которая закроет фильтры -->
+		<button class="clear" on:click={handleResetFilters} transition:fade={{duration: 200}}>очистить</button>
+		<button class="show_results" on:click={() => toggleFilters = !toggleFilters}>Показать результаты</button>
 	{/if}
 </div>
 
 <style>
-	button {
+	.clear {
 		position: sticky;
 		bottom: 0;
 		width: 100%;
@@ -68,7 +69,7 @@
 		transition: .2s;
 	}
 
-	button:hover {
+	:hover {
 		background: var(--main-hover-color);
 	}
 
@@ -78,6 +79,10 @@
 
 	.close {
 		display: none;
+	}
+
+	.show_results {
+		display: none;;
 	}
 
 	@media (max-width: 768px) {
@@ -103,12 +108,13 @@
 		.close {
 			display: initial;
 			position: absolute;
-			right: 1rem;
+			right: 1.25rem;
 			top: 0.5rem;
 			font-size: 2rem;
+			border: 1px solid var(--main-border-color);
 		}
 
-		button {
+		.clear {
 			position: absolute;
 			top: 1rem;
 			bottom: unset;
@@ -117,6 +123,20 @@
 			background: var(--main-bg-color);
 			color: var(--main-theme-color);
 			border: 0;
+		}
+
+		.show_results {
+			display: initial;
+			position: sticky;
+			bottom: 0;
+			width: 100%;
+			background: var(--main-theme-color);
+			border: 1px solid var(--main-theme-color);
+			color: var(--main-bg-color);
+			font: 600 0.75rem var(--font);
+			text-transform: uppercase;
+			padding: 17px;
+			cursor: pointer;
 		}
 	}
 </style>

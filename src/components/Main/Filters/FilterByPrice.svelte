@@ -8,7 +8,10 @@
 
     let min = temp.getMinPrice(allData);
 	let max = temp.getMaxPrice(allData);
-	let values = [];
+	export let values = [
+		temp.getMinPrice(allData),
+		temp.getMaxPrice(allData)
+	];
 
 	$: if(!changePrice) values = [temp.getMinPrice(allData), temp.getMaxPrice(allData)];
 </script>

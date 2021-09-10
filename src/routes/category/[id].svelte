@@ -81,9 +81,6 @@
         font-size: 1.5rem;
         font-weight: 500;
         min-width: max-content;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         min-height: 100vh;
         width: 100%;
     }

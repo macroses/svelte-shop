@@ -105,7 +105,7 @@ class Model {
         return arr;
 	}
 
-    getInitialCheckboxesState(filterCollection ,attrName, attrValue) {
+    getInitialCheckboxesState(filterCollection, attrName, attrValue) {
         return filterCollection[attrName] === undefined 
             ? false 
             : filterCollection[attrName].includes(attrValue);

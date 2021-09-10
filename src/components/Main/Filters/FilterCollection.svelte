@@ -1,4 +1,5 @@
 <script>
+    import { afterUpdate } from 'svelte';
     import Checkbox from '../../Helpers/Checkbox.svelte';
     import Model from '../../../model/data-service';
     import { slide } from 'svelte/transition';
@@ -14,11 +15,19 @@
 
     $: active = false;
     const temp = new Model();
+    let showMarker = false;
+
+    afterUpdate(() => {
+        return filterCollection[itemAttr[0]] === undefined 
+                || filterCollection[itemAttr[0]].length === 0
+                    ? showMarker = false
+                    : showMarker = true;
+    });
 </script>
 
 <div class="filterlist_item">
-    <div class="unique_title"  class:active on:click={() => active = !active} >
-        <span class="val">{itemAttr[0]}</span>
+    <div class="unique_title"  class:active on:click={() => active = !active}>
+        <span class="val" class:marker={showMarker}>{itemAttr[0]}</span>
         <span class="material-icons-two-tone arrow">expand_more</span>
     </div>
     {#if active}
@@ -45,6 +54,20 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
+    }
+
+    .marker:after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        display: inline-block;
+        border-radius: 50%;
+        margin-left: 10px;
+        background: var(--main-theme-color);
+    }
+
+    .unique_title.active .marker:after {
+        background: var(--main-bg-color);
     }
 
     .unique_title.active .arrow {
