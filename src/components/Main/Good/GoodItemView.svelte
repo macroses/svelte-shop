@@ -1,18 +1,19 @@
 <script>
     import { fade } from "svelte/transition";
     import Button from "../../Helpers/Button.svelte";
+
     export let {...item} = $$props;
 
     let currentIndex = 0;
     let defaultInfo = false;
 
-    $:  if(currentIndex >= item.imgSet.length) {
+    $:  if(currentIndex > item.imgSet.length) {
         currentIndex = 0;
     } else if (currentIndex < 0) {
         currentIndex = item.imgSet.length-1;
     }
     
-    function getIndex(i, imgs) {
+    function getImgSetIndex(i, imgs) {
         if(currentIndex >= imgs.length) {
             currentIndex = 0;
         } else {
@@ -34,7 +35,7 @@
             <div class="preview_list">    
                 {#each item.imgSet as itemImg, index}
                     {#if item.imgSet.length > 1}
-                        <span class="preview" on:mouseenter={() => getIndex(index, item.imgSet)} ></span>
+                        <span class="preview" on:mouseenter={() => getImgSetIndex(index, item.imgSet)} ></span>
                     {/if}
                 {/each}
             </div>

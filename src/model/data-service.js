@@ -110,16 +110,6 @@ class Model {
             ? false 
             : filterCollection[attrName].includes(attrValue);
     }
-
-    getImgSetIndex(index, imgSet, currentIndex) {
-        if(currentIndex >= imgSet.length) {
-            currentIndex = 0;
-        } else {
-            currentIndex = index;
-        }
-
-        return currentIndex;
-    }
 }
 
 export default Model;

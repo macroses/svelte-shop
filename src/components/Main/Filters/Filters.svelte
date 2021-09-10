@@ -8,6 +8,7 @@
 	export let selectedValue;
 	export let allData = $$props;
     export let filterCollection;
+	export let toggleFilters = false;
 
 	let exportedActive;
 	let showResetButton = false;
@@ -35,7 +36,8 @@
 			: showResetButton = false;
 </script>
 
-<div class="filters">
+<div class="filters" class:toggleFilters={toggleFilters === true}>
+	<span class="close material-icons-two-tone" on:click={() => toggleFilters = !toggleFilters}>close</span>
 	<SortSelect bind:selected={selectedValue}>
 		<option value="" selected disabled slot="s-head">Сортировка</option>
 		<option value="price_desc">Сначала дешевле</option>
@@ -47,6 +49,7 @@
 	{/each}
 	{#if showResetButton}
 		<button on:click={handleResetFilters} transition:fade={{duration: 200}}>очистить</button>
+		<!-- сюда кнопку "показать" для мобильных, которая закроет фильтры -->
 	{/if}
 </div>
 
@@ -69,9 +72,51 @@
 		background: var(--main-hover-color);
 	}
 
+	.filters {
+		background: var(--main-bg-color);
+	}
+
+	.close {
+		display: none;
+	}
+
 	@media (max-width: 768px) {
 		.filters {
-			display: none;
+			position: fixed;
+			z-index: 10;
+			width: 400px;
+			max-width: 100%;
+			bottom: 0;
+			top: 0;
+			left: 0;
+			padding: 3rem 1.25rem 1.5rem 1.25rem;
+			transform: translate(-200%);
+			overflow-y: auto;
+			box-shadow: 5px 0px 20px 1px rgba(0,0,0,.3);
+			transition: .2s;
+		}
+
+		.toggleFilters {
+			transform: translate(0);
+		}
+
+		.close {
+			display: initial;
+			position: absolute;
+			right: 1rem;
+			top: 0.5rem;
+			font-size: 2rem;
+		}
+
+		button {
+			position: absolute;
+			top: 1rem;
+			bottom: unset;
+			padding: 0;
+			width: auto;
+			background: var(--main-bg-color);
+			color: var(--main-theme-color);
+			border: 0;
 		}
 	}
 </style>

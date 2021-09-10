@@ -18,6 +18,7 @@
     let title = '';
     let selectedValue;
     let values;
+    let toggleFilters = false;
 
     $: filterCollection = [];
     $: categoryItem = temp.getCategoryItem(id, selectedValue, filterCollection, values);
@@ -42,7 +43,9 @@
                     bind:selectedValue 
                     bind:filterCollection
                     bind:values
+                    bind:toggleFilters
                     />
+                <button class="toggle_filters" on:click={() => toggleFilters = true}>фильтры</button>
             {/if}
         {/await}
         {#await categoryItem}
@@ -62,6 +65,18 @@
 </div>
 
 <style>
+    .toggle_filters {
+		width: 100%;
+		background: var(--main-theme-color);
+		border: 1px solid var(--main-theme-color);
+		color: var(--main-bg-color);
+		font: 600 0.75rem var(--font);
+		text-transform: uppercase; 
+        grid-area: filter;
+        padding: 0.5rem 0;
+        margin: 1rem 0;
+    }
+
     .empty_catalog {
         font-size: 1.5rem;
         font-weight: 500;
@@ -90,11 +105,20 @@
             'filter content';
     }
 
+    .toggle_filters {
+        display: none;
+    }
     @media (max-width: 768px) {
         .category_box {
+            grid-template-columns: 1fr 1fr;
             grid-template-areas: 
             'crumbs crumbs'
+            'filter filter'
             'content content';
+        }
+
+        .toggle_filters {
+            display: initial;
         }
     }
 </style>
