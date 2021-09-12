@@ -21,6 +21,7 @@
         cursor: pointer;
         display: block;
         width: 100%;
+        padding: 0.5rem 0 0.5rem 1rem;
     }
 
     span {

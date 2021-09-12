@@ -10,7 +10,9 @@
 <header>
     <div class="container">
         <div class="header_content">
-            <a href="/" class="logo"></a>
+            <a href="/" class="logo">
+                <img src="../logo.svg" alt="">
+            </a>
             <HeaderCatalog modalToggle={() => showModal = true}/>
             <HeaderSearch/>
             <HeaderOptions/>
@@ -41,7 +43,6 @@
     .logo {
         grid-area: logo;
         height: 30px;
-        background: url(../logo.svg) no-repeat;
     }
 
     @media (max-width: 992px) {

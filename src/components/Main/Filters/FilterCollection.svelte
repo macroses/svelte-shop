@@ -96,10 +96,6 @@
         background: var(--filter-bg-color);
 	}
 
-	.filters_list li {
-		padding: 0.5rem 0 0.5rem 1rem;
-	}
-
     .filters_list li:hover {
         background: #ececec;
     }
