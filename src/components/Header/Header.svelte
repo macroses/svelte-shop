@@ -11,7 +11,7 @@
     <div class="container">
         <div class="header_content">
             <a href="/" class="logo">
-                <img src="../logo.svg" alt="">
+                <img src="/logo.svg" alt="">
             </a>
             <HeaderCatalog modalToggle={() => showModal = true}/>
             <HeaderSearch/>
