@@ -9,7 +9,6 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@beyonk/svelte-carousel": "^2.8.0",
     "@sveltejs/kit": "next",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
@@ -17,7 +16,6 @@
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
     "svelte": "^3.34.0",
-    "svelte-feather-icons": "^3.5.0",
     "svelte-range-slider-pips": "^1.8.0"
   },
   "type": "module",

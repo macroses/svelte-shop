@@ -3,6 +3,7 @@
     import Button from "../../Helpers/Button.svelte";
 
     export let {...item} = $$props;
+    export let categoryId;
 
     let currentIndex = 0;
     let defaultInfo = false;
@@ -23,7 +24,7 @@
 </script>
 
 <li>
-    <a href="/" class="item_link_img">
+    <a href="/category/{categoryId}/goodItem/{item.id}" class="item_link_img">
         <div class="picture">
             {#if !defaultInfo}
                 <img src="{item.imgSet[currentIndex]}" alt={item.name}>

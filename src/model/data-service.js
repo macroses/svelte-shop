@@ -37,6 +37,11 @@ class Model {
         return result;
     }
 
+    async getSingleItem(categoryId, itemId) {
+        const resolve = await this.getCategoryItem(categoryId);
+        return resolve.category[itemId-1];
+    }
+
     _filterByPriceValue(categoryItem, pricesArr) {
         categoryItem.category = categoryItem.category.filter(el => {
             return el.price >= pricesArr[0] && el.price <= pricesArr[1];
