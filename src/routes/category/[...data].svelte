@@ -11,6 +11,7 @@
     import Loader from '../../components/Helpers/Loader.svelte';
     import Model from '../../model/data-service';
     import { onMount } from 'svelte';
+import { escape_attribute_value } from 'svelte/internal';
 
     const temp = new Model();
     const staticData = temp.getSingleItem(categoryId, id);
@@ -40,13 +41,33 @@
                 <span class="text">{favoriteString}</span>
             </div>
         </div>
-        <div class="item_img_box">
-            <div class="img_preview">
-                <img src={value.imgSet[0]} alt="">
+        <div class="item_container">
+            <div class="item_img_box">
+                <div class="img_preview">
+                    <img src={value.imgSet[0]} alt="">
+                </div>
+            </div>
+            <div class="item_attrs">
+                <ul class="attrs_list">
+                    {#each value.attributes as attr}
+                        <li class="attr_item">
+                            {#if attr.attrVal.length <= 1}
+                                <span class="name">{attr.attrName}:</span>
+                                <span class="value">{attr.attrVal}</span>
+                            {:else}
+                                {#each attr.attrVal as valueItem}
+                                    <span class="value_item">{valueItem}</span>
+                                {/each}
+                            {/if}
+                        </li>
+                    {/each}
+                </ul>
+            </div>
+            <div class="item_price">
+                {value.price}
+                <button>в корзину</button>
             </div>
         </div>
-        <div class="item_attributes"></div>
-        <div class="item_price"></div>
     {/await}
 </div>
 
@@ -55,6 +76,29 @@
 </svelte:head>
 
 <style>
+    .attr_item {
+        display: flex;
+        margin-bottom: 1.5rem;
+    }
+
+    .attr_item .name {
+        margin-right: 10px;
+        color: var(--main-descr-color);
+    }
+    .value_item {
+        color: var(--main-theme-color);
+    }
+
+    .img_preview img{
+        max-width: 100%;
+    }
+    
+    .item_container {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr auto 1fr;
+        padding-top: 2rem;
+    }
     h1 {
         font-size: 1.5rem;
         font-weight: 500;
