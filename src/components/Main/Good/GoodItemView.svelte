@@ -44,7 +44,7 @@
         <span class="item_name">{item.name}</span>
     </a>
     <div class="bottom">
-        <div class="price">{item.price} руб</div>
+        <div class="price">{(item.price).toLocaleString('ru')} руб</div>
         <Button titleProp={"в корзину"}>
             <span class="material-icons-two-tone cart">shopping_cart</span>
         </Button>

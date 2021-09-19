@@ -11,7 +11,7 @@
     import Loader from '../../components/Helpers/Loader.svelte';
     import Model from '../../model/data-service';
     import { onMount } from 'svelte';
-import { escape_attribute_value } from 'svelte/internal';
+    import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
 
     const temp = new Model();
     const staticData = temp.getSingleItem(categoryId, id);
@@ -34,6 +34,7 @@ import { escape_attribute_value } from 'svelte/internal';
     {#await staticData}
         <Loader/>
     {:then value}
+        <Breadcrumbs refaddress={value.name}/>
         <h1>{value.name}</h1>
         <div class="item_funcs">
             <div class="favorite" on:click={handleFavorite} class:favoriteState>
@@ -47,27 +48,33 @@ import { escape_attribute_value } from 'svelte/internal';
                     <img src={value.imgSet[0]} alt="">
                 </div>
             </div>
-            <div class="item_attrs">
-                <ul class="attrs_list">
-                    {#each value.attributes as attr}
-                        <li class="attr_item">
-                            {#if attr.attrVal.length <= 1}
-                                <span class="name">{attr.attrName}:</span>
-                                <span class="value">{attr.attrVal}</span>
-                            {:else}
-                                {#each attr.attrVal as valueItem}
-                                    <span class="value_item">{valueItem}</span>
-                                {/each}
-                            {/if}
-                        </li>
-                    {/each}
-                </ul>
+            <div class='item_body'>
+                <div class="title">{value.title}</div>
+                <div class="title_content">{value.body}</div>
+                <a href="." class="characteristics_link">Характеристики</a>
             </div>
             <div class="item_price">
-                {value.price}
+                {(value.price).toLocaleString('ru')}
                 <button>в корзину</button>
             </div>
         </div>
+
+<!--        <div class="item_attrs">-->
+<!--            <ul class="attrs_list">-->
+<!--                {#each value.attributes as attr}-->
+<!--                    <li class="attr_item">-->
+<!--                        {#if attr.attrVal.length <= 1}-->
+<!--                            <span class="name">{attr.attrName}:</span>-->
+<!--                            <span class="value">{attr.attrVal}</span>-->
+<!--                        {:else}-->
+<!--                            {#each attr.attrVal as valueItem}-->
+<!--                                <span class="value_item">{valueItem}</span>-->
+<!--                            {/each}-->
+<!--                        {/if}-->
+<!--                    </li>-->
+<!--                {/each}-->
+<!--            </ul>-->
+<!--        </div>-->
     {/await}
 </div>
 
@@ -76,33 +83,37 @@ import { escape_attribute_value } from 'svelte/internal';
 </svelte:head>
 
 <style>
-    .attr_item {
-        display: flex;
-        margin-bottom: 1.5rem;
+    .characteristics_link {
+        color: var(--main-theme-color);
+        margin-top: 1rem;
+        display: inline-block;
     }
 
-    .attr_item .name {
-        margin-right: 10px;
-        color: var(--main-descr-color);
-    }
-    .value_item {
-        color: var(--main-theme-color);
+    .item_price {
+        border: 1px solid var(--main-border-color);
+        padding: 1rem;
     }
 
     .img_preview img{
         max-width: 100%;
     }
+
+    .title {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
     
     .item_container {
         display: grid;
         gap: 2rem;
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-columns: 1fr minmax(300px, 500px) 1fr;
         padding-top: 2rem;
+        align-items: flex-start;
     }
     h1 {
         font-size: 1.5rem;
         font-weight: 500;
-        margin-top: 1rem;
     }
 
     .item_funcs {
