@@ -53,10 +53,25 @@
                     <img src={value.imgSet[0]} alt="">
                 </div>
             </div>
-            <div class='item_body'>
-                <div class="title">{value.title}</div>
-                <div class="title_content">{value.body}</div>
-                <a href="." class="characteristics_link">Описание</a>
+            <div class="item_feature">
+                <ul class="feature_list">
+                    {#each value.attributes as attrItem}
+                        <li class="feature_list_item">
+                            {#if attrItem.attrVal.length > 1}
+                                <div class="collection_vals">
+                                    <div class="title_val">{attrItem.attrName}</div>
+                                    {#each attrItem.attrVal as item}
+                                        <span class="val_item">{item}</span>
+                                    {/each}
+                                </div>
+                            {:else}
+                                <span class="attr_name">{attrItem.attrName}</span>
+                                <span class="attr_value">{attrItem.attrVal}</span>
+                            {/if}
+                        </li>
+                    {/each}
+                </ul>
+                <a class='to_about_item' href='#'>к описанию</a>
             </div>
             <div class="item_price">
                 <span class="product_price_cur">
@@ -75,6 +90,61 @@
 </svelte:head>
 
 <style>
+    .feature_list {
+        margin-bottom: 1rem;
+    }
+
+    .attr_name {
+        color: var(--main-descr-color);
+        background: var(--main-bg-color);
+        display: inline-block;
+        padding: 5px 0;
+    }
+
+    .to_about_item {
+        color: var(--main-theme-color);
+    }
+
+    .attr_name:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px dotted var(--main-descr-color);
+        left: 0;
+        bottom: 10px;
+        z-index: -1;
+    }
+
+    .attr_value {
+        background: var(--main-bg-color);
+        display: inline-block;
+        padding: 5px;
+    }
+
+    .feature_list_item {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .collection_vals {
+        margin-bottom: 1rem;
+    }
+
+    .title_val {
+        font-size: 1rem;
+        text-transform: uppercase;
+        margin-bottom: 0.3rem;
+    }
+
+    .val_item {
+        display: inline-block;
+        margin-right: 0.5rem;
+        padding: 0 0.5rem;
+        border: 2px solid var(--main-theme-color);
+    }
+
     .currency {
         font-size: 1rem;
     }
@@ -89,12 +159,6 @@
         display: flex;
         flex-direction: column;
     }
-    
-    .characteristics_link {
-        color: var(--main-theme-color);
-        margin-top: 1rem;
-        display: inline-block;
-    }
 
     .item_price {
         border: 1px solid var(--main-border-color);
@@ -103,17 +167,11 @@
     .img_preview img{
         max-width: 100%;
     }
-
-    .title {
-        font-size: 1.4rem;
-        font-weight: 500;
-        margin-bottom: 1rem;
-    }
     
     .item_container {
         display: grid;
         gap: 2rem;
-        grid-template-columns: 1fr minmax(300px, 500px) 1fr;
+        grid-template-columns: 1fr minmax(auto, 400px) 1fr;
         padding-top: 2rem;
         align-items: flex-start;
     }

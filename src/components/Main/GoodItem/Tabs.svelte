@@ -35,7 +35,7 @@
     .tabs {
         display: flex;
         align-items: center;
-        margin-top: 3rem;
+        margin: 3rem 0 1rem;
     }
 
     .tab_item {
@@ -62,6 +62,7 @@
     }
 
     .tab_content {
-        padding: 2rem 0;
+        padding: 1rem;
+        border: 1px solid var(--main-border-color);
     }
 </style>
