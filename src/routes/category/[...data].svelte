@@ -8,16 +8,21 @@
 <script>
     export let id;
     export let categoryId;
+
     import Loader from '../../components/Helpers/Loader.svelte';
     import Model from '../../model/data-service';
     import { onMount } from 'svelte';
     import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
+    import GoodsCounter from '../../components/Main/GoodItem/GoodsCounter.svelte';
+    import Tabs from '../../components/Main/GoodItem/Tabs.svelte';
 
     const temp = new Model();
     const staticData = temp.getSingleItem(categoryId, id);
     let title = "";
     let favoriteString = "в избранное";
     let favoriteState = false;
+    let toggleTab = false;
+    let cartCounter = 0;
 
     function handleFavorite() {
         favoriteState ? favoriteString = "в избранное" : favoriteString = "в избранном";
@@ -51,30 +56,17 @@
             <div class='item_body'>
                 <div class="title">{value.title}</div>
                 <div class="title_content">{value.body}</div>
-                <a href="." class="characteristics_link">Характеристики</a>
+                <a href="." class="characteristics_link">Описание</a>
             </div>
             <div class="item_price">
-                {(value.price).toLocaleString('ru')}
-                <button>в корзину</button>
+                <span class="product_price_cur">
+                    {(value.price).toLocaleString('ru')}
+                    <span class="currency">RUB</span>
+                </span>
+                <GoodsCounter counter={cartCounter}/>
             </div>
         </div>
-
-<!--        <div class="item_attrs">-->
-<!--            <ul class="attrs_list">-->
-<!--                {#each value.attributes as attr}-->
-<!--                    <li class="attr_item">-->
-<!--                        {#if attr.attrVal.length <= 1}-->
-<!--                            <span class="name">{attr.attrName}:</span>-->
-<!--                            <span class="value">{attr.attrVal}</span>-->
-<!--                        {:else}-->
-<!--                            {#each attr.attrVal as valueItem}-->
-<!--                                <span class="value_item">{valueItem}</span>-->
-<!--                            {/each}-->
-<!--                        {/if}-->
-<!--                    </li>-->
-<!--                {/each}-->
-<!--            </ul>-->
-<!--        </div>-->
+        <Tabs title={value.title} body={value.body}/>
     {/await}
 </div>
 
@@ -83,6 +75,21 @@
 </svelte:head>
 
 <style>
+    .currency {
+        font-size: 1rem;
+    }
+
+    .product_price_cur {
+        font-size: 2.3rem;
+        font-weight: 500;
+        padding: 1rem;
+    }
+
+    .item_price {
+        display: flex;
+        flex-direction: column;
+    }
+    
     .characteristics_link {
         color: var(--main-theme-color);
         margin-top: 1rem;
@@ -91,7 +98,6 @@
 
     .item_price {
         border: 1px solid var(--main-border-color);
-        padding: 1rem;
     }
 
     .img_preview img{

@@ -10,7 +10,7 @@
     {#await categories}
         <Loader />
     {:then value}
-        {#each value as item}
+        {#each value as item (item.id)}
             <a href="category/{item.id}" sveltekit:prefetch>
                 <span class="material-icons-two-tone">{item.catImg}</span>
                 <span class="cat_name_text">{item.catName}</span>
@@ -40,8 +40,6 @@
         text-align: center;
         padding: 1.5rem;
     }
-
-    
 
     .category_list a:hover .material-icons-two-tone {
         filter: invert(46%) sepia(89%) saturate(6094%) hue-rotate(1deg) brightness(104%) contrast(104%);

@@ -81,7 +81,6 @@
         font-size: 1.5rem;
         font-weight: 500;
         min-width: max-content;
-        min-height: 100vh;
         width: 100%;
     }
     .items_list {

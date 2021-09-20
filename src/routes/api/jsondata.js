@@ -530,7 +530,7 @@ export async function get() {
                             {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
-                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["MacOS"]},
                             {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]},
                             {"attrId": 10, "attrName": "бренд", "attrVal": ["Apple"]}
                         ]
@@ -561,7 +561,7 @@ export async function get() {
                             {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
-                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["MacOS"]},
                             {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]},
                             {"attrId": 10, "attrName": "бренд", "attrVal": ["Apple"]}
                         ]
@@ -592,7 +592,7 @@ export async function get() {
                             {"attrId": 5, "attrName": "ОЗУ", "attrVal": ["8"]},
                             {"attrId": 6, "attrName": "время работы", "attrVal": ["до 20 часов"]},
                             {"attrId": 7, "attrName": "датчик отпечатков пальцев", "attrVal": ["Да"]},
-                            {"attrId": 8, "attrName": "OS", "attrVal": ["Windows 10 Домашняя 64"]},
+                            {"attrId": 8, "attrName": "OS", "attrVal": ["MacOS"]},
                             {"attrId": 9, "attrName": "вес", "attrVal": ["1,85 кг"]},
                             {"attrId": 10, "attrName": "бренд", "attrVal": ["Apple"]}
                         ]
