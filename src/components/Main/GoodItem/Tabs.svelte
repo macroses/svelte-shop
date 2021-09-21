@@ -19,7 +19,7 @@
 
 <div class="tab_content">
     {#if active === "1"}
-        <div class="tab_content_body" transition:slide|local>
+        <div id="about1" class="tab_content_body" transition:slide|local>
             <div class="title">{title}</div>
             <div class="content">{body}</div>
         </div>

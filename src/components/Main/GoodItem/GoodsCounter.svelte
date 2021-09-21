@@ -25,6 +25,7 @@
 <style>
 	.cart_control {
         display: flex;
+        border-top: 1px solid var(--main-border-color);
     }
 
     .cart_control a {

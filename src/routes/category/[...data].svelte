@@ -15,14 +15,16 @@
     import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
     import GoodsCounter from '../../components/Main/GoodItem/GoodsCounter.svelte';
     import Tabs from '../../components/Main/GoodItem/Tabs.svelte';
+    import FeatureList from '../../components/Main/GoodItem/FeatureList.svelte';
+    import GoodItemPrice from '../../components/Main/GoodItem/GoodItemPrice.svelte';
+    import GoodItemImgs from '../../components/Main/GoodItem/GoodItemImgs.svelte';
 
-    const temp = new Model();
-    const staticData = temp.getSingleItem(categoryId, id);
-    let title = "";
+    const temp         = new Model();
+    const staticData   = temp.getSingleItem(categoryId, id);
+    let title          = "";
     let favoriteString = "в избранное";
-    let favoriteState = false;
-    let toggleTab = false;
-    let cartCounter = 0;
+    let favoriteState  = false;
+    let cartCounter    = 0;
 
     function handleFavorite() {
         favoriteState ? favoriteString = "в избранное" : favoriteString = "в избранном";
@@ -48,36 +50,10 @@
             </div>
         </div>
         <div class="item_container">
-            <div class="item_img_box">
-                <div class="img_preview">
-                    <img src={value.imgSet[0]} alt="">
-                </div>
-            </div>
-            <div class="item_feature">
-                <ul class="feature_list">
-                    {#each value.attributes as attrItem}
-                        <li class="feature_list_item">
-                            {#if attrItem.attrVal.length > 1}
-                                <div class="collection_vals">
-                                    <div class="title_val">{attrItem.attrName}</div>
-                                    {#each attrItem.attrVal as item}
-                                        <span class="val_item">{item}</span>
-                                    {/each}
-                                </div>
-                            {:else}
-                                <span class="attr_name">{attrItem.attrName}</span>
-                                <span class="attr_value">{attrItem.attrVal}</span>
-                            {/if}
-                        </li>
-                    {/each}
-                </ul>
-                <a class='to_about_item' href='#'>к описанию</a>
-            </div>
+            <GoodItemImgs imgs={value.imgSet}/>
+            <FeatureList attrs={value.attributes}/>
             <div class="item_price">
-                <span class="product_price_cur">
-                    {(value.price).toLocaleString('ru')}
-                    <span class="currency">RUB</span>
-                </span>
+                <GoodItemPrice price={value.price}/>
                 <GoodsCounter counter={cartCounter}/>
             </div>
         </div>
@@ -90,70 +66,7 @@
 </svelte:head>
 
 <style>
-    .feature_list {
-        margin-bottom: 1rem;
-    }
-
-    .attr_name {
-        color: var(--main-descr-color);
-        background: var(--main-bg-color);
-        display: inline-block;
-        padding: 5px 0;
-    }
-
-    .to_about_item {
-        color: var(--main-theme-color);
-    }
-
-    .attr_name:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        border-bottom: 1px dotted var(--main-descr-color);
-        left: 0;
-        bottom: 10px;
-        z-index: -1;
-    }
-
-    .attr_value {
-        background: var(--main-bg-color);
-        display: inline-block;
-        padding: 5px;
-    }
-
-    .feature_list_item {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-    }
-
-    .collection_vals {
-        margin-bottom: 1rem;
-    }
-
-    .title_val {
-        font-size: 1rem;
-        text-transform: uppercase;
-        margin-bottom: 0.3rem;
-    }
-
-    .val_item {
-        display: inline-block;
-        margin-right: 0.5rem;
-        padding: 0 0.5rem;
-        border: 2px solid var(--main-theme-color);
-    }
-
-    .currency {
-        font-size: 1rem;
-    }
-
-    .product_price_cur {
-        font-size: 2.3rem;
-        font-weight: 500;
-        padding: 1rem;
-    }
+    
 
     .item_price {
         display: flex;
@@ -164,9 +77,7 @@
         border: 1px solid var(--main-border-color);
     }
 
-    .img_preview img{
-        max-width: 100%;
-    }
+    
     
     .item_container {
         display: grid;

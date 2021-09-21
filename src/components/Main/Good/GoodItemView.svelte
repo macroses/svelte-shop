@@ -69,6 +69,9 @@
     .item_name {
         color: var(--main-text-color);
         transition: .2s;
+        overflow: hidden;
+        height: 70px;
+        display: inline-block;
     }
 
     .picture {
