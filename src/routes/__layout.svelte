@@ -14,6 +14,7 @@
     .wrapper {
         min-height: 100vh;
         display: grid;
+        grid-template-columns: 100%;
         grid-template-rows: auto 1fr auto;
         grid-template-areas: 
             "header"

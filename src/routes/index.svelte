@@ -6,19 +6,24 @@
     let steps;
     const temp = new Model();
     const staticData = temp.getCategoryItem(0);
+
+    let slideWidth = 0;
 	
-	function step() {
-        const itemWidth = steps.children[0].offsetWidth;
+	function step(val) {
+        switch (val) {
+            case 'next':
+                slideWidth = slideWidth - steps.children[0].offsetWidth;
+                if(slideWidth <= -(steps.offsetWidth)) slideWidth = -(steps.offsetWidth);
+                break;
+            case "prev":
+                slideWidth = slideWidth + steps.children[0].offsetWidth;
+                if(slideWidth > 0) slideWidth = 0;
+                break;
+            default:
+                break;
+        }
 
-        Array.from(steps.children).forEach((el,i, array) => {
-            // array.push(array.splice(i, 1)[0]);
-            el.style.transform = `translate(${-itemWidth}px)`;
-        })
-
-
-        // steps.children[idxCounter].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        // if(idxCounter >= steps.children.length) return; 
-        // if(idxCounter <= 4) idxCounter = 4; 
+        steps.style.transform = `translateX(${slideWidth}px)`;
 	}
 </script>
 
@@ -36,37 +41,48 @@
                         <GoodItemView {...item} categoryId={0}/>
                     {/each}
                 {/await}
-                
             </ul>
         </div>
         
         <div class="controls">
             <button class="control" on:click="{() => step("prev")}">Prev</button>
-            <button class="control" on:click="{() => step()}">Next</button>
+            <button class="control" on:click="{() => step("next")}">Next</button>
 
         </div>
     </div>
 </div>
 
 <style>
-    .steps {
-		margin-bottom: 1rem;
+    .steps { 
 		overflow: hidden;
 	}
 
-    .step {
-        padding: 2rem;
-    }
-	
 	.track {
 		display: flex;
+        transform: translate(0);
+        transition: .2s;
 	}
 
     .track :global(li) {
         flex: 0 0 20%;
+        padding: 0 2rem;
     }
 	
 	.controls {
 		display: flex;
 	}
+
+    @media (max-width: 1200px) {
+        .track :global(li) {
+            flex: 0 0 25%;
+            padding: 0 3rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .track :global(li) {
+            flex: 0 0 50%;
+            padding: 0;
+        }
+    }
 </style>
