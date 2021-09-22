@@ -6,23 +6,20 @@
     let steps;
     const temp = new Model();
     const staticData = temp.getCategoryItem(0);
-    let idxCounter = 4;
 	
-	function step(toggler) {
-        if(toggler === "next") {
-            idxCounter++;
-        } else if (toggler === "prev") {
-            idxCounter--;
-        }
+	function step() {
+        const itemWidth = steps.children[0].offsetWidth;
 
-        
+        Array.from(steps.children).forEach((el,i, array) => {
+            // array.push(array.splice(i, 1)[0]);
+            el.style.transform = `translate(${-itemWidth}px)`;
+        })
 
-        steps.children[idxCounter].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        if(idxCounter >= steps.children.length) return; 
-        if(idxCounter <= 4) idxCounter = 4; 
+
+        // steps.children[idxCounter].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        // if(idxCounter >= steps.children.length) return; 
+        // if(idxCounter <= 4) idxCounter = 4; 
 	}
-
-    console.log(staticData)
 </script>
 
 <svelte:head>
@@ -36,10 +33,7 @@
             <ul class="track" bind:this="{steps}">
                 {#await staticData then value}
                     {#each value.category as item}
-                        <div class="step" style={"flex: 0 0 20%"}>
-                            <GoodItemView {...item} categoryId={0}/>
-                        </div>
-                        
+                        <GoodItemView {...item} categoryId={0}/>
                     {/each}
                 {/await}
                 
@@ -48,7 +42,7 @@
         
         <div class="controls">
             <button class="control" on:click="{() => step("prev")}">Prev</button>
-            <button class="control" on:click="{() => step("next")}">Next</button>
+            <button class="control" on:click="{() => step()}">Next</button>
 
         </div>
     </div>
@@ -67,6 +61,10 @@
 	.track {
 		display: flex;
 	}
+
+    .track :global(li) {
+        flex: 0 0 20%;
+    }
 	
 	.controls {
 		display: flex;
