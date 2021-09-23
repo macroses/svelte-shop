@@ -3,7 +3,7 @@
 </script>
 
 <div class="catalog" on:click={modalToggle}>
-    <span class="material-icons-two-tone">menu</span>
+    <span class="material-icons-outlined">menu</span>
     <span class="text">Каталог</span>
 </div>
 

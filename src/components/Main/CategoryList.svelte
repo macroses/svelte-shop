@@ -12,7 +12,7 @@
     {:then value}
         {#each value as item (item.id)}
             <a href="category/{item.id}" sveltekit:prefetch>
-                <span class="material-icons-two-tone">{item.catImg}</span>
+                <span class="material-icons-outlined">{item.catImg}</span>
                 <span class="cat_name_text">{item.catName}</span>
             </a>
         {/each}
@@ -41,16 +41,17 @@
         padding: 1.5rem;
     }
 
-    .category_list a:hover .material-icons-two-tone {
-        filter: invert(46%) sepia(89%) saturate(6094%) hue-rotate(1deg) brightness(104%) contrast(104%);
+    .category_list a:hover .material-icons-outlined {
+        color: var(--main-theme-color);
         transition: .2s;
     }
 
-    .material-icons-two-tone {
+    .material-icons-outlined {
         font-size: 48px;
         text-align: right;
         margin-right: 10px; 
         transition: .2s;
+        color: var(--main-text-color);
     }
 
     .cat_name_text {
@@ -58,7 +59,7 @@
     }
 
     @media (max-width: 992px) {
-        .material-icons-two-tone {
+        .material-icons-outlined {
             font-size: 48px;
         }
         .category_list a {
@@ -79,7 +80,7 @@
             padding: 0.5rem;
             font-size: 0.8rem;
         }
-        .material-icons-two-tone {
+        .material-icons-outlined {
             font-size: 1.5rem;
         }
     }

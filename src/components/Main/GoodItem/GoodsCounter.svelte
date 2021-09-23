@@ -5,19 +5,19 @@
 {#if counter === 0}
 	<button class="to_cart_btn" on:click={() => counter++}>
 		в корзину
-		<span class="material-icons-two-tone">shopping_cart</span>
+		<span class="material-icons-outlined">shopping_cart</span>
 	</button>
 {:else}
 	<div class="cart_control">
 		<button on:click={() => counter--}>
-			<span class="material-icons-two-tone">remove</span>
+			<span class="material-icons-outlined">remove</span>
 		</button>
 		<a href="/cart">
 			<span class="items_counter">В корзине {counter} шт</span>
 			<span>Перейти</span>
 		</a>
 		<button on:click={() => counter++}>
-			<span class="material-icons-two-tone">add</span>
+			<span class="material-icons-outlined">add</span>
 		</button>
 	</div>
 {/if}

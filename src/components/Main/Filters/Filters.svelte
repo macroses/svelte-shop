@@ -38,7 +38,7 @@
 </script>
 
 <div class="filters" class:toggleFilters={toggleFilters === true}>
-	<span class="close material-icons-two-tone" on:click={() => toggleFilters = !toggleFilters}>close</span>
+	<span class="close material-icons-outlined" on:click={() => toggleFilters = !toggleFilters}>close</span>
 	<SortSelect bind:selected={selectedValue}>
 		<option value="" selected disabled slot="s-head">Сортировка</option>
 		<option value="price_desc">Сначала дешевле</option>

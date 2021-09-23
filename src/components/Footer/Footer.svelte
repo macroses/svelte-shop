@@ -16,11 +16,11 @@
                     </div>
                 </div>
                 <div class="footer_social">
-                    <span class="material-icons-two-tone">whatsapp</span>
-                    <span class="material-icons-two-tone">catching_pokemon</span>
-                    <span class="material-icons-two-tone">reddit</span>
-                    <span class="material-icons-two-tone">shopify</span>
-                    <span class="material-icons-two-tone">cast</span>
+                    <span class="material-icons-outlined">whatsapp</span>
+                    <span class="material-icons-outlined">catching_pokemon</span>
+                    <span class="material-icons-outlined">reddit</span>
+                    <span class="material-icons-outlined">shopify</span>
+                    <span class="material-icons-outlined">cast</span>
                 </div>
             </div>
             <div class="footer_menu">

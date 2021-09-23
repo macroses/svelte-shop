@@ -46,16 +46,11 @@
     <div class="bottom">
         <div class="price">{(item.price).toLocaleString('ru')} руб</div>
         <Button titleProp={"в корзину"}>
-            <span class="material-icons-two-tone cart">shopping_cart</span>
+            <span class="material-icons-outlined cart">shopping_cart</span>
         </Button>
     </div>
 
-    {#if item.imgSet.length > 1}
-        <div class="controls">
-            <span on:click={() => currentIndex = ++currentIndex} class="material-icons-two-tone">navigate_before</span>
-            <span on:click={() => currentIndex = --currentIndex} class="material-icons-two-tone">navigate_next</span>
-        </div>
-    {/if}
+    
     
 </li>
 
@@ -144,7 +139,7 @@
     }
 
     .cart {
-        filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(23deg) brightness(118%) contrast(118%);
+        color: #fff;
     }
 
     .controls {
@@ -162,6 +157,7 @@
             justify-content: space-between;
             position: absolute;
             top: 25%;
+            left: 0;
             z-index: 2;
 
             font-size: 2rem;

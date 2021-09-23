@@ -8,11 +8,11 @@
 
 <div class="tabs">
     <div class="tab_item" class:active={active === "1"} on:click="{() => active = "1"}">
-        <span class="material-icons-two-tone">source</span>
+        <span class="material-icons-outlined">source</span>
         <span class="tab_name">Описание</span>
     </div>
     <div class="tab_item" class:active={active === "2"} on:click="{() => active = "2"}">
-        <span class="material-icons-two-tone">chat_bubble_outline</span>
+        <span class="material-icons-outlined">chat_bubble_outline</span>
         <span class="tab_name">Отзывы</span>
     </div>
 </div>

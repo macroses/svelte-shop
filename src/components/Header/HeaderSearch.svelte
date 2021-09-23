@@ -2,7 +2,7 @@
     <form action="GET" class="search-form" on:submit|preventDefault>
         <input type="text" class="search-input" placeholder="Поиск">
         <button type="submit" class="btn_submit">
-            <span class="material-icons-two-tone">search</span>
+            <span class="material-icons-outlined">search</span>
         </button>
     </form>
 </div>

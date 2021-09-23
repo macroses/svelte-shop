@@ -28,7 +28,7 @@
 <div class="filterlist_item">
     <div class="unique_title"  class:active on:click={() => active = !active}>
         <span class="val" class:marker={showMarker}>{itemAttr[0]}</span>
-        <span class="material-icons-two-tone arrow">expand_more</span>
+        <span class="material-icons-outlined arrow">expand_more</span>
     </div>
     {#if active}
         <ul class="filters_list" transition:slide={{duration: 200}}>

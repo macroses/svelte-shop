@@ -1,19 +1,19 @@
 <div class="options">
     <div class="profile">
         <a href="/profile" class="control">
-            <span class="material-icons-two-tone">face</span>
+            <span class="material-icons-outlined">face</span>
             <span class="text">Профиль</span>
         </a>
     </div>
     <div class="favorite">
         <a href="/favorite" class="control">
-            <span class="material-icons-two-tone">favorite_border</span>
+            <span class="material-icons-outlined">favorite_border</span>
             <span class="text">Избранное</span>
         </a>
     </div>
     <div class="cart">
         <a href="/cart" class="control">
-            <span class="material-icons-two-tone">shopping_cart</span>
+            <span class="material-icons-outlined">shopping_cart</span>
             <span class="text">Корзина</span>
         </a>
     </div>

@@ -45,7 +45,7 @@
         <h1>{value.name}</h1>
         <div class="item_funcs">
             <div class="favorite" on:click={handleFavorite} class:favoriteState>
-                <span class="material-icons-two-tone">favorite_border</span>
+                <span class="material-icons-outlined">favorite_border</span>
                 <span class="text">{favoriteString}</span>
             </div>
         </div>
@@ -113,7 +113,7 @@
         color: var(--main-theme-color);
     }
 
-    .favorite.favoriteState .material-icons-two-tone {
+    .favorite.favoriteState .material-icons-outlined {
         color: red;
     }
 
