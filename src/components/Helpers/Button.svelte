@@ -2,7 +2,7 @@
     export let titleProp;
 </script>
 
-<button title={titleProp}>
+<button title={titleProp} on:click>
     <slot></slot>
 </button>
 

@@ -27,14 +27,16 @@
     <a href="/category/{categoryId}/goodItem/{item.id}" class="item_link_img">
         <div class="picture">
             {#if !defaultInfo}
-                <img src="{item.imgSet[currentIndex]}" alt={item.name}>
+                {#key currentIndex}
+                    <img in:fade src="{item.imgSet[currentIndex]}" alt={item.name}>
+                {/key}
             {:else}
                 {#if currentIndex}
                     <img src="default_img.svg" alt="" transition:fade>
                 {/if}
             {/if}
             <div class="preview_list">    
-                {#each item.imgSet as itemImg, index}
+                {#each item.imgSet as _, index}
                     {#if item.imgSet.length > 1}
                         <span class="preview" on:mouseenter={() => getImgSetIndex(index, item.imgSet)} ></span>
                     {/if}
@@ -67,6 +69,17 @@
         overflow: hidden;
         height: 70px;
         display: inline-block;
+        position: relative;
+    }
+
+    .item_name:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        height: 20px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0), #fff);
     }
 
     .picture {

@@ -1,6 +1,7 @@
 <script>
 	import { createEventDispatcher} from 'svelte';
     import { fade } from 'svelte/transition';
+	import Button from '../Helpers/Button.svelte';
 
 	const dispatch = createEventDispatcher();
 	const close = () => dispatch('close');
@@ -22,14 +23,16 @@
 
 <div class="modal" role="dialog" aria-modal="true" bind:this={modal} transition:fade="{{duration: 200 }}">
 	<slot name="header" />
-	<hr />
 	<slot />
-	<hr />
-
-	<button on:click={close}>Закрыть</button>
+	<div class="close_btn">
+		<Button on:click={close}>Закрыть</Button>
+	</div>
 </div>
 
 <style>
+	.close_btn {
+		margin-top: 0.5rem;
+	}
 	.modal-background {
 		position: fixed;
 		top: 0;
@@ -44,8 +47,7 @@
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		width: calc(100vw - 4em);
-		max-width: 32em;
+		width: 1200px;
 		max-height: calc(100vh - 4em);
 		overflow: auto;
 		transform: translate(-50%, -50%);
@@ -53,9 +55,5 @@
 		border-radius: 0.2em;
 		background: white;
         z-index: 1001;
-	}
-
-	button {
-		display: block;
 	}
 </style>

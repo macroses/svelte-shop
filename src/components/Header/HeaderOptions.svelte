@@ -35,6 +35,10 @@
         height: 100%;
     }
 
+    .text {
+        transition: .2s;
+    }
+
     .favorite, .cart {
         margin-left: 1.25rem;
     }

@@ -26,6 +26,8 @@
         box-shadow: none;
         font-family: var(--font);
         font-size: 1rem;
+        width: auto;
+        transition: .2s;
     }
 
     .btn_submit {

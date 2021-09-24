@@ -3,9 +3,13 @@
     import HeaderOptions from "./HeaderOptions.svelte";
     import HeaderSearch from "./HeaderSearch.svelte";
     import Modal from "../Modal/Modal.svelte";
+    import CategoryList from '../Main/CategoryList.svelte';
 
     let showModal = false;
+    let y;
 </script>
+
+<svelte:window bind:scrollY={y}/>
 
 <header>
     <div class="container">
@@ -21,7 +25,12 @@
 </header>
 
 {#if showModal}
-    <Modal on:close="{() => showModal = false}"/>
+    <Modal on:close="{() => showModal = false}">
+        <h3 name="header">Каталог категорий</h3>
+        <div class="category_container"  on:click={() => showModal = false}>
+            <CategoryList/>
+        </div>
+    </Modal>
 {/if}
 
 
@@ -29,7 +38,13 @@
     header {
         border-bottom: 1px solid var(--main-border-color);
         box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.1);
+        background: var(--main-bg-color);
     }
+
+    h3 {
+        margin-bottom: 1rem;
+    }
+
 
     .header_content {
         display: grid;
@@ -38,6 +53,7 @@
         column-gap: 2rem;
         align-items: center;
         padding: 1rem 0;
+        transition: .2s;
     }
 
     .logo {
@@ -52,13 +68,14 @@
             'logo logo logo logo logo logo controls' 
             'catalog search search search search search search';
             column-gap: 1rem;
+            row-gap: 0.5rem;
         }
     }
 
     @media (max-width: 768px) {
         .header_content {
             padding: 0.5rem 0;
-            row-gap: 0.5rem;
+            
         }
 
         header {

@@ -12,11 +12,13 @@
         display: flex;
         padding: 1.5rem 0;
         grid-area: crumbs;
+        overflow: auto;
     }
 
     li {
         margin-right: 30px;
         position: relative;
+        white-space: nowrap;
     }
 
     li:not(:last-child):after {
@@ -32,7 +34,7 @@
 
     @media (max-width: 768px) {
         ul {
-            padding: 0 0 0.5rem;
+            padding: 0 0 1rem;
         }
     }
 </style>

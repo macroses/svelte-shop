@@ -61,6 +61,7 @@
     .val_item {
         display: inline-block;
         margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
         padding: 0 0.5rem;
         border: 2px solid var(--main-theme-color);
     }

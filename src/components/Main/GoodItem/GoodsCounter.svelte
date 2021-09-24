@@ -74,7 +74,7 @@
     }
 
     .to_cart_btn span {
-        filter: invert(100%) sepia(2%) saturate(1795%) hue-rotate(149deg) brightness(104%) contrast(101%);
+        color: accent-color;
         margin-left: 0.5rem;
     }
 </style>

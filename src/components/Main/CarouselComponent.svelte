@@ -15,18 +15,25 @@
     </div>
     <Carousel perPage={{1200: 6, 992: 4, 768: 3, 500: 2, 400: 1}} loop={false} dots={false}>
         <span class="control" slot="left-control">
-            prev
+            <span class="material-icons-outlined">arrow_back</span>
         </span>
         {#each value.category as item}
             <GoodItemView {...item} {categoryId}/>
         {/each}
         <span class="control" slot="right-control">
-            next
+            <span class="material-icons-outlined">arrow_forward</span>
         </span>
     </Carousel>
 {/await}
 
 <style>
+    .control {
+        color: var(--main-text-color);
+    }
+    .control:hover {
+        color: var(--main-theme-color);
+    }
+
     .carousel_title {
         font-size: 1.5rem;
         font-weight: 500;
@@ -39,12 +46,18 @@
 
     :global(.carousel button.left) {
         top: -2rem;
-        left: calc(100% - 10rem)!important;
+        left: calc(100% - 120px)!important;
     }
 
     :global(.carousel button.right) {
         top: -2rem;
         left: none;
         right: 0;
+    }
+
+    @media (max-width: 768px) {
+        .control {
+            display: none;
+        }
     }
 </style>

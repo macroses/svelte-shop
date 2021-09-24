@@ -66,11 +66,10 @@
 </svelte:head>
 
 <style>
-    
-
     .item_price {
         display: flex;
         flex-direction: column;
+        grid-area: price
     }
 
     .item_price {
@@ -83,6 +82,7 @@
         display: grid;
         gap: 2rem;
         grid-template-columns: 1fr minmax(auto, 400px) 1fr;
+        grid-template-areas: "img about price";
         padding-top: 2rem;
         align-items: flex-start;
     }
@@ -119,5 +119,35 @@
 
     .text {
         margin-left: 5px;
+    }
+
+    @media (max-width: 992px) {
+        .item_container {
+            grid-template-columns: 1fr minmax(auto, 400px);
+            grid-template-areas: "img about" "price price"
+        }
+    }
+
+    @media (max-width: 768px) {
+        .item_container {
+            grid-template-columns: 1fr;
+            grid-template-areas: "img" "price" "about"
+
+        }
+
+        .item_price {
+            z-index: 2;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--main-bg-color);
+            text-align: center;
+        }
+
+        .item_price :global(.product_price_cur) {
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
     }
 </style>

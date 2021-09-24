@@ -11,7 +11,7 @@
         <Loader />
     {:then value}
         {#each value as item (item.id)}
-            <a href="category/{item.id}" sveltekit:prefetch>
+            <a href="/category/{item.id}" sveltekit:prefetch>
                 <span class="material-icons-outlined">{item.catImg}</span>
                 <span class="cat_name_text">{item.catName}</span>
             </a>
