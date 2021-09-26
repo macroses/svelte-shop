@@ -9,7 +9,8 @@
     const staticData = temp.getCategoryItem(categoryId);
 </script>
 
-{#await staticData then value}
+<div class="carousel_container">
+    {#await staticData then value}
     <div class="carousel_title">
         {value.catName}
     </div>
@@ -25,6 +26,7 @@
         </span>
     </Carousel>
 {/await}
+</div>
 
 <style>
     .control {
@@ -40,16 +42,16 @@
         margin: 4rem 0 1rem;
     }
 
-    :global(.carousel li) {
+    .carousel_container :global(.carousel li) {
         padding: 0 1rem;
     }
 
-    :global(.carousel button.left) {
+    .carousel_container :global(.carousel button.left) {
         top: -2rem;
         left: calc(100% - 120px)!important;
     }
 
-    :global(.carousel button.right) {
+    .carousel_container :global(.carousel button.right) {
         top: -2rem;
         left: none;
         right: 0;

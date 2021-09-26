@@ -42,6 +42,19 @@ class Model {
         return resolve.category[itemId-1];
     }
 
+    async searchResults(inputText) {
+        const resolve = await this._getAllItems();
+        let goodsNames = [];
+        resolve.forEach(cat => {
+            cat.category.forEach(el => {
+                goodsNames.push(el);
+            })
+        })
+
+        goodsNames = goodsNames.filter(el => el.name.toLowerCase().includes(inputText.toLowerCase()));
+        return goodsNames;
+    }
+
     _filterByPriceValue(categoryItem, pricesArr) {
         categoryItem.category = categoryItem.category.filter(el => {
             return el.price >= pricesArr[0] && el.price <= pricesArr[1];

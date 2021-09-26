@@ -1,5 +1,5 @@
 <script>
-    import { slide, fly } from 'svelte/transition';
+    import { fly } from 'svelte/transition';
     import Carousel from '@beyonk/svelte-carousel';
 
     export let imgs;
@@ -55,11 +55,11 @@
         margin: 0 auto;
     }
 
-    .slider_for_item :global(.left) {
+    .item_img_box .slider_for_item :global(.left) {
         left: -4vw;
     }
 
-    .slider_for_item :global(.right) {
+    .item_img_box .slider_for_item :global(.right) {
         right: -4vw;
     }
 
@@ -82,5 +82,12 @@
     }
     .img_preview img{
         max-width: 400px;
+    }
+
+    @media (max-width: 768px) {
+        .img_preview {
+            display: flex;
+            justify-content: center;
+        }
     }
 </style>
