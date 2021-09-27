@@ -24,7 +24,7 @@
 </script>
 
 <li>
-    <a href="/category/{categoryId}/goodItem/{item.id}" class="item_link_img">
+    <a href="/category/{categoryId}/{item.id}" class="item_link_img">
         <div class="picture">
             {#if !defaultInfo}
                 {#key currentIndex}

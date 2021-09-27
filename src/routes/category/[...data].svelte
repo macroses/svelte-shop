@@ -1,7 +1,6 @@
 <script context="module">
     export async function load(ctx) {
-        let url = ctx.page.params.data.split('/goodItem/');
-        console.log(ctx)
+        let url = ctx.page.params.data.split('/');
         return { props: { id: url[1], categoryId: url[0]}}
     }
 </script>

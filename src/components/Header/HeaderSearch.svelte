@@ -25,7 +25,7 @@
                 {:then value}
                     {#each value as item}
                         <li>
-                            <a href="/category/{item.categoryId}/goodItem/{item.id}" title={item.name}>
+                            <a href="/category/{item.categoryId}/{item.id}" title={item.name} target="_self">
                                 <img src={item.imgSet[0]} alt="">
                                 <div class="item_name">{item.name}</div>
                             </a>
