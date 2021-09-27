@@ -3,37 +3,40 @@
     import Loader from '../Helpers/Loader.svelte';
 
     const temp = new Model();
+    let activeSearchList = false;
 
     let searchTerm = "";
     $: searchResultsData = temp.searchResults(searchTerm);
-
-    
 </script>
 
 <div class="search">
-    <form action="GET" class="search-form" on:submit|preventDefault>
-        <input type="text" class="search-input" placeholder="Поиск" bind:value={searchTerm}>
+    <form action="GET" class="search-form">
+        <input type="text" class="search-input" placeholder="Поиск" 
+            bind:value={searchTerm}
+            on:focus={() => activeSearchList = true}>
         <button type="submit" class="btn_submit">
             <span class="material-icons-outlined">search</span>
         </button>
 
-        <ul class="search_res">
-            {#await searchResultsData}
-                <Loader />
-            {:then value}
-                {#each value as item}
-                    <li>
-                        <a href="#" title={item.name}>
-                            <img src={item.imgSet[0]} alt="">
-                            <div class="item_name">{item.name}</div>
-                        </a>
-                    </li>
-                    
-                {/each}
-            {:catch error}
-                lolo
-            {/await}
-        </ul>
+        {#if activeSearchList}
+            <ul class="search_res" class:activeSearchList>
+                {#await searchResultsData}
+                    <Loader />
+                {:then value}
+                    {#each value as item}
+                        <li>
+                            <a href="/category/{item.categoryId}/goodItem/{item.id}" title={item.name}>
+                                <img src={item.imgSet[0]} alt="">
+                                <div class="item_name">{item.name}</div>
+                            </a>
+                        </li>
+                        
+                    {/each}
+                {:catch error}
+                    lolo
+                {/await}
+            </ul>
+        {/if}
     </form>
 </div>
 
@@ -48,6 +51,7 @@
         max-height: 300px;
         overflow: auto;
         border: 1px solid var(--main-border-color);
+        z-index: 10;
     }
 
     .search_res li a{

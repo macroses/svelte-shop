@@ -45,11 +45,14 @@ class Model {
     async searchResults(inputText) {
         const resolve = await this._getAllItems();
         let goodsNames = [];
+        // промаппим все категории в список товаров с айдишниками категорий,
+        // чтобы удобнее было оперировать этими данными.
         resolve.forEach(cat => {
             cat.category.forEach(el => {
-                goodsNames.push(el);
-            })
-        })
+                let mappedObj = {'categoryId': cat.id, ...el}
+                goodsNames.push(mappedObj);
+            });
+        });
 
         goodsNames = goodsNames.filter(el => el.name.toLowerCase().includes(inputText.toLowerCase()));
         return goodsNames;
