@@ -32,14 +32,14 @@
             itemId: parseFloat(itemId)
         }
 
-        // if(!$favoriteCollection.find(storeEl => storeEl.categoryId == el.categoryId && storeEl.itemId == el.itemId)) {
-        //     $favoriteCollection = [...$favoriteCollection, el];
-        // }
-        // else {
-        //     $favoriteCollection = $favoriteCollection.filter(item => item != el)
-        // }
-
-        
+        if(!$favoriteCollection.find(storeEl => storeEl.categoryId == el.categoryId && storeEl.itemId == el.itemId)) {
+            $favoriteCollection = [...$favoriteCollection, el];
+        }
+        else {
+            const removeIndex = $favoriteCollection.findIndex(item => item.categoryId == el.categoryId && item.itemId == el.itemId);
+            $favoriteCollection.splice(removeIndex, 1);
+            $favoriteCollection = $favoriteCollection;
+        }
     }
 </script>
 
@@ -79,7 +79,7 @@
                 categoryId, 
                 item.id, 
                 item.favorite)}
-            >favorite_border</span>
+            >{item.favorite ? "favorite" : "favorite_border"}</span>
     </div>
 </li>
 
@@ -100,6 +100,10 @@
     }
 
     .favorite_item:hover {
+        color: red;
+    }
+
+    .favorite_item .favorite {
         color: red;
     }
 
