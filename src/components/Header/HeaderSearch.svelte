@@ -9,8 +9,10 @@
     $: searchResultsData = temp.searchResults(searchTerm);
 </script>
 
-<div class="search">
-    <form action="GET" class="search-form">
+<svelte:window on:click={() => activeSearchList = false}/>
+
+<div class="search" on:click|stopPropagation>
+    <form action="GET" class="search-form" >
         <input type="text" class="search-input" placeholder="Поиск" 
             bind:value={searchTerm}
             on:focus={() => activeSearchList = true}>
@@ -23,15 +25,19 @@
                 {#await searchResultsData}
                     <Loader />
                 {:then value}
-                    {#each value as item}
-                        <li>
-                            <a href="/category/{item.categoryId}/{item.id}" title={item.name} target="_self">
-                                <img src={item.imgSet[0]} alt="">
-                                <div class="item_name">{item.name}</div>
-                            </a>
-                        </li>
-                        
-                    {/each}
+                    {#if searchTerm}
+                        {#each value as item}
+                            <li>
+                                <a href="/category/{item.categoryId}/{item.id}" title={item.name} target="_self">
+                                    <img src={item.imgSet[0]} alt="">
+                                    <div class="item_name">{item.name}</div>
+                                </a>
+                            </li>
+                        {/each}
+                    {:else}
+                        <li class="emptyholder">введите запрос</li>
+                    {/if}
+                    
                 {:catch error}
                     lolo
                 {/await}
@@ -41,6 +47,11 @@
 </div>
 
 <style>
+    .emptyholder {
+        padding: 0.5rem 1rem;
+        color: var(--main-descr-color);
+    }
+
     .search_res {
         width: 100%;
         position: absolute;
