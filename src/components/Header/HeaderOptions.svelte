@@ -1,3 +1,9 @@
+<script>
+    import { favoriteCollection } from '../../stores/favoriteStore';
+
+    $: console.log($favoriteCollection)
+</script>
+
 <div class="options">
     <div class="profile">
         <a href="/profile" class="control">
@@ -8,6 +14,7 @@
     <div class="favorite">
         <a href="/favorite" class="control">
             <span class="material-icons-outlined">favorite_border</span>
+            <span class="counter">{$favoriteCollection.length}</span>
             <span class="text">Избранное</span>
         </a>
     </div>
@@ -20,6 +27,22 @@
 </div>
 
 <style>
+    .counter {
+        background: var(--main-theme-color);
+        color: var(--main-bg-color);
+        font-size: 0.6rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 14px;
+        height: 14px;
+
+        position: absolute;
+        top: calc(50% - 7px);
+        left: calc(50% + 7px);
+    }
+
     .options {
         display: flex;
         grid-area: controls;
@@ -33,6 +56,7 @@
         align-items: center;
         color: var(--main-text-color);
         height: 100%;
+        position: relative;
     }
 
     .text {

@@ -55,6 +55,7 @@ class Model {
         });
 
         goodsNames = goodsNames.filter(el => el.name.toLowerCase().includes(inputText.toLowerCase()));
+        if(goodsNames.length === 0) return goodsNames = [];
         return goodsNames;
     }
 

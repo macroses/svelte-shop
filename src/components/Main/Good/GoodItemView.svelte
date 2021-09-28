@@ -1,6 +1,7 @@
 <script>
     import { fade } from "svelte/transition";
     import Button from "../../Helpers/Button.svelte";
+    import { favoriteCollection } from '../../../stores/favoriteStore';
 
     export let {...item} = $$props;
     export let categoryId;
@@ -20,6 +21,25 @@
         } else {
             currentIndex = i;
         }
+    }
+    
+    // move to data-service
+    function pushToFavorite(categoryId, itemId) {
+        item.favorite = !item.favorite;
+
+        let el = {
+            categoryId: parseFloat(categoryId),
+            itemId: parseFloat(itemId)
+        }
+
+        // if(!$favoriteCollection.find(storeEl => storeEl.categoryId == el.categoryId && storeEl.itemId == el.itemId)) {
+        //     $favoriteCollection = [...$favoriteCollection, el];
+        // }
+        // else {
+        //     $favoriteCollection = $favoriteCollection.filter(item => item != el)
+        // }
+
+        
     }
 </script>
 
@@ -52,8 +72,15 @@
         </Button>
     </div>
 
-    
-    
+    <div class="favorite_item">
+        <span class="material-icons-outlined"
+            class:favorite={item.favorite}
+            on:click={() => pushToFavorite(
+                categoryId, 
+                item.id, 
+                item.favorite)}
+            >favorite_border</span>
+    </div>
 </li>
 
 <style>
@@ -61,6 +88,19 @@
         display: flex;
         flex-direction: column;
         position: relative;
+    }
+
+    .favorite_item {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 100;
+        cursor: pointer;
+        color: var(--main-text-color);
+    }
+
+    .favorite_item:hover {
+        color: red;
     }
 
     .item_name {
@@ -155,34 +195,9 @@
         color: #fff;
     }
 
-    .controls {
-        display: none;
-    }
-
     @media (max-width: 768px) {
         .preview_list {
             display: none;
-        }
-
-        .controls {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            position: absolute;
-            top: 25%;
-            left: 0;
-            z-index: 2;
-
-            font-size: 2rem;
-        }
-
-        .controls span {
-            border: 1px solid var(--main-border-color);
-            color: var(--main-theme-color);
-            border-radius: 50%;
-            padding: 5px;
-            user-select: none;
-            transition: .1s;
         }
     }
 </style>

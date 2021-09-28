@@ -1,18 +1,25 @@
 <script>
     import Model from '../../model/data-service';
     import Loader from '../Helpers/Loader.svelte';
+    import { goto } from '$app/navigation';
 
     const temp = new Model();
     let activeSearchList = false;
 
+    let resultsList;
+
     let searchTerm = "";
     $: searchResultsData = temp.searchResults(searchTerm);
+
+    const handleSubmit = () => {
+        goto(`/searchResults`);
+    }
 </script>
 
 <svelte:window on:click={() => activeSearchList = false}/>
 
 <div class="search" on:click|stopPropagation>
-    <form action="GET" class="search-form" >
+    <form action="GET" class="search-form" on:submit|preventDefault={handleSubmit}>
         <input type="text" class="search-input" placeholder="Поиск" 
             bind:value={searchTerm}
             on:focus={() => activeSearchList = true}>
@@ -21,7 +28,7 @@
         </button>
 
         {#if activeSearchList}
-            <ul class="search_res" class:activeSearchList>
+            <ul class="search_res" class:activeSearchList bind:this={resultsList}>
                 {#await searchResultsData}
                     <Loader />
                 {:then value}
@@ -34,7 +41,10 @@
                                 </a>
                             </li>
                         {/each}
-                    {:else}
+                        {#if value.length == 0}
+                            <li class="emptyholder">Поиск не дал результатов</li>
+                        {/if}
+                    {:else}    
                         <li class="emptyholder">введите запрос</li>
                     {/if}
                     
@@ -62,6 +72,7 @@
         max-height: 300px;
         overflow: auto;
         border: 1px solid var(--main-border-color);
+        border-top: 0;
         z-index: 10;
     }
 
