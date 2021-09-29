@@ -5,6 +5,7 @@
 
     export let {...item} = $$props;
     export let categoryId;
+    export let isFavorite = false;
 
     let currentIndex = 0;
     let defaultInfo = false;
@@ -25,11 +26,13 @@
     
     // move to data-service
     function pushToFavorite(categoryId, itemId) {
-        item.favorite = !item.favorite;
+        isFavorite = !isFavorite;
+        
 
         let el = {
             categoryId: parseFloat(categoryId),
-            itemId: parseFloat(itemId)
+            itemId: parseFloat(itemId),
+            isFavorite: isFavorite
         }
 
         if(!$favoriteCollection.find(storeEl => storeEl.categoryId == el.categoryId && storeEl.itemId == el.itemId)) {
@@ -44,7 +47,7 @@
 </script>
 
 <li>
-    <a href="/category/{categoryId}/{item.id}" class="item_link_img">
+    <a href="/category/{categoryId}/goodItems/{item.id}" class="item_link_img">
         <div class="picture">
             {#if !defaultInfo}
                 {#key currentIndex}
@@ -74,12 +77,11 @@
 
     <div class="favorite_item">
         <span class="material-icons-outlined"
-            class:favorite={item.favorite}
+            class:favorite={isFavorite}
             on:click={() => pushToFavorite(
                 categoryId, 
-                item.id, 
-                item.favorite)}
-            >{item.favorite ? "favorite" : "favorite_border"}</span>
+                item.id)}
+            >{isFavorite ? "favorite" : "favorite_border"}</span>
     </div>
 </li>
 
@@ -94,9 +96,10 @@
         position: absolute;
         right: 0;
         top: 0;
-        z-index: 100;
+        z-index: 20;
         cursor: pointer;
         color: var(--main-text-color);
+        background: var(--main-bg-color);
     }
 
     .favorite_item:hover {

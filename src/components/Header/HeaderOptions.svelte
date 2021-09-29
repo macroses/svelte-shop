@@ -1,7 +1,5 @@
 <script>
     import { favoriteCollection } from '../../stores/favoriteStore';
-
-    $: console.log($favoriteCollection)
 </script>
 
 <div class="options">

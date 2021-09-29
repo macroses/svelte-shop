@@ -6,8 +6,6 @@
     const temp = new Model();
     let activeSearchList = false;
 
-    let resultsList;
-
     let searchTerm = "";
     $: searchResultsData = temp.searchResults(searchTerm);
 
@@ -16,9 +14,10 @@
     }
 </script>
 
-<svelte:window on:click={() => activeSearchList = false}/>
+<!-- <svelte:window on:click={() => activeSearchList = false}/> -->
+<!-- и для .search on:click|stopPropagation  -->
 
-<div class="search" on:click|stopPropagation>
+<div class="search">    
     <form action="GET" class="search-form" on:submit|preventDefault={handleSubmit}>
         <input type="text" class="search-input" placeholder="Поиск" 
             bind:value={searchTerm}
@@ -28,14 +27,14 @@
         </button>
 
         {#if activeSearchList}
-            <ul class="search_res" class:activeSearchList bind:this={resultsList}>
+            <ul class="search_res" class:activeSearchList>
                 {#await searchResultsData}
                     <Loader />
                 {:then value}
                     {#if searchTerm}
                         {#each value as item}
                             <li>
-                                <a href="/category/{item.categoryId}/{item.id}" title={item.name} target="_self">
+                                <a href="/category/{item.categoryId}/goodItems/{item.id}" title={item.name} on:click={() => activeSearchList = false}>
                                     <img src={item.imgSet[0]} alt="">
                                     <div class="item_name">{item.name}</div>
                                 </a>
