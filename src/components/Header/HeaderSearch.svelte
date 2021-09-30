@@ -34,7 +34,8 @@
                     {#if searchTerm}
                         {#each value as item}
                             <li>
-                                <a href="/category/{item.categoryId}/goodItems/{item.id}" title={item.name} on:click={() => activeSearchList = false}>
+                                <a href="/category/{item.categoryId}/goodItems/{item.id}" 
+                                    title={item.name} >
                                     <img src={item.imgSet[0]} alt="">
                                     <div class="item_name">{item.name}</div>
                                 </a>

@@ -1,29 +1,24 @@
 <script>
+    import {flip} from 'svelte/animate';
     import { favoriteCollection } from '../stores/favoriteStore';
-    import Model from '../model/data-service';
     import GoodItemView from '../components/Main/Good/GoodItemView.svelte';
 
-    const temp = new Model();
-    let favoriteArray = [];
-
-    $favoriteCollection.forEach(el => {
-        favoriteArray = [...favoriteArray, temp.getSingleItem(el.categoryId, el.itemId)];
-    });
+    $: console.log($favoriteCollection ?? "123123")
 </script>
 
 <div class="container">
     <div class="title">Избранное</div>
-    {#await Promise.all(favoriteArray).then(value => value) then value}
-        {#if value.length !== 0}
-            <ul class="favorite_list">
-                {#each value as item}
+    {#if $favoriteCollection.length > 0}
+        <ul class="favorite_list">
+            {#each $favoriteCollection as item (item.name)}
+                <div animate:flip={{duration: 200}}>
                     <GoodItemView {...item}/>
-                {/each}
-            </ul>
-        {:else}
-            <p>вы ничего не добавили в избранное</p>
-        {/if}
-    {/await}
+                </div>
+            {/each}
+        </ul>
+    {:else}
+        Вы еще не добавили избранных товаров
+    {/if}
 </div>
 
 <style>
@@ -33,5 +28,11 @@
         gap: 30px 50px;
         height: min-content;
         grid-area: content;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 1rem 0;
     }
 </style>

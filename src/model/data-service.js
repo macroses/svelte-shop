@@ -4,7 +4,7 @@ class Model {
         const result = await resolve.json();
         const data = result.map((cat) => {
             return {
-                id: cat.id,
+                id: parseFloat(cat.id),
                 catName: cat.catName,
                 catImg: cat.catImg,
                 category: cat.category ? cat.category.map(item => {

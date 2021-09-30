@@ -5,7 +5,6 @@
 
     export let {...item} = $$props;
     export let categoryId;
-    export let isFavorite = false;
 
     let currentIndex = 0;
     let defaultInfo = false;
@@ -17,33 +16,21 @@
     }
     
     function getImgSetIndex(i, imgs) {
-        if(currentIndex >= imgs.length) {
-            currentIndex = 0;
-        } else {
-            currentIndex = i;
-        }
+        currentIndex >= imgs.length ? currentIndex = 0 : currentIndex = i;
     }
     
-    // move to data-service
-    function pushToFavorite(categoryId, itemId) {
-        isFavorite = !isFavorite;
-        
-
-        let el = {
-            categoryId: parseFloat(categoryId),
-            itemId: parseFloat(itemId),
-            isFavorite: isFavorite
-        }
-
-        if(!$favoriteCollection.find(storeEl => storeEl.categoryId == el.categoryId && storeEl.itemId == el.itemId)) {
-            $favoriteCollection = [...$favoriteCollection, el];
-        }
-        else {
-            const removeIndex = $favoriteCollection.findIndex(item => item.categoryId == el.categoryId && item.itemId == el.itemId);
-            $favoriteCollection.splice(removeIndex, 1);
-            $favoriteCollection = $favoriteCollection;
-        }
+    function pushToFavorite() {
+        item.favorite = !item.favorite;
+        item.favorite 
+        ? $favoriteCollection = [...$favoriteCollection, {...item}]
+        : $favoriteCollection = $favoriteCollection.filter(el => !el.name.includes(item.name))
     }
+
+    $favoriteCollection.forEach(el => {
+        if(el.name === item.name) {
+            item.favorite = true;
+        }
+    });
 </script>
 
 <li>
@@ -77,11 +64,9 @@
 
     <div class="favorite_item">
         <span class="material-icons-outlined"
-            class:favorite={isFavorite}
-            on:click={() => pushToFavorite(
-                categoryId, 
-                item.id)}
-            >{isFavorite ? "favorite" : "favorite_border"}</span>
+            class:favorite={item.favorite}
+            on:click={pushToFavorite}
+            >{item.favorite ? "favorite" : "favorite_border"}</span>
     </div>
 </li>
 
