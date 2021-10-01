@@ -11,7 +11,7 @@
 	export let toggleFilters = false;
 	export let values;
 
-	let exportedActive;
+	export let exportedActive;
 	let showResetButton = false;
 	let changePrice;
 

@@ -19,6 +19,7 @@
     let selectedValue;
     let values;
     let toggleFilters = false;
+    let exportedActive;
 
     $: filterCollection = [];
     $: categoryItem = temp.getCategoryItem(id, selectedValue, filterCollection, values);
@@ -44,6 +45,7 @@
                     bind:filterCollection
                     bind:values
                     bind:toggleFilters
+                    bind:exportedActive
                     />
                 <button class="toggle_filters" on:click={() => toggleFilters = true}>фильтры</button>
             {/if}
@@ -54,8 +56,7 @@
             {#if value.category.length > 0}
                 <ul class="items_list" in:fade>
                     {#each value.category as item (item.id)}
-
-                        <GoodItemView {...item}/>    
+                        <GoodItemView {...item} categoryId={id}/>    
                     {/each}
                 </ul>
             {:else}

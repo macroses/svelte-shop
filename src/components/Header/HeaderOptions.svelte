@@ -12,7 +12,9 @@
     <div class="favorite">
         <a href="/favorite" class="control">
             <span class="material-icons-outlined">favorite_border</span>
-            <span class="counter">{$favoriteCollection.length}</span>
+            {#if $favoriteCollection.length}
+                <span class="counter">{$favoriteCollection.length}</span>
+            {/if}
             <span class="text">Избранное</span>
         </a>
     </div>

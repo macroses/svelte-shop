@@ -4,7 +4,7 @@ class Model {
         const result = await resolve.json();
         const data = result.map((cat) => {
             return {
-                id: parseFloat(cat.id),
+                id: cat.id,
                 catName: cat.catName,
                 catImg: cat.catImg,
                 category: cat.category ? cat.category.map(item => {
@@ -132,6 +132,22 @@ class Model {
             ? false 
             : filterCollection[attrName].includes(attrValue);
     }
+
+    // handleResetFilters(filterCollection, selectedVal, isExport, isChangedPrice) {
+    //     for(let key in filterCollection) {
+    //         if(filterCollection[key] !== undefined) {
+    //             filterCollection = [];
+    //         }
+    //     }
+
+    //     selectedVal = "";
+    //     isExport = false;
+    //     isChangedPrice = false;
+
+        
+    //     console.log(filterCollection, selectedVal, isExport, isChangedPrice)
+    //     return (filterCollection, selectedVal, isExport, isChangedPrice)
+    // }
 }
 
 export default Model; 

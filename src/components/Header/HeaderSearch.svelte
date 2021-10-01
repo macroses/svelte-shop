@@ -1,7 +1,7 @@
 <script>
     import Model from '../../model/data-service';
     import Loader from '../Helpers/Loader.svelte';
-    import { goto } from '$app/navigation';
+    import { goto, invalidate } from '$app/navigation';
 
     const temp = new Model();
     let activeSearchList = false;
@@ -9,8 +9,8 @@
     let searchTerm = "";
     $: searchResultsData = temp.searchResults(searchTerm);
 
-    const handleSubmit = () => {
-        goto(`/searchResults`);
+    const handleSubmit = (url) => {
+        goto(url, {replaceState});
     }
 </script>
 
@@ -18,7 +18,7 @@
 <!-- и для .search on:click|stopPropagation  -->
 
 <div class="search">    
-    <form action="GET" class="search-form" on:submit|preventDefault={handleSubmit}>
+    <form action="GET" class="search-form" on:submit|preventDefault={() => handleSubmit(`/searchResults`)}>
         <input type="text" class="search-input" placeholder="Поиск" 
             bind:value={searchTerm}
             on:focus={() => activeSearchList = true}>
