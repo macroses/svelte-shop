@@ -38,11 +38,11 @@
         <div class="picture">
             {#if !defaultInfo}
                 {#key currentIndex}
-                    <img in:fade src="{item.imgSet[currentIndex]}" alt={item.name}>
+                    <img in:fade src="{item.imgSet[currentIndex]}" alt={item.name} loading="lazy">
                 {/key}
             {:else}
                 {#if currentIndex}
-                    <img src="default_img.svg" alt="" transition:fade>
+                    <img src="default_img.svg" alt="" loading="lazy" transition:fade>
                 {/if}
             {/if}
             <div class="preview_list">    
