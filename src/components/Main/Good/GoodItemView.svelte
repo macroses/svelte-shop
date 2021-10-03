@@ -2,6 +2,7 @@
     import { fade } from "svelte/transition";
     import Button from "../../Helpers/Button.svelte";
     import { favoriteCollection } from '../../../stores/favoriteStore';
+    import { cartCollection } from '../../../stores/cart';
 
     export let {...item} = $$props;
     export let categoryId;
@@ -24,6 +25,10 @@
         item.favorite 
         ? $favoriteCollection = [...$favoriteCollection, {...item}]
         : $favoriteCollection = $favoriteCollection.filter(el => !el.name.includes(item.name))
+    }
+
+    function pushToCart() {
+        $cartCollection = [...$cartCollection, {...item}]
     }
 
     $favoriteCollection.forEach(el => {
@@ -57,7 +62,7 @@
     </a>
     <div class="bottom">
         <div class="price">{(item.price).toLocaleString('ru')} руб</div>
-        <Button titleProp={"в корзину"}>
+        <Button titleProp={"в корзину"} on:click={pushToCart}>
             <span class="material-icons-outlined cart">shopping_cart</span>
         </Button>
     </div>

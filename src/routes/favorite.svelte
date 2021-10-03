@@ -2,8 +2,6 @@
     import {flip} from 'svelte/animate';
     import { favoriteCollection } from '../stores/favoriteStore';
     import GoodItemView from '../components/Main/Good/GoodItemView.svelte';
-
-    $: console.log($favoriteCollection ?? "123123")
 </script>
 
 <div class="container">

@@ -1,5 +1,6 @@
 <script>
     import { favoriteCollection } from '../../stores/favoriteStore';
+    import { cartCollection } from '../../stores/cart';
 </script>
 
 <div class="options">
@@ -21,6 +22,9 @@
     <div class="cart">
         <a href="/cart" class="control">
             <span class="material-icons-outlined">shopping_cart</span>
+            {#if $cartCollection.length}
+                <span class="counter">{$cartCollection.length}</span>
+            {/if}
             <span class="text">Корзина</span>
         </a>
     </div>
