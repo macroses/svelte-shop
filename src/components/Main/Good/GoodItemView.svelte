@@ -9,6 +9,7 @@
 
     let currentIndex = 0;
     let defaultInfo = false;
+    let cartCounter = 1;
 
     $:  if(currentIndex > item.imgSet.length) {
         currentIndex = 0;
@@ -27,15 +28,23 @@
         : $favoriteCollection = $favoriteCollection.filter(el => !el.name.includes(item.name))
     }
 
-    function pushToCart() {
-        $cartCollection = [...$cartCollection, {...item}]
-    }
-
     $favoriteCollection.forEach(el => {
         if(el.name === item.name) {
             item.favorite = true;
         }
     });
+
+    function pushToCart() {
+        $cartCollection.forEach(el => {
+            if(el[1] == {...item}) {
+                console.log('yes')
+            }
+        })
+
+        $cartCollection = [...$cartCollection, [categoryId, {...item}, cartCounter]]
+
+        console.log($cartCollection)
+    }
 </script>
 
 <li>
