@@ -1,11 +1,6 @@
 <script>
     import { cartCollection } from '../stores/cart';
-
-    $: console.log($cartCollection)
-
-    // let uniqueCart = [...new Set($cartCollection.map(JSON.stringify))].map(JSON.parse);
-
-    // $: console.log(uniqueCart)
+    import { onlyDigits } from '../presenter/present-service';
 </script>
 
 
@@ -14,28 +9,28 @@
     <div class="cart">
         <div class="cart_area">
             <ul class="cart_list">
-                <!-- {#each uniqueCart as item, idx}
+                {#each $cartCollection as {categoryId, elem, cartCounter}, idx}
                     <li class="cart_item">
                         <div class="item_img">
-                            <img src="{item[1].imgSet[0]}" alt="{item[1].name}">
+                            <img src="{elem.imgSet[0]}" alt="{elem.name}">
                         </div>
-                        <a href="/category/{item[0]}/goodItems/{item[1].id}" class="item_title">{item[1].name}</a>
-                        <div class="item_total">{item[1].price} руб</div>
+                        <a href="/category/{categoryId}/goodItems/{elem.id}" class="item_title">{elem.name}</a>
+                        <div class="item_total">{elem.price * cartCounter} руб</div>
                         <div class="item_delete">
                             <span class="material-icons-outlined">
-                                {item[1].favorite ? "favorite" : "favorite_border"}
+                                {elem.favorite ? "favorite" : "favorite_border"}
                             </span>
                             <span class="material-icons-outlined">
                                 delete
                             </span>
                         </div>
                         <div class="item_counter">
-                            <button>-</button>
-                            <input type="text">
-                            <button>+</button>
+                            <button on:click={() => cartCounter--}>-</button>
+                            <input type="text" use:onlyDigits bind:value={cartCounter} >
+                            <button on:click={() => cartCounter++}>+</button>
                         </div>
                     </li>
-                {/each} -->
+                {/each}
             </ul>
         </div>
         <div class="cart_controls">2</div>

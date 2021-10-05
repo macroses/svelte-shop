@@ -33,15 +33,21 @@
             item.favorite = true;
         }
     });
+    
 
     function pushToCart() {
-        $cartCollection.forEach(el => {
-            if(el[1] == {...item}) {
-                console.log('yes')
-            }
-        })
+        const cartElem = {
+            categoryId: categoryId,
+            elem: {...item},
+            cartCounter: 1
+        }
 
-        $cartCollection = [...$cartCollection, [categoryId, {...item}, cartCounter]]
+        const elemIndex = $cartCollection.findIndex(el => el.elem.name == item.name);
+        if(elemIndex >= 0) {
+            return ($cartCollection[elemIndex].cartCounter += 1);
+        }
+
+        $cartCollection = [...$cartCollection, cartElem];
 
         console.log($cartCollection)
     }

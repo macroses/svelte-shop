@@ -132,22 +132,6 @@ class Model {
             ? false 
             : filterCollection[attrName].includes(attrValue);
     }
-
-    // handleResetFilters(filterCollection, selectedVal, isExport, isChangedPrice) {
-    //     for(let key in filterCollection) {
-    //         if(filterCollection[key] !== undefined) {
-    //             filterCollection = [];
-    //         }
-    //     }
-
-    //     selectedVal = "";
-    //     isExport = false;
-    //     isChangedPrice = false;
-
-        
-    //     console.log(filterCollection, selectedVal, isExport, isChangedPrice)
-    //     return (filterCollection, selectedVal, isExport, isChangedPrice)
-    // }
 }
 
 export default Model; 
