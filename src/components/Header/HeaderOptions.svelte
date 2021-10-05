@@ -1,6 +1,14 @@
 <script>
     import { favoriteCollection } from '../../stores/favoriteStore';
     import { cartCollection } from '../../stores/cart';
+
+    $: cartCollectionCounter = () => {
+        let sum;
+        if($cartCollection.length > 0) {
+            sum = $cartCollection.reduce((acc, el) => acc + parseFloat(el.cartCounter), 0);
+        }
+        return sum;
+    }
 </script>
 
 <div class="options">
@@ -23,7 +31,7 @@
         <a href="/cart" class="control">
             <span class="material-icons-outlined">shopping_cart</span>
             {#if $cartCollection.length}
-                <span class="counter">{$cartCollection.length}</span>
+                <span class="counter">{cartCollectionCounter()}</span>
             {/if}
             <span class="text">Корзина</span>
         </a>
@@ -41,10 +49,11 @@
         justify-content: center;
         min-width: 14px;
         height: 14px;
+        padding: 0 3px;
 
         position: absolute;
         top: calc(50% - 7px);
-        left: calc(50% + 7px);
+        left: 0;
     }
 
     .options {

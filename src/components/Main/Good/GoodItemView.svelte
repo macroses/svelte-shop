@@ -9,7 +9,6 @@
 
     let currentIndex = 0;
     let defaultInfo = false;
-    let cartCounter = 1;
 
     $:  if(currentIndex > item.imgSet.length) {
         currentIndex = 0;
@@ -48,8 +47,6 @@
         }
 
         $cartCollection = [...$cartCollection, cartElem];
-
-        console.log($cartCollection)
     }
 </script>
 
