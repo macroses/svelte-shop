@@ -60,6 +60,8 @@
             "image delete . counter" 
             "image . . .";
         gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--main-border-color);
     }
 
     .item_img {
