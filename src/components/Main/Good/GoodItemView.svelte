@@ -35,14 +35,29 @@
     });
     
 
+    // function pushToCart() {
+    //     const cartElem = {
+    //         categoryId: categoryId,
+    //         elem: {...item},
+    //         cartCounter: cartElemCounter
+    //     }
+
+    //     const elemIndex = $cartCollection.findIndex(el => el.elem.name == item.name);
+    //     if(elemIndex >= 0) {
+    //         return ($cartCollection[elemIndex].cartCounter += 1);
+    //     }
+
+    //     $cartCollection = [...$cartCollection, cartElem];
+    // }
+
     function pushToCart() {
         const cartElem = {
             categoryId: categoryId,
-            elem: {...item},
+            elem: item.id,
             cartCounter: cartElemCounter
         }
 
-        const elemIndex = $cartCollection.findIndex(el => el.elem.name == item.name);
+        const elemIndex = $cartCollection.findIndex(el => el.elem == item.id);
         if(elemIndex >= 0) {
             return ($cartCollection[elemIndex].cartCounter += 1);
         }

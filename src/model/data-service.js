@@ -42,6 +42,20 @@ class Model {
         return resolve.category[itemId-1];
     }
 
+    async getCartCollection(cartStore) {
+        let collection = [];
+
+        cartStore.forEach(el => {
+            
+            collection.push(
+                this.getSingleItem(el.categoryId, el.elem),
+                el.cartCounter
+            )
+        })
+
+        return collection
+    }
+
     async searchResults(inputText) {
         const resolve = await this._getAllItems();
         let goodsNames = [];

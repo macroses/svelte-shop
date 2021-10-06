@@ -11,13 +11,14 @@
 
     import Loader from '../../components/Helpers/Loader.svelte';
     import Model from '../../model/data-service';
-    import { onMount } from 'svelte';
+    import { onMount, afterUpdate } from 'svelte';
     import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
     import GoodsCounter from '../../components/Main/GoodItem/GoodsCounter.svelte';
     import Tabs from '../../components/Main/GoodItem/Tabs.svelte';
     import FeatureList from '../../components/Main/GoodItem/FeatureList.svelte';
     import GoodItemPrice from '../../components/Main/GoodItem/GoodItemPrice.svelte';
     import GoodItemImgs from '../../components/Main/GoodItem/GoodItemImgs.svelte';
+    import { cartCollection } from '../../stores/cart';
 
     const temp         = new Model();
     const staticData   = temp.getSingleItem(categoryId, id);
@@ -34,7 +35,7 @@
     onMount(async() => {
         const resolve = await staticData;
         title = resolve.name;
-    })
+    });
 </script>
 
 <div class="container">
@@ -54,7 +55,7 @@
             <FeatureList attrs={value.attributes}/>
             <div class="item_price">
                 <GoodItemPrice price={value.price}/>
-                <GoodsCounter counter={cartCounter}/>
+                <GoodsCounter bind:counter={cartCounter} on:click={() => pushToCart()}/>
             </div>
         </div>
         <Tabs title={value.title} body={value.body}/>
