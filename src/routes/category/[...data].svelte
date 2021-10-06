@@ -18,6 +18,7 @@
     import FeatureList from '../../components/Main/GoodItem/FeatureList.svelte';
     import GoodItemPrice from '../../components/Main/GoodItem/GoodItemPrice.svelte';
     import GoodItemImgs from '../../components/Main/GoodItem/GoodItemImgs.svelte';
+    import { cartCollection } from '../../stores/cart';
 
     const temp         = new Model();
     const staticData   = temp.getSingleItem(categoryId, id);
@@ -35,6 +36,23 @@
         const resolve = await staticData;
         title = resolve.name;
     })
+
+    function pushToCart(val) {
+        const cartElem = {
+            categoryId: categoryId,
+            elem: val,
+            cartCounter: cartCounter+1
+        }
+
+        const elemIndex = $cartCollection.findIndex(el => el.elem.name == val.name);
+        if(elemIndex >= 0) {
+            return ($cartCollection[elemIndex].cartCounter += 1);
+        }
+
+        $cartCollection = [...$cartCollection, cartElem];
+
+        console.log($cartCollection)
+    }
 </script>
 
 <div class="container">
@@ -54,7 +72,7 @@
             <FeatureList attrs={value.attributes}/>
             <div class="item_price">
                 <GoodItemPrice price={value.price}/>
-                <GoodsCounter counter={cartCounter}/>
+                <GoodsCounter counter={cartCounter} on:click={() => pushToCart(value)}/>
             </div>
         </div>
         <Tabs title={value.title} body={value.body}/>

@@ -3,7 +3,11 @@
 </script>
 
 {#if counter === 0}
-	<button class="to_cart_btn" on:click={() => counter++}>
+	<!-- <button class="to_cart_btn" on:click={() => counter++}>
+		в корзину
+		<span class="material-icons-outlined">shopping_cart</span>
+	</button> -->
+    <button class="to_cart_btn" on:click>
 		в корзину
 		<span class="material-icons-outlined">shopping_cart</span>
 	</button>
