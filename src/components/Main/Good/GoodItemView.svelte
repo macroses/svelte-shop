@@ -9,7 +9,7 @@
 
     let currentIndex = 0;
     let defaultInfo = false;
-    let cartCounter = 1;
+    let cartElemCounter = 1;
 
     $:  if(currentIndex > item.imgSet.length) {
         currentIndex = 0;
@@ -39,7 +39,7 @@
         const cartElem = {
             categoryId: categoryId,
             elem: {...item},
-            cartCounter: 1
+            cartCounter: cartElemCounter
         }
 
         const elemIndex = $cartCollection.findIndex(el => el.elem.name == item.name);
@@ -48,8 +48,6 @@
         }
 
         $cartCollection = [...$cartCollection, cartElem];
-
-        console.log($cartCollection)
     }
 </script>
 
@@ -79,6 +77,7 @@
         <div class="price">{(item.price).toLocaleString('ru')} руб</div>
         <Button titleProp={"в корзину"} on:click={pushToCart}>
             <span class="material-icons-outlined cart">shopping_cart</span>
+            {cartElemCounter}
         </Button>
     </div>
 

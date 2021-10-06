@@ -1,6 +1,14 @@
 <script>
     import { favoriteCollection } from '../../stores/favoriteStore';
     import { cartCollection } from '../../stores/cart';
+
+    $: cartCollectionCounter = () => {
+        let sum;
+        if($cartCollection.length > 0) {
+            sum = $cartCollection.reduce((acc, el) => acc + parseFloat(el.cartCounter), 0);
+        }
+        return sum;
+    }
 </script>
 
 <div class="options">
@@ -12,25 +20,33 @@
     </div>
     <div class="favorite">
         <a href="/favorite" class="control">
-            <span class="material-icons-outlined">favorite_border</span>
-            {#if $favoriteCollection.length}
-                <span class="counter">{$favoriteCollection.length}</span>
-            {/if}
+            <div class="icon_container">
+                <span class="material-icons-outlined">favorite_border</span>
+                {#if $favoriteCollection.length}
+                    <span class="counter">{$favoriteCollection.length}</span>
+                {/if}
+            </div>
             <span class="text">Избранное</span>
         </a>
     </div>
     <div class="cart">
         <a href="/cart" class="control">
-            <span class="material-icons-outlined">shopping_cart</span>
-            {#if $cartCollection.length}
-                <span class="counter">{$cartCollection.length}</span>
-            {/if}
+            <div class="icon_container">
+                <span class="material-icons-outlined">shopping_cart</span>
+                {#if $cartCollection.length}
+                    <span class="counter">{cartCollectionCounter()}</span>
+                {/if}
+            </div>
             <span class="text">Корзина</span>
         </a>
     </div>
 </div>
 
 <style>
+
+    .icon_container {
+        position: relative;
+    }
     .counter {
         background: var(--main-theme-color);
         color: var(--main-bg-color);
@@ -41,10 +57,11 @@
         justify-content: center;
         min-width: 14px;
         height: 14px;
+        padding: 0 3px;
 
         position: absolute;
-        top: calc(50% - 7px);
-        left: calc(50% + 7px);
+        top: 50%;
+        left: 0;
     }
 
     .options {
