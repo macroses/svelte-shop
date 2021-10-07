@@ -9,7 +9,7 @@
 
     let currentIndex = 0;
     let defaultInfo = false;
-    let cartElemCounter = 1;
+    $: cartElemCounter = 0;
 
     $:  if(currentIndex > item.imgSet.length) {
         currentIndex = 0;
@@ -33,20 +33,26 @@
             item.favorite = true;
         }
     });
+
+    $: $cartCollection.forEach(el => {
+        if(el.elem.name == item.name) {
+            cartElemCounter = el.cartCounter;
+        }
+    })
+
+    console.log(cartElemCounter)
     
 
     function pushToCart() {
         const cartElem = {
             categoryId: categoryId,
             elem: {...item},
-            cartCounter: cartElemCounter
+            cartCounter: cartElemCounter+1
         }
-
         const elemIndex = $cartCollection.findIndex(el => el.elem.name == item.name);
         if(elemIndex >= 0) {
             return ($cartCollection[elemIndex].cartCounter += 1);
         }
-
         $cartCollection = [...$cartCollection, cartElem];
     }
 </script>
@@ -76,8 +82,14 @@
     <div class="bottom">
         <div class="price">{(item.price).toLocaleString('ru')} руб</div>
         <Button titleProp={"в корзину"} on:click={pushToCart}>
-            <span class="material-icons-outlined cart">shopping_cart</span>
-            {cartElemCounter}
+            <span class="cart_val_wrap">
+                {#if cartElemCounter > 0}
+                    <span class="cart_counter">{cartElemCounter}</span>
+                    <span>+1</span>
+                {:else}
+                    <span class="material-icons-outlined cart">shopping_cart</span>
+                {/if}
+            </span>
         </Button>
     </div>
 
@@ -90,6 +102,21 @@
 </li>
 
 <style>
+    .cart_counter {
+        position: absolute;
+        min-width: 1rem;
+        height: 1rem;
+        top: -12px;
+        right: -12px;
+        background: var(--main-hover-color);
+        color: #fff;
+        border: 1px solid var(--main-bg-color);
+        font-size: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     li {
         display: flex;
         flex-direction: column;
@@ -204,6 +231,19 @@
 
     .cart {
         color: #fff;
+        font-size: 1rem;
+    }
+
+
+    .cart_val_wrap {
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 1.5rem;
+        height: 1.5rem;
+        position: relative;
+        font: 400 1rem var(--font);
     }
 
     @media (max-width: 768px) {

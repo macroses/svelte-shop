@@ -10,32 +10,47 @@
     export let categoryId;
 
     import Loader from '../../components/Helpers/Loader.svelte';
-    import Model from '../../model/data-service';
-    import { onMount } from 'svelte';
-    import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
-    import GoodsCounter from '../../components/Main/GoodItem/GoodsCounter.svelte';
-    import Tabs from '../../components/Main/GoodItem/Tabs.svelte';
-    import FeatureList from '../../components/Main/GoodItem/FeatureList.svelte';
-    import GoodItemPrice from '../../components/Main/GoodItem/GoodItemPrice.svelte';
-    import GoodItemImgs from '../../components/Main/GoodItem/GoodItemImgs.svelte';
-    import { cartCollection } from '../../stores/cart';
+        import Model from '../../model/data-service';
+        import { onMount } from 'svelte';
+        import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
+        import GoodsCounter from '../../components/Main/GoodItem/GoodsCounter.svelte';
+        import Tabs from '../../components/Main/GoodItem/Tabs.svelte';
+        import FeatureList from '../../components/Main/GoodItem/FeatureList.svelte';
+        import GoodItemPrice from '../../components/Main/GoodItem/GoodItemPrice.svelte';
+        import GoodItemImgs from '../../components/Main/GoodItem/GoodItemImgs.svelte';
+        import { cartCollection } from '../../stores/cart';
+        import { favoriteCollection } from '../../stores/favoriteStore';
 
     const temp         = new Model();
     const staticData   = temp.getSingleItem(categoryId, id);
     let title          = "";
     let favoriteString = "в избранное";
-    let favoriteState  = false;
     let cartCounter    = 0;
-
-    function handleFavorite() {
-        favoriteState ? favoriteString = "в избранное" : favoriteString = "в избранном";
-        favoriteState = !favoriteState;
-    }
 
     onMount(async() => {
         const resolve = await staticData;
         title = resolve.name;
     })
+
+    $favoriteCollection.forEach(el => {
+        if(el.id == id) {
+                val.favorite = true;
+            }
+    });
+
+    $: $cartCollection.forEach(el => {
+        if(el.elem.name == item.name) {
+            cartElemCounter = el.cartCounter;
+        }
+    })
+
+    // доделать стейт избранного
+    // function pushToFavorite() {
+    //     val.favorite = !val.favorite;
+    //     val.favorite 
+    //     ? $favoriteCollection = [...$favoriteCollection, {...val, categoryId: categoryId}]
+    //     : $favoriteCollection = $favoriteCollection.filter(el => !el.name.includes(val.name))
+    // }
 
     function pushToCart(val) {
         const cartElem = {
@@ -50,8 +65,6 @@
         }
 
         $cartCollection = [...$cartCollection, cartElem];
-
-        console.log($cartCollection)
     }
 </script>
 
@@ -62,9 +75,10 @@
         <Breadcrumbs refaddress={value.name}/>
         <h1>{value.name}</h1>
         <div class="item_funcs">
-            <div class="favorite" on:click={handleFavorite} class:favoriteState>
+            <div class="favorite" on:click={() => pushToFavorite(value)}>
                 <span class="material-icons-outlined">favorite_border</span>
                 <span class="text">{favoriteString}</span>
+                <span class="text">{value.favorite}</span>
             </div>
         </div>
         <div class="item_container">
