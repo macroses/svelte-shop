@@ -18,53 +18,24 @@
         import FeatureList from '../../components/Main/GoodItem/FeatureList.svelte';
         import GoodItemPrice from '../../components/Main/GoodItem/GoodItemPrice.svelte';
         import GoodItemImgs from '../../components/Main/GoodItem/GoodItemImgs.svelte';
-        import { cartCollection } from '../../stores/cart';
         import { favoriteCollection } from '../../stores/favoriteStore';
 
     const temp         = new Model();
     const staticData   = temp.getSingleItem(categoryId, id);
     let title          = "";
-    let favoriteString = "в избранное";
-    let cartCounter    = 0;
+    let tempFavState;
 
     onMount(async() => {
         const resolve = await staticData;
         title = resolve.name;
-    })
-
-    // $favoriteCollection.forEach(el => {
-    //     if(el.id == id) {
-    //             val.favorite = true;
-    //         }
-    // });
-
-    // $: $cartCollection.forEach(el => {
-    //     if(el.elem.name == item.name) {
-    //         cartElemCounter = el.cartCounter;
-    //     }
-    // })
+    });
 
     // доделать стейт избранного
-    function pushToFavorite() {
+    function pushToFavorite(val) {
         val.favorite = !val.favorite;
-        val.favorite 
+        val.favorite
         ? $favoriteCollection = [...$favoriteCollection, {...val, categoryId: categoryId}]
-        : $favoriteCollection = $favoriteCollection.filter(el => !el.name.includes(val.name))
-    }
-
-    function pushToCart(val) {
-        const cartElem = {
-            categoryId: categoryId,
-            elem: val,
-            cartCounter: cartCounter+1
-        }
-
-        const elemIndex = $cartCollection.findIndex(el => el.elem.name == val.name);
-        if(elemIndex >= 0) {
-            return ($cartCollection[elemIndex].cartCounter += 1);
-        }
-
-        $cartCollection = [...$cartCollection, cartElem];
+        : $favoriteCollection = $favoriteCollection.filter(el => !el.name.includes(val.name));
     }
 </script>
 
@@ -75,10 +46,9 @@
         <Breadcrumbs refaddress={value.name}/>
         <h1>{value.name}</h1>
         <div class="item_funcs">
-            <div class="favorite" on:click={() => pushToFavorite(value)}>
-                <span class="material-icons-outlined">favorite_border</span>
-                <span class="text">{favoriteString}</span>
-                <span class="text">{value.favorite}</span>
+            <div class="favorite" on:click={() => pushToFavorite(value)} class:tempFavState>
+                <span class="material-icons-outlined">{ value.favorite ? "favorite" : "favorite_border" }</span>
+                <span class="text">{value.favorite ? "В избранном" : "Добавить в избранное"}</span>
             </div>
         </div>
         <div class="item_container">
@@ -86,7 +56,7 @@
             <FeatureList attrs={value.attributes}/>
             <div class="item_price">
                 <GoodItemPrice price={value.price}/>
-                <GoodsCounter counter={cartCounter} on:click={() => pushToCart(value)}/>
+                <GoodsCounter {...value} categoryId={categoryId}/>
             </div>
         </div>
         <Tabs title={value.title} body={value.body}/>
@@ -101,15 +71,13 @@
     .item_price {
         display: flex;
         flex-direction: column;
-        grid-area: price
+        grid-area: price;
     }
 
     .item_price {
         border: 1px solid var(--main-border-color);
     }
 
-    
-    
     .item_container {
         display: grid;
         gap: 2rem;
@@ -145,7 +113,7 @@
         color: var(--main-theme-color);
     }
 
-    .favorite.favoriteState .material-icons-outlined {
+    .favorite.tempFavState .material-icons-outlined {
         color: red;
     }
 

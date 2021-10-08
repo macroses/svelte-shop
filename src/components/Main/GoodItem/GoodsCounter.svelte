@@ -1,13 +1,39 @@
 <script>
-    export let counter;
+    import { cartCollection } from '../../../stores/cart';
+
+    export let categoryId; 
+    export let item = $$props;
+
+    $: counter = 0;
+
+    function pushToCart(operation) {
+        const cartElem = {
+            categoryId: categoryId,
+            elem: item,
+            cartCounter: counter+1
+        }
+
+        const elemIndex = $cartCollection.findIndex(el => el.elem.name == item.name);
+        if(elemIndex >= 0) {
+            return ($cartCollection[elemIndex].cartCounter += 1);
+        } 
+
+        if(operation === "plus") {
+            $cartCollection = [...$cartCollection, cartElem];
+        }
+
+        
+    }
+
+    $: $cartCollection.forEach(el => {
+        if(el.elem.name == item.name) {
+            counter = el.cartCounter;
+        }
+    })
 </script>
 
 {#if counter === 0}
-	<!-- <button class="to_cart_btn" on:click={() => counter++}>
-		в корзину
-		<span class="material-icons-outlined">shopping_cart</span>
-	</button> -->
-    <button class="to_cart_btn" on:click>
+    <button class="to_cart_btn" on:click={() => pushToCart('plus')}>
 		в корзину
 		<span class="material-icons-outlined">shopping_cart</span>
 	</button>
@@ -20,7 +46,7 @@
 			<span class="items_counter">В корзине {counter} шт</span>
 			<span>Перейти</span>
 		</a>
-		<button on:click={() => counter++}>
+		<button on:click={() => pushToCart('plus')}>
 			<span class="material-icons-outlined">add</span>
 		</button>
 	</div>

@@ -39,8 +39,6 @@
             cartElemCounter = el.cartCounter;
         }
     })
-
-    console.log(cartElemCounter)
     
 
     function pushToCart() {
