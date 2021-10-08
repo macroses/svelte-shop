@@ -32,25 +32,25 @@
         title = resolve.name;
     })
 
-    $favoriteCollection.forEach(el => {
-        if(el.id == id) {
-                val.favorite = true;
-            }
-    });
+    // $favoriteCollection.forEach(el => {
+    //     if(el.id == id) {
+    //             val.favorite = true;
+    //         }
+    // });
 
-    $: $cartCollection.forEach(el => {
-        if(el.elem.name == item.name) {
-            cartElemCounter = el.cartCounter;
-        }
-    })
+    // $: $cartCollection.forEach(el => {
+    //     if(el.elem.name == item.name) {
+    //         cartElemCounter = el.cartCounter;
+    //     }
+    // })
 
     // доделать стейт избранного
-    // function pushToFavorite() {
-    //     val.favorite = !val.favorite;
-    //     val.favorite 
-    //     ? $favoriteCollection = [...$favoriteCollection, {...val, categoryId: categoryId}]
-    //     : $favoriteCollection = $favoriteCollection.filter(el => !el.name.includes(val.name))
-    // }
+    function pushToFavorite() {
+        val.favorite = !val.favorite;
+        val.favorite 
+        ? $favoriteCollection = [...$favoriteCollection, {...val, categoryId: categoryId}]
+        : $favoriteCollection = $favoriteCollection.filter(el => !el.name.includes(val.name))
+    }
 
     function pushToCart(val) {
         const cartElem = {
