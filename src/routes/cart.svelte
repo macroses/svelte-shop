@@ -1,6 +1,7 @@
 <script>
     import { cartCollection } from '../stores/cart';
     import { onlyDigits } from '../presenter/present-service';
+    import CartItem from '../components/Main/Cart/CartItem.svelte';
 
     let promocode = false;
 
@@ -22,7 +23,7 @@
         $cartCollection.forEach(el => {
             sum += el.elem.price * el.cartCounter;
         });
-        return sum
+        return sum;
     };
 </script>
 
@@ -40,12 +41,6 @@
                         <a href="/category/{categoryId}/goodItems/{elem.id}" class="item_title">{elem.name}</a>
                         <div class="item_total">{elem.price * cartCounter} руб</div>
                         <div class="item_delete">
-                            <div class="item_delete_option">
-                                <span class="material-icons-outlined">
-                                    {elem.favorite ? "favorite" : "favorite_border"}
-                                </span>
-                                <span class="option_text">в избранное</span>
-                            </div>
                             <div class="item_delete_option" on:click={() => cartItemRemove(idx)}>
                                 <span class="material-icons-outlined">delete</span>
                                 <span class="option_text">удалить</span>
@@ -253,5 +248,34 @@
         object-fit: contain;
         width: 100%;
         height: auto;
+    }
+
+    @media (max-width: 992px) {
+        .cart {
+            grid-template-areas: "items" "controls";
+        }
+        
+        .item_title {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        .item_total {
+            font-size: 1rem;
+        }
+
+        .cart_item {
+            grid-auto-columns: 100px min-content auto min-content;
+            grid-template-areas: 
+                "image title title total"
+                "image delete . counter" 
+                "image . . .";
+        }
+
+        .item_img {
+            width: 100px;
+            height: 100px;
+            grid-area: image;
+        }
     }
 </style>

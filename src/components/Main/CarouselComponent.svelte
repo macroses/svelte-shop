@@ -11,21 +11,21 @@
 
 <div class="carousel_container">
     {#await staticData then value}
-    <div class="carousel_title">
-        {value.catName}
-    </div>
-    <Carousel perPage={{1200: 6, 992: 4, 768: 3, 500: 2, 350: 1}} loop={false} dots={false}>
-        <span class="control" slot="left-control">
-            <span class="material-icons-outlined">arrow_back</span>
-        </span>
-        {#each value.category as item}
-            <GoodItemView {...item} {categoryId}/>
-        {/each}
-        <span class="control" slot="right-control">
-            <span class="material-icons-outlined">arrow_forward</span>
-        </span>
-    </Carousel>
-{/await}
+        <div class="carousel_title">
+            {value.catName}
+        </div>
+        <Carousel perPage={{1200: 6, 992: 4, 768: 3, 500: 2}} loop={false} dots={false}>
+            <span class="control" slot="left-control">
+                <span class="material-icons-outlined">arrow_back</span>
+            </span>
+            {#each value.category as item}
+                <GoodItemView {...item} {categoryId}/>
+            {/each}
+            <span class="control" slot="right-control">
+                <span class="material-icons-outlined">arrow_forward</span>
+            </span>
+        </Carousel>
+    {/await}
 </div>
 
 <style>

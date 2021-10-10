@@ -5,6 +5,7 @@
     export let item = $$props;
 
     $: counter = 0;
+    if(counter < 1) counter = 1;
 
     function pushToCart(operation) {
         const cartElem = {
@@ -14,22 +15,27 @@
         }
 
         const elemIndex = $cartCollection.findIndex(el => el.elem.name == item.name);
-        if(elemIndex >= 0) {
-            return ($cartCollection[elemIndex].cartCounter += 1);
-        } 
-
         if(operation === "plus") {
+            if(elemIndex >= 0) {
+                return ($cartCollection[elemIndex].cartCounter += 1);
+            }
             $cartCollection = [...$cartCollection, cartElem];
         }
 
-        
+        if(operation === "minus") {
+            $cartCollection[elemIndex].cartCounter -= 1
+            if($cartCollection[elemIndex].cartCounter < 1) {
+                $cartCollection = $cartCollection.filter(el => el.elem.name !== item.name);
+                counter = 0;
+            }
+        }
     }
 
     $: $cartCollection.forEach(el => {
         if(el.elem.name == item.name) {
             counter = el.cartCounter;
         }
-    })
+    });
 </script>
 
 {#if counter === 0}
@@ -39,7 +45,7 @@
 	</button>
 {:else}
 	<div class="cart_control">
-		<button on:click={() => counter--}>
+		<button on:click={() => pushToCart('minus')}>
 			<span class="material-icons-outlined">remove</span>
 		</button>
 		<a href="/cart">

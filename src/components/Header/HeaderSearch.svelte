@@ -11,7 +11,7 @@
     $: searchResultsData = temp.searchResults(searchTerm);
 
     const handleSubmit = (url) => {
-        goto('/searchResults');
+        goto('/searchResults', {replaceState});
     }
 </script>
 

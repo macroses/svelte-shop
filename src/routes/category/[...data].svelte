@@ -18,25 +18,16 @@
         import FeatureList from '../../components/Main/GoodItem/FeatureList.svelte';
         import GoodItemPrice from '../../components/Main/GoodItem/GoodItemPrice.svelte';
         import GoodItemImgs from '../../components/Main/GoodItem/GoodItemImgs.svelte';
-        import { favoriteCollection } from '../../stores/favoriteStore';
+        import DataFavorite from '../../components/Main/GoodItem/DataFavorite.svelte';
 
     const temp         = new Model();
     const staticData   = temp.getSingleItem(categoryId, id);
     let title          = "";
-    let tempFavState;
 
     onMount(async() => {
         const resolve = await staticData;
         title = resolve.name;
     });
-
-    // доделать стейт избранного
-    function pushToFavorite(val) {
-        val.favorite = !val.favorite;
-        val.favorite
-        ? $favoriteCollection = [...$favoriteCollection, {...val, categoryId: categoryId}]
-        : $favoriteCollection = $favoriteCollection.filter(el => !el.name.includes(val.name));
-    }
 </script>
 
 <div class="container">
@@ -46,10 +37,7 @@
         <Breadcrumbs refaddress={value.name}/>
         <h1>{value.name}</h1>
         <div class="item_funcs">
-            <div class="favorite" on:click={() => pushToFavorite(value)} class:tempFavState>
-                <span class="material-icons-outlined">{ value.favorite ? "favorite" : "favorite_border" }</span>
-                <span class="text">{value.favorite ? "В избранном" : "Добавить в избранное"}</span>
-            </div>
+            <DataFavorite {...value} categoryId={categoryId}/>
         </div>
         <div class="item_container">
             <GoodItemImgs imgs={value.imgSet}/>
@@ -97,29 +85,7 @@
         align-items: center;
         padding: 0.5rem 0;
     }
-    
-    .favorite {
-        display: flex;
-        align-items: center;
-        user-select: none;
-        cursor: pointer;
-    }
 
-    .favorite span {
-        transition: .2s;
-    }
-
-    .favorite:hover span{
-        color: var(--main-theme-color);
-    }
-
-    .favorite.tempFavState .material-icons-outlined {
-        color: red;
-    }
-
-    .text {
-        margin-left: 5px;
-    }
 
     @media (max-width: 992px) {
         .item_container {

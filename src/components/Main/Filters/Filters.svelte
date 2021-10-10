@@ -88,7 +88,7 @@
 	@media (max-width: 768px) {
 		.filters {
 			position: fixed;
-			z-index: 10;
+			z-index: 100;
 			width: 400px;
 			max-width: 100%;
 			bottom: 0;
