@@ -22,9 +22,7 @@
     }
 
     @media (max-width: 992px) {
-        .item_feature {
-            padding-right: 1rem;
-        }
+
     }
 
     @media (max-width: 768px) {

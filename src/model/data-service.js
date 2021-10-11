@@ -27,7 +27,7 @@ class Model {
     }
 
     async getCategoryItem(id, sortVal, filterCollection, prices) {
-        const resolve = await this._getAllItems(id);
+        const resolve = await this._getAllItems();
         const result = await resolve[id];
 
         if(sortVal) this._sortByPrice(sortVal, result);

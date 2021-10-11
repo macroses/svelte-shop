@@ -72,6 +72,7 @@
     }
     .slide_container img {
         max-width: 50px;
+        height: 50px;
     }
     .item_img_box {
         grid-area: img;
@@ -79,15 +80,24 @@
 
     .img_preview {
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .img_preview img{
         max-width: 400px;
+        max-height: 400px;
     }
 
     @media (max-width: 768px) {
         .img_preview {
             display: flex;
             justify-content: center;
+        }
+
+        .img_preview img{
+            max-width: 400px;
+            max-height: 280px;
         }
     }
 </style>

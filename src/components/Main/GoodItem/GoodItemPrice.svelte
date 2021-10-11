@@ -17,4 +17,13 @@
         font-weight: 500;
         padding: 1rem;
     }
+
+    @media (max-width: 768px) {
+        .product_price_cur {
+            font-size: 1rem;
+            padding: 0 0 0 1rem;
+            display: flex;
+            align-items: center;
+        }
+    }
 </style>

@@ -28,6 +28,7 @@
     .favorite {
         display: flex;
         align-items: center;
+        cursor: pointer;
     }
 
     .favorite span {

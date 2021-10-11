@@ -40,7 +40,7 @@
 
 {#if counter === 0}
     <button class="to_cart_btn" on:click={() => pushToCart('plus')}>
-		в корзину
+		<span class="text">в корзину</span>
 		<span class="material-icons-outlined">shopping_cart</span>
 	</button>
 {:else}
@@ -112,5 +112,19 @@
     .to_cart_btn span {
         color: accent-color;
         margin-left: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .text {
+            display: none;   
+        }
+
+        .to_cart_btn span {
+            margin-left: 0;
+        }
+
+        .cart_control a {
+            padding: 0 0.5rem;
+        }
     }
 </style>
