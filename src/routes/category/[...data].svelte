@@ -1,4 +1,6 @@
 <script context="module">
+    import {pageState} from '../../stores/pages';
+
     export async function load(ctx) {
         let url = ctx.page.params.data.split('/goodItems/');
         return { props: { id: url[1], categoryId: url[0]}}
@@ -28,6 +30,7 @@
         const resolve = await staticData;
         title = resolve.name;
     });
+
 </script>
 
 <div class="container">
