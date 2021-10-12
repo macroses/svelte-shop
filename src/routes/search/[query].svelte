@@ -8,10 +8,14 @@
 <script>
     export let query;
     import Model from '../../model/data-service';
+    import { beforeUpdate } from 'svelte';
 
     const temp = new Model();
-    let searchResultsData = temp.getDataBySearchQuery(query);
-    console.log(searchResultsData)
+    let searchResultsData = temp.searchResults(query);
+
+    beforeUpdate(() => {
+        searchResultsData = temp.searchResults(query);
+    })
 </script>
 
 {#await searchResultsData then value}

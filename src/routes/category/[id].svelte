@@ -28,6 +28,7 @@
     onMount(async() => {
         const resolve = await categoryItem;
         title = resolve.catName;
+        
     });
 </script>
 

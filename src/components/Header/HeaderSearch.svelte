@@ -11,7 +11,10 @@
     $: searchResultsData = temp.searchResults(searchTerm);
 
     const handleSubmit = () => {
-        goto(`/search/${encodeURI(searchTerm)}`);
+        if(searchTerm !== "") {
+            goto(`/search/${encodeURI(searchTerm)}`);
+        };
+        
         activeSearchList = false;
     }
 </script>
@@ -21,6 +24,9 @@
         <input type="text" class="search-input" placeholder="Поиск" 
             bind:value={searchTerm}
             on:focus={() => activeSearchList = true}>
+        {#if searchTerm !== ""}
+            <span class="material-icons-outlined">remove</span>
+        {/if}
         <button type="submit" class="btn_submit">
             <span class="material-icons-outlined">search</span>
         </button>
