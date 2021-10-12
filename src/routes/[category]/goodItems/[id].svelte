@@ -1,9 +1,8 @@
 <script context="module">
-    import {pageState} from '../../stores/pages';
-
     export async function load(ctx) {
-        let url = ctx.page.params.data.split('/goodItems/');
-        return { props: { id: url[1], categoryId: url[0]}}
+        let id = ctx.page.params.id;
+        let categoryId = ctx.page.params.category;
+        return { props: { id: id, categoryId: categoryId}}
     }
 </script>
 
@@ -11,26 +10,34 @@
     export let id;
     export let categoryId;
 
-    import Loader from '../../components/Helpers/Loader.svelte';
-        import Model from '../../model/data-service';
-        import { onMount } from 'svelte';
-        import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
-        import GoodsCounter from '../../components/Main/GoodItem/GoodsCounter.svelte';
-        import Tabs from '../../components/Main/GoodItem/Tabs.svelte';
-        import FeatureList from '../../components/Main/GoodItem/FeatureList.svelte';
-        import GoodItemPrice from '../../components/Main/GoodItem/GoodItemPrice.svelte';
-        import GoodItemImgs from '../../components/Main/GoodItem/GoodItemImgs.svelte';
-        import DataFavorite from '../../components/Main/GoodItem/DataFavorite.svelte';
+    import Loader from '../../../components/Helpers/Loader.svelte';
+        import Model from '../../../model/data-service';
+        import { beforeUpdate, onMount } from 'svelte';
+        import Breadcrumbs from '../../../components/Helpers/Breadcrumbs.svelte';
+        import GoodsCounter from '../../../components/Main/GoodItem/GoodsCounter.svelte';
+        import Tabs from '../../../components/Main/GoodItem/Tabs.svelte';
+        import FeatureList from '../../../components/Main/GoodItem/FeatureList.svelte';
+        import GoodItemPrice from '../../../components/Main/GoodItem/GoodItemPrice.svelte';
+        import GoodItemImgs from '../../../components/Main/GoodItem/GoodItemImgs.svelte';
+        import DataFavorite from '../../../components/Main/GoodItem/DataFavorite.svelte';
 
     const temp         = new Model();
-    const staticData   = temp.getSingleItem(categoryId, id);
+    
+    let staticData;
     let title          = "";
+
+    function updateData() {
+        staticData   = temp.getSingleItem(categoryId, id);
+    }
+
+    
 
     onMount(async() => {
         const resolve = await staticData;
         title = resolve.name;
     });
 
+    beforeUpdate(updateData);
 </script>
 
 <div class="container">

@@ -2,7 +2,7 @@
     import Model from '../../model/data-service';
     import Loader from '../Helpers/Loader.svelte';
     import { goto } from '$app/navigation';
-    import { getStores } from '$app/stores';
+    import {clickOutside} from '../../presenter/present-service.js';
  
     const temp = new Model();
     let activeSearchList = false;
@@ -10,15 +10,13 @@
     let searchTerm = "";
     $: searchResultsData = temp.searchResults(searchTerm);
 
-    const handleSubmit = (url) => {
-        goto('/searchResults', {replaceState});
+    const handleSubmit = () => {
+        goto(`/search/${encodeURI(searchTerm)}`);
+        activeSearchList = false;
     }
 </script>
 
-<!-- <svelte:window on:click={() => activeSearchList = false}/> -->
-<!-- и для .search on:click|stopPropagation  -->
-
-<div class="search">    
+<div class="search" use:clickOutside on:click_outside="{() => activeSearchList = false }">    
     <form action="GET" class="search-form" on:submit|preventDefault={() => handleSubmit()}>
         <input type="text" class="search-input" placeholder="Поиск" 
             bind:value={searchTerm}
@@ -35,8 +33,9 @@
                     {#if searchTerm}
                         {#each value as item}
                             <li>
-                                <a href="/category/{item.categoryId}/goodItems/{item.id}" 
-                                    title={item.name} >
+                                <a href="/{item.categoryId}/goodItems/{item.id}" 
+                                    title={item.name}
+                                    on:click={() => activeSearchList = false} >
                                     <img src={item.imgSet[0]} alt="">
                                     <div class="item_name">{item.name}</div>
                                 </a>

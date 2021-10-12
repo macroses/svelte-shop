@@ -37,6 +37,20 @@ class Model {
         return result;
     }
 
+    async getDataBySearchQuery(query) {
+        const resolve = await this._getAllItems();
+        let searchQueryColletion = [];
+        resolve.forEach(cat => {
+            cat.category.forEach(el => {
+                searchQueryColletion.push(el);
+            });
+        });
+
+        searchQueryColletion = searchQueryColletion.filter(el => el.name.includes(query));
+        
+        return searchQueryColletion;
+    }
+
     async getSingleItem(categoryId, itemId) {
         const resolve = await this.getCategoryItem(categoryId);
         return resolve.category[itemId-1];

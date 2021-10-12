@@ -56,7 +56,7 @@
 </script>
 
 <li>
-    <a href="/category/{categoryId}/goodItems/{item.id}" class="item_link_img">
+    <a href="/{categoryId}/goodItems/{item.id}" class="item_link_img">
         <div class="picture">
             {#if !defaultInfo}
                 {#key currentIndex}
