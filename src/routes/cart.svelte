@@ -38,7 +38,7 @@
                         <div class="item_img">
                             <img src="{elem.imgSet[0]}" alt="{elem.name}">
                         </div>
-                        <a href="/category/{categoryId}/goodItems/{elem.id}" class="item_title">{elem.name}</a>
+                        <a href="/{categoryId}/goodItems/{elem.id}" class="item_title">{elem.name}</a>
                         <div class="item_total">{elem.price * cartCounter} руб</div>
                         <div class="item_delete">
                             <div class="item_delete_option" on:click={() => cartItemRemove(idx)}>

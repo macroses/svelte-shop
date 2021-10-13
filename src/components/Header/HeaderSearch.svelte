@@ -53,9 +53,6 @@
                     {:else}    
                         <li class="emptyholder">введите запрос</li>
                     {/if}
-                    
-                {:catch error}
-                    lolo
                 {/await}
             </ul>
         {/if}

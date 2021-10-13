@@ -539,7 +539,7 @@ export async function get() {
                     {
                         "id": 9,
                         "brand": "Apple",
-                        "name": "Ноутбук Apple MacBook Pro 13 M1/8/256 Space Gray",
+                        "name": "Ноутбук Apple MacBook Pro 13 M1/8/256 White",
                         "title": "MacBook Pro 13 дюймов",
                         "body": "MacBook Pro 13 дюймов выходит на совершенно новый уровень благодаря мощному чипу Apple M1. До 2,8 раза больше вычислительной мощности, до 5 раз выше скорость обработки графики, до 20 часов работы без подзарядки — дольше любого другого Mac. Теперь в вашем распоряжении ещё более впечатляющие возможности. И они повсюду с вами.",
                         "price": "31 990",
@@ -570,7 +570,7 @@ export async function get() {
                     {
                         "id": 10,
                         "brand": "Apple",
-                        "name": "Ноутбук Apple MacBook Pro 13 M1/8/256 Space Gray",
+                        "name": "Ноутбук Apple MacBook Pro 13 M1/8/256 Pink",
                         "title": "MacBook Pro 13 дюймов",
                         "body": "MacBook Pro 13 дюймов выходит на совершенно новый уровень благодаря мощному чипу Apple M1. До 2,8 раза больше вычислительной мощности, до 5 раз выше скорость обработки графики, до 20 часов работы без подзарядки — дольше любого другого Mac. Теперь в вашем распоряжении ещё более впечатляющие возможности. И они повсюду с вами.",
                         "price": "31 990",
@@ -884,7 +884,117 @@ export async function get() {
             {
                 "id": 3,
                 "catName": "Холодильники",
-                "catImg": "kitchen"
+                "catImg": "kitchen",
+                "category": [
+                    {
+                        "id": 1,
+                        "brand": "Haier",
+                        "name": "Холодильник Haier C2F637CWMV",
+                        "title": "Haier C2F637CWMV – элегантный и вместительный двухкамерный холодильник с нижним расположением морозильной камеры.",
+                        "body": "Haier C2F637CWMV – элегантный и вместительный двухкамерный холодильник с нижним расположением морозильной камеры. Пять полок и «сухая» зона свежести в холодильном отделении, а также четыре ящика в морозильнике дают возможность распределить продукты так, как пожелают хозяева. В холодильном и морозильном отделениях этой модели установлена система No Frost. Благодаря этому хозяевам не нужно думать о разморозке, всё выполняется автоматически. По камерам холодильника циркулирует охлаждённый воздух, препятствуя образованию наледи на стенках.",
+                        "price": "64999",
+                        "imgSet": [
+                            "https://img.mvideo.ru/Pdb/20036155b.jpg",
+                            "https://img.mvideo.ru/Pdb/20036155b1.jpg",
+                            "https://img.mvideo.ru/Pdb/20036155b2.jpg",
+                            "https://img.mvideo.ru/Pdb/20036155b3.jpg",
+                            "https://img.mvideo.ru/Pdb/20036155b4.jpg"
+                        ],
+                        "favorite": false,
+                        "isActive": false,
+                        "attributes": [
+                            {"attrId": 1, "attrName": "Тип компрессора", "attrVal": ["стандартный"]},
+                            {"attrId": 2, "attrName": "Общий объем", "attrVal": ["386 л"]},
+                            {"attrId": 3, "attrName": "Система No Frost", "attrVal": ["в холодильном и морозильном отделениях"]},
+                            {"attrId": 4, "attrName": "Разм. мороз. камеры", "attrVal": ["автомат"]},
+                            {"attrId": 5, "attrName": "Разм. холод. камеры", "attrVal": ["автомат"]},
+                            {"attrId": 6, "attrName": "Регулируемых полок", "attrVal": ["3"]},
+                            {"attrId": 7, "attrName": "Тип зоны сохранения свежести", "attrVal": ["Влажная"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Haier"]}
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "brand": "LG",
+                        "name": "Холодильник LG DoorCooling+ GA-B459SMUM",
+                        "title": "ЗОНА СВЕЖЕСТИ FreshBalancer",
+                        "body": "ехнология DoorCooling+ обеспечивает дополнительное охлаждение из панели в верхней части корпуса. Оно выполняется на 32% быстрее, чем в моделях без этой системы. За счёт этого на всех полках, в том числе на тех, что установлены в двери, поддерживается постоянная температура.",
+                        "price": "39999",
+                        "imgSet": [
+                            "https://img.mvideo.ru/Big/20069639bb.jpg",
+                            "https://img.mvideo.ru/Big/20069639bb1.jpg",
+                            "https://img.mvideo.ru/Big/20069639bb2.jpg",
+                            "https://img.mvideo.ru/Big/20069639bb3.jpg",
+                            "https://img.mvideo.ru/Big/20069639bb4.jpg"
+                        ],
+                        "favorite": false,
+                        "isActive": false,
+                        "attributes": [
+                            {"attrId": 1, "attrName": "Тип компрессора", "attrVal": ["инверторный"]},
+                            {"attrId": 2, "attrName": "Общий объем", "attrVal": ["220 л"]},
+                            {"attrId": 3, "attrName": "Система No Frost", "attrVal": ["в холодильном и морозильном отделениях"]},
+                            {"attrId": 4, "attrName": "Разм. мороз. камеры", "attrVal": ["автомат"]},
+                            {"attrId": 5, "attrName": "Разм. холод. камеры", "attrVal": ["автомат"]},
+                            {"attrId": 6, "attrName": "Регулируемых полок", "attrVal": ["3"]},
+                            {"attrId": 7, "attrName": "Тип зоны сохранения свежести", "attrVal": ["Влажная"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["LG"]}
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "brand": "Bosch",
+                        "name": "Холодильник Bosch Serie | 2 VitaFresh KGN39UW22R",
+                        "title": "ОБОСОБЛЕННЫЙ КОНТРОЛЬ",
+                        "body": "Модель с двухконтурной модификацией позволяет выставлять независимые настройки в каждом из отделений. На панели управления расположены кнопки для выбора температуры, активации специальных программ и яркие индикаторы. Разобраться с тем, что и когда нажимать, не составит труда, поскольку все клавиши снабжены лаконичными надписями.",
+                        "price": "47999",
+                        "imgSet": [
+                            "https://img.mvideo.ru/Big/20068484bb.jpg",
+                            "https://img.mvideo.ru/Big/20068484bb1.jpg",
+                            "https://img.mvideo.ru/Big/20068484bb2.jpg",
+                            "https://img.mvideo.ru/Big/20068484bb3.jpg",
+                            "https://img.mvideo.ru/Big/20068484bb4.jpg",
+                        ],
+                        "favorite": false,
+                        "isActive": false,
+                        "attributes": [
+                            {"attrId": 1, "attrName": "Тип компрессора", "attrVal": ["стандартный"]},
+                            {"attrId": 2, "attrName": "Общий объем", "attrVal": ["419 л"]},
+                            {"attrId": 3, "attrName": "Система No Frost", "attrVal": ["в холодильном и морозильном отделениях"]},
+                            {"attrId": 4, "attrName": "Разм. мороз. камеры", "attrVal": ["автомат"]},
+                            {"attrId": 5, "attrName": "Разм. холод. камеры", "attrVal": ["автомат"]},
+                            {"attrId": 6, "attrName": "Регулируемых полок", "attrVal": ["3"]},
+                            {"attrId": 7, "attrName": "Тип зоны сохранения свежести", "attrVal": ["Влажная"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Bosch"]}
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "brand": "Samsung",
+                        "name": "Холодильник Bosch Serie | 2 VitaFresh KGN39UWR",
+                        "title": "Без хлопот",
+                        "body": "Общий объём устройства – 617литров, из них 202 литра приходятся на морозильную камеру. Такой большой вместительности удалось достичь при помощи технологии SpaceMax: использована особая тонкая термоизоляция, которая, несмотря на компактность, не снижает эффективность работы. А повышает её конструктивное решение Metal Cooling: на задней стенке отделений расположена стальная пластина. Она способствует удержанию холода и позволяет быстрее восстановить микроклимат после открывания дверей.",
+                        "price": "97499",
+                        "imgSet": [
+                            "https://img.mvideo.ru/Big/20062868bb.jpg",
+                            "https://img.mvideo.ru/Big/20062868bb1.jpg",
+                            "https://img.mvideo.ru/Big/20062868bb2.jpg",
+                            "https://img.mvideo.ru/Big/20062868bb3.jpg",
+                            "https://img.mvideo.ru/Big/20062868bb4.jpg",
+                        ],
+                        "favorite": false,
+                        "isActive": false,
+                        "attributes": [
+                            {"attrId": 1, "attrName": "Тип компрессора", "attrVal": ["инверторный"]},
+                            {"attrId": 2, "attrName": "Общий объем", "attrVal": ["617 л"]},
+                            {"attrId": 3, "attrName": "Система No Frost", "attrVal": ["в холодильном и морозильном отделениях"]},
+                            {"attrId": 4, "attrName": "Разм. мороз. камеры", "attrVal": ["автомат"]},
+                            {"attrId": 5, "attrName": "Разм. холод. камеры", "attrVal": ["автомат"]},
+                            {"attrId": 6, "attrName": "Индикация температуры в холодильной камере", "attrVal": ["да"]},
+                            {"attrId": 7, "attrName": "Тип управления", "attrVal": ["электронный"]},
+                            {"attrId": 8, "attrName": "бренд", "attrVal": ["Samsung"]}
+                        ]
+                    }
+                ]
             },
         
             {
