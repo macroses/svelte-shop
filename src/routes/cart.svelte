@@ -1,9 +1,17 @@
 <script>
     import { cartCollection } from '../stores/cart';
+    import {slide, fly} from 'svelte/transition';
     import { onlyDigits } from '../presenter/present-service';
-    import CartItem from '../components/Main/Cart/CartItem.svelte';
+    import {paginate, LightPaginationNav} from '../components/Main/Pagination';
 
     let promocode = false;
+
+    let currentPage = 1;
+    let pageSize = 3;
+    let items = [];
+    let promoValue = '';
+
+    $: items = $cartCollection;
 
     function cartItemRemove(idx) {
         $cartCollection.splice(idx, 1);
@@ -25,6 +33,12 @@
         });
         return sum;
     };
+
+    function activatePromocode() {
+        promocode = false;
+    }
+
+    $: paginatedItems = paginate({items, pageSize, currentPage})
 </script>
 
 
@@ -33,7 +47,7 @@
     <div class="cart">
         <div class="cart_area">
             <ul class="cart_list">
-                {#each $cartCollection as {categoryId, elem, cartCounter}, idx (idx)}
+                {#each paginatedItems as {categoryId, elem, cartCounter}, idx (idx)}
                     <li class="cart_item">
                         <div class="item_img">
                             <img src="{elem.imgSet[0]}" alt="{elem.name}">
@@ -62,15 +76,31 @@
                     </li>
                 {/each}
             </ul>
+            {#if items.length > pageSize}
+                <LightPaginationNav
+                    totalItems="{items.length}"
+                    pageSize="{pageSize}"
+                    currentPage="{currentPage}"
+                    limit="{1}"
+                    showStepOptions="{true}"
+                    on:setPage="{(e) => currentPage = e.detail.page}"
+                />
+            {/if}
         </div>
         <div class="cart_controls_box">
             {#if $cartCollection.length > 0}
                 <div class="controls_wrap">
                     <div class="cart_controls">
-                        <div class="title">В корзине</div>
-                        <div class="static_counter">товаров: {cartCollectionCounter()}</div>
+                        <div class="title">В корзине {cartCollectionCounter()} шт.</div>
                         {#if promocode}
-                            <input type="text">
+                            <form class="promocode_form" on:submit|preventDefault={activatePromocode}>
+                                <div transition:slide class="form_container">
+                                    <input type="text" class="promo_inp" placeholder="для теста 123" value={promoValue}>
+                                    <button class="submit_code_btn">
+                                        <span class="material-icons-outlined">upload</span>
+                                    </button>
+                                </div>
+                            </form>
                         {/if}
                         <button class="same_as_link"
                             on:click={() => promocode = !promocode}
@@ -93,6 +123,34 @@
 </div>
 
 <style>
+    .form_container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .submit_code_btn {
+        background: var(--main-theme-color);
+        color: var(--main-bg-color);
+        border: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.3rem 1rem;
+    }
+    .promo_inp {
+        flex-grow: 1;
+        padding: 6px 10px;
+        height: 50px;
+        border: 1px solid var(--main-border-color);
+        border-right: none;
+        box-shadow: none;
+        font-family: var(--font);
+        font-size: 1rem;
+        width: auto;
+        transition: .2s;
+    }
+    
     .make_order {
         display: flex;
     }
@@ -119,9 +177,6 @@
         font-weight: 500;
     }
 
-    .static_counter {
-        margin-bottom: 1rem;
-    }
     .same_as_link {
         background: transparent;
         border: 0;

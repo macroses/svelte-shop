@@ -13,7 +13,6 @@
     import Breadcrumbs from '../../components/Helpers/Breadcrumbs.svelte';
     import Loader from '../../components/Helpers/Loader.svelte';
     import Filters from "../../components/Main/Filters/Filters.svelte";
-    import Pagination from "../../components/Helpers/Pagination.svelte";
 
     const temp = new Model();
     let title = '';
@@ -64,7 +63,6 @@
             {:else}
                 <div class="empty_catalog">По вашему запросу ничего не найдено</div>
             {/if}
-            <Pagination />
         {/await}
     </div>
 </div>
