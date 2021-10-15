@@ -11,6 +11,7 @@
     let items = [];
     let promoValue = '';
 
+    $: paginatedItems = paginate({items, pageSize, currentPage})
     $: items = $cartCollection;
 
     function cartItemRemove(idx) {
@@ -20,15 +21,15 @@
 
     $: cartCollectionCounter = () => {
         let sum;
-        if($cartCollection.length > 0) {
-            sum = $cartCollection.reduce((acc, el) => acc + parseFloat(el.cartCounter), 0);
+        if(items.length > 0) {
+            sum = items.reduce((acc, el) => acc + parseFloat(el.cartCounter), 0);
         }
         return sum;
     };
 
     $: sumAllItemsPrice = () => {
         let sum = 0;
-        $cartCollection.forEach(el => {
+        items.forEach(el => {
             sum += el.elem.price * el.cartCounter;
         });
         return sum;
@@ -38,7 +39,7 @@
         promocode = false;
     }
 
-    $: paginatedItems = paginate({items, pageSize, currentPage})
+    
 </script>
 
 
@@ -88,7 +89,7 @@
             {/if}
         </div>
         <div class="cart_controls_box">
-            {#if $cartCollection.length > 0}
+            {#if paginatedItems.length > 0}
                 <div class="controls_wrap">
                     <div class="cart_controls">
                         <div class="title">В корзине {cartCollectionCounter()} шт.</div>

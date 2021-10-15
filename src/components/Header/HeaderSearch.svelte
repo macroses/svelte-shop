@@ -3,7 +3,7 @@
     import Loader from '../Helpers/Loader.svelte';
     import { goto } from '$app/navigation';
     import {clickOutside} from '../../presenter/present-service.js';
- 
+
     const temp = new Model();
     let activeSearchList = false;
 
