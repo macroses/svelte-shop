@@ -56,7 +56,7 @@
         {:then value}
             {#if value.category.length > 0}
                 <ul class="items_list" in:fade>
-                    {#each value.category as item, idx (idx)}
+                    {#each value.category as item (item.name)}
                         <GoodItemView {...item} categoryId={id}/>    
                     {/each}
                 </ul>

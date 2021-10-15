@@ -1,18 +1,22 @@
 <script>
-    import { cartCollection } from '../stores/cart';
-    import {slide, fly} from 'svelte/transition';
+    import { cartCollection, promocodeState } from '../stores/cart';
+    import { flip } from 'svelte/animate';
     import { onlyDigits } from '../presenter/present-service';
-    import {paginate, LightPaginationNav} from '../components/Main/Pagination';
 
     let promocode = false;
-
-    let currentPage = 1;
-    let pageSize = 3;
-    let items = [];
+    let promoCodeValidate = false;
     let promoValue = '';
 
-    $: paginatedItems = paginate({items, pageSize, currentPage})
-    $: items = $cartCollection;
+    function approveCode() {
+        promoValue === "123" ? $promocodeState = true : $promocodeState = false;
+
+        if(promoValue === "123") {
+            $promocodeState = true;
+        } else {
+            $promocodeState = false;
+            promoCodeValidate = true;
+        }
+    }
 
     function cartItemRemove(idx) {
         $cartCollection.splice(idx, 1);
@@ -21,40 +25,49 @@
 
     $: cartCollectionCounter = () => {
         let sum;
-        if(items.length > 0) {
-            sum = items.reduce((acc, el) => acc + parseFloat(el.cartCounter), 0);
+        if($cartCollection.length > 0) {
+            sum = $cartCollection.reduce((acc, el) => acc + parseFloat(el.cartCounter), 0);
         }
         return sum;
     };
 
     $: sumAllItemsPrice = () => {
         let sum = 0;
-        items.forEach(el => {
+        $cartCollection.forEach(el => {
             sum += el.elem.price * el.cartCounter;
         });
+
+        if($promocodeState) {
+            promocode = false;
+            return sum * 0.9;
+        }
+
         return sum;
     };
 
-    function activatePromocode() {
-        promocode = false;
+    $: oldSumAllItemsPrice = () => {
+        let sum = 0;
+        $cartCollection.forEach(el => {
+            sum += el.elem.price * el.cartCounter;
+        });
+        return sum;
     }
-
-    
 </script>
 
 
 <div class="container">
     <div class="title">Корзина</div>
     <div class="cart">
+
         <div class="cart_area">
             <ul class="cart_list">
-                {#each paginatedItems as {categoryId, elem, cartCounter}, idx (idx)}
-                    <li class="cart_item">
+                {#each $cartCollection as item, idx (item.elem.name)}
+                    <li class="cart_item" animate:flip={{duration: 200}}>
                         <div class="item_img">
-                            <img src="{elem.imgSet[0]}" alt="{elem.name}">
+                            <img src="{item.elem.imgSet[0]}" alt="{item.elem.name}">
                         </div>
-                        <a href="/{categoryId}/goodItems/{elem.id}" class="item_title">{elem.name}</a>
-                        <div class="item_total">{elem.price * cartCounter} руб</div>
+                        <a href="/{item.categoryId}/goodItems/{item.elem.id}" class="item_title">{item.elem.name}</a>
+                        <div class="item_total">{item.elem.price * item.cartCounter} руб</div>
                         <div class="item_delete">
                             <div class="item_delete_option" on:click={() => cartItemRemove(idx)}>
                                 <span class="material-icons-outlined">delete</span>
@@ -63,10 +76,10 @@
                         </div>
                         <div class="item_counter">
                             <button 
-                                on:click={() => cartCounter <= 1 ? cartCounter = 1 : --cartCounter}
+                                on:click={() => item.cartCounter <= 1 ? item.cartCounter = 1 : --item.cartCounter}
                                 ><span class="material-icons-outlined">remove</span></button>
-                            <input type="text" use:onlyDigits bind:value={cartCounter} >
-                            <button on:click={() => cartCounter++}>
+                            <input type="text" use:onlyDigits bind:value={item.cartCounter} >
+                            <button on:click={() => item.cartCounter++}>
                                 <span class="material-icons-outlined">add</span>
                             </button>
                         </div>
@@ -77,44 +90,51 @@
                     </li>
                 {/each}
             </ul>
-            {#if items.length > pageSize}
-                <LightPaginationNav
-                    totalItems="{items.length}"
-                    pageSize="{pageSize}"
-                    currentPage="{currentPage}"
-                    limit="{1}"
-                    showStepOptions="{true}"
-                    on:setPage="{(e) => currentPage = e.detail.page}"
-                />
-            {/if}
         </div>
+
         <div class="cart_controls_box">
-            {#if paginatedItems.length > 0}
+            {#if $cartCollection.length > 0}
                 <div class="controls_wrap">
                     <div class="cart_controls">
                         <div class="title">В корзине {cartCollectionCounter()} шт.</div>
                         {#if promocode}
-                            <form class="promocode_form" on:submit|preventDefault={activatePromocode}>
-                                <div transition:slide class="form_container">
-                                    <input type="text" class="promo_inp" placeholder="для теста 123" value={promoValue}>
+                            <form class="promocode_form" on:submit|preventDefault={approveCode(promoValue)}>
+                                <div class="form_container">
+                                    <input type="text" class="promo_inp" placeholder="для теста 123" bind:value={promoValue}>
+                                    {#if promoCodeValidate}
+                                        <span class="err">Такого купона не существует</span>
+                                    {/if}
                                     <button class="submit_code_btn">
                                         <span class="material-icons-outlined">upload</span>
                                     </button>
                                 </div>
                             </form>
                         {/if}
-                        <button class="same_as_link"
-                            on:click={() => promocode = !promocode}
-                            >{promocode ? "активировать промокод" : "введите промокод"}
-                        </button>
-                        
+                        {#if !promocode && !$promocodeState}
+                            <button class="same_as_link"
+                                on:click={() => promocode = !promocode}
+                                >{promocode ? "активировать промокод" : "введите промокод"}
+                            </button>
+                        {/if}
+                        {#if $promocodeState}
+                            <div class="approved">Промокод активирован
+                                <span class="material-icons-outlined">done</span>
+                            </div>
+                            <span class="old_price">
+                                <span class="material-icons-outlined">local_offer</span>
+                                (10%): 
+                                <span class="val">
+                                    { oldSumAllItemsPrice() }
+                                </span>
+                            </span>
+                        {/if}
                         <div class="sum_all_items">
                             <span>итого:</span>
                             <span class="val">{ sumAllItemsPrice() } руб</span>
                         </div>
                     </div>
                     <div class="make_order">
-                        <button>Оформить заказ</button>
+                        <a href="/newOrder">Оформить заказ</a>
                     </div>
                 </div>
             {/if}
@@ -124,10 +144,41 @@
 </div>
 
 <style>
+    .old_price {
+        color: var(--main-descr-color);
+        display: flex;
+        align-items: center;
+    }
+    .old_price .val {
+        text-decoration: line-through;
+        margin-left: 0.5rem;
+    }
+
+    .old_price .material-icons-outlined {
+        font-size: 1rem;
+        margin-right: 0.5rem;
+        color: var(--main-theme-color);
+    }
+
+    .approved {
+        display: flex;
+        align-items: center;
+        color: var(--positive-color)
+    }
+
     .form_container {
         display: flex;
         flex-direction: column;
         width: 100%;
+        position: relative;
+    }
+
+    .err {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        color: red;
+        font-size: 0.8rem;
     }
 
     .submit_code_btn {
@@ -155,12 +206,12 @@
     .make_order {
         display: flex;
     }
-    .make_order button{
+    .make_order a{
         background: var(--main-theme-color);
         color: var(--main-bg-color);
         width: 100%;
         border: 0;
-        display: inline-block;
+        text-align: center;
         font: 500 1rem var(--font);
         padding: 1rem;
     }

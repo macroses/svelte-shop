@@ -25,7 +25,7 @@
             bind:value={searchTerm}
             on:focus={() => activeSearchList = true}>
         {#if searchTerm !== ""}
-            <span class="material-icons-outlined">remove</span>
+            <span class="material-icons-outlined clear_search" on:click={() => searchTerm = ""}>close</span>
         {/if}
         <button type="submit" class="btn_submit">
             <span class="material-icons-outlined">search</span>
@@ -60,6 +60,14 @@
 </div>
 
 <style>
+    .clear_search {
+        position: absolute;
+        right: 45px;
+        top: 10px;
+        cursor: pointer;
+        color: var(--main-text-color);
+    }
+
     .emptyholder {
         padding: 0.5rem 1rem;
         color: var(--main-descr-color);
