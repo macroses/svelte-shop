@@ -28,3 +28,35 @@ export function onlyDigits(node) {
         }
     }
 }
+
+export function formatByPattern(node,pattern) {
+		
+    function set_cursor(){
+        const match = node.value.match(/[\d]/gi);
+        const pos = match ? node.value.lastIndexOf(match.pop())+1 : 0;
+        node.setSelectionRange(pos, pos);
+    }
+    
+    function format_value(e){
+        let digits = node.value.replace(/[^\d]/g,'').split('');
+        node.value = pattern.replace(/[*]/g,(m)=>digits.shift()||m);
+        set_cursor();
+    }
+    
+    node.addEventListener('input',format_value);
+    
+    format_value();
+    
+    return {
+        destroy: ()=>node.removeEventListener('input',format_value)
+    }
+}
+
+export async function getTowns() {
+    const resolve = await fetch(`https://api.hh.ru/areas/113`);
+    const result = await resolve.json();
+
+    const data = result;
+
+    return data;
+}

@@ -1,27 +1,18 @@
 <script>
-    import { cartCollection, promocodeState } from '../stores/cart';
     import { flip } from 'svelte/animate';
     import { onlyDigits } from '../presenter/present-service';
-
-    let promocode = false;
-    let promoCodeValidate = false;
-    let promoValue = '';
-
-    function approveCode() {
-        promoValue === "123" ? $promocodeState = true : $promocodeState = false;
-
-        if(promoValue === "123") {
-            $promocodeState = true;
-        } else {
-            $promocodeState = false;
-            promoCodeValidate = true;
-        }
-    }
+    import { cartCollection, promocodeState } from '../stores/cart';
 
     function cartItemRemove(idx) {
         $cartCollection.splice(idx, 1);
         $cartCollection = $cartCollection;
     };
+
+    let promoObj = {
+        promocode: false,
+        promoCodeValidate: false,
+        promoValue: ''
+    }
 
     $: cartCollectionCounter = () => {
         let sum;
@@ -31,6 +22,17 @@
         return sum;
     };
 
+    function approveCode() {
+        promoObj.promoValue === "123" ? $promocodeState = true : $promocodeState = false;
+
+        if(promoObj.promoValue === "123") {
+            $promocodeState = true;
+        } else {
+            $promocodeState = false;
+            promoObj.promoCodeValidate = true;
+        }
+    }
+
     $: sumAllItemsPrice = () => {
         let sum = 0;
         $cartCollection.forEach(el => {
@@ -38,8 +40,8 @@
         });
 
         if($promocodeState) {
-            promocode = false;
-            return sum * 0.9;
+            promoObj.promocode = false;
+            return Math.ceil(sum * 0.9);
         }
 
         return sum;
@@ -50,7 +52,7 @@
         $cartCollection.forEach(el => {
             sum += el.elem.price * el.cartCounter;
         });
-        return sum;
+        return (sum);
     }
 </script>
 
@@ -91,17 +93,16 @@
                 {/each}
             </ul>
         </div>
-
         <div class="cart_controls_box">
             {#if $cartCollection.length > 0}
                 <div class="controls_wrap">
                     <div class="cart_controls">
                         <div class="title">В корзине {cartCollectionCounter()} шт.</div>
-                        {#if promocode}
-                            <form class="promocode_form" on:submit|preventDefault={approveCode(promoValue)}>
+                        {#if promoObj.promocode}
+                            <form class="promocode_form" on:submit|preventDefault={approveCode(promoObj.promoValue)}>
                                 <div class="form_container">
-                                    <input type="text" class="promo_inp" placeholder="для теста 123" bind:value={promoValue}>
-                                    {#if promoCodeValidate}
+                                    <input type="text" class="promo_inp" placeholder="для теста 123" bind:value={promoObj.promoValue}>
+                                    {#if promoObj.promoCodeValidate}
                                         <span class="err">Такого купона не существует</span>
                                     {/if}
                                     <button class="submit_code_btn">
@@ -110,10 +111,10 @@
                                 </div>
                             </form>
                         {/if}
-                        {#if !promocode && !$promocodeState}
+                        {#if !promoObj.promocode && !$promocodeState}
                             <button class="same_as_link"
-                                on:click={() => promocode = !promocode}
-                                >{promocode ? "активировать промокод" : "введите промокод"}
+                                on:click={() => promoObj.promocode = !promoObj.promocode}
+                                >{promoObj.promocode ? "активировать промокод" : "введите промокод"}
                             </button>
                         {/if}
                         {#if $promocodeState}
@@ -138,7 +139,6 @@
                     </div>
                 </div>
             {/if}
-            
         </div>
     </div>
 </div>
@@ -250,7 +250,7 @@
         position: sticky;
         top: 0;
     }
-    
+
     .empty a {
         color: var(--main-theme-color);
     }
