@@ -37,7 +37,7 @@ export function formatByPattern(node,pattern) {
         node.setSelectionRange(pos, pos);
     }
     
-    function format_value(e){
+    function format_value(){
         let digits = node.value.replace(/[^\d]/g,'').split('');
         node.value = pattern.replace(/[*]/g,(m)=>digits.shift()||m);
         set_cursor();
@@ -50,13 +50,4 @@ export function formatByPattern(node,pattern) {
     return {
         destroy: ()=>node.removeEventListener('input',format_value)
     }
-}
-
-export async function getTowns() {
-    const resolve = await fetch(`https://api.hh.ru/areas/113`);
-    const result = await resolve.json();
-
-    const data = result;
-
-    return data;
 }

@@ -1,11 +1,24 @@
 <script>
     import {cartCollection} from '../stores/cart';
-    import { formatByPattern, getTowns } from '../presenter/present-service';
+    import { formatByPattern } from '../presenter/present-service';
+    import { fade } from 'svelte/transition';
+    import { flip } from 'svelte/animate';
+    import { get } from './api/townsData';
 
-    const towns = getTowns();
+    let townSearch = '';
+    let townInputFocus = false;
+    let townValue = "";
+    $: townSearchResult = get(townSearch);
 
-    $: console.log(towns);
+    let input;
+
+    
 </script>
+
+<svelte:head>
+    <title>Оформление заказа</title>    
+</svelte:head>
+
 
 <div class="container">
     <div class="order">
@@ -29,7 +42,32 @@
                             <span>+7</span>
                             <input type="text" id="phone" use:formatByPattern={'(***) ***-**-**'}>
                         </div>
-                        
+                    </div>
+                    <div class="item_title">Доставка</div>
+                    <div class="item_block">
+                        <label for="names">
+                            Населенный пункт<span class="star">*</span>
+                        </label>
+                        <input type="text" id="names" bind:value={townSearch} 
+                            bind:this={input}
+                            on:focus={() => townInputFocus = true}
+                            on:blur={() => townInputFocus = false}>
+                        {#if townSearch}
+                            <span class="material-icons-outlined clear" on:click={() => townSearch = ""}>clear</span>
+                        {/if}
+                        {#await townSearchResult then value}
+                            <ul class="towns_list">
+                                {#each value.body as item}
+                                    {#each item as town, i (i)}
+                                        {#if townSearch !== "" && townSearchResult.length === 0}
+                                            <li>ничего не найдено</li>
+                                        {:else}
+                                            <li transition:fade on:click={() => townSearch = town}>{town}</li>
+                                        {/if}
+                                    {/each}
+                                {/each}
+                            </ul>
+                        {/await}
                     </div>
                 </div>
             </form>
@@ -68,6 +106,37 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 1rem;
+        position: relative;
+    }
+
+    .item_block .clear {
+        position: absolute;
+        cursor: pointer;
+        bottom: 12px;
+        right: 10px;
+        color: var(--main-text-color);
+    }
+
+    .towns_list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 300px;
+        overflow: auto;
+        background:var(--main-bg-color);
+        box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.1);
+    }
+
+    .towns_list li {
+        padding: 5px 20px;
+        cursor: pointer;
+        transition: .1s;
+    }
+
+    .towns_list li:hover {
+        background: var(--main-theme-color);
+        color: var(--main-bg-color);
     }
 
     .item_block input {
