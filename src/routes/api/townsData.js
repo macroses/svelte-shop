@@ -15,8 +15,6 @@ export async function get(searchVal) {
 
     data = data.filter(el => 
         el.toLowerCase().includes(searchString) && searchString !== "" && searchString.length > 1);
-    
-    console.log(data)
     return {
         body: [
             data
