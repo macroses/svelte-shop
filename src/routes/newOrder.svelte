@@ -1,7 +1,16 @@
 <script>
+    import OrderCart from "../components/Main/Order/OrderCart.svelte";
     import OrderForm from "../components/Main/Order/OrderForm.svelte";
-
     
+    let inputValues = {
+        townSearch: '',
+        nameValue: '',
+        phoneValue: '',
+        commentValue: '',
+        emailValue: '',
+        payChoice: null,
+        deliveryChoice: 0
+    }
 </script>
 
 <svelte:head>
@@ -11,8 +20,8 @@
 
 <div class="container">
     <div class="order">
-        <OrderForm />
-        <div class="order_cart"></div>
+        <OrderForm bind:inputValues={inputValues}/>
+        <OrderCart deliveryCost={inputValues.deliveryChoice}/>
     </div>
 </div>
 
@@ -22,7 +31,4 @@
         gap: 1rem;
     }
 
-    .order_cart {
-        flex: 1;
-    }
 </style>

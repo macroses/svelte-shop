@@ -1,18 +1,28 @@
 <script>
-    import { formatByPattern } from '../../../presenter/present-service';
     import { fade } from 'svelte/transition';
     import { get } from '../../../routes/api/townsData';
+    import OrderRadio from './OrderRadio.svelte';
+    import OrderInputText from './OrderInputText.svelte';
 
-    let townInputFocus = false;
-
-    let inputValues = {
+    export let inputValues = {
         townSearch: '',
         nameValue: '',
-        phoneValue: ''
+        phoneValue: '',
+        commentValue: '',
+        emailValue: '',
+        payChoice: null,
+        deliveryChoice: 0
     }
 
+    let townInputFocus = false;
+    let input;
+
     $: townSearchResult = get(inputValues.townSearch);
-    let delivery = 0;
+
+    function clearAndFocus() {
+        inputValues.townSearch = "";
+        input.focus();
+    }
 </script>
 
 <div class="order_form">
@@ -21,33 +31,31 @@
         <div class="order_form_item">
             <div class="item_title">Контактные данные</div>
             <div class="item_block">
-                <label for="names">
-                    ФИО<span class="star">*</span>
-                </label>
-                <input type="text" id="names" placeholder="введите ФИО контактного лица" value={inputValues.nameValue}>
-                {#if inputValues.nameValue}
-                    <span class="material-icons-outlined clear" on:click={() => inputValues.nameValue = ""}>clear</span>
-                {/if}
+                <OrderInputText 
+                    idVal="names" 
+                    pholder="введите ФИО контактного лица" 
+                    bind:inpVal={inputValues.nameValue}>
+                        <span slot=label>ФИО<span class="star">*</span></span>
+                </OrderInputText>
             </div>
             <div class="item_block">
-                <label for="phone">
-                    Телефон<span class="star">*</span>
-                </label>
-                <div class="phone_wrap">
-                    <span>+7</span>
-                    <input type="text" id="phone" use:formatByPattern={'(***) ***-**-**'} value={inputValues.phoneValue}>
-                </div>
+                <OrderInputText 
+                    pattern={true}
+                    idVal="phone">
+                        <span slot=label>Телефон<span class="star">*</span></span>
+                </OrderInputText>
             </div>
             <div class="item_title">Доставка</div>
             <div class="item_block">
                 <label for="names">
                     Населенный пункт<span class="star">*</span>
                 </label>
-                <input type="text" id="names" bind:value={inputValues.townSearch} 
+                <input type="text" id="names" bind:value={inputValues.townSearch}
+                    bind:this={input} 
                     on:focus={() => townInputFocus = true}
                     on:blur={() => townInputFocus = false}>
                 {#if inputValues.townSearch}
-                    <span class="material-icons-outlined clear" on:click={() => inputValues.townSearch = ""}>clear</span>
+                    <span class="material-icons-outlined clear" on:click={() => clearAndFocus()}>clear</span>
                 {/if}
                 {#await townSearchResult then value}
                     <ul class="towns_list">
@@ -62,78 +70,54 @@
                 {/await}
             </div>
 
-            <div class="item_block delivery">
-                <label>
-                    <input type="radio" bind:group={delivery} value={0}>
-                    <span class="radio_content">
-                        <span class="value">Самовывоз (на пункте выдачи)</span>
-                        <span class="price">+ 0 руб</span>
-                    </span>
-                </label>
-                <label>
-                    <input type="radio" bind:group={delivery} value={300}>
-                    <span class="radio_content">
-                        <span class="value">Курьером</span>
-                        <span class="price">+ 300 руб</span>
-                    </span>
-                </label>
+            <div class="item_block">
+                <OrderRadio bind:flag={inputValues.deliveryChoice} radioValue={0}>
+                    <span slot="value">Самовывоз (на пуункте выдачи)</span>
+                    <span slot="price">+ 0 руб</span>
+                </OrderRadio>
+                <OrderRadio bind:flag={inputValues.deliveryChoice} radioValue={300}>
+                    <span slot="value">Курьером</span>
+                    <span slot="price">+ 300 руб</span>
+                </OrderRadio>
+            </div>
+            <div class="item_block">
+                <label for="comment">Комментарии к заказу</label>
+                <textarea id="comment"></textarea>
+            </div>
+
+            <div class="item_title">Покупатель</div>
+            <div class="item_block">
+                <OrderInputText 
+                    idVal="mail"
+                    pholder="email адрес"
+                    bind:inpVal={ inputValues.emailValue }>
+                        <span slot=label>Email<span class="star">*</span></span>
+                </OrderInputText>
+            </div>
+
+            <div class="item_title">Способ оплаты<span class="star">*</span></div>
+            <div class="item_block">
+                <OrderRadio bind:flag={inputValues.payChoice} radioValue={1}>
+                    <span slot="value">Наличными курьеру</span>
+                </OrderRadio>
+                <OrderRadio bind:flag={inputValues.payChoice} radioValue={2}>
+                    <span slot="value">Банковский перевод</span>
+                </OrderRadio>
             </div>
         </div>
+        <button class="confirm_order">Подтвердить заказ</button>
     </form>
 </div>
 
 <style>
-    .delivery input {
-        visibility: hidden;
-        position: absolute;
-    }
-
-    .delivery label {
-        cursor: pointer;
-        padding: 1rem;
-        border: 1px solid var(--main-border-color);
-        transition: .2s;
-        margin-bottom: 0.5rem;
-    }
-
-    .delivery label:hover {
-        background: var(--filter-bg-color);
-    }
-
-    .delivery .radio_content {
-        position: relative;
-        padding-left: 25px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.3rem;
-    }
-
-    .delivery .radio_content:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 6px;
-        width: 18px;
-        height: 18px;
-        border: 1px solid #ccc;
-        border-radius: 50%;
-        background: #fff;
-    }
-
-    .delivery .radio_content:after {
-        content: '';
-        background: rgba(255,255,255,0);
-        position: absolute;
-        left: 4px;
-        top: 10px;
-        width: 11px;
-        height: 11px;
-        border-radius: 50px;
-    }
-
-    .delivery input:checked + .radio_content:after {
+    .confirm_order {
         background: var(--main-theme-color);
+        color: var(--main-bg-color);
+        width: 100%;
+        border: 0;
+        text-align: center;
+        font: 500 1rem var(--font);
+        padding: 1rem;
     }
 
     .title {
@@ -150,6 +134,9 @@
 
     .order_form {
         flex: 1;
+        border-right: 1px solid var(--main-border-color);
+        padding-right: 1rem;
+        color: var(--main-text-color);
     }
 
     .item_block {
@@ -167,6 +154,13 @@
         color: var(--main-text-color);
     }
 
+    .item_block textarea {
+        height: 100px;
+        resize: vertical;
+        border: 1px solid var(--main-border-color);
+        padding: 0.5rem;
+    }
+
     .towns_list {
         position: absolute;
         top: 100%;
@@ -178,6 +172,7 @@
         box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.1);
         border: 1px solid var(--main-border-color);
         border-top: 0;
+        z-index: 10;
     }
 
     .towns_list li {
@@ -200,7 +195,7 @@
         transition: .2s;
     }
 
-    .phone_wrap {
+    /* .phone_wrap {
         display: flex;
         align-items: center;
     }
@@ -211,7 +206,7 @@
 
     .phone_wrap input {
         flex: 1;
-    }
+    } */
 
     .star {
         color: red;
