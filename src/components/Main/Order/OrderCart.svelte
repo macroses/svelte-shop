@@ -11,10 +11,10 @@
         });
 
         if($promocodeState) {
-            return Math.ceil(sum * 0.9);
+            return Math.ceil(sum * 0.9) + deliveryCost;
         }
 
-        return sum;
+        return sum + deliveryCost;
     };
 </script>
 
@@ -88,5 +88,11 @@
 
     .total .sum_val {
         font-size: 1.5em;
+    }
+
+    @media (max-width: 768px) {
+        .order_cart {
+            order: -1;
+        }
     }
 </style>

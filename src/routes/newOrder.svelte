@@ -21,7 +21,7 @@
 <div class="container">
     <div class="order">
         <OrderForm bind:inputValues={inputValues}/>
-        <OrderCart deliveryCost={inputValues.deliveryChoice}/>
+        <OrderCart bind:deliveryCost={inputValues.deliveryChoice}/>
     </div>
 </div>
 
@@ -31,4 +31,9 @@
         gap: 1rem;
     }
 
+    @media (max-width: 768px) {
+        .order {
+            flex-direction: column;
+        }
+    }
 </style>

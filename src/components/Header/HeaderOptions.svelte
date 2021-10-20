@@ -61,7 +61,7 @@
 
         position: absolute;
         top: 50%;
-        left: 0;
+        right: 0;
     }
 
     .options {
@@ -91,6 +91,10 @@
     @media (max-width: 992px) {
         .text {
             display: none;
+        }
+
+        .options {
+            margin-right: 0.5rem;
         }
     }
     

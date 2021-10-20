@@ -157,7 +157,7 @@
         }
 
         .footer_logo {
-            margin-bottom: 0;
+            margin: 0 auto;
         }
 
         .phone_value {
@@ -172,7 +172,7 @@
         }
 
         .footer_menu {
-            justify-content: center;
+            display: none;
         }
 
         .menu_item {

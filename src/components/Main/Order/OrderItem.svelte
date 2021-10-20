@@ -15,10 +15,11 @@
 </li>
 
 <style>
-     .order_item {
+    .order_item {
         display: flex;
         align-items: center;
         margin-bottom: 1rem;
+        flex-wrap: wrap;
     }
 
     .item_img {
@@ -43,5 +44,25 @@
     .price {
         font-size: 1.3em;
         font-weight: 600;
+    }
+
+    .item_price {
+        margin-left: auto;
+    }
+
+    @media (max-width: 768px) {
+        .item_img {
+            flex: 0 1 50px;
+            min-height: 70px;
+        }
+
+        .item_img img {
+            width: 100%;
+        }
+
+        .order_item:not(:last-child) {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--main-border-color);
+        }
     }
 </style>

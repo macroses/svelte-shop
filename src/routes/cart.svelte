@@ -368,7 +368,7 @@
         }
 
         .item_total {
-            font-size: 1rem;
+            /* font-size: 1rem; */
         }
 
         .cart_item {
@@ -383,6 +383,16 @@
             width: 100px;
             height: 100px;
             grid-area: image;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .cart_item {
+            grid-auto-columns: 100px min-content auto min-content;
+            grid-template-areas: 
+                "image title title title"
+                "image delete delete delete" 
+                "counter counter total total";
         }
     }
 </style>

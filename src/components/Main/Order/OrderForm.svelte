@@ -72,7 +72,7 @@
 
             <div class="item_block">
                 <OrderRadio bind:flag={inputValues.deliveryChoice} radioValue={0}>
-                    <span slot="value">Самовывоз (на пуункте выдачи)</span>
+                    <span slot="value">Самовывоз (на пункте выдачи)</span>
                     <span slot="price">+ 0 руб</span>
                 </OrderRadio>
                 <OrderRadio bind:flag={inputValues.deliveryChoice} radioValue={300}>
@@ -195,20 +195,14 @@
         transition: .2s;
     }
 
-    /* .phone_wrap {
-        display: flex;
-        align-items: center;
-    }
-
-    .phone_wrap span {
-        margin-right: 5px;
-    }
-
-    .phone_wrap input {
-        flex: 1;
-    } */
-
     .star {
         color: red;
+    }
+
+    @media (max-width: 768px) {
+        .order_form {
+            padding: 0;
+            border-right: 0;
+        }
     }
 </style>

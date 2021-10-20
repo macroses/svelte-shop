@@ -56,50 +56,57 @@
 </script>
 
 <li>
-    <a href="/{categoryId}/goodItems/{item.id}" class="item_link_img">
-        <div class="picture">
-            {#if !defaultInfo}
-                {#key currentIndex}
-                    <img in:fade src="{item.imgSet[currentIndex]}" alt={item.name} loading="lazy">
-                {/key}
-            {:else}
-                {#if currentIndex}
-                    <img src="default_img.svg" alt="" loading="lazy" transition:fade>
-                {/if}
-            {/if}
-            <div class="preview_list">    
-                {#each item.imgSet as _, index}
-                    {#if item.imgSet.length > 1}
-                        <span class="preview" on:mouseenter={() => getImgSetIndex(index, item.imgSet)} ></span>
-                    {/if}
-                {/each}
-            </div>
-        </div>
-        <span class="item_name">{item.name}</span>
-    </a>
-    <div class="bottom">
-        <div class="price">{(item.price).toLocaleString('ru')} руб</div>
-        <Button titleProp={"в корзину"} on:click={pushToCart}>
-            <span class="cart_val_wrap">
-                {#if cartElemCounter > 0}
-                    <span class="cart_counter">{cartElemCounter}</span>
-                    <span>+1</span>
+    <div class="item_container">
+        <a href="/{categoryId}/goodItems/{item.id}" class="item_link_img">
+            <div class="picture">
+                {#if !defaultInfo}
+                    {#key currentIndex}
+                        <img in:fade src="{item.imgSet[currentIndex]}" alt={item.name} loading="lazy">
+                    {/key}
                 {:else}
-                    <span class="material-icons-outlined cart">shopping_cart</span>
+                    {#if currentIndex}
+                        <img src="default_img.svg" alt="" loading="lazy" transition:fade>
+                    {/if}
                 {/if}
-            </span>
-        </Button>
-    </div>
+                <div class="preview_list">    
+                    {#each item.imgSet as _, index}
+                        {#if item.imgSet.length > 1}
+                            <span class="preview" on:mouseenter={() => getImgSetIndex(index, item.imgSet)} ></span>
+                        {/if}
+                    {/each}
+                </div>
+            </div>
+            <span class="item_name">{item.name}</span>
+        </a>
+        <div class="bottom">
+            <div class="price">{(item.price).toLocaleString('ru')} руб</div>
+            <Button titleProp={"в корзину"} on:click={pushToCart}>
+                <span class="cart_val_wrap">
+                    {#if cartElemCounter > 0}
+                        <span class="cart_counter">{cartElemCounter}</span>
+                        <span>+1</span>
+                    {:else}
+                        <span class="material-icons-outlined cart">shopping_cart</span>
+                    {/if}
+                </span>
+            </Button>
+        </div>
 
-    <div class="favorite_item">
-        <span class="material-icons-outlined"
-            class:favorite={item.favorite}
-            on:click={pushToFavorite}
-            >{item.favorite ? "favorite" : "favorite_border"}</span>
+        <div class="favorite_item">
+            <span class="material-icons-outlined"
+                class:favorite={item.favorite}
+                on:click={pushToFavorite}
+                >{item.favorite ? "favorite" : "favorite_border"}</span>
+        </div>
     </div>
 </li>
 
 <style>
+    .item_container {
+        max-width: 300px;
+        margin: 0 auto;
+        position: relative;
+    }
     .cart_counter {
         position: absolute;
         min-width: 1rem;
