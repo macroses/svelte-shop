@@ -21,16 +21,14 @@
         import GoodItemImgs from '../../../components/Main/GoodItem/GoodItemImgs.svelte';
         import DataFavorite from '../../../components/Main/GoodItem/DataFavorite.svelte';
 
-    const temp         = new Model();
+    const temp = new Model();
     
     let staticData;
-    let title          = "";
+    let title = "";
 
     function updateData() {
         staticData   = temp.getSingleItem(categoryId, id);
     }
-
-    
 
     onMount(async() => {
         const resolve = await staticData;

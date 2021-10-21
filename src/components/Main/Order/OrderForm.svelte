@@ -3,6 +3,8 @@
     import { get } from '../../../routes/api/townsData';
     import OrderRadio from './OrderRadio.svelte';
     import OrderInputText from './OrderInputText.svelte';
+    import { goto } from '$app/navigation';
+    import { orderStore, cartCollection } from '../../../stores/cart';
 
     export let inputValues = {
         townSearch: '',
@@ -11,8 +13,11 @@
         commentValue: '',
         emailValue: '',
         payChoice: null,
-        deliveryChoice: 0
+        deliveryChoice: 0,
+        sum: 0
     }
+
+    $: $orderStore = inputValues;
 
     let townInputFocus = false;
     let input;
@@ -23,11 +28,15 @@
         inputValues.townSearch = "";
         input.focus();
     }
+
+    const handleSubmit = () => {
+        goto(`/completeOrder`);
+    }
 </script>
 
 <div class="order_form">
     <div class="title">Оформление заказа</div>
-    <form action="post">
+    <form on:submit|preventDefault={handleSubmit}>
         <div class="order_form_item">
             <div class="item_title">Контактные данные</div>
             <div class="item_block">
@@ -41,7 +50,8 @@
             <div class="item_block">
                 <OrderInputText 
                     pattern={true}
-                    idVal="phone">
+                    idVal="phone"
+                    bind:inpVal={inputValues.phoneValue}>
                         <span slot=label>Телефон<span class="star">*</span></span>
                 </OrderInputText>
             </div>
@@ -82,7 +92,7 @@
             </div>
             <div class="item_block">
                 <label for="comment">Комментарии к заказу</label>
-                <textarea id="comment"></textarea>
+                <textarea id="comment" bind:value={inputValues.commentValue}></textarea>
             </div>
 
             <div class="item_title">Покупатель</div>

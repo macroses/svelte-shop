@@ -1,5 +1,5 @@
 <script>
-    import { cartCollection, promocodeState } from '../../../stores/cart';
+    import { cartCollection, promocodeState, orderStore } from '../../../stores/cart';
     import OrderItem from './OrderItem.svelte';
 
     export let deliveryCost;
@@ -16,6 +16,8 @@
 
         return sum + deliveryCost;
     };
+
+    $: $orderStore.sum = sumAllItemsPrice();
 </script>
 
 

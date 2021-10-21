@@ -20,7 +20,7 @@
         <slot name="label">{label}</slot>
     </label>
     {#if pattern}
-        <input type="text" id={idVal} placeholder={pholder} use:formatByPattern={'(***) ***-**-**'} value={inpVal}>
+        <input type="text" id={idVal} placeholder={pholder} use:formatByPattern={'(***) ***-**-**'} bind:value={inpVal} bind:this={input}>
     {:else}
         <input type="text" id={idVal} placeholder={pholder} bind:value={inpVal} bind:this={input}>
     {/if}
