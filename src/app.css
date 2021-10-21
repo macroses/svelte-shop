@@ -20,7 +20,7 @@
     --gray-hover-color: #f5f5f5;
     --positive-color: #14c014;
 
-    --font: 'Jost', sans-serif;
+    --font: 'Jost', 'Arial', sans-serif;
     --font-size-default: 16px;
     --transition-timing: .2s;
     --footer-bg-color: #f5f5f5;

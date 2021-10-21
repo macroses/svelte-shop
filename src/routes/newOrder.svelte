@@ -1,7 +1,7 @@
 <script>
     import OrderCart from "../components/Main/Order/OrderCart.svelte";
     import OrderForm from "../components/Main/Order/OrderForm.svelte";
-    import { cartCollection } from '../stores/cart';
+    import { cartCollection, promocodeState } from '../stores/cart';
     
     let inputValues = {
         townSearch: '',
@@ -11,10 +11,10 @@
         emailValue: '',
         payChoice: null,
         deliveryChoice: 0,
-        sum: 0
+        sum: 0,
+        promo: $promocodeState
     }
 
-    $: console.log($cartCollection)
 </script>
 
 <svelte:head>

@@ -56,6 +56,9 @@
     }
 </script>
 
+<svelte:head>
+    <title>Корзина</title>
+</svelte:head>
 
 <div class="container">
     <div class="title">Корзина</div>

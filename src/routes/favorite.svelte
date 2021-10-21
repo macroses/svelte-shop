@@ -4,6 +4,10 @@
     import GoodItemView from '../components/Main/Good/GoodItemView.svelte';
 </script>
 
+<svelte:head>
+    <title>Избранное</title>
+</svelte:head>
+
 <div class="container">
     <div class="title">Избранное</div>
     {#if $favoriteCollection.length > 0}
