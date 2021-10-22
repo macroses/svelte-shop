@@ -135,10 +135,6 @@
 		flex-basis: 200px;
 	}
 
-	.soc {
-		font-size: 40px;
-	}
-
 	.order_table {
 		width: 100%;
 		border: 1px solid var(--main-border-color);

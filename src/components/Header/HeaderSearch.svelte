@@ -84,7 +84,7 @@
         overflow: auto;
         border: 1px solid var(--main-border-color);
         border-top: 0;
-        z-index: 10;
+        z-index: 30;
     }
 
     .search_res li a{
