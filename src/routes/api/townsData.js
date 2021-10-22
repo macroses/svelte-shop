@@ -1,5 +1,5 @@
 export async function get(searchVal) {
-    const resolve = await fetch(`https://api.hh.ru/areas/113`, {mode: "no-cors"});
+    const resolve = await fetch(`https://api.hh.ru/areas/113`);
     const result = await resolve.json();
 
     let data = result.areas.map(areas => {

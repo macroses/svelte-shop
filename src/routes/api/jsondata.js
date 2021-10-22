@@ -14,10 +14,10 @@ export async function get() {
                         "body": "Большой 6,5-дюймовый HD+ экран с V-образным вырезом для камеры создан для полного погружения в контент. Благодаря поддержке технологии HD+ картинка на Samsung Galaxy A12 яркая и насыщенная.",
                         "price": "13 990",
                         "imgSet": [
-                            "https://static-sl.insales.ru/r/rA-yB-Aq4fw/fit/1000/0/ce/1/plain/images/products/1/7539/461503859/medium_f655e62135382d922a3d0fdaa66ced29.jpg@webp",
-                            "https://static-sl.insales.ru/r/8Fsnks0OGqc/fit/1000/0/ce/1/plain/images/products/1/686/414040750/%D0%91%D0%B5%D0%B7_%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F__4_.jfif@webp",
-                            "https://static-sl.insales.ru/r/LcPmXL6IRjM/fit/1000/0/ce/1/plain/images/products/1/659/414040723/%D0%91%D0%B5%D0%B7_%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F__1_.jfif@webp",
-                            "https://static-sl.insales.ru/r/i1jdLiyBIBM/fit/1000/0/ce/1/plain/images/products/1/740/414040804/%D0%91%D0%B5%D0%B7_%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F__5_.jfif@webp"
+                            "goods/1_1_a.webp",
+                            "goods/1_1_b.webp",
+                            "goods/1_1_c.webp",
+                            "goods/1_1_d.webp"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -41,11 +41,11 @@ export async function get() {
                         "body": "",
                         "price": "72 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30051224bb.jpg",
-                            "https://img.mvideo.ru/Big/30051224bb1.jpg",
-                            "https://img.mvideo.ru/Big/30051224bb2.jpg",
-                            "https://img.mvideo.ru/Big/30051224bb3.jpg",
-                            "https://img.mvideo.ru/Big/30051224bb4.jpg",
+                            "goods/1_2_a.jpg",
+                            "goods/1_2_b.jpg",
+                            "goods/1_2_c.jpg",
+                            "goods/1_2_d.jpg",
+                            "goods/1_2_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -69,12 +69,12 @@ export async function get() {
                         "body": "Откройте для себя эксклюзивные цвета Galaxy Z Flip3 5G только на Samsung.com.Предложение ограничено!",
                         "price": "89 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30058445bb.jpg",
-                            "https://img.mvideo.ru/Big/30058445bb1.jpg",
-                            "https://img.mvideo.ru/Big/30058445bb2.jpg",
-                            "https://img.mvideo.ru/Big/30058445bb3.jpg",
-                            "https://img.mvideo.ru/Big/30058445bb4.jpg",
-                            "https://img.mvideo.ru/Big/30058445bb5.jpg"
+                            "goods/1_3_a.jpg",
+                            "goods/1_3_b.jpg",
+                            "goods/1_3_c.jpg",
+                            "goods/1_3_d.jpg",
+                            "goods/1_3_e.jpg",
+                            "goods/1_3_f.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -98,12 +98,12 @@ export async function get() {
                         "body": "Mi 11 создан для любителей кино. Xiaomi объединила выдающиеся технологии с передовым программным обеспечением, чтобы предложить множество креативных и простых в использовании функций видеосъёмки.",
                         "price": "75 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30056960bb.jpg",
-                            "https://img.mvideo.ru/Big/30056960bb1.jpg",
-                            "https://img.mvideo.ru/Big/30056960bb2.jpg",
-                            "https://img.mvideo.ru/Big/30056960bb3.jpg",
-                            "https://img.mvideo.ru/Big/30056960bb4.jpg",
-                            "https://img.mvideo.ru/Big/30056960bb5.jpg"
+                            "goods/1_4_a.jpg",
+                            "goods/1_4_b.jpg",
+                            "goods/1_4_c.jpg",
+                            "goods/1_4_d.jpg",
+                            "goods/1_4_e.jpg",
+                            "goods/1_4_f.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
