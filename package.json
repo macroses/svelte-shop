@@ -18,8 +18,7 @@
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
     "svelte": "^3.34.0",
-    "svelte-range-slider-pips": "^1.8.0",
-    "@sveltejs/adapter-vercel": "next"
+    "svelte-range-slider-pips": "^1.8.0"
   },
   "type": "module",
   "dependencies": {
