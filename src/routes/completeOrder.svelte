@@ -1,11 +1,12 @@
 <script>
-	import { orderStore, cartCollection } from '../stores/cart';
+	import { orderStore, cartCollection, promocodeState } from '../stores/cart';
 	import { afterUpdate } from 'svelte';
 
 	let orderCollection = $cartCollection;
 
 	afterUpdate(() => {
 		$cartCollection = [];
+		$promocodeState = false;
 	});
 
 	let orderNum = randomOrderNum();
@@ -30,13 +31,6 @@
 			<div class="order_info_value sum">{$orderStore.sum} руб</div>
 			<div class="order_info_status">Принят</div>
 			<div class="order_info_status">Не оплачен</div>
-		</div>
-		<div class="order_info_item">
-			<div class="order_info_title">Получать уведомления в мессенджерах</div>
-			<div class="order_info_value">
-				<span class="material-icons-outlined soc">whatsapp</span>
-				<span class="material-icons-outlined soc">send</span>
-			</div>
 		</div>
 		<div class="order_info_item">
 			<div class="order_info_title">Способ оплаты</div>
