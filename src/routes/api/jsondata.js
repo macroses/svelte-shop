@@ -976,7 +976,7 @@ export async function get() {
                         "price": "97499",
                         "imgSet": [
                             "/goods/4_3_a.jpg",
-                            "/goods/4_3_b.jpg",
+                            "/goods/4_3_b.jpg", 
                             "/goods/4_3_c.jpg",
                             "/goods/4_3_d.jpg",
                             "/goods/4_3_e.jpg"
