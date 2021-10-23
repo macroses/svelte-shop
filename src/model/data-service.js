@@ -1,6 +1,6 @@
 class Model {
     async _getAllItems() {
-        const resolve = await fetch('/api/jsondata');
+        const resolve = await fetch('https://svelte-shop-lilac.vercel.app/api/jsondata');
         // const resolve = await fetch('http://localhost:3000/api/jsondata');
         const result = await resolve.json();
         const data = result.map((cat) => {
