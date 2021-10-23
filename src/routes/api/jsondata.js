@@ -14,10 +14,10 @@ export async function get() {
                         "body": "Большой 6,5-дюймовый HD+ экран с V-образным вырезом для камеры создан для полного погружения в контент. Благодаря поддержке технологии HD+ картинка на Samsung Galaxy A12 яркая и насыщенная.",
                         "price": "13 990",
                         "imgSet": [
-                            "goods/1_1_a.webp",
-                            "goods/1_1_b.webp",
-                            "goods/1_1_c.webp",
-                            "goods/1_1_d.webp"
+                            "/static/goods/1_1_a.webp",
+                            "/static/goods/1_1_b.webp",
+                            "/static/goods/1_1_c.webp",
+                            "/static/goods/1_1_d.webp"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -41,11 +41,11 @@ export async function get() {
                         "body": "",
                         "price": "72 990",
                         "imgSet": [
-                            "goods/1_2_a.jpg",
-                            "goods/1_2_b.jpg",
-                            "goods/1_2_c.jpg",
-                            "goods/1_2_d.jpg",
-                            "goods/1_2_e.jpg"
+                            "/static/goods/1_2_a.jpg",
+                            "/static/goods/1_2_b.jpg",
+                            "/static/goods/1_2_c.jpg",
+                            "/static/goods/1_2_d.jpg",
+                            "/static/goods/1_2_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -69,12 +69,12 @@ export async function get() {
                         "body": "Откройте для себя эксклюзивные цвета Galaxy Z Flip3 5G только на Samsung.com.Предложение ограничено!",
                         "price": "89 990",
                         "imgSet": [
-                            "goods/1_3_a.jpg",
-                            "goods/1_3_b.jpg",
-                            "goods/1_3_c.jpg",
-                            "goods/1_3_d.jpg",
-                            "goods/1_3_e.jpg",
-                            "goods/1_3_f.jpg"
+                            "/static/goods/1_3_a.jpg",
+                            "/static/goods/1_3_b.jpg",
+                            "/static/goods/1_3_c.jpg",
+                            "/static/goods/1_3_d.jpg",
+                            "/static/goods/1_3_e.jpg",
+                            "/static/goods/1_3_f.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -98,12 +98,12 @@ export async function get() {
                         "body": "Mi 11 создан для любителей кино. Xiaomi объединила выдающиеся технологии с передовым программным обеспечением, чтобы предложить множество креативных и простых в использовании функций видеосъёмки.",
                         "price": "75 990",
                         "imgSet": [
-                            "goods/1_4_a.jpg",
-                            "goods/1_4_b.jpg",
-                            "goods/1_4_c.jpg",
-                            "goods/1_4_d.jpg",
-                            "goods/1_4_e.jpg",
-                            "goods/1_4_f.jpg"
+                            "/static/goods/1_4_a.jpg",
+                            "/static/goods/1_4_b.jpg",
+                            "/static/goods/1_4_c.jpg",
+                            "/static/goods/1_4_d.jpg",
+                            "/static/goods/1_4_e.jpg",
+                            "/static/goods/1_4_f.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -127,12 +127,11 @@ export async function get() {
                         "body": "Huawei делала P Smart 2021, явно прислушиваясь к народным чаяниям, словно бы на основе социологического опроса.",
                         "price": "15 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30053815bb.jpg",
-                            "https://img.mvideo.ru/Big/30053815bb1.jpg",
-                            "https://img.mvideo.ru/Big/30053815bb2.jpg",
-                            "https://img.mvideo.ru/Big/30053815bb3.jpg",
-                            "https://img.mvideo.ru/Big/30053815bb4.jpg",
-                            "https://img.mvideo.ru/Big/30053815bb5.jpg"
+                            "/static/goods/1_5_a.jpg",
+                            "/static/goods/1_5_b.jpg",
+                            "/static/goods/1_5_c.jpg",
+                            "/static/goods/1_5_d.jpg",
+                            "/static/goods/1_5_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -156,12 +155,12 @@ export async function get() {
                         "body": "Huawei P40 Pro – улучшенная версия флагманского смартфона от известного производителя.  Его 6,58-дюймовый экран, выполненный по технологии OLED, загнут на все грани и торцы корпуса. За счёт этого создаётся ощущение полной безграничности дисплея. Разрешение 2640 х 1200 пикселей и частота обновления 90 Гц обеспечивают безупречную реалистичность изображения.",
                         "price": "64 999",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30048587bb.jpg",
-                            "https://img.mvideo.ru/Big/30048587bb1.jpg",
-                            "https://img.mvideo.ru/Big/30048587bb2.jpg",
-                            "https://img.mvideo.ru/Big/30048587bb3.jpg",
-                            "https://img.mvideo.ru/Big/30048587bb4.jpg",
-                            "https://img.mvideo.ru/Big/30048587bb5.jpg"
+                            "/static/goods/1_6_a.jpg",
+                            "/static/goods/1_6_b.jpg",
+                            "/static/goods/1_6_c.jpg",
+                            "/static/goods/1_6_d.jpg",
+                            "/static/goods/1_6_e.jpg",
+                            "/static/goods/1_6_f.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -185,12 +184,11 @@ export async function get() {
                         "body": "Корпус модели выполнен из металла, имеющего хорошую устойчивость к внешним повреждениям, а также влаге и пыли. Стильный смартфон APPLE iPhone 11 128Гб, MHDH3RU/A обладает экраном IPS диагональю 6,1 дюйма для отображения яркой, насыщенной цветом картинки в разрешении 1792x828 пикселей. Система камер 12+12 Мп, сочетающая в себе широкоугольную и сверхширокоугольную камеры, отличается большим спектром возможностей, позволяя создавать фотографии высокого качества. Для длительной автономной работы модель имеет ёмкую аккумуляторную батарею.",
                         "price": "64 999",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30052936bb.jpg",
-                            "https://img.mvideo.ru/Big/30052936bb1.jpg",
-                            "https://img.mvideo.ru/Big/30052936bb2.jpg",
-                            "https://img.mvideo.ru/Big/30052936bb3.jpg",
-                            "https://img.mvideo.ru/Big/30052936bb4.jpg",
-                            "https://img.mvideo.ru/Big/30052936bb5.jpg"
+                            "/static/goods/1_7_a.jpg",
+                            "/static/goods/1_7_b.jpg",
+                            "/static/goods/1_7_c.jpg",
+                            "/static/goods/1_7_d.jpg",
+                            "/static/goods/1_7_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -214,14 +212,14 @@ export async function get() {
                         "body": "Это iPhone 12 Pro Max. A14 Bionic, самый быстрый процессор iPhone. Система камер Pro, которая обеспечивает потрясающее качество снимков при слабом освещении. И увеличенный дисплей Super Retina XDR. Это новая эра для iPhone.",
                         "price": "103 390",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30052915bb.jpg",
-                            "https://img.mvideo.ru/Big/30052915bb1.jpg",
-                            "https://img.mvideo.ru/Big/30052915bb2.jpg",
-                            "https://img.mvideo.ru/Big/30052915bb3.jpg",
-                            "https://img.mvideo.ru/Big/30052915bb4.jpg",
-                            "https://img.mvideo.ru/Big/30052915bb5.jpg",
-                            "https://img.mvideo.ru/Big/30052915bb6.jpg",
-                            "https://img.mvideo.ru/Big/30052915bb7.jpg"
+                            "/static/goods/1_8_a.jpg",
+                            "/static/goods/1_8_b.jpg",
+                            "/static/goods/1_8_c.jpg",
+                            "/static/goods/1_8_d.jpg",
+                            "/static/goods/1_8_e.jpg",
+                            "/static/goods/1_8_f.jpg",
+                            "/static/goods/1_8_g.jpg",
+                            "/static/goods/1_8_h.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -245,11 +243,11 @@ export async function get() {
                         "body": "A14 Bionic, самый быстрый процессор iPhone. Дисплей OLED от края до края. Передняя панель Ceramic Shield, которая в четыре раза снижает риск повреждений дисплея при падении. И Ночной режим на всех камерах. Всё это есть в iPhone 12. В двух размерах.",
                         "price": "69 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30052938bb.jpg",
-                            "https://img.mvideo.ru/Big/30052938bb1.jpg",
-                            "https://img.mvideo.ru/Big/30052938bb2.jpg",
-                            "https://img.mvideo.ru/Big/30052938bb3.jpg",
-                            "https://img.mvideo.ru/Big/30052938bb4.jpg"
+                            "/static/goods/1_9_a.jpg",
+                            "/static/goods/1_9_b.jpg",
+                            "/static/goods/1_9_c.jpg",
+                            "/static/goods/1_9_d.jpg",
+                            "/static/goods/1_9_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -273,11 +271,11 @@ export async function get() {
                         "body": "Одно из них – поворотный блок камер, позволяющий делать снимки отличного качества в обычном и фронтальном режимах. В вашем распоряжении – три объектива: 64, 12 и 8 Мп. С ними вы получите как обычные фотографии, яркие и детализированные, так и эффектные панорамы, портреты, селфи и видеоролики.",
                         "price": "69 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30057794bb.jpg",
-                            "https://img.mvideo.ru/Big/30057794bb1.jpg",
-                            "https://img.mvideo.ru/Big/30057794bb2.jpg",
-                            "https://img.mvideo.ru/Big/30057795bb3.jpg",
-                            "https://img.mvideo.ru/Big/30057795bb4.jpg"
+                            "/static/goods/1_10_a.jpg",
+                            "/static/goods/1_10_b.jpg",
+                            "/static/goods/1_10_c.jpg",
+                            "/static/goods/1_10_d.jpg",
+                            "/static/goods/1_10_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -308,11 +306,11 @@ export async function get() {
                         "body": "Хороший стильный ноутбук для учебы и работы. Шум вентиляторов либо не слышно, либо в очень ресурсоёмких задачах немного слышно (еле как, совсем не мешает). P.S. Вообще советую рассматривать модели с процессором AMD, но они немного дороже, и немного дефицитные.",
                         "price": "42 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30057322bb.jpg",
-                            "https://img.mvideo.ru/Big/30057322bb1.jpg",
-                            "https://img.mvideo.ru/Big/30057322bb2.jpg",
-                            "https://img.mvideo.ru/Big/30057322bb3.jpg",
-                            "https://img.mvideo.ru/Big/30057322bb21.jpg"
+                            "/static/goods/2_1_a.jpg",
+                            "/static/goods/2_1_b.jpg",
+                            "/static/goods/2_1_c.jpg",
+                            "/static/goods/2_1_d.jpg",
+                            "/static/goods/2_1_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -337,8 +335,10 @@ export async function get() {
                         "body": "Для стабильной работы большинства приложений не требуется заоблачная мощность - ноутбук HP 15s-fq2060ur запросто справится с поставленными задачами, позволяя владельцу заниматься будничными делами и отдыхать в свободное время.",
                         "price": "41 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30056517bb.jpg",
-                            "https://img.mvideo.ru/Big/30056517bb21.jpg"
+                            "/static/goods/2_2_a.jpg",
+                            "/static/goods/2_2_b.jpg",
+                            "/static/goods/2_2_c.jpg",
+                            "/static/goods/2_2_d.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -364,11 +364,11 @@ export async function get() {
                         "body": "Производительный лэптоп делает ставку на видеокарту GeForce GTX 1650 с 4 Гб памяти на борту. Она поддерживает множество современных технологий, включая DirectX 12, и выдаёт стабильный FPS в множестве хитов, включая сетевые шутеры и стратегии. Также создатели разместили в недрах устройства четырёхъядерный процессор Intel Core i5 10300H и 8 Гб оперативной памяти DDR4.",
                         "price": "64 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/small_pic/480/30056162bb.jpg",
-                            "https://img.mvideo.ru/Big/small_pic/480/30056162bb1.jpg",
-                            "https://img.mvideo.ru/Big/small_pic/480/30056162bb2.jpg",
-                            "https://img.mvideo.ru/Big/30056162bb21.jpg",
-                            "https://img.mvideo.ru/Big/30056162bb22.jpg"
+                            "/static/goods/2_3_a.jpg",
+                            "/static/goods/2_3_b.jpg",
+                            "/static/goods/2_3_c.jpg",
+                            "/static/goods/2_3_d.jpg",
+                            "/static/goods/2_3_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -394,11 +394,11 @@ export async function get() {
                         "body": "Мобильный компьютер можно каждый день брать с собой на занятия. Благодаря прорезиненной противоударной рамке, экрану с защитой от давления, и клавиатуре, выдерживающей проливание до 330 мл жидкости, ему не страшно даже неаккуратное обращение.",
                         "price": "15 000",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30054870bb.jpg",
-                            "https://img.mvideo.ru/Big/30054870bb1.jpg",
-                            "https://img.mvideo.ru/Big/30054870bb2.jpg",
-                            "https://img.mvideo.ru/Big/30054870bb3.jpg",
-                            "https://img.mvideo.ru/Big/30054870bb4.jpg"
+                            "/static/goods/2_4_a.jpg",
+                            "/static/goods/2_4_b.jpg",
+                            "/static/goods/2_4_c.jpg",
+                            "/static/goods/2_4_d.jpg",
+                            "/static/goods/2_4_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -424,10 +424,10 @@ export async function get() {
                         "body": "Отличное сочетание видеокарты и процессора, экран с хорошей ips матрицей, корпус симпатичный, без лишнего колхоза. ",
                         "price": "64 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30054072bb.jpg",
-                            "https://img.mvideo.ru/Big/30054072bb1.jpg",
-                            "https://img.mvideo.ru/Big/30054072bb2.jpg",
-                            "https://img.mvideo.ru/Big/30054072bb3.jpg"
+                            "/static/goods/2_5_a.jpg",
+                            "/static/goods/2_5_b.jpg",
+                            "/static/goods/2_5_c.jpg",
+                            "/static/goods/2_5_d.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -453,11 +453,11 @@ export async function get() {
                         "body": "Главная особенность ноутбука от Lenovo – видеокарта GeForce RTX 3060 c 6 Гб памяти. Благодаря стараниям адаптера тебе не придётся смотреть на мыльные текстуры или отключать эффекты ради стабильного FPS. Он поддерживает технологию DLSS, которая пригодится в самых требовательных играх, а также трассировку лучей в реальном времени.",
                         "price": "109 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30056271bb21.jpg",
-                            "https://img.mvideo.ru/Big/30056271bb22.jpg",
-                            "https://img.mvideo.ru/Big/30056271bb23.jpg",
-                            "https://img.mvideo.ru/Big/30056271bb24.jpg",
-                            "https://img.mvideo.ru/Big/30056271bb25.jpg"
+                            "/static/goods/2_6_a.jpg",
+                            "/static/goods/2_6_b.jpg",
+                            "/static/goods/2_6_c.jpg",
+                            "/static/goods/2_6_d.jpg",
+                            "/static/goods/2_6_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -483,11 +483,11 @@ export async function get() {
                         "body": "Линейка ноутбуков Dell Inspiron 3501 выделяется не только скромными габаритами, благодаря которым владелец может запросто запускать самые востребованные программы в дороге, но и солидными характеристиками.",
                         "price": "31 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30055083bb.jpg",
-                            "https://img.mvideo.ru/Big/30055083bb1.jpg",
-                            "https://img.mvideo.ru/Big/30055083bb21.jpg",
-                            "https://img.mvideo.ru/Big/30055083bb22.jpg",
-                            "https://img.mvideo.ru/Big/30055083bb23.jpg"
+                            "/static/goods/2_7_a.jpg",
+                            "/static/goods/2_7_b.jpg",
+                            "/static/goods/2_7_c.jpg",
+                            "/static/goods/2_7_d.jpg",
+                            "/static/goods/2_7_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -513,12 +513,12 @@ export async function get() {
                         "body": "MacBook Pro 13 дюймов выходит на совершенно новый уровень благодаря мощному чипу Apple M1. До 2,8 раза больше вычислительной мощности, до 5 раз выше скорость обработки графики, до 20 часов работы без подзарядки — дольше любого другого Mac. Теперь в вашем распоряжении ещё более впечатляющие возможности. И они повсюду с вами.",
                         "price": "31 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30053805bb.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb1.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb2.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb3.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb4.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb5.jpg"
+                            "/static/goods/2_8_a.jpg",
+                            "/static/goods/2_8_b.jpg",
+                            "/static/goods/2_8_c.jpg",
+                            "/static/goods/2_8_d.jpg",
+                            "/static/goods/2_8_e.jpg",
+                            "/static/goods/2_8_f.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -544,12 +544,12 @@ export async function get() {
                         "body": "MacBook Pro 13 дюймов выходит на совершенно новый уровень благодаря мощному чипу Apple M1. До 2,8 раза больше вычислительной мощности, до 5 раз выше скорость обработки графики, до 20 часов работы без подзарядки — дольше любого другого Mac. Теперь в вашем распоряжении ещё более впечатляющие возможности. И они повсюду с вами.",
                         "price": "31 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30053805bb.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb1.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb2.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb3.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb4.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb5.jpg"
+                            "/static/goods/2_8_a.jpg",
+                            "/static/goods/2_8_b.jpg",
+                            "/static/goods/2_8_c.jpg",
+                            "/static/goods/2_8_d.jpg",
+                            "/static/goods/2_8_e.jpg",
+                            "/static/goods/2_8_f.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -575,12 +575,12 @@ export async function get() {
                         "body": "MacBook Pro 13 дюймов выходит на совершенно новый уровень благодаря мощному чипу Apple M1. До 2,8 раза больше вычислительной мощности, до 5 раз выше скорость обработки графики, до 20 часов работы без подзарядки — дольше любого другого Mac. Теперь в вашем распоряжении ещё более впечатляющие возможности. И они повсюду с вами.",
                         "price": "31 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/30053805bb.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb1.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb2.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb3.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb4.jpg",
-                            "https://img.mvideo.ru/Big/30053805bb5.jpg"
+                            "/static/goods/2_8_a.jpg",
+                            "/static/goods/2_8_b.jpg",
+                            "/static/goods/2_8_c.jpg",
+                            "/static/goods/2_8_d.jpg",
+                            "/static/goods/2_8_e.jpg",
+                            "/static/goods/2_8_f.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -613,11 +613,11 @@ export async function get() {
                         "body": "Узкая стиральная машина Samsung WW65K52E69S оснащена инверторным мотором, собранным по технологии Digital Inverter. В нём есть мощные магниты, благодаря которым значительно уменьшается трение деталей, снижается вибрация и уровень шума.",
                         "price": "42 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Pdb/20036717b.jpg",
-                            "https://img.mvideo.ru/Pdb/20036717b1.jpg",
-                            "https://img.mvideo.ru/Pdb/20036717b2.jpg",
-                            "https://img.mvideo.ru/Pdb/20036717b3.jpg",
-                            "https://img.mvideo.ru/Pdb/20036717b4.jpg"
+                            "/static/goods/3_1_a.jpg",
+                            "/static/goods/3_1_b.jpg",
+                            "/static/goods/3_1_c.jpg",
+                            "/static/goods/3_1_d.jpg",
+                            "/static/goods/3_1_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -641,11 +641,11 @@ export async function get() {
                         "body": "Стиральная машина Samsung WW80R42LXFW сочетает компактные размеры с большой вместимостью – до 8 килограммов хлопкового белья. Она эффективно очищает плотные ткани от стойких пятен, равномерно насыщая их моющим средством с помощью генератора пузырьков.",
                         "price": "28 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/20062756bb.jpg",
-                            "https://img.mvideo.ru/Big/20062756bb1.jpg",
-                            "https://img.mvideo.ru/Big/20062756bb2.jpg",
-                            "https://img.mvideo.ru/Big/20062756bb3.jpg",
-                            "https://img.mvideo.ru/Big/20062756bb4.jpg"
+                            "/static/goods/3_2_a.jpg",
+                            "/static/goods/3_2_b.jpg",
+                            "/static/goods/3_2_c.jpg",
+                            "/static/goods/3_2_d.jpg",
+                            "/static/goods/3_2_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -669,11 +669,11 @@ export async function get() {
                         "body": "Стиральная машина LG AI DD F2T9HS9S снабжена датчиками, которые определяют тип ткани. Она автоматически выбирает настройки для каждого материала, повышая эффективность удаления пятен и защищая деликатное бельё от повреждений.",
                         "price": "33 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/20063140bb.jpg",
-                            "https://img.mvideo.ru/Big/20063140bb1.jpg",
-                            "https://img.mvideo.ru/Big/20063140bb2.jpg",
-                            "https://img.mvideo.ru/Big/20063140bb3.jpg",
-                            "https://img.mvideo.ru/Big/20063140bb4.jpg"
+                            "/static/goods/3_3_a.jpg",
+                            "/static/goods/3_3_b.jpg",
+                            "/static/goods/3_3_c.jpg",
+                            "/static/goods/3_3_d.jpg",
+                            "/static/goods/3_3_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -697,11 +697,11 @@ export async function get() {
                         "body": "Функция обработки паром Steam значительно уменьшит количество складок и заломов. Она также уберёт большую часть аллергенов и устранит неприятные запахи.",
                         "price": "35 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/20063129bb.jpg",
-                            "https://img.mvideo.ru/Big/20063129bb1.jpg",
-                            "https://img.mvideo.ru/Big/20063129bb2.jpg",
-                            "https://img.mvideo.ru/Big/20063129bb3.jpg",
-                            "https://img.mvideo.ru/Big/20063129bb4.jpg"
+                            "/static/goods/3_4_a.jpg",
+                            "/static/goods/3_4_b.jpg",
+                            "/static/goods/3_4_c.jpg",
+                            "/static/goods/3_4_d.jpg",
+                            "/static/goods/3_4_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -725,9 +725,9 @@ export async function get() {
                         "body": "Узкая стиральная машина Bosch Serie | 2 WLG20060OE хорошо подходит для установки в небольших помещениях. Она не занимает много места, обеспечивает высокое качество стирки.",
                         "price": "23 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Pdb/20026559b.jpg",
-                            "https://img.mvideo.ru/Big/20026559b1.jpg",
-                            "https://img.mvideo.ru/Big/20026559b2.jpg"
+                            "/static/goods/3_5_a.jpg",
+                            "/static/goods/3_5_b.jpg",
+                            "/static/goods/3_5_c.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -751,11 +751,11 @@ export async function get() {
                         "body": "Узкая стиральная машина Bosch Serie | 2 WLG20060OE хорошо подходит для установки в небольших помещениях. Она не занимает много места, обеспечивает высокое качество стирки.",
                         "price": "23 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/20068648bb.jpg",
-                            "https://img.mvideo.ru/Big/20068648bb1.jpg",
-                            "https://img.mvideo.ru/Big/20068648bb2.jpg",
-                            "https://img.mvideo.ru/Big/20068648bb3.jpg",
-                            "https://img.mvideo.ru/Big/20068648bb4.jpg"
+                            "/static/goods/3_6_a.jpg",
+                            "/static/goods/3_6_b.jpg",
+                            "/static/goods/3_6_c.jpg",
+                            "/static/goods/3_6_d.jpg",
+                            "/static/goods/3_6_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -779,11 +779,11 @@ export async function get() {
                         "body": "Глубина корпуса стиральной машины Candy SmartPro CSO4 CO4 106T1/2-07 составляет 40 см. Благодаря этому она не занимает много места и подходит для установки в небольшом помещении. Эта модель рассчитана на одновременную загрузку до 6 кг белья.",
                         "price": "17 490",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/20071249bb4.jpg",
-                            "https://img.mvideo.ru/Big/20071249bb1.jpg",
-                            "https://img.mvideo.ru/Big/20071249bb2.jpg",
-                            "https://img.mvideo.ru/Big/20071249bb3.jpg",
-                            "https://img.mvideo.ru/Big/20071249bb4.jpg"
+                            "/static/goods/3_7_a.jpg",
+                            "/static/goods/3_7_b.jpg",
+                            "/static/goods/3_7_c.jpg",
+                            "/static/goods/3_7_d.jpg",
+                            "/static/goods/3_7_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -807,11 +807,11 @@ export async function get() {
                         "body": "ГИ вот я ее нашла! Изучив характеристики этой машинки, я отправилась за ней в магазин, оценить, так сказать, ",
                         "price": "27 490",
                         "imgSet": [
-                            "https://img.mvideo.ru/Pdb/1100023634546b.jpg",
-                            "https://img.mvideo.ru/Pdb/1100023634546b1.jpg",
-                            "https://img.mvideo.ru/Pdb/1100023634546b2.jpg",
-                            "https://img.mvideo.ru/Pdb/1100023634546b3.jpg",
-                            "https://img.mvideo.ru/Pdb/1100023634546b4.jpg"
+                            "/static/goods/3_8_a.jpg",
+                            "/static/goods/3_8_b.jpg",
+                            "/static/goods/3_8_c.jpg",
+                            "/static/goods/3_8_d.jpg",
+                            "/static/goods/3_8_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -835,11 +835,11 @@ export async function get() {
                         "body": "V-Zug AdoraWash AW6TWHCR – стиральная машина премиум-класса. Она обеспечивает превосходные результаты стирки, а функция разглаживания паром позволяет справиться со складками и обойтись без утюга.",
                         "price": "535 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Pdb/20075493b.jpg",
-                            "https://img.mvideo.ru/Pdb/20075493b1.jpg",
-                            "https://img.mvideo.ru/Pdb/20075493b2.jpg",
-                            "https://img.mvideo.ru/Pdb/20075493b3.jpg",
-                            "https://img.mvideo.ru/Pdb/20075493b4.jpg"
+                            "/static/goods/3_9_a.jpg",
+                            "/static/goods/3_9_b.jpg",
+                            "/static/goods/3_8_c.jpg",
+                            "/static/goods/3_8_d.jpg",
+                            "/static/goods/3_8_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -863,7 +863,7 @@ export async function get() {
                         "body": "Kuppersbusch WA 1940.0 T – стиральная машина с предельной загрузкой 8 кг, которая обеспечит вашей одежде и текстилю уход премиум-класса. Производимая в Швейцарии модель отличается непревзойдённой надёжностью, поэтому прослужит вам максимально долго.",
                         "price": "386 990",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/20072309bb.jpg"
+                            "/static/goods/3_10_a.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -894,11 +894,11 @@ export async function get() {
                         "body": "Haier C2F637CWMV – элегантный и вместительный двухкамерный холодильник с нижним расположением морозильной камеры. Пять полок и «сухая» зона свежести в холодильном отделении, а также четыре ящика в морозильнике дают возможность распределить продукты так, как пожелают хозяева. В холодильном и морозильном отделениях этой модели установлена система No Frost. Благодаря этому хозяевам не нужно думать о разморозке, всё выполняется автоматически. По камерам холодильника циркулирует охлаждённый воздух, препятствуя образованию наледи на стенках.",
                         "price": "64999",
                         "imgSet": [
-                            "https://img.mvideo.ru/Pdb/20036155b.jpg",
-                            "https://img.mvideo.ru/Pdb/20036155b1.jpg",
-                            "https://img.mvideo.ru/Pdb/20036155b2.jpg",
-                            "https://img.mvideo.ru/Pdb/20036155b3.jpg",
-                            "https://img.mvideo.ru/Pdb/20036155b4.jpg"
+                            "/static/goods/4_1_a.jpg",
+                            "/static/goods/4_1_b.jpg",
+                            "/static/goods/4_1_c.jpg",
+                            "/static/goods/4_1_d.jpg",
+                            "/static/goods/4_1_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -921,11 +921,11 @@ export async function get() {
                         "body": "ехнология DoorCooling+ обеспечивает дополнительное охлаждение из панели в верхней части корпуса. Оно выполняется на 32% быстрее, чем в моделях без этой системы. За счёт этого на всех полках, в том числе на тех, что установлены в двери, поддерживается постоянная температура.",
                         "price": "39999",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/20069639bb.jpg",
-                            "https://img.mvideo.ru/Big/20069639bb1.jpg",
-                            "https://img.mvideo.ru/Big/20069639bb2.jpg",
-                            "https://img.mvideo.ru/Big/20069639bb3.jpg",
-                            "https://img.mvideo.ru/Big/20069639bb4.jpg"
+                            "/static/goods/4_2_a.jpg",
+                            "/static/goods/4_2_b.jpg",
+                            "/static/goods/4_2_c.jpg",
+                            "/static/goods/4_2_d.jpg",
+                            "/static/goods/4_2_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -948,11 +948,11 @@ export async function get() {
                         "body": "Модель с двухконтурной модификацией позволяет выставлять независимые настройки в каждом из отделений. На панели управления расположены кнопки для выбора температуры, активации специальных программ и яркие индикаторы. Разобраться с тем, что и когда нажимать, не составит труда, поскольку все клавиши снабжены лаконичными надписями.",
                         "price": "47999",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/20068484bb.jpg",
-                            "https://img.mvideo.ru/Big/20068484bb1.jpg",
-                            "https://img.mvideo.ru/Big/20068484bb2.jpg",
-                            "https://img.mvideo.ru/Big/20068484bb3.jpg",
-                            "https://img.mvideo.ru/Big/20068484bb4.jpg",
+                            "/static/goods/4_3_a.jpg",
+                            "/static/goods/4_3_b.jpg",
+                            "/static/goods/4_3_c.jpg",
+                            "/static/goods/4_3_d.jpg",
+                            "/static/goods/4_3_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
@@ -975,11 +975,11 @@ export async function get() {
                         "body": "Общий объём устройства – 617литров, из них 202 литра приходятся на морозильную камеру. Такой большой вместительности удалось достичь при помощи технологии SpaceMax: использована особая тонкая термоизоляция, которая, несмотря на компактность, не снижает эффективность работы. А повышает её конструктивное решение Metal Cooling: на задней стенке отделений расположена стальная пластина. Она способствует удержанию холода и позволяет быстрее восстановить микроклимат после открывания дверей.",
                         "price": "97499",
                         "imgSet": [
-                            "https://img.mvideo.ru/Big/20062868bb.jpg",
-                            "https://img.mvideo.ru/Big/20062868bb1.jpg",
-                            "https://img.mvideo.ru/Big/20062868bb2.jpg",
-                            "https://img.mvideo.ru/Big/20062868bb3.jpg",
-                            "https://img.mvideo.ru/Big/20062868bb4.jpg",
+                            "/static/goods/4_3_a.jpg",
+                            "/static/goods/4_3_b.jpg",
+                            "/static/goods/4_3_c.jpg",
+                            "/static/goods/4_3_d.jpg",
+                            "/static/goods/4_3_e.jpg"
                         ],
                         "favorite": false,
                         "isActive": false,
