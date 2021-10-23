@@ -20,7 +20,7 @@
 </script>
 
 <div class="search" use:clickOutside on:click_outside="{() => activeSearchList = false }">    
-    <form action="GET" class="search-form" on:submit|preventDefault={() => handleSubmit()}>
+    <form class="search-form" on:submit|preventDefault={() => handleSubmit()}>
         <input type="text" class="search-input" placeholder="Поиск" 
             bind:value={searchTerm}
             on:focus={() => activeSearchList = true}>
