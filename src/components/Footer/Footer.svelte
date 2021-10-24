@@ -47,9 +47,6 @@
             </div>
         </div>
     </div>
-    <div class='footer_about'>
-        <div class='container'>Создано мучительно долго, но увлекательно.</div>
-    </div>
 </footer>
 
 
@@ -86,13 +83,6 @@
         margin-bottom: 0.5rem;
         font-weight: 500;
         font-size: 0.9rem;
-    }
-
-    .footer_about {
-        font-size: 11px;
-        background: var(--main-descr-color);
-        padding: 0.5rem 0;
-        margin-top: 1rem;
     }
 
     .footer_layout {
@@ -139,6 +129,7 @@
             display: flex;
             flex-wrap: wrap;
             column-gap: 1rem;
+            justify-content: center;
         }
 
         .footer_social {
@@ -157,7 +148,8 @@
         }
 
         .footer_logo {
-            margin: 0 auto;
+            /* margin: 0 auto; */
+            margin: 0;
         }
 
         .phone_value {
@@ -168,7 +160,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            margin-left: auto;
         }
 
         .footer_menu {
