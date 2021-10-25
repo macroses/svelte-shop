@@ -1,5 +1,5 @@
+<div class="promo_title">Акции</div>
 <div class="promo_block">
-    <div class="promo_title">Акции</div>
     <div class="promo_content">
         <div class="promo_item">
             <img src="https://static-sl.insales.ru/r/WXPD9U3YGS8/fit/469/0/ce/1/plain/files/1/6778/16366202/original/Group_179_44a64edc4aaac4a857f6cf68909a657f.jpg" alt="">
@@ -16,7 +16,8 @@
 <style>
     .promo_block {
         max-width: 100%;
-        overflow: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
     }
 
     .promo_title {

@@ -14,7 +14,7 @@
         <div class="carousel_title">
             {value.catName}
         </div>
-        <Carousel perPage={{1200: 6, 992: 4, 768: 3, 500: 2}} loop={false} dots={false}>
+        <Carousel perPage={{1200: 6, 992: 4, 768: 3, 500: 2}} dots={false}>
             <span class="control" slot="left-control">
                 <span class="material-icons-outlined">arrow_back</span>
             </span>

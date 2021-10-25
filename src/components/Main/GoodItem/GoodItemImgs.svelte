@@ -56,11 +56,11 @@
     }
 
     .item_img_box .slider_for_item :global(.left) {
-        left: -4vw;
+        left: -40px;
     }
 
     .item_img_box .slider_for_item :global(.right) {
-        right: -4vw;
+        right: -40px;
     }
 
     .slide_container {
@@ -85,8 +85,9 @@
         justify-content: center;
     }
     .img_preview img{
-        max-width: 400px;
+        max-width: 100%;
         max-height: 400px;
+        height: auto;
     }
 
     @media (max-width: 768px) {

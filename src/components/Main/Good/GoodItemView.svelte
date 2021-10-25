@@ -55,7 +55,7 @@
     }
 </script>
 
-<li>
+<div class="item_view">
     <div class="item_container">
         <a href="/{categoryId}/goodItems/{item.id}" class="item_link_img">
             <div class="picture">
@@ -99,11 +99,11 @@
                 >{item.favorite ? "favorite" : "favorite_border"}</span>
         </div>
     </div>
-</li>
+</div>
 
 <style>
     .item_container {
-        max-width: 300px;
+        max-width: 180px;
         margin: 0 auto;
         position: relative;
     }
@@ -122,7 +122,7 @@
         justify-content: center;
     }
 
-    li {
+    .item_view {
         display: flex;
         flex-direction: column;
         position: relative;
@@ -210,6 +210,7 @@
     .picture img {
         max-width: 100%;
         height: 150px;
+        width: auto;
     }
 
     .price {

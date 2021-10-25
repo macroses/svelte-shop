@@ -13,6 +13,8 @@
         padding: 1.5rem 0;
         grid-area: crumbs;
         overflow: auto;
+        position: relative;
+        z-index: -1;
     }
 
     li {

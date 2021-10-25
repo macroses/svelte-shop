@@ -32,9 +32,9 @@
     {#await items then _}
         <ul class="result_list">
             {#each paginatedItems as item (item.name)}
-                <div>
+                <li>
                     <GoodItemView {...item}/>
-                </div>
+                </li>
             {/each}
         </ul>
     {/await}

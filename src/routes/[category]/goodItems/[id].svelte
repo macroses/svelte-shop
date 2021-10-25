@@ -69,7 +69,9 @@
         flex-direction: column;
         grid-area: price;
         position: sticky;
-        top: 0;
+        bottom: 0;
+        background: var(--main-bg-color);
+        z-index: 50;
     }
 
     .item_price {
@@ -109,6 +111,7 @@
         .item_price {
             flex-direction: row;
             justify-content: space-between;
+            min-height: 42px;
         }
 
         .item_container {

@@ -50,7 +50,7 @@
 	{/each}
 	{#if showResetButton}
 		<button class="clear" on:click={handleResetFilters} transition:fade={{duration: 200}}>очистить</button>
-		<button class="show_results" on:click={() => toggleFilters = !toggleFilters}>Показать результаты</button>
+		<button class="show_results" on:click={() => toggleFilters = !toggleFilters}>Показать результаты </button>
 	{/if}
 </div>
 
@@ -111,7 +111,6 @@
 			right: 1.25rem;
 			top: 0.5rem;
 			font-size: 2rem;
-			border: 1px solid var(--main-border-color);
 		}
 
 		.clear {
