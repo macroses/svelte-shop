@@ -7,7 +7,7 @@
                 </div>
                 <div class="contacts">
                     <div class="footer_contacts">
-                        <a href="tel:+78008008080" class="phone_value">+7(800)800-80-80</a>
+                        <a href="tel:+78008008080" class="phone_value">+7(800)800-80-81</a>
                         <div class="phone_info">справочная служба</div>
                     </div>
                     <div class="footer_contacts">
