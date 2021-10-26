@@ -78,7 +78,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        background: #fff;
+        background: var(--main-bg-color);
         box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.1);
         max-height: 300px;
         overflow: auto;
@@ -132,6 +132,9 @@
         font-family: var(--font);
         font-size: 1rem;
         width: auto;
+        transition: .2s;
+        background: var(--main-bg-color);
+        color: var(--main-text-color);
         transition: .2s;
     }
 

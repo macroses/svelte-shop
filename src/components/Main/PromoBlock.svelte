@@ -24,6 +24,7 @@
         font-size: 1.5rem;
         font-weight: 500;
         margin: 4rem 0 1rem;
+        color: var(--main-text-color);
     }
 
     .promo_content {

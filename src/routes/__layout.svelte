@@ -2,11 +2,18 @@
     import '../app.css'
     import Header from '../components/Header/Header.svelte';
     import Footer from '../components/Footer/Footer.svelte';
+    import { theme } from '../stores/theme';
+
+    function handleChangeTheme() {
+        $theme === 'light' ? theme.set('dark') : theme.set('light'); 
+    }
 </script>
 
-<div class="wrapper">
-    <Header/>
-    <main><slot></slot></main>
+<div class="wrapper" use:handleChangeTheme class:dark={$theme === 'dark'}>
+    <Header on:changeTheme={handleChangeTheme}/>
+    <main>
+        <slot></slot>
+    </main>
     <Footer/>
 </div>
 
@@ -22,5 +29,10 @@
             "footer";
 
         margin: 0 auto;
+    }
+
+    main {
+        background: var(--main-bg-color);
+        padding-bottom: 2rem;
     }
 </style>

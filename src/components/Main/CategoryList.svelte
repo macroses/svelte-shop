@@ -32,7 +32,7 @@
     }
     
     .category_list a {
-        background: #f6f6f6;
+        background: var(--main-category-list-color);
         display: flex;
         align-items: center;
         justify-content: center;
