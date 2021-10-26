@@ -135,7 +135,6 @@
         z-index: 20;
         cursor: pointer;
         color: var(--main-text-color);
-        background: var(--main-bg-color);
     }
 
     .favorite_item:hover {
@@ -162,7 +161,7 @@
         bottom: 0;
         left: 0;
         height: 20px;
-        background: linear-gradient(to bottom, rgba(0,0,0,0), #fff);
+        background: linear-gradient(to bottom, rgba(0,0,0,0), var(--main-bg-color));
     }
 
     .picture {
@@ -196,7 +195,8 @@
         width: calc(100% - 5px);
         padding: 0 1px;
         height: 3px;
-        background: rgba(0,0,0,.2);
+        background: var(--main-text-color);
+        opacity: .5;
         bottom: -10px;
     }
 
@@ -217,6 +217,7 @@
         font-size: 1.3rem;
         font-weight: normal;
         font-weight: 500;
+        color: var(--main-text-color);
     }
 
     .item_link_img {

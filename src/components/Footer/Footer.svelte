@@ -52,7 +52,6 @@
 
 <style>
     footer {
-        margin-top: 2rem;
         background: var(--footer-bg-color);
         padding: 2rem 0 0;
     }
@@ -83,6 +82,7 @@
         margin-bottom: 0.5rem;
         font-weight: 500;
         font-size: 0.9rem;
+        color: var(--main-text-color);
     }
 
     .footer_layout {
@@ -97,6 +97,7 @@
 
     .footer_logo img {
         width: 100%;
+        filter: drop-shadow(0px 0px 1px #fff);
     }
 
     .phone_value {
@@ -108,6 +109,7 @@
     .phone_info {
         font-size: 0.9rem;
         font-weight: 300;
+        color: var(--main-text-color);
     }
 
     .footer_contacts {
@@ -118,6 +120,7 @@
         font-size: 30px;
         margin-right: 0.5rem;
         margin-top: 2rem;
+        color: var(--main-text-color);
     }
 
     @media (max-width: 768px) {

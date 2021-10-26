@@ -12,7 +12,7 @@
         grid-area: catalog;
 
         background: var(--main-theme-color);
-        color: #fff;
+        color: var(--main-text-color);
         transition: var(--transition-timing);
         cursor: pointer;
         font-size: 1.125rem;

@@ -19,7 +19,7 @@
             </a>
             <HeaderCatalog modalToggle={() => showModal = true}/>
             <HeaderSearch/>
-            <HeaderOptions/>
+            <HeaderOptions on:changeTheme/>
         </div>
     </div>
 </header>
@@ -38,7 +38,7 @@
     header {
         border-bottom: 1px solid var(--main-border-color);
         box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.1);
-        background: var(--main-bg-color);
+        background: var(--main-section-color);
     }
 
     h3 {
@@ -59,6 +59,10 @@
     .logo {
         grid-area: logo;
         height: 30px;
+    }
+
+    .logo img {
+        filter: drop-shadow(0px 0px 1px #fff)
     }
 
     @media (max-width: 992px) {

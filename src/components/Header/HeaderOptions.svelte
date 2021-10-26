@@ -1,6 +1,16 @@
 <script>
     import { favoriteCollection } from '../../stores/favoriteStore';
     import { cartCollection } from '../../stores/cart';
+    import { createEventDispatcher } from 'svelte';
+
+
+    let themeIcon = 'light_mode';
+    const dispatch = createEventDispatcher();
+    
+    function handleChange() {
+        themeIcon === 'light_mode' ? themeIcon = "dark_mode" : themeIcon = 'light_mode';
+        dispatch('changeTheme');
+    }
 
     $: cartCollectionCounter = () => {
         let sum;
@@ -12,37 +22,48 @@
 </script>
 
 <div class="options">
+    <div class="theme">
+        <div class="control">
+            <div class="icon_container">
+                <span class="material-icons-outlined option_icon"
+                    on:click={handleChange}>{themeIcon}</span>
+            </div>
+        </div>
+    </div>
     <div class="profile">
         <a href="/profile" class="control">
-            <span class="material-icons-outlined">face</span>
-            <span class="text">Профиль</span>
+            <div class="icon_container">
+                <span class="material-icons-outlined option_icon">face</span>
+            </div>
         </a>
     </div>
     <div class="favorite">
         <a href="/favorite" class="control">
             <div class="icon_container">
-                <span class="material-icons-outlined">favorite_border</span>
+                <span class="material-icons-outlined option_icon">favorite_border</span>
                 {#if $favoriteCollection.length}
                     <span class="counter">{$favoriteCollection.length}</span>
                 {/if}
             </div>
-            <span class="text">Избранное</span>
         </a>
     </div>
     <div class="cart">
         <a href="/cart" class="control">
             <div class="icon_container">
-                <span class="material-icons-outlined">shopping_cart</span>
+                <span class="material-icons-outlined option_icon">shopping_cart</span>
                 {#if $cartCollection.length}
                     <span class="counter">{cartCollectionCounter()}</span>
                 {/if}
             </div>
-            <span class="text">Корзина</span>
         </a>
     </div>
 </div>
 
 <style>
+
+    .option_icon {
+        font-size: 26px;
+    }
 
     .icon_container {
         position: relative;
@@ -72,27 +93,18 @@
 
     .control {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         align-items: center;
         color: var(--main-text-color);
         height: 100%;
         position: relative;
+        cursor: pointer;
     }
 
-    .text {
-        transition: .2s;
-    }
-
-    .favorite, .cart {
+    .favorite, .cart, .profile {
         margin-left: 1.25rem;
     }
 
     @media (max-width: 992px) {
-        .text {
-            display: none;
-        }
-
         .options {
             margin-right: 0.5rem;
         }
