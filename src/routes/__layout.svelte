@@ -4,13 +4,15 @@
     import Footer from '../components/Footer/Footer.svelte';
     import { theme } from '../stores/theme';
 
-    function handleChangeTheme() {
-        $theme === 'light' ? theme.set('dark') : theme.set('light'); 
+    function handleCHangeTheme() {
+        $theme === 'dark' ? theme.set('light') : theme.set('dark');
     }
 </script>
 
-<div class="wrapper" use:handleChangeTheme class:dark={$theme === 'dark'}>
-    <Header on:changeTheme={handleChangeTheme}/>
+<div class="wrapper">
+    <button on:click={() => theme.set('light')}>light</button>
+    <button on:click={() => theme.set('dark')}>dark</button>
+    <Header on:changeTheme={handleCHangeTheme}/>
     <main>
         <slot></slot>
     </main>
