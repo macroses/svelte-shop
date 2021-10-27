@@ -19,15 +19,17 @@
 
 <svelte:window on:keydown={handle_keydown} />
 
-<div class="modal-background" on:click={close} transition:fade="{{duration: 100 }}"/>
-
-<div class="modal" role="dialog" aria-modal="true" bind:this={modal} transition:fade="{{duration: 200 }}">
-	<slot name="header" />
-	<slot />
-	<div class="close_btn">
-		<Button on:click={close}>Закрыть</Button>
+<div class="modal-background" on:click={close} transition:fade="{{duration: 100 }}">
+	<div class="modal" role="dialog" aria-modal="true" bind:this={modal} transition:fade="{{duration: 200 }}">
+		<slot name="header" />
+		<slot />
+		<div class="close_btn">
+			<Button on:click={close}>Закрыть</Button>
+		</div>
 	</div>
 </div>
+
+
 
 <style>
 	.close_btn {
@@ -41,16 +43,13 @@
 		height: 100%;
 		background: rgba(0, 0, 0, 0.3);
         z-index: 1000;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.modal {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		width: 1200px;
-		max-height: calc(100vh - 4em);
-		overflow: auto;
-		transform: translate(-50%, -50%);
 		padding: 1em;
 		border-radius: 0.2em;
 		background: white;

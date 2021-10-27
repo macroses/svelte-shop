@@ -6,7 +6,7 @@
 </script>
 <script>
     export let id;
-    import { onMount } from "svelte";
+    import { onMount, beforeUpdate, afterUpdate } from "svelte";
     import { fade } from "svelte/transition";
     import Model from "../../model/data-service";
     import GoodItemView from "../../components/Main/Good/GoodItemView.svelte";
@@ -23,12 +23,11 @@
 
     $: filterCollection = [];
     $: categoryItem = temp.getCategoryItem(id, selectedValue, filterCollection, values);
-    const staticData = temp.getCategoryItem(id);
+    let staticData = temp.getCategoryItem(id);
 
     onMount(async() => {
         const resolve = await categoryItem;
-        title = resolve.catName;
-        
+        title = resolve.catName;    
     });
 </script>
 
@@ -49,11 +48,12 @@
                     bind:exportedActive
                     />
                 <button class="toggle_filters" on:click={() => toggleFilters = true}>фильтры</button>
+                
             {/if}
         {/await}
         {#await categoryItem}
                 <Loader/>
-        {:then value}
+        {:then value} 
             {#if value.category.length > 0}
                 <ul class="items_list" in:fade>
                     {#each value.category as item (item.name)}

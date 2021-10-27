@@ -3,7 +3,7 @@
         <div class="footer_layout">
             <div class="footer_aside">
                 <div class="footer_logo">
-                    <a href="."><img src="/logo.svg" alt=""></a>
+                    <a href="/"><img src="/logo.svg" alt=""></a>
                 </div>
                 <div class="contacts">
                     <div class="footer_contacts">

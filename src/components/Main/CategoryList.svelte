@@ -72,7 +72,7 @@
         .category_list {
             grid-template-columns: 1fr 1fr;
             gap: 0.5rem;
-            margin: 0;
+            margin: 0.5rem 0 0 0;
         }
 
         .category_list a {

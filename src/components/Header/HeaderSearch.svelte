@@ -62,10 +62,16 @@
 <style>
     .clear_search {
         position: absolute;
-        right: 45px;
-        top: 10px;
+        right: 50px;
+        top: 1px;
+        height: 48px;
+        width: 48px;
         cursor: pointer;
         color: var(--main-text-color);
+        background: var(--main-bg-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .emptyholder {
