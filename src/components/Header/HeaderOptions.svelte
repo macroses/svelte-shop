@@ -4,7 +4,7 @@
     import { createEventDispatcher } from 'svelte';
 
 
-    let themeIcon = 'light_mode';
+    $: themeIcon = 'light_mode';
     const dispatch = createEventDispatcher();
     
     function handleChange() {

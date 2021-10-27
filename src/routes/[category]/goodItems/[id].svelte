@@ -23,7 +23,7 @@
 
     const temp = new Model();
     
-    let staticData;
+    let staticData = temp.getSingleItem(categoryId, id);
     let title = "";
 
     function updateData() {
@@ -90,6 +90,7 @@
     h1 {
         font-size: 1.5rem;
         font-weight: 500;
+        color: var(--main-text-color);
     }
 
     .item_funcs {

@@ -8,11 +8,11 @@
 
 <div class="tabs">
     <div class="tab_item" class:active={active === "1"} on:click="{() => active = "1"}">
-        <span class="material-icons-outlined">source</span>
+        <span class="material-icons-outlined icon">source</span>
         <span class="tab_name">Описание</span>
     </div>
     <div class="tab_item" class:active={active === "2"} on:click="{() => active = "2"}">
-        <span class="material-icons-outlined">chat_bubble_outline</span>
+        <span class="material-icons-outlined icon">chat_bubble_outline</span>
         <span class="tab_name">Отзывы</span>
     </div>
 </div>
@@ -46,6 +46,10 @@
         opacity: .5;
     }
 
+    .tab_item .icon {
+        color: var(--main-text-color);
+    }
+
     .tab_item.active {
         opacity: 1;
     }
@@ -53,6 +57,7 @@
     .tab_name {
         font-size: 1.5rem;
         margin-left: 0.5rem;
+        color: var(--main-text-color);
     }
 
     .title {
@@ -64,5 +69,9 @@
     .tab_content {
         padding: 1rem;
         border: 1px solid var(--main-border-color);
+    }
+
+    .tab_content_body {
+        color: var(--main-text-color);
     }
 </style>

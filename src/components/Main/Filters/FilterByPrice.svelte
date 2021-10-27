@@ -46,6 +46,11 @@
 
 	.price_item {
 		display: inline-block;
+		color: var(--main-text-color);
+	}
+
+	.val {
+		color: var(--main-text-color);
 	}
 
 	:global(.rangeSlider) {

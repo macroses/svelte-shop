@@ -30,7 +30,7 @@
         position: absolute;
         width: 100%;
         height: 1px;
-        border-bottom: 1px dotted var(--main-descr-color);
+        border-bottom: 1px dotted var(--main-text-color);
         left: 0;
         bottom: 10px;
         z-index: -1;
@@ -38,6 +38,7 @@
 
     .attr_value {
         background: var(--main-bg-color);
+        color: var(--main-text-color);
         display: inline-block;
         padding: 5px;
     }

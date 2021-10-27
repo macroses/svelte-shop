@@ -10,7 +10,7 @@
 .light-pagination-nav :global(.pagination-nav) {
   display: flex;
   justify-content: center;
-  background: #FFF;
+  /* background: #FFF; */
   border-radius: 3px;
 }
 .light-pagination-nav :global(.option) {
@@ -20,7 +20,7 @@
   justify-content: center;
   transition: 0.2s all ease-out;
   user-select: none;
-  color: hsl(200, 90%, 10%);
+  color: var(--main-text-color);
 }
 
 .light-pagination-nav :global(.option.number),

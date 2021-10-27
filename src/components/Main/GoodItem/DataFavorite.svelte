@@ -29,6 +29,7 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+        color: var(--main-text-color);
     }
 
     .favorite span {

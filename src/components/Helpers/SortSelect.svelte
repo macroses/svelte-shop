@@ -9,8 +9,9 @@
 
 <style>
     select {
-        background: #fff;
+        background: var(--main-section-color);
         border: 1px solid var(--main-border-color);
+        color: var(--main-text-color);
         font-family: var(--font);
         font-size: 1rem;
         padding: 5px 10px;

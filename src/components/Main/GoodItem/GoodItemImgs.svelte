@@ -57,10 +57,12 @@
 
     .item_img_box .slider_for_item :global(.left) {
         left: -40px;
+        color: var(--main-text-color);
     }
 
     .item_img_box .slider_for_item :global(.right) {
         right: -40px;
+        color: var(--main-text-color);
     }
 
     .slide_container {

@@ -54,6 +54,7 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
+        color: var(--main-text-color);
     }
 
     .marker:after {

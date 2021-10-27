@@ -14,13 +14,14 @@
         grid-area: crumbs;
         overflow: auto;
         position: relative;
-        z-index: -1;
+        z-index: 0;
     }
 
     li {
         margin-right: 30px;
         position: relative;
         white-space: nowrap;
+        color: var(--main-text-color);
     }
 
     li:not(:last-child):after {

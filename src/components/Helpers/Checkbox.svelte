@@ -22,6 +22,8 @@
         display: block;
         width: 100%;
         padding: 0.5rem 0 0.5rem 1rem;
+        background: var(--main-section-color);
+        color: var(--main-text-color);
     }
 
     span {

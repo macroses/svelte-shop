@@ -9,9 +9,7 @@
     }
 </script>
 
-<div class="wrapper">
-    <button on:click={() => theme.set('light')}>light</button>
-    <button on:click={() => theme.set('dark')}>dark</button>
+<div class="wrapper {$theme === "dark" ? "dark" : "light"}" >
     <Header on:changeTheme={handleCHangeTheme}/>
     <main>
         <slot></slot>

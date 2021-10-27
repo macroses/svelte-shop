@@ -67,5 +67,6 @@
         font-size: 1.5rem;
         font-weight: 500;
         margin: 1rem 0;
+        color: var(--main-text-color);
     }
 </style>
