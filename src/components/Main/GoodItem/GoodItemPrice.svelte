@@ -17,6 +17,7 @@
         font-weight: 500;
         padding: 1rem;
         color: var(--main-text-color);
+        background: var(--main-section-color);
     }
 
     @media (max-width: 768px) {

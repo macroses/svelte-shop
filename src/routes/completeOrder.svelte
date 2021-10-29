@@ -164,6 +164,10 @@
 		text-align: right;
 	}
 
+	.order_info_value {
+		color: var(--main-text-color);
+	}
+
 	@media screen and (max-width: 768px) {
 		table {
 			border: 0;
@@ -238,8 +242,6 @@
 			padding: 0 0.2rem;
 		}
 
-		.order_info_value {
-			color: var(--main-text-color);
-		}
+		
 	}
 </style>

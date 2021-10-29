@@ -14,7 +14,7 @@
         <div class="carousel_title">
             {value.catName}
         </div>
-        <Carousel perPage={{1200: 6, 992: 4, 768: 3, 500: 2}} dots={false}>
+        <Carousel perPage={{1200: 6, 992: 4, 768: 3, 500: 2}} loop={false} dots={false}>
             <span class="control" slot="left-control">
                 <span class="material-icons-outlined">arrow_back</span>
             </span>
@@ -60,7 +60,18 @@
 
     @media (max-width: 768px) {
         .control {
-            display: none;
+            /* display: none; */
+        }
+
+        .carousel_container :global(.carousel button.left) {
+            top: 50%;
+            left: 0!important;
+        }
+
+        .carousel_container :global(.carousel button.right) {
+            top: 50%;
+            left: none;
+            right: 0;
         }
 
         .carousel_title {

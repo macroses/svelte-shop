@@ -211,7 +211,7 @@
     }
     .make_order a{
         background: var(--main-theme-color);
-        color: var(--main-bg-color);
+        color: #fff;
         width: 100%;
         border: 0;
         text-align: center;
@@ -225,6 +225,7 @@
 
     .sum_all_items {
         margin-top: 1rem;
+        color: var(--main-text-color);
     }
 
     .sum_all_items .val{
@@ -240,13 +241,14 @@
     }
 
     .cart_controls {
-        background: var(--gray-hover-color);
+        background: var(--main-section-color);
         padding: 1.5rem;
         font-family: var(--font);
     }
 
     .cart_controls .title {
         margin-top: 0;
+        color: var(--main-text-color);
     }
 
     .controls_wrap {
@@ -274,6 +276,7 @@
         font-size: 1.5rem;
         font-weight: 500;
         margin: 1rem 0;
+        color: var(--main-text-color);
     }
 
     .cart {
@@ -317,6 +320,7 @@
         white-space: nowrap;
         font-size: 1.5rem;
         font-weight: 500;
+        color: var(--main-text-color);
     }
 
     .item_delete {
@@ -330,6 +334,7 @@
         display: flex;
         justify-self: end;
         border: 1px solid var(--main-border-color);
+        background: var(--main-section-color);
     }
 
     .item_counter button {
@@ -344,7 +349,7 @@
     }
 
     .item_counter button:hover {
-        background: var(--gray-hover-color);
+        background: var(--main-bg-color);
     }
     .item_counter input {
         width: 3rem;
@@ -352,6 +357,12 @@
         border: 0;
         text-align: center;
         font-size: 1rem;
+        background: var(--main-section-color);
+        color: var(--main-text-color);
+    }
+
+    .item_counter input:hover {
+        background: var(--main-bg-color);
     }
 
     .item_img img {

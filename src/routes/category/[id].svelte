@@ -50,7 +50,6 @@
                     bind:exportedActive
                     />
                 <button class="toggle_filters" on:click={() => toggleFilters = true}>фильтры</button>
-                
             {/if}
         {/await}
         {#await categoryItem}

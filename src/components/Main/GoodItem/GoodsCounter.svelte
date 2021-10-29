@@ -62,11 +62,12 @@
 	.cart_control {
         display: flex;
         border-top: 1px solid var(--main-border-color);
-        
+        background: var(--main-section-color);
     }
 
     .cart_control button {
         color: var(--main-text-color);
+        
     }
 
     .cart_control a {
@@ -79,7 +80,7 @@
     }
 
     .cart_control a:hover {
-        background: var(--main-section-color);
+        background: var(--main-bg-color);
     }
 
     .items_counter {
@@ -95,7 +96,7 @@
     }
 
     .cart_control button:hover {
-        background: var(--main-section-color);
+        background: var(--main-bg-color);
     }
     
     .to_cart_btn {

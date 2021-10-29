@@ -4,7 +4,7 @@
     import OrderRadio from './OrderRadio.svelte';
     import OrderInputText from './OrderInputText.svelte';
     import { goto } from '$app/navigation';
-    import { orderStore, cartCollection } from '../../../stores/cart';
+    import { orderStore } from '../../../stores/cart';
 
     export let inputValues = {
         townSearch: '',

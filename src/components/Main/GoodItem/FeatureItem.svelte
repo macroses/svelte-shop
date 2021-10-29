@@ -57,6 +57,7 @@
         font-size: 1rem;
         text-transform: uppercase;
         margin-bottom: 0.3rem;
+        color: var(--main-text-color);
     }
 
     .val_item {
@@ -65,5 +66,6 @@
         margin-bottom: 0.5rem;
         padding: 0 0.5rem;
         border: 2px solid var(--main-theme-color);
+        color: var(--main-text-color);
     }
 </style>

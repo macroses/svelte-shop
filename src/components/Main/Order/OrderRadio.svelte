@@ -26,7 +26,7 @@
     }
 
     label:hover {
-        background: var(--filter-bg-color);
+        background: var(--main-section-color);
     }
 
     .radio_content {
