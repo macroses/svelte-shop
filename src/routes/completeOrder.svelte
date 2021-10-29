@@ -50,7 +50,7 @@
 		</div>
 		<div class="order_info_item">
 			<div class="order_info_title">Получатель</div>
-			<div class="order_info_value">{$orderStore.nameValue + '' + $orderStore.phoneValue}</div>
+			<div class="order_info_value">{$orderStore.nameValue + ' ' + $orderStore.phoneValue}</div>
 		</div>
 		<div class="order_info_item">
 			<div class="order_info_title">Комментарий к заказу</div>
@@ -92,6 +92,7 @@
 <style>
 	.sum {
 		font-weight: bold;
+		color: var(--main-text-color)
 	}
 
 	.order_sum {
@@ -109,12 +110,14 @@
 		padding: 0.5rem 1rem;
 		border: 1px solid var(--main-border-color);
 		margin-left: 1rem;
+		color: var(--main-text-color)
 	}
 
 	.order_title {
 		font-size: 1.5rem;
 		font-weight: 500;
 		margin: 1rem 0;
+		color: var(--main-text-color);
 	}
 
 	.descript {
@@ -122,6 +125,7 @@
 		font-weight: 500;
 		margin: 0.5rem 0;
 		padding-bottom: 1rem;
+		color: var(--main-text-color)
 	}
 
 	.order_info_item {
@@ -133,12 +137,14 @@
 	.order_info_title {
 		color: var(--main-descr-color);
 		flex-basis: 200px;
+		min-width: 200px;
 	}
 
 	.order_table {
 		width: 100%;
 		border: 1px solid var(--main-border-color);
 		border-spacing: 0;
+		color: var(--main-text-color);
 	}
 
 	.order_table td {
@@ -158,7 +164,7 @@
 		text-align: right;
 	}
 
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: 768px) {
 		table {
 			border: 0;
 		}
@@ -175,9 +181,12 @@
 		}
 
 		table tr {
-			border-bottom: 3px solid #ddd;
 			display: block;
 			margin-bottom: 0.625em;
+		}
+
+		table tr:not(:last-child) {
+			border-bottom: 1px solid var(--main-border-color);
 		}
 
 		table td {
@@ -195,6 +204,42 @@
 
 		table td:last-child {
 			border-bottom: 0;
+		}
+
+		.order_info_item {
+			flex-wrap: wrap;
+			padding: 1rem 0.5rem;
+		}
+
+		.order_info_item:not(:last-child) {
+			border-bottom: 1px solid var(--main-border-color);
+		}
+
+		.order_info_item:nth-child(odd) {
+			background: var(--main-section-color);
+		}
+
+		.order_info_title {
+			flex-basis: auto;
+			width: 100%;
+			text-align: center;
+		}
+
+		.order_title {
+			margin: 0;
+		}
+
+		.descript {
+			margin: 0;
+			padding-bottom: 0.5rem;
+		}
+
+		.order_info_status {
+			padding: 0 0.2rem;
+		}
+
+		.order_info_value {
+			color: var(--main-text-color);
 		}
 	}
 </style>

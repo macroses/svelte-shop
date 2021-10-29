@@ -6,7 +6,7 @@
 </script>
 <script>
     export let id;
-    import { onMount, beforeUpdate, afterUpdate } from "svelte";
+    import { onMount, beforeUpdate, afterUpdate, tick } from "svelte";
     import { fade } from "svelte/transition";
     import Model from "../../model/data-service";
     import GoodItemView from "../../components/Main/Good/GoodItemView.svelte";
@@ -27,7 +27,9 @@
 
     onMount(async() => {
         const resolve = await categoryItem;
-        title = resolve.catName;    
+        title = resolve.catName;   
+        
+        staticData = temp.getCategoryItem(id);
     });
 </script>
 

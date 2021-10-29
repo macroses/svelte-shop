@@ -63,7 +63,8 @@
                 <input type="text" id="names" bind:value={inputValues.townSearch}
                     bind:this={input} 
                     on:focus={() => townInputFocus = true}
-                    on:blur={() => townInputFocus = false}>
+                    on:blur={() => townInputFocus = false}
+                    required>
                 {#if inputValues.townSearch}
                     <span class="material-icons-outlined clear" on:click={() => clearAndFocus()}>clear</span>
                 {/if}
