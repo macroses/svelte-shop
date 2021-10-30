@@ -36,7 +36,7 @@
 
 <div class="order_form">
     <div class="title">Оформление заказа</div>
-    <form on:submit|preventDefault={handleSubmit}>
+    <form on:submit|preventDefault={handleSubmit} autocomplete="off">
         <div class="order_form_item">
             <div class="item_title">Контактные данные</div>
             <div class="item_block">

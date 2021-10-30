@@ -43,6 +43,7 @@
 
     h3 {
         margin-bottom: 1rem;
+        color: var(--main-text-color);
     }
 
 

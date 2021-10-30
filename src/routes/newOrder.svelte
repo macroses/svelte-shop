@@ -9,7 +9,7 @@
         phoneValue: '',
         commentValue: '',
         emailValue: '',
-        payChoice: null,
+        payChoice: 1,
         deliveryChoice: 0,
         sum: 0,
         promo: $promocodeState

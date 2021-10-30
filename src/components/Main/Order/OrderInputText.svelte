@@ -7,7 +7,7 @@
     export let label;
     export let pattern = false;
 
-    let input
+    $: input = 0;
 
     function clearAndFocus() {
         inpVal = "";
@@ -20,7 +20,7 @@
         <slot name="label">{label}</slot>
     </label>
     {#if pattern}
-        <input type="text" id={idVal} placeholder={pholder} use:formatByPattern={'(***) ***-**-**'} bind:value={inpVal} bind:this={input} required>
+        <input type="text" id={idVal} placeholder={pholder} use:formatByPattern={'(***) ***-**-**'} bind:value={inpVal} bind:this={input}>
     {:else}
         <input type="text" id={idVal} placeholder={pholder} bind:value={inpVal} bind:this={input} required>
     {/if}

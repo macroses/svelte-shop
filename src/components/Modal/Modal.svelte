@@ -52,7 +52,7 @@
 	.modal {
 		padding: 1em;
 		border-radius: 0.2em;
-		background: white;
+		background: var(--main-bg-color);
         z-index: 1001;
 	}
 </style>

@@ -52,10 +52,12 @@
 			<div class="order_info_title">Получатель</div>
 			<div class="order_info_value">{$orderStore.nameValue + ' ' + $orderStore.phoneValue}</div>
 		</div>
-		<div class="order_info_item">
-			<div class="order_info_title">Комментарий к заказу</div>
-			<div class="order_info_value">{$orderStore.commentValue}</div>
-		</div>
+		{#if $orderStore.commentValue}
+			<div class="order_info_item">
+				<div class="order_info_title">Комментарий к заказу</div>
+				<div class="order_info_value">{$orderStore.commentValue}</div>
+			</div>
+		{/if}
 	</div>
 
 	<div class="order_title">Состав заказа</div>

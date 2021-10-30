@@ -7,6 +7,8 @@
 	function handleSubmit() {
 		$authStore = { username };
 	}
+
+	$: console.log($authStore);
 </script>
 
 <div>
@@ -27,4 +29,8 @@
 		</label>
 		<button type="submit">Submit</button>
 	</form>
+</div>
+
+<div class="container">
+	
 </div>
