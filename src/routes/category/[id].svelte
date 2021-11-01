@@ -84,8 +84,9 @@
     .empty_catalog {
         font-size: 1.5rem;
         font-weight: 500;
-        min-width: max-content;
         width: 100%;
+        color: var(--main-text-color);
+        grid-area: content;
     }
     .items_list {
         display: grid;

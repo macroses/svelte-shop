@@ -256,6 +256,10 @@
         top: 0;
     }
 
+    .empty {
+        color: var(--main-text-color);
+    }
+
     .empty a {
         color: var(--main-theme-color);
     }
