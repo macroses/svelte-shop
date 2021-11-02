@@ -38,7 +38,7 @@
     --main-section-color: #282c34;
     --main-category-list-color: var(--main-section-color);
     --footer-bg-color: var(--main-section-color);
-    --filter-bg-color: var(--main-bg-color):
+    --filter-bg-color: var(--main-bg-color);
     --transparent-color: rgba(31, 33, 40, 0);
 }
 
