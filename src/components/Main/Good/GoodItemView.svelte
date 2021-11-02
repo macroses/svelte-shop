@@ -161,7 +161,7 @@
         bottom: 0;
         left: 0;
         height: 20px;
-        background: linear-gradient(to bottom, rgba(0,0,0,0), var(--main-bg-color));
+        background: linear-gradient(to bottom, var(--transparent-color), var(--main-bg-color));
     }
 
     .picture {
