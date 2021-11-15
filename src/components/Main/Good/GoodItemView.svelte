@@ -61,7 +61,7 @@
             <div class="picture">
                 {#if !defaultInfo}
                     {#key currentIndex}
-                        <img in:fade src="{item.imgSet[currentIndex]}" alt={item.name} loading="lazy">
+                        <img in:fade src="{item.imgSet[currentIndex]}" alt={item.name}>
                     {/key}
                 {:else}
                     {#if currentIndex}
