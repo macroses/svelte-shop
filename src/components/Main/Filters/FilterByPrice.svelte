@@ -15,16 +15,8 @@
 		temp.getMaxPrice(allData)
 	];
 
-	// $: if(!changePrice) values = [temp.getMinPrice(allData), temp.getMaxPrice(allData)];
-	let timer;
-
-	const debounce = () => {
-		clearTimeout(timer);
-
-		timer = setTimeout(() => {
-			max = temp.getMaxPrice(allData)
-		}, 500);
-	}
+	$: if(!changePrice) values = [temp.getMinPrice(allData), temp.getMaxPrice(allData)];
+	
 </script>
 
 <div class="unique_title">
@@ -35,7 +27,7 @@
 		<div class="price_item">от {values[0]}</div>
 		<div class="price_item">до {values[1]}</div>
 	</div>
-	<RangeSlider range bind:min bind:max bind:values on:changePrice={debounce}/>
+	<RangeSlider range bind:min bind:max bind:values on:change={() => changePrice = true}/>
 </div>
 
 <style>
